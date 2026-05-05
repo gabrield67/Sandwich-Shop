@@ -5,6 +5,7 @@ const DIST = 1000
 
 
 var grabbed_object = null
+var hover_object = null
 var mouse = Vector2()
 var zPos = 5	
 var cardHeightOrig = 3
@@ -42,12 +43,13 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		mouse =event.position
+		get_mouse_world_pos(mouse, false)
 	if event is InputEventMouseButton:
 		if event.button_index == 1 and event.is_pressed():
 			if firstPress:
-				get_mouse_world_pos(mouse)
+				get_mouse_world_pos(mouse, true)
 				if grabbed_object:
-					grabbed_object.start_particles()
+					grabbed_object.on_grab()
 					
 					if grabbed_object.bread:
 						grabbed_object.bread.remove_from_sandwich(grabbed_object)
@@ -63,7 +65,7 @@ func _input(event: InputEvent) -> void:
 			firstPress = true
 	
 			
-func get_mouse_world_pos(mouse_in:Vector2):
+func get_mouse_world_pos(mouse_in:Vector2, try_grab:bool):
 	var space = get_world_3d().direct_space_state
 	var start = get_viewport().get_camera_3d().project_ray_origin(mouse_in)
 	var end = get_viewport().get_camera_3d().project_position(mouse_in, DIST)
@@ -79,11 +81,27 @@ func get_mouse_world_pos(mouse_in:Vector2):
 		#print("here0")
 		if result.collider is Ingredient:
 			#print("here1")
-			grabbed_object = result.collider
-			grabbed_object.isHeld = true
-			#print("here2")
-			cardHeight = 0
-			
+			if try_grab:
+				grabbed_object = result.collider
+				grabbed_object.isHeld = true
+				#print("here2")
+				cardHeight = 0
+			else:
+				if hover_object:
+					if hover_object != result.collider:
+						hover_object.isHovered = false
+						hover_object.on_stop_hover()
+				hover_object = result.collider;
+				hover_object.isHovered = true
+				hover_object.on_hover()
+		else:
+			if hover_object:
+				hover_object.isHovered = false
+				hover_object.on_stop_hover()
+	else:
+		if hover_object:
+			hover_object.isHovered = false
+			hover_object.on_stop_hover()
 func get_grab_position():
 	#zPos = ($"Camera Pivot/Camera3D".position -  grabbed_object.position).length()*.5
 	var pre_position = get_viewport().get_camera_3d().project_position(mouse, zPos);
