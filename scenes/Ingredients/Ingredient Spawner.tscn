@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://drkevmp0aiaxv"]
+
+[ext_resource type="Script" uid="uid://b1a3r4c7c51yw" path="res://scenes/Ingredients/ingredient_spawner.gd" id="1_sa0xx"]
+
+[node name="IngredientSpawner" type="Node3D" unique_id=1365398154]
+script = ExtResource("1_sa0xx")
