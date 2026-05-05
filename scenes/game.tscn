@@ -1,10 +1,15 @@
 [gd_scene format=3 uid="uid://b6sf5n1s3tjjo"]
 
+[ext_resource type="Script" uid="uid://dnsby02e4apsw" path="res://scenes/drag_and_drop_controller.gd" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://bgu50auo18ypd" path="res://scenes/Ingredients/Ingredient.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://c54v7gf8e74j5" path="res://scenes/Ingredients/Bread.tscn" id="3_lnu2h"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_8cj0n"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_uwrxv"]
 
 [node name="Game" type="Node3D" unique_id=1126054119]
+script = ExtResource("1_yqjtg")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1180750594]
 transform = Transform3D(1, 0, 0, 0, -0.07449138, 0.99722165, 0, -0.99722165, -0.07449138, 0, 3.2350664, -0.60483086)
@@ -23,3 +28,38 @@ transform = Transform3D(1, 0, 0, 0, 0.25881907, 0.9659258, 0, -0.9659258, 0.2588
 
 [node name="Camera3D" type="Camera3D" parent="Camera Pivot" unique_id=1031999790]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19)
+
+[node name="Ingredient" parent="." unique_id=1817893045 instance=ExtResource("2_yqjtg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0458584, 2.3038454, 1.5081034)
+
+[node name="Bread" parent="." unique_id=1187585206 instance=ExtResource("3_lnu2h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28471273, 1.6317925, -2.7094417)
+
+[node name="Ingredient2" parent="." unique_id=1685615450 instance=ExtResource("2_yqjtg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.902828, 2.3038454, 1.5081034)
+
+[node name="Ingredient3" parent="." unique_id=1620411737 instance=ExtResource("2_yqjtg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0458584, 2.3038454, 4.2221823)
+
+[node name="Ingredient4" parent="." unique_id=1878213807 instance=ExtResource("2_yqjtg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.902828, 2.3038454, 4.2221823)
+
+[node name="Ingredient5" parent="." unique_id=2137268779 instance=ExtResource("2_yqjtg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.80094385, 2.3038454, 1.5081034)
+
+[node name="Ingredient6" parent="." unique_id=1213247403 instance=ExtResource("2_yqjtg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9439743, 2.3038454, 1.5081034)
+
+[node name="Ingredient7" parent="." unique_id=588327089 instance=ExtResource("2_yqjtg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.80094385, 2.3038454, 4.2221823)
+
+[node name="Ingredient8" parent="." unique_id=994611454 instance=ExtResource("2_yqjtg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9439743, 2.3038454, 4.2221823)
+
+[node name="Bread2" parent="." unique_id=603495618 instance=ExtResource("3_lnu2h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3046246, 1.6317925, -2.7094417)
+
+[connection signal="body_entered" from="Bread" to="Bread" method="on_entered"]
+[connection signal="body_exited" from="Bread" to="Bread" method="on_exited"]
+[connection signal="body_entered" from="Bread2" to="Bread2" method="on_entered"]
+[connection signal="body_exited" from="Bread2" to="Bread2" method="on_exited"]
