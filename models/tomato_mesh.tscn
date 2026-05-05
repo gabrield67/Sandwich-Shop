@@ -1,0 +1,223 @@
+[gd_scene format=3 uid="uid://b6uqd7cn3xg0x"]
+
+[ext_resource type="PackedScene" uid="uid://rsxwc7c5vaky" path="res://models/tomato.glb" id="1_4w42u"]
+[ext_resource type="Material" uid="uid://cyyp7dpy6ma8" path="res://colors/tomatoRed.tres" id="2_jtr0v"]
+[ext_resource type="Material" uid="uid://c41cdur73twra" path="res://colors/tomatoLightRed.tres" id="3_a4arl"]
+[ext_resource type="Material" uid="uid://dbct6i3fm0wjg" path="res://colors/tomatoWhite.tres" id="4_jtr0v"]
+
+[node name="tomatoMesh" unique_id=1286273143 instance=ExtResource("1_4w42u")]
+
+[node name="Cylinder" parent="." index="0" unique_id=604134293]
+surface_material_override/0 = ExtResource("2_jtr0v")
+surface_material_override/1 = ExtResource("3_a4arl")
+surface_material_override/2 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_003" parent="." index="3" unique_id=907515822]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_004" parent="." index="4" unique_id=2080818972]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_005" parent="." index="5" unique_id=1654115012]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_006" parent="." index="6" unique_id=1753893902]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_007" parent="." index="7" unique_id=807791107]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_008" parent="." index="8" unique_id=352901189]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_009" parent="." index="9" unique_id=1802160975]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_010" parent="." index="10" unique_id=439978981]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_011" parent="." index="11" unique_id=1236249900]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_012" parent="." index="12" unique_id=1072570806]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_013" parent="." index="13" unique_id=111150416]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_014" parent="." index="14" unique_id=1335053277]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_015" parent="." index="15" unique_id=1862646854]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_016" parent="." index="16" unique_id=1436366994]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_017" parent="." index="17" unique_id=1616394731]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_018" parent="." index="18" unique_id=935395196]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_019" parent="." index="19" unique_id=1096278171]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_020" parent="." index="20" unique_id=1308930525]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_021" parent="." index="21" unique_id=791660997]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_022" parent="." index="22" unique_id=826508661]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_023" parent="." index="23" unique_id=606047405]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_024" parent="." index="24" unique_id=1407491205]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_025" parent="." index="25" unique_id=1266288838]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_026" parent="." index="26" unique_id=1669264931]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_027" parent="." index="27" unique_id=1844259346]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_028" parent="." index="28" unique_id=112030216]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_029" parent="." index="29" unique_id=1157191]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_030" parent="." index="30" unique_id=467932741]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_031" parent="." index="31" unique_id=728209371]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_032" parent="." index="32" unique_id=1925067694]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_033" parent="." index="33" unique_id=1511982888]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_034" parent="." index="34" unique_id=2064296441]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_035" parent="." index="35" unique_id=921349697]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_036" parent="." index="36" unique_id=1687861938]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_037" parent="." index="37" unique_id=1788972796]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_038" parent="." index="38" unique_id=1161533003]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_039" parent="." index="39" unique_id=760041667]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_040" parent="." index="40" unique_id=1834004625]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_041" parent="." index="41" unique_id=283159143]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_042" parent="." index="42" unique_id=1737311630]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_043" parent="." index="43" unique_id=2053109567]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_044" parent="." index="44" unique_id=242039760]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_045" parent="." index="45" unique_id=1905873808]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_046" parent="." index="46" unique_id=1098370193]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_047" parent="." index="47" unique_id=1408071918]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_048" parent="." index="48" unique_id=1153868382]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_049" parent="." index="49" unique_id=353817881]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_050" parent="." index="50" unique_id=1154209027]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_051" parent="." index="51" unique_id=126512781]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_052" parent="." index="52" unique_id=1448923035]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_053" parent="." index="53" unique_id=2079617522]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_054" parent="." index="54" unique_id=175252548]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_055" parent="." index="55" unique_id=410480163]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_056" parent="." index="56" unique_id=87943545]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_057" parent="." index="57" unique_id=143656334]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_058" parent="." index="58" unique_id=741746284]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_059" parent="." index="59" unique_id=1011774085]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_060" parent="." index="60" unique_id=1144119111]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_061" parent="." index="61" unique_id=1539704222]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_062" parent="." index="62" unique_id=542743619]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_063" parent="." index="63" unique_id=747611483]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_064" parent="." index="64" unique_id=23819373]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_065" parent="." index="65" unique_id=1629996590]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_066" parent="." index="66" unique_id=2083666072]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_067" parent="." index="67" unique_id=816728190]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_068" parent="." index="68" unique_id=504158329]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_069" parent="." index="69" unique_id=691083412]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_070" parent="." index="70" unique_id=1014602319]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_071" parent="." index="71" unique_id=878122574]
+surface_material_override/0 = ExtResource("4_jtr0v")
+
+[node name="Cylinder_072" parent="." index="72" unique_id=1036719429]
+surface_material_override/0 = ExtResource("4_jtr0v")
