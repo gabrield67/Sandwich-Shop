@@ -14,6 +14,12 @@ func _ready() -> void:
 	
 	off_material = StandardMaterial3D.new()
 	off_material.albedo_color = Color.YELLOW
+	randomize()
+	$TargetFlavorProfile.add_flavor( randi_range(0, 4) 
+	, randi_range(0, 4)
+	, randi_range(0, 4)
+	, randi_range(0, 4)
+	)
 	pass # Replace with function body.
 
 
@@ -43,9 +49,16 @@ func material_off() -> void:
 	
 func add_to_sandwich(ingredient: Node3D):
 	ingredients.push_back(ingredient)
+	var a = ingredient.get_flavor_amounts()
+	$ActualFlavorProfile.add_flavor(a[0],a[1], a[2], a[3])
+	if $ActualFlavorProfile.compare($TargetFlavorProfile):
+		off_material.albedo_color = Color.DARK_GREEN
+		on_material.albedo_color = Color.GREEN
 	update_positions()
 	
 func remove_from_sandwich(ingredient: Node3D):
+	var a = ingredient.get_flavor_amounts()
+	$ActualFlavorProfile.remove_flavor(a[0],a[1], a[2], a[3])
 	ingredients.erase(ingredient)
 	update_positions()
 	

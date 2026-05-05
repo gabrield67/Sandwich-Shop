@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dlcqiqygwtmgd" path="res://scenes/Ingredients/ingredient.gd" id="1_1am71"]
 [ext_resource type="PackedScene" uid="uid://b6uqd7cn3xg0x" path="res://models/tomato_mesh.tscn" id="1_weumo"]
+[ext_resource type="PackedScene" uid="uid://ecpkd4q734jf" path="res://scenes/FlavorProfile.tscn" id="3_b12no"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1am71"]
 size = Vector3(2, 0.4, 2)
@@ -13,3 +14,6 @@ script = ExtResource("1_1am71")
 shape = SubResource("BoxShape3D_1am71")
 
 [node name="tomatoMesh" parent="." unique_id=1286273143 instance=ExtResource("1_weumo")]
+
+[node name="FlavorProfile" parent="." unique_id=414758302 instance=ExtResource("3_b12no")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.66455185, 0.2718928, 1.0902346)

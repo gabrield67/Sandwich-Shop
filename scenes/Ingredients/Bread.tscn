@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c54v7gf8e74j5"]
 
 [ext_resource type="Script" uid="uid://b3r8sts5bsuoa" path="res://scenes/Ingredients/bread.gd" id="1_kf4f7"]
+[ext_resource type="PackedScene" uid="uid://ecpkd4q734jf" path="res://scenes/FlavorProfile.tscn" id="2_rap00"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_84ix8"]
 albedo_color = Color(1, 1, 0, 1)
@@ -21,3 +22,9 @@ mesh = SubResource("SphereMesh_84ix8")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=584160643]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.940264, 0)
 shape = SubResource("BoxShape3D_kf4f7")
+
+[node name="ActualFlavorProfile" parent="." unique_id=414758302 instance=ExtResource("2_rap00")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 2.3720236, 2.8585114)
+
+[node name="TargetFlavorProfile" parent="." unique_id=443898979 instance=ExtResource("2_rap00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9594035, -1.6379085)

@@ -16,6 +16,7 @@ var bread
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	original_size = scale
+	#$FlavorProfile.add_flavor(3,4,2,3)
 	#print("new ingredient")
 	pass # Replace with function body.
 
@@ -42,3 +43,16 @@ func on_hover():
 func on_stop_hover():
 	scale = original_size
 	pass
+	
+func add_flavor(f:int ) -> void:
+	if f == 1:
+		$FlavorProfile.add_flavor(1,0,0,0)
+	elif f == 2:
+		$FlavorProfile.add_flavor(0,1,0,0)
+	elif f == 3:
+		$FlavorProfile.add_flavor(0,0,1,0)
+	elif f == 4:
+		$FlavorProfile.add_flavor(0,0,0,1)
+
+func get_flavor_amounts() -> Array:
+	return $FlavorProfile.get_flavor_amounts()
