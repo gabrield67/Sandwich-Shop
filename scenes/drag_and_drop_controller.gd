@@ -122,3 +122,11 @@ func play_win_sound():
 
 func play_lose_sound():
 	$LoseSound.play()
+	
+func good_sandwich_event():
+	play_win_sound()
+	pass
+	
+func bad_sandwich_event():
+	play_lose_sound()
+	pass
