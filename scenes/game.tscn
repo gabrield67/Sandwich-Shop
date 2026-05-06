@@ -2,12 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dnsby02e4apsw" path="res://scenes/drag_and_drop_controller.gd" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://c54v7gf8e74j5" path="res://scenes/Ingredients/Bread.tscn" id="3_lnu2h"]
+[ext_resource type="AudioStream" uid="uid://4bgt8e0y4v5a" path="res://sounds/switch_02_rubber_duck.ogg" id="4_iywne"]
 [ext_resource type="PackedScene" uid="uid://drkevmp0aiaxv" path="res://scenes/Ingredients/Ingredient Spawner.tscn" id="4_lbhrr"]
-[ext_resource type="AudioStream" uid="uid://dqndtmnajwa2x" path="res://sounds/plop_01_rubber_duck_oga.ogg" id="4_p57ef"]
-[ext_resource type="AudioStream" uid="uid://cuwtp2lhf4g5" path="res://sounds/music/rpg_brandon_morris_oga_hael_DB.ogg" id="5_iywne"]
-[ext_resource type="AudioStream" uid="uid://4b5yi8avjoew" path="res://sounds/plop_02_rubber_duck_oga.ogg" id="5_u5sy4"]
-[ext_resource type="AudioStream" uid="uid://bhebxqcor48g" path="res://sounds/bell_01_rubber_duck_oga.ogg" id="7_gee14"]
-[ext_resource type="AudioStream" uid="uid://b54m7lsq21hkc" path="res://sounds/spring_07_rubber_duck.ogg" id="8_0tnpc"]
+[ext_resource type="PackedScene" uid="uid://bkd5kxair4hmq" path="res://scenes/HUD.tscn" id="5_iywne"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8cj0n"]
 
@@ -34,36 +31,36 @@ transform = Transform3D(1, 0, 0, 0, 0.25881907, 0.9659258, 0, -0.9659258, 0.2588
 [node name="Camera3D" type="Camera3D" parent="Camera Pivot" unique_id=1031999790]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19)
 
+[node name="Bread" parent="." unique_id=1187585206 instance=ExtResource("3_lnu2h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2391553, 1.6317925, -2.7094417)
+
+[node name="Bread2" parent="." unique_id=603495618 instance=ExtResource("3_lnu2h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1174407, 1.6317925, -2.7094417)
+
 [node name="IngredientSpawner" parent="." unique_id=1365398154 instance=ExtResource("4_lbhrr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3609233, 2.8174725, 6.0316615)
 
+[node name="Bread3" parent="." unique_id=1041816712 instance=ExtResource("3_lnu2h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0807528, 1.6317925, -2.7094417)
+
+[node name="Bread4" parent="." unique_id=157967700 instance=ExtResource("3_lnu2h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.422533, 1.6317925, -2.7094417)
+
 [node name="Pickup Sound" type="AudioStreamPlayer" parent="." unique_id=1434898793]
-stream = ExtResource("4_p57ef")
+stream = ExtResource("4_iywne")
 
 [node name="Drop Sound" type="AudioStreamPlayer" parent="." unique_id=1576941343]
-stream = ExtResource("5_u5sy4")
+stream = ExtResource("4_iywne")
 volume_db = -5.0
 pitch_scale = 0.58
 
-[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1450073285]
-stream = ExtResource("5_iywne")
-volume_db = -10.0
-autoplay = true
+[node name="HUD" parent="." unique_id=1287460498 instance=ExtResource("5_iywne")]
 
-[node name="WinSound" type="AudioStreamPlayer" parent="." unique_id=423782023]
-stream = ExtResource("7_gee14")
-
-[node name="LoseSound" type="AudioStreamPlayer" parent="." unique_id=1258149584]
-stream = ExtResource("8_0tnpc")
-
-[node name="Bread" parent="." unique_id=1187585206 instance=ExtResource("3_lnu2h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0807528, 1.6317925, -2.7094417)
-
-[node name="Bread2" parent="." unique_id=1809608212 instance=ExtResource("3_lnu2h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.304316, 1.6317925, -2.7094417)
-
-[node name="Bread3" parent="." unique_id=271192708 instance=ExtResource("3_lnu2h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8022723, 1.6317925, -2.7094417)
-
-[node name="Bread4" parent="." unique_id=2016498421 instance=ExtResource("3_lnu2h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.870647, 1.6317925, -2.7094417)
+[connection signal="body_entered" from="Bread" to="Bread" method="on_entered"]
+[connection signal="body_exited" from="Bread" to="Bread" method="on_exited"]
+[connection signal="body_entered" from="Bread2" to="Bread2" method="on_entered"]
+[connection signal="body_exited" from="Bread2" to="Bread2" method="on_exited"]
+[connection signal="body_entered" from="Bread3" to="Bread3" method="on_entered"]
+[connection signal="body_exited" from="Bread3" to="Bread3" method="on_exited"]
+[connection signal="body_entered" from="Bread4" to="Bread4" method="on_entered"]
+[connection signal="body_exited" from="Bread4" to="Bread4" method="on_exited"]
