@@ -2,22 +2,13 @@
 
 [ext_resource type="Script" uid="uid://b3r8sts5bsuoa" path="res://scenes/Ingredients/bread.gd" id="1_kf4f7"]
 [ext_resource type="PackedScene" uid="uid://ecpkd4q734jf" path="res://scenes/FlavorProfile.tscn" id="2_rap00"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_84ix8"]
-albedo_color = Color(1, 1, 0, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_84ix8"]
-material = SubResource("StandardMaterial3D_84ix8")
+[ext_resource type="PackedScene" uid="uid://ju7u3wbxyx7i" path="res://models/breadMesh.tscn" id="3_3yw7i"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kf4f7"]
 size = Vector3(2, 20, 3)
 
 [node name="Bread" type="Area3D" unique_id=1187585206]
 script = ExtResource("1_kf4f7")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=427502753]
-transform = Transform3D(2.0994837, 0, 0, 0, 0.3586203, 0, 0, 0, 4.673756, 0, 0, 0)
-mesh = SubResource("SphereMesh_84ix8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=584160643]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.940264, 0)
@@ -28,3 +19,6 @@ transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 2.3720236, 2.8585114
 
 [node name="TargetFlavorProfile" parent="." unique_id=443898979 instance=ExtResource("2_rap00")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9594035, -1.6379085)
+
+[node name="bread" parent="." unique_id=338320632 instance=ExtResource("3_3yw7i")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)

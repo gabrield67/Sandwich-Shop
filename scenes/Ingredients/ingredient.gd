@@ -2,6 +2,11 @@ class_name Ingredient
 extends StaticBody3D
 
 
+var tomatoMesh = preload("res://models/tomato_mesh.tscn")
+var fishMesh = preload("res://models/fishBonesMesh.tscn")
+var lettuceMesh = preload("res://models/lettuceMesh.tscn")
+var breadMesh = preload("res://models/breadMesh.tscn")
+
 
 var isHeld = false
 var isHovered = false
@@ -12,10 +17,22 @@ var move_speed = 2
 var move_direction = Vector3(1,0,0)
 var original_size;
 var bread
+var ingredient_types = ['Tomato', 'Lettuce','Fish Bone', 'Bread']
+var ingredient_scales = [1, 1,.75, 1.5	]
+var meshes = [tomatoMesh , lettuceMesh,fishMesh, breadMesh]
+var spawnedMesh
+var type_index = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	original_size = scale
+	$tomatoMesh.queue_free()
+	
+	randomize()
+	type_index = randi_range(0, 3)
+	spawnedMesh = meshes[type_index].instantiate()
+	spawnedMesh.scale = Vector3(ingredient_scales [type_index],ingredient_scales [type_index],ingredient_scales [type_index])
+	add_child(spawnedMesh)
 	#$FlavorProfile.add_flavor(3,4,2,3)
 	#print("new ingredient")
 	pass # Replace with function body.
@@ -56,3 +73,6 @@ func add_flavor(f:int ) -> void:
 
 func get_flavor_amounts() -> Array:
 	return $FlavorProfile.get_flavor_amounts()
+
+func play_add_to_sandwich() -> void:
+	$AddToSandwichSound.play()

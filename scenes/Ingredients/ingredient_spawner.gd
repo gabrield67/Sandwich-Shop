@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 		#print("here")
 		timer = 0
 		var ingredient = ingredient_scene.instantiate()
-		print(position)
+		#print(position)
 		
 		get_parent().add_child(ingredient)
 		ingredient.position = position

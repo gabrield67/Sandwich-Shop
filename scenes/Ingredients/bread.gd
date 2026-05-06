@@ -5,10 +5,14 @@ extends Area3D
 var on_material 
 var off_material 
 
+var original_size
+
+
 @export var ingredients = [];
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	original_size = scale
 	on_material = StandardMaterial3D.new()
 	on_material.albedo_color = Color.RED
 	
@@ -31,25 +35,26 @@ func _process(delta: float) -> void:
 func on_entered(body: Node3D) -> void:
 	if body is Ingredient:
 		#print (body.name)
-		if body.isHeld:
-			if(body):
-				body.bread = self;
-			$MeshInstance3D.set_surface_override_material(0, on_material)
-			
+		if(body):
+			body.bread = self;
+			#$MeshInstance3D.set_surface_override_material(0, on_material)
+			scale = original_size*1.2
 func on_exited(body: Node3D) -> void:
 	if body is Ingredient:
 		#print (body.name)
-		if body.isHeld:
-			if body:
+		if body:
+			if body.bread == self:
 				body.bread = null
-				self.material_off()
+			self.material_off()
 			
 func material_off() -> void:
-	$MeshInstance3D.set_surface_override_material(0, off_material)
+	#$MeshInstance3D.set_surface_override_material(0, off_material)
+	scale = original_size
 	
 func add_to_sandwich(ingredient: Node3D):
 	ingredients.push_back(ingredient)
 	var a = ingredient.get_flavor_amounts()
+	ingredient.play_add_to_sandwich()
 	$ActualFlavorProfile.add_flavor(a[0],a[1], a[2], a[3])
 	if $ActualFlavorProfile.compare($TargetFlavorProfile):
 		off_material.albedo_color = Color.DARK_GREEN

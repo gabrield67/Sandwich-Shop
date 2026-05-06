@@ -50,18 +50,25 @@ func _input(event: InputEvent) -> void:
 				get_mouse_world_pos(mouse, true)
 				if grabbed_object:
 					grabbed_object.on_grab()
+					$"Pickup Sound".play()
 					
 					if grabbed_object.bread:
 						grabbed_object.bread.remove_from_sandwich(grabbed_object)
 				firstPress = false
 		elif event.button_index == 1 and not event.is_pressed():
-			prev_grabbed_object = grabbed_object
+			
 			#prevCardHeight = 3
-			if grabbed_object.bread:
-				grabbed_object.bread.material_off()
-				grabbed_object.bread.add_to_sandwich(grabbed_object)
-			grabbed_object.isHeld = false
-			grabbed_object = null
+			if grabbed_object:
+				
+				if grabbed_object.bread:
+					grabbed_object.bread.material_off()
+					grabbed_object.bread.add_to_sandwich(grabbed_object)
+				else:
+					$"Drop Sound".play()
+				grabbed_object.isHeld = false
+				prev_grabbed_object = grabbed_object
+				
+				grabbed_object = null
 			firstPress = true
 	
 			
