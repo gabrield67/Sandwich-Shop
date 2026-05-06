@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://pd50n848wkq0"]
+
+[ext_resource type="PackedScene" uid="uid://ctbbrrgaeak2w" path="res://models/lettuce.glb" id="1_6d0og"]
+[ext_resource type="Material" uid="uid://dpsrxlweilyva" path="res://colors/lettuceGreen.tres" id="2_egsvg"]
+
+[node name="lettuce" unique_id=1237050228 instance=ExtResource("1_6d0og")]
+
+[node name="Cube" parent="." index="0" unique_id=1335395425]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95075893, 0)
+surface_material_override/0 = ExtResource("2_egsvg")

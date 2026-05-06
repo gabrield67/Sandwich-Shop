@@ -8,6 +8,7 @@
 [node name="tomatoMesh" unique_id=1286273143 instance=ExtResource("1_4w42u")]
 
 [node name="Cylinder" parent="." index="0" unique_id=604134293]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0017073154, -5.9604645e-08, -0.0017925501)
 surface_material_override/0 = ExtResource("2_jtr0v")
 surface_material_override/1 = ExtResource("3_a4arl")
 surface_material_override/2 = ExtResource("4_jtr0v")
