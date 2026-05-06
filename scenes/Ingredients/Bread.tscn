@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://b3r8sts5bsuoa" path="res://scenes/Ingredients/bread.gd" id="1_kf4f7"]
 [ext_resource type="PackedScene" uid="uid://ecpkd4q734jf" path="res://scenes/FlavorProfile.tscn" id="2_rap00"]
 [ext_resource type="PackedScene" uid="uid://ju7u3wbxyx7i" path="res://models/breadMesh.tscn" id="3_3yw7i"]
+[ext_resource type="AudioStream" uid="uid://bhebxqcor48g" path="res://sounds/bell_01_rubber_duck_oga.ogg" id="4_3deqp"]
+[ext_resource type="AudioStream" uid="uid://b54m7lsq21hkc" path="res://sounds/spring_07_rubber_duck.ogg" id="5_4ncmt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kf4f7"]
 size = Vector3(2, 20, 3)
@@ -22,3 +24,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9594035, -1.6379085)
 
 [node name="bread" parent="." unique_id=338320632 instance=ExtResource("3_3yw7i")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="WinSound" type="AudioStreamPlayer" parent="." unique_id=1122598284]
+stream = ExtResource("4_3deqp")
+
+[node name="LoseSound" type="AudioStreamPlayer" parent="." unique_id=859498381]
+stream = ExtResource("5_4ncmt")
+
+[connection signal="body_entered" from="." to="." method="on_entered"]
+[connection signal="body_exited" from="." to="." method="on_exited"]

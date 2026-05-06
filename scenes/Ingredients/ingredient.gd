@@ -30,9 +30,17 @@ func _ready() -> void:
 	
 	randomize()
 	type_index = randi_range(0, 3)
+	if type_index == 3:
+		var test = randi_range(0,3)
+		if test >= 3:
+			type_index = randi_range(0, 3)
 	spawnedMesh = meshes[type_index].instantiate()
 	spawnedMesh.scale = Vector3(ingredient_scales [type_index],ingredient_scales [type_index],ingredient_scales [type_index])
 	add_child(spawnedMesh)
+	add_flavor(type_index + 1)
+	var dub = randi_range(0,1)
+	if dub >= 1:
+		add_flavor(randi_range(1,4))
 	#$FlavorProfile.add_flavor(3,4,2,3)
 	#print("new ingredient")
 	pass # Replace with function body.
