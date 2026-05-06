@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c54v7gf8e74j5" path="res://scenes/Ingredients/Bread.tscn" id="3_lnu2h"]
 [ext_resource type="AudioStream" uid="uid://4bgt8e0y4v5a" path="res://sounds/switch_02_rubber_duck.ogg" id="4_iywne"]
 [ext_resource type="PackedScene" uid="uid://drkevmp0aiaxv" path="res://scenes/Ingredients/Ingredient Spawner.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://bkd5kxair4hmq" path="res://scenes/HUD.tscn" id="5_iywne"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8cj0n"]
 
@@ -52,6 +53,8 @@ stream = ExtResource("4_iywne")
 stream = ExtResource("4_iywne")
 volume_db = -5.0
 pitch_scale = 0.58
+
+[node name="HUD" parent="." unique_id=1287460498 instance=ExtResource("5_iywne")]
 
 [connection signal="body_entered" from="Bread" to="Bread" method="on_entered"]
 [connection signal="body_exited" from="Bread" to="Bread" method="on_exited"]
