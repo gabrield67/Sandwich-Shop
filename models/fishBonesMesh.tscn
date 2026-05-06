@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://7x41ywua5vgq"]
+
+[ext_resource type="PackedScene" uid="uid://brkk8hdy7gpu1" path="res://models/fishBones.glb" id="1_iwl0q"]
+[ext_resource type="Material" uid="uid://dg5hpu5nslhmc" path="res://colors/boneWhite.tres" id="2_q585f"]
+
+[node name="fishBones" unique_id=978523315 instance=ExtResource("1_iwl0q")]
+
+[node name="Cube" parent="." index="0" unique_id=679532409]
+material_override = ExtResource("2_q585f")
+
+[node name="Cube_001" parent="." index="1" unique_id=1248033416]
+material_override = ExtResource("2_q585f")
+
+[node name="Cube_002" parent="." index="2" unique_id=390694942]
+material_override = ExtResource("2_q585f")
+
+[node name="Cube_003" parent="." index="3" unique_id=754198302]
+material_override = ExtResource("2_q585f")
+
+[node name="Cube_004" parent="." index="4" unique_id=1355058751]
+material_override = ExtResource("2_q585f")
+
+[node name="Cube_005" parent="." index="5" unique_id=1413507430]
+material_override = ExtResource("2_q585f")
