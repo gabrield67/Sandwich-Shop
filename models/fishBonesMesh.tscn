@@ -2,29 +2,41 @@
 
 [ext_resource type="PackedScene" uid="uid://brkk8hdy7gpu1" path="res://models/fishBones.glb" id="1_iwl0q"]
 [ext_resource type="Material" uid="uid://dg5hpu5nslhmc" path="res://colors/boneWhite.tres" id="2_q585f"]
+[ext_resource type="Material" uid="uid://8kf6dv73p3lv" path="res://colors/fishCharcoal.tres" id="3_q585f"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ont51"]
+material = ExtResource("3_q585f")
+top_radius = 0.255
+bottom_radius = 0.16
+height = 0.001
 
 [node name="fishBones" unique_id=978523315 instance=ExtResource("1_iwl0q")]
+transform = Transform3D(0.63639605, 0, 0.63639605, 0, 0.9, 0, -0.63639605, 0, 0.63639605, 0, 0, 0)
 
-[node name="Cube" parent="." index="0" unique_id=535075048]
+[node name="Cube" parent="." index="0" unique_id=679532409]
 transform = Transform3D(-4.371139e-08, -1, 0, 0.9659258, -4.222196e-08, -0.25881904, 0.25881904, -1.131334e-08, 0.9659258, 0, -0.53694236, 2.1376574)
 material_override = ExtResource("2_q585f")
 
-[node name="Cube_001" parent="." index="1" unique_id=473465004]
+[node name="Cube_001" parent="." index="1" unique_id=1248033416]
 transform = Transform3D(-4.371139e-08, -1, 0, 0.9650165, -4.218221e-08, 0.26218918, -0.26218918, 1.1460653e-08, 0.9650165, 0, -0.2671969, -2.2662885)
 material_override = ExtResource("2_q585f")
 
-[node name="Cube_002" parent="." index="2" unique_id=1528128726]
+[node name="Cube_002" parent="." index="2" unique_id=390694942]
 transform = Transform3D(-4.371139e-08, -1, 0, 0.9879787, -4.318592e-08, -0.15459, 0.15459, -6.757343e-09, 0.9879787, 0, -0.09948616, 0.3336916)
 material_override = ExtResource("2_q585f")
 
-[node name="Cube_003" parent="." index="3" unique_id=1265772491]
+[node name="Cube_003" parent="." index="3" unique_id=754198302]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, -0.4851637)
 material_override = ExtResource("2_q585f")
 
-[node name="Cube_004" parent="." index="4" unique_id=346951691]
+[node name="Cube_004" parent="." index="4" unique_id=1355058751]
 transform = Transform3D(-4.371139e-08, -1, 0, 0.95966, -4.194807e-08, 0.28116313, -0.28116313, 1.229003e-08, 0.95966, 0, -0.032438993, -1.2659214)
 material_override = ExtResource("2_q585f")
 
-[node name="Cube_005" parent="." index="5" unique_id=1472125329]
+[node name="Cube_005" parent="." index="5" unique_id=1413507430]
 transform = Transform3D(-5.429716e-09, -0.124217436, 0, 0.12187519, -5.327334e-09, -0.024008473, 0.02400847, -1.0494436e-09, 0.121875204, -0.17688401, -0.27132374, 1.3328159)
 material_override = ExtResource("2_q585f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="6" unique_id=1752478591]
+transform = Transform3D(0.82, 0, 0, 0, 0.7746377, -0.2689542, 0, 0.2689542, 0.7746377, -0.12470353, -0.31219125, 2.2511077)
+mesh = SubResource("CylinderMesh_ont51")
