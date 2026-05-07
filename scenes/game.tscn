@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://4bgt8e0y4v5a" path="res://sounds/switch_02_rubber_duck.ogg" id="4_iywne"]
 [ext_resource type="PackedScene" uid="uid://drkevmp0aiaxv" path="res://scenes/Ingredients/Ingredient Spawner.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://bkd5kxair4hmq" path="res://scenes/HUD.tscn" id="5_iywne"]
-[ext_resource type="PackedScene" uid="uid://ceawtkpgiuuo" path="res://scenes/raccoon.tscn" id="8_gee14"]
+[ext_resource type="PackedScene" uid="uid://ccbffutqtq21k" path="res://scenes/raccoon.tscn" id="8_gee14"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8cj0n"]
 
