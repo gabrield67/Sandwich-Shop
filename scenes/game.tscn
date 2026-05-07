@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://4bgt8e0y4v5a" path="res://sounds/switch_02_rubber_duck.ogg" id="4_iywne"]
 [ext_resource type="PackedScene" uid="uid://drkevmp0aiaxv" path="res://scenes/Ingredients/Ingredient Spawner.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://bkd5kxair4hmq" path="res://scenes/HUD.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://ceawtkpgiuuo" path="res://scenes/raccoon.tscn" id="8_gee14"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8cj0n"]
 
@@ -55,6 +56,9 @@ volume_db = -5.0
 pitch_scale = 0.58
 
 [node name="HUD" parent="." unique_id=1287460498 instance=ExtResource("5_iywne")]
+
+[node name="Raccoon" parent="." unique_id=1781054978 instance=ExtResource("8_gee14")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7.2391553, 3.7849565, -10.730326)
 
 [connection signal="body_entered" from="Bread" to="Bread" method="on_entered"]
 [connection signal="body_exited" from="Bread" to="Bread" method="on_exited"]
