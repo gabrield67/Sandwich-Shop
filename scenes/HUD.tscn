@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://bkd5kxair4hmq"]
 
+[ext_resource type="Script" uid="uid://2we5k3tji1q1" path="res://scenes/hud.gd" id="1_1etfg"]
 [ext_resource type="Texture2D" uid="uid://cxqhivndx050a" path="res://assets/progress_circle_lime_green.png" id="1_fls4u"]
-[ext_resource type="Script" uid="uid://dae7ma6q3yf0w" path="res://scenes/radial_timer.gd" id="2_1etfg"]
 
 [node name="HUD" type="CanvasLayer" unique_id=1287460498]
+script = ExtResource("1_1etfg")
 
 [node name="Control" type="Control" parent="." unique_id=614236100]
 layout_mode = 3
@@ -11,8 +12,9 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -40.0
-offset_bottom = 40.0
+offset_right = -40.0
 grow_horizontal = 0
+size_flags_horizontal = 0
 
 [node name="Radial Timer" type="TextureProgressBar" parent="Control" unique_id=826439598]
 layout_mode = 0
@@ -21,6 +23,10 @@ offset_bottom = 40.0
 fill_mode = 5
 nine_patch_stretch = true
 texture_progress = ExtResource("1_fls4u")
-script = ExtResource("2_1etfg")
 
 [node name="Level Timer" type="Timer" parent="Control/Radial Timer" unique_id=1849427169]
+
+[node name="Label" type="Label" parent="Control" unique_id=1029001574]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
