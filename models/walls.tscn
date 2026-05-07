@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b4kkoakbexh8r"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pd14n"]
+size = Vector3(1, 9.8, 19.225)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4gegr"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.60784316, 0.47843137, 0.54509807, 1)
+roughness = 0.0
+
+[node name="Walls" type="Node3D" unique_id=915657737]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=621821630]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.759998, 3.5059636, 0)
+mesh = SubResource("BoxMesh_pd14n")
+surface_material_override/0 = SubResource("StandardMaterial3D_4gegr")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=106696433]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.415331, 3.5059636, 0)
+mesh = SubResource("BoxMesh_pd14n")
+surface_material_override/0 = SubResource("StandardMaterial3D_4gegr")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=188742623]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.5279827, 3.5059636, -6.93202)
+mesh = SubResource("BoxMesh_pd14n")
+surface_material_override/0 = SubResource("StandardMaterial3D_4gegr")

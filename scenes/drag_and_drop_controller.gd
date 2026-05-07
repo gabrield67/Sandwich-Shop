@@ -22,6 +22,7 @@ var firstPress = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#@$AudioStreamPlayer.play()
 	pass # Replace with function body.
 
 
@@ -116,3 +117,17 @@ func get_grab_position():
 	var ratio = ((cardHeightOrig + cardHeight) - $"Camera Pivot/Camera3D".global_position[1])/line[1]
 	var line_fin = line*ratio
 	return $"Camera Pivot/Camera3D".global_position + line_fin
+
+func play_win_sound():
+	$WinSound.play()
+
+func play_lose_sound():
+	$LoseSound.play()
+	
+func good_sandwich_event():
+	play_win_sound()
+	pass
+	
+func bad_sandwich_event():
+	play_lose_sound()
+	pass

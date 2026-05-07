@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ccbffutqtq21k"]
 
 [ext_resource type="Script" path="res://scenes/raccoon.gd" id="1_fnbhh"]
-[ext_resource type="PackedScene" uid="uid://g3ri2k46mdch" path="res://scenes/timer_3d.tscn" id="2_wngsp"]
+[ext_resource type="PackedScene" path="res://scenes/timer_3d.tscn" id="2_wngsp"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_iywne"]
 

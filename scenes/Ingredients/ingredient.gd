@@ -12,7 +12,7 @@ var isHeld = false
 var isHovered = false
 var move_on_start = false
 var despawn = false
-var time_to_despawn = 6
+var time_to_despawn = 8
 var move_speed = 2
 var move_direction = Vector3(1,0,0)
 var original_size;
@@ -30,9 +30,17 @@ func _ready() -> void:
 	
 	randomize()
 	type_index = randi_range(0, 3)
+	if type_index == 3:
+		var test = randi_range(0,3)
+		if test >= 3:
+			type_index = randi_range(0, 3)
 	spawnedMesh = meshes[type_index].instantiate()
 	spawnedMesh.scale = Vector3(ingredient_scales [type_index],ingredient_scales [type_index],ingredient_scales [type_index])
 	add_child(spawnedMesh)
+	add_flavor(type_index + 1)
+	var dub = randi_range(0,1)
+	if dub >= 1:
+		add_flavor(randi_range(1,4))
 	#$FlavorProfile.add_flavor(3,4,2,3)
 	#print("new ingredient")
 	pass # Replace with function body.

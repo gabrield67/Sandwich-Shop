@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 		ingredient.position = position
 		ingredient.move_on_start = moving_ingredients
 		ingredient.despawn = true
-		randomize() 
-		var my_random_int = randi_range(1, 4)
-		ingredient.add_flavor(my_random_int)
+		#randomize() 
+		#var my_random_int = randi_range(1, 4)
+		#ingredient.add_flavor(my_random_int)
 	pass
