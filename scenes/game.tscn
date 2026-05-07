@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" path="res://scenes/HUD.tscn" id="5_iywne"]
 [ext_resource type="AudioStream" uid="uid://bhebxqcor48g" path="res://sounds/bell_01_rubber_duck_oga.ogg" id="7_gee14"]
 [ext_resource type="AudioStream" uid="uid://b54m7lsq21hkc" path="res://sounds/spring_07_rubber_duck.ogg" id="8_0tnpc"]
+[ext_resource type="AudioStream" uid="uid://cuwtp2lhf4g5" path="res://sounds/music/rpg_brandon_morris_oga_hael_DB.ogg" id="8_gee14"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8cj0n"]
 
@@ -74,3 +75,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.741928, 1.6317925, -2.70944
 
 [node name="Bread4" parent="." unique_id=607306648 instance=ExtResource("3_lnu2h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4413023, 1.6317925, -2.7094417)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1534530507]
+stream = ExtResource("8_gee14")
+autoplay = true
+parameters/looping = true
