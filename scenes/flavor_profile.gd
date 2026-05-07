@@ -45,6 +45,17 @@ func remove_flavor_helper(num:int, f_arr:Array, f:int ):
 		for i in range(num):
 			remove_flavor_block(f_arr, f-1)
 
+func add_flavor_block_2d(f_arr:Array,f):
+	var sprite = Sprite3D.new()
+	sprite.texture = load("res://assets/white square.png")
+	sprite.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+	sprite.position = points[f].position + Vector3(0,f_arr.size()*.6,0)
+	sprite.scale = Vector3(.5,.5,.5)	
+	sprite.modulate= colors[f]
+	f_arr.push_back(sprite)
+	self.add_child(sprite)
+	pass
+
 func add_flavor_block(f_arr:Array,f):
 	var static_body = StaticBody3D.new()
 	var mesh_instance = MeshInstance3D.new()
@@ -56,7 +67,7 @@ func add_flavor_block(f_arr:Array,f):
 	mesh_instance.set_surface_override_material(0, on_material)
 	f_arr.push_back(static_body)
 	self.add_child(static_body)
-	static_body.position = points[f].position + Vector3(0,0,-f_arr.size()*.6)
+	static_body.position = points[f].position + Vector3(0,f_arr.size()*.6,0)
 	static_body.scale = Vector3(.5,.5,.5)	
 	pass
 	
