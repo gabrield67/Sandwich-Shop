@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bkd5kxair4hmq"]
+
+[ext_resource type="Script" uid="uid://2we5k3tji1q1" path="res://scenes/UI/hud.gd" id="1_1etfg"]
+[ext_resource type="Texture2D" uid="uid://cxqhivndx050a" path="res://assets/progress_circle_lime_green.png" id="1_fls4u"]
+[ext_resource type="Texture2D" uid="uid://kukxhywuqh7o" path="res://assets/trash_full.png" id="3_5ip4n"]
+[ext_resource type="Texture2D" uid="uid://bh5epw1konr3x" path="res://assets/trash_empty.png" id="4_l8xe2"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1287460498]
+script = ExtResource("1_1etfg")
+
+[node name="Control" type="Control" parent="." unique_id=614236100]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="Timer Container" type="MarginContainer" parent="Control" unique_id=1001362588]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -45.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = 45.0
+grow_horizontal = 0
+
+[node name="Radial Timer" type="TextureProgressBar" parent="Control/Timer Container" unique_id=826439598]
+layout_mode = 2
+fill_mode = 5
+nine_patch_stretch = true
+texture_progress = ExtResource("1_fls4u")
+
+[node name="Level Timer" type="Timer" parent="Control/Timer Container/Radial Timer" unique_id=1849427169]
+
+[node name="Waste Container" type="MarginContainer" parent="Control" unique_id=1267399968]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -45.0
+offset_top = -46.0
+offset_right = -5.0
+offset_bottom = -6.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Waste Progress" type="TextureProgressBar" parent="Control/Waste Container" unique_id=698615135]
+layout_mode = 2
+max_value = 0.0
+fill_mode = 3
+texture_under = ExtResource("4_l8xe2")
+texture_progress = ExtResource("3_5ip4n")

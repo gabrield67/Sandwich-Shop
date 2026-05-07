@@ -4,11 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://c54v7gf8e74j5" path="res://scenes/Ingredients/Bread.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://drkevmp0aiaxv" path="res://scenes/Ingredients/Ingredient Spawner.tscn" id="4_lbhrr"]
 [ext_resource type="AudioStream" uid="uid://dqndtmnajwa2x" path="res://sounds/plop_01_rubber_duck_oga.ogg" id="4_p57ef"]
-[ext_resource type="PackedScene" uid="uid://bkd5kxair4hmq" path="res://scenes/HUD.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://bkd5kxair4hmq" path="res://scenes/UI/HUD.tscn" id="5_iywne"]
 [ext_resource type="AudioStream" uid="uid://bhebxqcor48g" path="res://sounds/bell_01_rubber_duck_oga.ogg" id="7_gee14"]
 [ext_resource type="AudioStream" uid="uid://b54m7lsq21hkc" path="res://sounds/spring_07_rubber_duck.ogg" id="8_0tnpc"]
 [ext_resource type="AudioStream" uid="uid://cuwtp2lhf4g5" path="res://sounds/music/rpg_brandon_morris_oga_hael_DB.ogg" id="8_gee14"]
-[ext_resource type="PackedScene" uid="uid://b4kkoakbexh8r" path="res://models/walls.tscn" id="9_0tnpc"]
+[ext_resource type="PackedScene" path="res://models/walls.tscn" id="9_0tnpc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8cj0n"]
 

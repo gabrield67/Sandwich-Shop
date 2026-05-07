@@ -53,6 +53,7 @@ func _process(delta: float) -> void:
 		time_to_despawn = time_to_despawn-delta 
 		if time_to_despawn <= 0:
 			queue_free()
+			GlobalEvents.ingredients_wasted.emit()
 	pass
 	
 func on_grab():

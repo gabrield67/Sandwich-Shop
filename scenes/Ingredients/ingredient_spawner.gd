@@ -3,6 +3,7 @@ var ingredient_scene = preload("res://scenes/Ingredients/Ingredient.tscn")
 var spawn_wait_time = 1.8
 var timer = 0
 var moving_ingredients = true
+var despawn_count: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
