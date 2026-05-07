@@ -37,3 +37,5 @@ func _process(_delta: float) -> void:
 func _on_ingredients_wasted():
 	wasteCount += 1
 	waste.value = wasteCount
+	if wasteCount > maxWaste:
+		GlobalEvents.max_ingredients_wasted.emit()
