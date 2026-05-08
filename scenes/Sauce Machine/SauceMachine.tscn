@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b8kmk2ebsnyy5"]
+
+[ext_resource type="Script" uid="uid://40iec7v7kyhi" path="res://scenes/Sauce Machine/sauce_machine.gd" id="1_hoo76"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ywgvx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hoo76"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ywgvx"]
+
+[node name="SauceMachine" type="StaticBody3D" unique_id=1370060822]
+script = ExtResource("1_hoo76")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=199650714]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0.48436487)
+shape = SubResource("BoxShape3D_ywgvx")
+
+[node name="Back" type="MeshInstance3D" parent="." unique_id=135099945]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_hoo76")
+
+[node name="Spawner" type="MeshInstance3D" parent="." unique_id=201823418]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 2, 0, -0.8527385, 0.5801202)
+mesh = SubResource("BoxMesh_ywgvx")
+
+[node name="Spawn Point" type="Node3D" parent="." unique_id=1449396289]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19827747, 1.0915298)

@@ -74,16 +74,22 @@ func material_off() -> void:
 	scale = original_size
 	
 func add_to_sandwich(ingredient: Node3D):
-	ingredients.push_back(ingredient)
-	var a = ingredient.get_flavor_amounts()
-	ingredient.play_add_to_sandwich()
-	$ActualFlavorProfile.add_flavor(a[0],a[1], a[2], a[3])
-	if $ActualFlavorProfile.compare($TargetFlavorProfile):
-		off_material.albedo_color = Color.LIGHT_GREEN
-		on_material.albedo_color = Color.GREEN
-	update_positions()
-	if ingredient.type_index == 3:
-		on_finished()
+	if ingredient.isSauce:
+		ingredient.handle_sauce($ActualFlavorProfile)
+		$SandwichEatParticles.restart()
+		$SandwichEatParticles.emitting = true
+		pass 
+	else:
+		ingredients.push_back(ingredient)
+		var a = ingredient.get_flavor_amounts()
+		ingredient.play_add_to_sandwich()
+		$ActualFlavorProfile.add_flavor(a[0],a[1], a[2], a[3])
+		if $ActualFlavorProfile.compare($TargetFlavorProfile):
+			off_material.albedo_color = Color.LIGHT_GREEN
+			on_material.albedo_color = Color.GREEN
+		update_positions()
+		if ingredient.type_index == 3:
+			on_finished()
 	
 func on_finished():
 	$SandwichEatParticles.restart()

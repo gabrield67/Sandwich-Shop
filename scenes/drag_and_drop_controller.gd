@@ -111,7 +111,7 @@ func get_mouse_world_pos(mouse_in:Vector2, try_grab:bool):
 						stopUpgradeTime()
 		else:
 			if result.collider is Ingredient:
-				print("here1")
+				#print("here1")
 				if try_grab:
 					grabbed_object = result.collider
 					grabbed_object.isHeld = true
