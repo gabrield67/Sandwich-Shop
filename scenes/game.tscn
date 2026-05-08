@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://b6sf5n1s3tjjo"]
 
 [ext_resource type="Script" uid="uid://dnsby02e4apsw" path="res://scenes/drag_and_drop_controller.gd" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://c54v7gf8e74j5" path="res://scenes/Ingredients/Bread.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://drkevmp0aiaxv" path="res://scenes/Ingredients/Ingredient Spawner.tscn" id="4_lbhrr"]
 [ext_resource type="AudioStream" uid="uid://dqndtmnajwa2x" path="res://sounds/plop_01_rubber_duck_oga.ogg" id="4_p57ef"]
 [ext_resource type="PackedScene" uid="uid://bkd5kxair4hmq" path="res://scenes/UI/HUD.tscn" id="5_iywne"]
@@ -8,7 +9,9 @@
 [ext_resource type="AudioStream" uid="uid://b54m7lsq21hkc" path="res://sounds/spring_07_rubber_duck.ogg" id="8_0tnpc"]
 [ext_resource type="AudioStream" uid="uid://cuwtp2lhf4g5" path="res://sounds/music/rpg_brandon_morris_oga_hael_DB.ogg" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://b4kkoakbexh8r" path="res://models/walls.tscn" id="9_0tnpc"]
-[ext_resource type="PackedScene" uid="uid://cmanph4x4jobr" path="res://scenes/upgrade_manager.tscn" id="10_vtaks"]
+[ext_resource type="PackedScene" uid="uid://yahuxvrjhitd" path="res://models/trash_base.tscn" id="10_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://dt2rm3uiki2lg" path="res://models/trash_lid.tscn" id="11_dinhu"]
+[ext_resource type="PackedScene" uid="uid://c124rtdal8yfg" path="res://whole_raccoon_model.tscn" id="12_dinhu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8cj0n"]
 
@@ -47,6 +50,7 @@ script = ExtResource("1_yqjtg")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1180750594]
 transform = Transform3D(0.96228284, -0.25890213, -0.08355648, 0.11845097, 0.12223191, 0.985408, -0.24491102, -0.95813835, 0.14828888, 0, 8.340313, -0.60483086)
 shadow_enabled = true
+shadow_bias = 0.298
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=314118659]
 
@@ -62,12 +66,12 @@ surface_material_override/0 = SubResource("StandardMaterial3D_gee14")
 transform = Transform3D(1, 0, 0, 0, 0.25881907, 0.9659258, 0, -0.9659258, 0.25881907, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Camera Pivot" unique_id=1031999790]
-transform = Transform3D(1, 0, 0, 0, 0.7253744, -0.68835455, 0, 0.68835455, 0.7253744, 0, -8.785, 10.6)
+transform = Transform3D(1, 0, 0, 0, 0.7253744, -0.68835455, 0, 0.68835455, 0.7253744, 0, -10.565, 11.29)
 environment = SubResource("Environment_0tnpc")
 fov = 72.8
 
 [node name="IngredientSpawner" parent="." unique_id=1365398154 instance=ExtResource("4_lbhrr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.328553, 1.3971848, 6.0316615)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.328553, 2.8174725, 6.0316615)
 
 [node name="Pickup Sound" type="AudioStreamPlayer" parent="." unique_id=1434898793]
 stream = ExtResource("4_p57ef")
@@ -84,13 +88,41 @@ stream = ExtResource("7_gee14")
 [node name="LoseSound" type="AudioStreamPlayer" parent="." unique_id=178496200]
 stream = ExtResource("8_0tnpc")
 
+[node name="Bread" parent="." unique_id=1187585206 instance=ExtResource("3_lnu2h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.570305, 1.6317925, -2.7094417)
+
+[node name="Bread3" parent="." unique_id=1988284436 instance=ExtResource("3_lnu2h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8709307, 1.6317925, -2.7094417)
+
+[node name="Bread2" parent="." unique_id=447678772 instance=ExtResource("3_lnu2h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.741928, 1.6317925, -2.7094417)
+
+[node name="Bread4" parent="." unique_id=607306648 instance=ExtResource("3_lnu2h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4413023, 1.6317925, -2.7094417)
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1534530507]
 stream = ExtResource("8_gee14")
 autoplay = true
 parameters/looping = true
 
-[node name="Walls" parent="." unique_id=915657737 instance=ExtResource("9_0tnpc")]
+[node name="LevelSet" type="Node3D" parent="." unique_id=800213077]
+
+[node name="Walls" parent="LevelSet" unique_id=915657737 instance=ExtResource("9_0tnpc")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6.0186763, 0, 0)
 
-[node name="UpgradeManager" parent="." unique_id=357130373 instance=ExtResource("10_vtaks")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38257766, 1.62287, -2.3773456)
+[node name="WholeTrash" type="Node3D" parent="LevelSet" unique_id=952600015]
+
+[node name="trashBase" parent="LevelSet/WholeTrash" unique_id=1689667389 instance=ExtResource("10_kvpfn")]
+transform = Transform3D(0.6465175, 2.0476813, 0.10731447, 0, 0.11252235, -2.1470535, -2.0504916, 0.6456315, 0.033836126, -7.06, 2.6, 6.785)
+
+[node name="trashLid" parent="LevelSet/WholeTrash" unique_id=1689766337 instance=ExtResource("11_dinhu")]
+transform = Transform3D(-0.53685117, -2.3161678, -0.77275985, -1.9109306, 0.89108145, -1.3432491, 1.519913, 0.30222622, -1.9617655, 11.705, 3.005, 1.74)
+
+[node name="WholeRaccoonModel" parent="." unique_id=1874828909 instance=ExtResource("12_dinhu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6593013, 2.6005845, -5.924519)
+
+[node name="WholeRaccoonModel2" parent="." unique_id=331384372 instance=ExtResource("12_dinhu")]
+transform = Transform3D(0.44619778, 0, -0.89493436, 0, 1, 0, 0.89493436, 0, 0.44619778, 8.984, 2.601, 3.135)
+
+[node name="WholeRaccoonModel3" parent="." unique_id=1240709033 instance=ExtResource("12_dinhu")]
+transform = Transform3D(0.7547096, 0, 0.656059, 0, 1, 0, -0.656059, 0, 0.7547096, -4.331, 2.601, 9.135)

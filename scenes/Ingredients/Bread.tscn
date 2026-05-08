@@ -5,8 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://ju7u3wbxyx7i" path="res://models/breadMesh.tscn" id="3_3yw7i"]
 [ext_resource type="AudioStream" uid="uid://bhebxqcor48g" path="res://sounds/bell_01_rubber_duck_oga.ogg" id="4_3deqp"]
 [ext_resource type="AudioStream" uid="uid://b54m7lsq21hkc" path="res://sounds/spring_07_rubber_duck.ogg" id="5_4ncmt"]
-[ext_resource type="PackedScene" uid="uid://bdh8u52n0jw4m" path="res://assets/Sandwich Eat Particles.tscn" id="6_4ncmt"]
-[ext_resource type="PackedScene" uid="uid://bsdvlbrb60p7d" path="res://assets/Sauce Particles.tscn" id="7_ok4gj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kf4f7"]
 size = Vector3(2, 20, 3)
@@ -19,8 +17,6 @@ albedo_color = Color(0, 1, 0.32941177, 0.5529412)
 material = SubResource("StandardMaterial3D_3deqp")
 size = Vector3(3, 1, 3)
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_3deqp"]
-
 [node name="Bread" type="Area3D" unique_id=1187585206]
 script = ExtResource("1_kf4f7")
 
@@ -31,14 +27,14 @@ shape = SubResource("BoxShape3D_kf4f7")
 [node name="ActualFlavorProfile" parent="." unique_id=414758302 instance=ExtResource("2_rap00")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.5407626, 1.6563432)
 
+[node name="TargetFlavorProfile" parent="." unique_id=443898979 instance=ExtResource("2_rap00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9594035, -1.6379085)
+
 [node name="bread" parent="." unique_id=338320632 instance=ExtResource("3_3yw7i")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
 [node name="WinSound" type="AudioStreamPlayer" parent="." unique_id=1122598284]
 stream = ExtResource("4_3deqp")
-
-[node name="TargetFlavorProfile" parent="." unique_id=443898979 instance=ExtResource("2_rap00")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9594035, -1.6379085)
 
 [node name="LoseSound" type="AudioStreamPlayer" parent="." unique_id=859498381]
 stream = ExtResource("5_4ncmt")
@@ -46,14 +42,6 @@ stream = ExtResource("5_4ncmt")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=517962003]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25861204, 0)
 mesh = SubResource("BoxMesh_4ncmt")
-
-[node name="Plate" type="MeshInstance3D" parent="." unique_id=296019120]
-transform = Transform3D(4.3741674, 0, 0, 0, 0.085751995, 0, 0, 0, 5.4601307, 0, -0.5172241, 0)
-mesh = SubResource("CylinderMesh_3deqp")
-
-[node name="SandwichEatParticles" parent="." unique_id=2146837341 instance=ExtResource("6_4ncmt")]
-
-[node name="Sauce Particles" parent="." unique_id=1058675559 instance=ExtResource("7_ok4gj")]
 
 [connection signal="body_entered" from="." to="." method="on_entered"]
 [connection signal="body_exited" from="." to="." method="on_exited"]
