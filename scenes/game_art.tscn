@@ -1,14 +1,14 @@
-[gd_scene format=4 uid="uid://b6sf5n1s3tjjo"]
+[gd_scene format=4 uid="uid://bpfynrkdc3kbq"]
 
-[ext_resource type="Script" uid="uid://dnsby02e4apsw" path="res://scenes/drag_and_drop_controller.gd" id="1_yqjtg"]
-[ext_resource type="PackedScene" uid="uid://drkevmp0aiaxv" path="res://scenes/Ingredients/Ingredient Spawner.tscn" id="4_lbhrr"]
-[ext_resource type="AudioStream" uid="uid://dqndtmnajwa2x" path="res://sounds/plop_01_rubber_duck_oga.ogg" id="4_p57ef"]
-[ext_resource type="PackedScene" uid="uid://bkd5kxair4hmq" path="res://scenes/UI/HUD.tscn" id="5_iywne"]
-[ext_resource type="AudioStream" uid="uid://bhebxqcor48g" path="res://sounds/bell_01_rubber_duck_oga.ogg" id="7_gee14"]
-[ext_resource type="AudioStream" uid="uid://b54m7lsq21hkc" path="res://sounds/spring_07_rubber_duck.ogg" id="8_0tnpc"]
-[ext_resource type="AudioStream" uid="uid://cuwtp2lhf4g5" path="res://sounds/music/rpg_brandon_morris_oga_hael_DB.ogg" id="8_gee14"]
-[ext_resource type="PackedScene" uid="uid://b4kkoakbexh8r" path="res://models/walls.tscn" id="9_0tnpc"]
-[ext_resource type="PackedScene" uid="uid://cmanph4x4jobr" path="res://scenes/upgrade_manager.tscn" id="10_vtaks"]
+[ext_resource type="Script" uid="uid://dnsby02e4apsw" path="res://scenes/game_manager.gd" id="1_egqwa"]
+[ext_resource type="PackedScene" uid="uid://drkevmp0aiaxv" path="res://scenes/Ingredients/Ingredient Spawner.tscn" id="2_030r3"]
+[ext_resource type="AudioStream" uid="uid://dqndtmnajwa2x" path="res://sounds/plop_01_rubber_duck_oga.ogg" id="3_oigvx"]
+[ext_resource type="PackedScene" uid="uid://bkd5kxair4hmq" path="res://scenes/UI/HUD.tscn" id="4_28nyi"]
+[ext_resource type="AudioStream" uid="uid://bhebxqcor48g" path="res://sounds/bell_01_rubber_duck_oga.ogg" id="5_ojg76"]
+[ext_resource type="AudioStream" uid="uid://b54m7lsq21hkc" path="res://sounds/spring_07_rubber_duck.ogg" id="6_txiir"]
+[ext_resource type="AudioStream" uid="uid://cuwtp2lhf4g5" path="res://sounds/music/rpg_brandon_morris_oga_hael_DB.ogg" id="7_qosn7"]
+[ext_resource type="PackedScene" uid="uid://b4kkoakbexh8r" path="res://models/walls.tscn" id="8_cccns"]
+[ext_resource type="PackedScene" uid="uid://cmanph4x4jobr" path="res://scenes/upgrade_manager.tscn" id="9_6esf2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8cj0n"]
 
@@ -41,8 +41,8 @@ tags = {
 "genre": "sound effect"
 }
 
-[node name="Game" type="Node3D" unique_id=1126054119]
-script = ExtResource("1_yqjtg")
+[node name="Game_Art" type="Node3D" unique_id=1126054119]
+script = ExtResource("1_egqwa")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1180750594]
 transform = Transform3D(0.96228284, -0.25890213, -0.08355648, 0.11845097, 0.12223191, 0.985408, -0.24491102, -0.95813835, 0.14828888, 0, 8.340313, -0.60483086)
@@ -66,31 +66,31 @@ transform = Transform3D(1, 0, 0, 0, 0.7253744, -0.68835455, 0, 0.68835455, 0.725
 environment = SubResource("Environment_0tnpc")
 fov = 72.8
 
-[node name="IngredientSpawner" parent="." unique_id=1365398154 instance=ExtResource("4_lbhrr")]
+[node name="IngredientSpawner" parent="." unique_id=1365398154 instance=ExtResource("2_030r3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.328553, 1.3971848, 6.0316615)
 
 [node name="Pickup Sound" type="AudioStreamPlayer" parent="." unique_id=1434898793]
-stream = ExtResource("4_p57ef")
+stream = ExtResource("3_oigvx")
 
 [node name="Drop Sound" type="AudioStreamPlayer" parent="." unique_id=1576941343]
 stream = SubResource("AudioStreamOggVorbis_u5sy4")
 volume_db = -5.0
 
-[node name="HUD" parent="." unique_id=1287460498 instance=ExtResource("5_iywne")]
+[node name="HUD" parent="." unique_id=1287460498 instance=ExtResource("4_28nyi")]
 
 [node name="WinSound" type="AudioStreamPlayer" parent="." unique_id=699382802]
-stream = ExtResource("7_gee14")
+stream = ExtResource("5_ojg76")
 
 [node name="LoseSound" type="AudioStreamPlayer" parent="." unique_id=178496200]
-stream = ExtResource("8_0tnpc")
+stream = ExtResource("6_txiir")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1534530507]
-stream = ExtResource("8_gee14")
+stream = ExtResource("7_qosn7")
 autoplay = true
 parameters/looping = true
 
-[node name="Walls" parent="." unique_id=915657737 instance=ExtResource("9_0tnpc")]
+[node name="Walls" parent="." unique_id=915657737 instance=ExtResource("8_cccns")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6.0186763, 0, 0)
 
-[node name="UpgradeManager" parent="." unique_id=357130373 instance=ExtResource("10_vtaks")]
+[node name="UpgradeManager" parent="." unique_id=357130373 instance=ExtResource("9_6esf2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38257766, 1.62287, -2.3773456)
