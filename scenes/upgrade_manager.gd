@@ -1,16 +1,24 @@
 class_name Upgrade_Manager
 extends Node3D
 
+var init = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Bread4.make_inactive()
+	
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if init:
+		$SauceMachine.init_machine(0)
+		$SauceMachine2.init_machine(1)
+		$SauceMachine3.init_machine(2)
+		$SauceMachine4.init_machine(3)
+		init = false
+
 
 
 func good_sandwich_event():

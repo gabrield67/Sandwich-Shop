@@ -8,7 +8,6 @@
 [ext_resource type="AudioStream" uid="uid://b54m7lsq21hkc" path="res://sounds/spring_07_rubber_duck.ogg" id="8_0tnpc"]
 [ext_resource type="AudioStream" uid="uid://cuwtp2lhf4g5" path="res://sounds/music/rpg_brandon_morris_oga_hael_DB.ogg" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://b4kkoakbexh8r" path="res://models/walls.tscn" id="9_0tnpc"]
-[ext_resource type="PackedScene" uid="uid://b8kmk2ebsnyy5" path="res://scenes/Sauce Machine/SauceMachine.tscn" id="10_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://cmanph4x4jobr" path="res://scenes/upgrade_manager.tscn" id="10_vtaks"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8cj0n"]
@@ -95,6 +94,3 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6.0186763, 0, 0)
 
 [node name="UpgradeManager" parent="." unique_id=357130373 instance=ExtResource("10_vtaks")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38257766, 1.62287, -2.3773456)
-
-[node name="SauceMachine" parent="." unique_id=1370060822 instance=ExtResource("10_kvpfn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.667333, 2.2139428, 2.6614895)

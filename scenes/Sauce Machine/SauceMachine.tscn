@@ -4,9 +4,17 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ywgvx"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hoo76"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_hoo76"]
+material = SubResource("StandardMaterial3D_hoo76")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yerb2"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ywgvx"]
+material = SubResource("StandardMaterial3D_yerb2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p3b6x"]
 
 [node name="SauceMachine" type="StaticBody3D" unique_id=1370060822]
 script = ExtResource("1_hoo76")
@@ -22,6 +30,7 @@ mesh = SubResource("BoxMesh_hoo76")
 [node name="Spawner" type="MeshInstance3D" parent="." unique_id=201823418]
 transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 2, 0, -0.8527385, 0.5801202)
 mesh = SubResource("BoxMesh_ywgvx")
+surface_material_override/0 = SubResource("StandardMaterial3D_p3b6x")
 
 [node name="Spawn Point" type="Node3D" parent="." unique_id=1449396289]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19827747, 1.0915298)

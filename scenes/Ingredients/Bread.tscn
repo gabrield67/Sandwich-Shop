@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bhebxqcor48g" path="res://sounds/bell_01_rubber_duck_oga.ogg" id="4_3deqp"]
 [ext_resource type="AudioStream" uid="uid://b54m7lsq21hkc" path="res://sounds/spring_07_rubber_duck.ogg" id="5_4ncmt"]
 [ext_resource type="PackedScene" uid="uid://bdh8u52n0jw4m" path="res://assets/Sandwich Eat Particles.tscn" id="6_4ncmt"]
+[ext_resource type="PackedScene" uid="uid://bsdvlbrb60p7d" path="res://assets/Sauce Particles.tscn" id="7_ok4gj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kf4f7"]
 size = Vector3(2, 20, 3)
@@ -51,6 +52,8 @@ transform = Transform3D(4.3741674, 0, 0, 0, 0.085751995, 0, 0, 0, 5.4601307, 0, 
 mesh = SubResource("CylinderMesh_3deqp")
 
 [node name="SandwichEatParticles" parent="." unique_id=2146837341 instance=ExtResource("6_4ncmt")]
+
+[node name="Sauce Particles" parent="." unique_id=1058675559 instance=ExtResource("7_ok4gj")]
 
 [connection signal="body_entered" from="." to="." method="on_entered"]
 [connection signal="body_exited" from="." to="." method="on_exited"]

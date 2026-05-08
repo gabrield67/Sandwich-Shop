@@ -75,9 +75,17 @@ func material_off() -> void:
 	
 func add_to_sandwich(ingredient: Node3D):
 	if ingredient.isSauce:
+		
+		var material = StandardMaterial3D.new()
+		material.albedo_color = ingredient.sauce_colors[ingredient.sauce_index]
+		var particle_material = $"Sauce Particles".process_material as ParticleProcessMaterial
+
+		if particle_material:
+			particle_material.color = ingredient.sauce_colors[ingredient.sauce_index]
 		ingredient.handle_sauce($ActualFlavorProfile)
-		$SandwichEatParticles.restart()
-		$SandwichEatParticles.emitting = true
+		
+		$"Sauce Particles".restart()
+		$"Sauce Particles".emitting = true
 		pass 
 	else:
 		ingredients.push_back(ingredient)

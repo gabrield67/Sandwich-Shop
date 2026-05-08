@@ -2,22 +2,31 @@
 
 [ext_resource type="Script" uid="uid://ccjc7jb5iqi23" path="res://scenes/upgrade_manager.gd" id="1_ssrsn"]
 [ext_resource type="PackedScene" uid="uid://c54v7gf8e74j5" path="res://scenes/Ingredients/Bread.tscn" id="2_076jq"]
+[ext_resource type="PackedScene" uid="uid://b8kmk2ebsnyy5" path="res://scenes/Sauce Machine/SauceMachine.tscn" id="3_076jq"]
 
 [node name="UpgradeManager" type="Node3D" unique_id=357130373]
 script = ExtResource("1_ssrsn")
 
 [node name="Bread" parent="." unique_id=1187585206 instance=ExtResource("2_076jq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7874794, 0, 0)
-ingredients = []
 
 [node name="Bread2" parent="." unique_id=673511391 instance=ExtResource("2_076jq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6648092, 0, 0)
-ingredients = []
 
 [node name="Bread3" parent="." unique_id=1372513161 instance=ExtResource("2_076jq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.02864, 0, 0)
-ingredients = []
 
 [node name="Bread4" parent="." unique_id=238430442 instance=ExtResource("2_076jq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9935837, 0, 0)
-ingredients = []
+
+[node name="SauceMachine" parent="." unique_id=1370060822 instance=ExtResource("3_076jq")]
+transform = Transform3D(0.4519366, 0, 0.89205, 0, 1, 0, -0.89205, 0, 0.4519366, -9.815767, 0, 3.8730211)
+
+[node name="SauceMachine2" parent="." unique_id=1885987930 instance=ExtResource("3_076jq")]
+transform = Transform3D(0.44253916, 0, 0.8967492, 0, 1, 0, -0.8967492, 0, 0.44253916, -10.061551, 0, 6.5593934)
+
+[node name="SauceMachine3" parent="." unique_id=1176405904 instance=ExtResource("3_076jq")]
+transform = Transform3D(0.53091055, 0, -0.84742785, 0, 1, 0, 0.84742785, 0, 0.53091055, 9.500717, 0, 3.7625265)
+
+[node name="SauceMachine4" parent="." unique_id=1172735737 instance=ExtResource("3_076jq")]
+transform = Transform3D(0.5802482, 0, -0.8144397, 0, 1, 0, 0.8144397, 0, 0.5802482, 10.431595, 0, 6.1263647)
