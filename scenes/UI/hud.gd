@@ -45,9 +45,9 @@ func _on_ingredients_wasted():
 		
 func addGoodSandwich() -> void:
 	goodSandwichCount = goodSandwichCount + 1
-	get_parent().startUpgradeTime()
+	#get_parent().startUpgradeTime()
 	
 func addBadSandwich() -> void:
 	badSandwichCount = badSandwichCount + 1
-	get_parent().startUpgradeTime()
+	#get_parent().startUpgradeTime()
 	

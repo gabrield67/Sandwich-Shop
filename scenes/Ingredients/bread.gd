@@ -22,6 +22,17 @@ func _ready() -> void:
 	
 	off_material = StandardMaterial3D.new()
 	off_material.albedo_color = Color.WHITE
+	randomize_target()
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func randomize_target() -> void:
+	$TargetFlavorProfile.clear()
+	
 	randomize()
 	
 	var total = randi_range(3,5)
@@ -36,13 +47,6 @@ func _ready() -> void:
 		,a[2]
 		,a[3]
 		)
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 
 func on_entered(body: Node3D) -> void:
 	if is_active:
@@ -82,6 +86,8 @@ func add_to_sandwich(ingredient: Node3D):
 		on_finished()
 	
 func on_finished():
+	$SandwichEatParticles.restart()
+	$SandwichEatParticles.emitting = true
 	if $ActualFlavorProfile.compare($TargetFlavorProfile):
 		get_parent().good_sandwich_event()
 	else:
@@ -95,7 +101,11 @@ func on_finished():
 func clean_up_bread():
 	for i in ingredients:
 		i.queue_free()
-	queue_free()
+	ingredients.clear()
+	$ActualFlavorProfile.clear()
+	on_material.albedo_color = Color.PINK
+	off_material.albedo_color = Color.WHITE
+	randomize_target()
 	
 func remove_from_sandwich(ingredient: Node3D):
 	var a = ingredient.get_flavor_amounts()

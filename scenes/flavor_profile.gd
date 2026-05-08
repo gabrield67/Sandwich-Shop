@@ -84,4 +84,19 @@ func compare(other:Node3D) -> bool:
 		return true
 	else:
 		return false
+		
+func clear() -> void:
+	for i in flavor1:
+		i.queue_free()
+	flavor1.clear()
+	for i in flavor2:
+		i.queue_free()
+	flavor2.clear()
+	for i in flavor3:
+		i.queue_free()
+	flavor3.clear()
+	for i in flavor4:
+		i.queue_free()
+	flavor4.clear()
+	
 	
