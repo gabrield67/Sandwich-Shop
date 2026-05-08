@@ -120,3 +120,9 @@ transform = Transform3D(-0.53685117, -2.3161678, -0.77275985, -1.9109306, 0.8910
 
 [node name="WholeRaccoonModel" parent="." unique_id=1874828909 instance=ExtResource("12_dinhu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6593013, 2.6005845, -5.924519)
+
+[node name="WholeRaccoonModel2" parent="." unique_id=331384372 instance=ExtResource("12_dinhu")]
+transform = Transform3D(0.44619778, 0, -0.89493436, 0, 1, 0, 0.89493436, 0, 0.44619778, 8.984, 2.601, 3.135)
+
+[node name="WholeRaccoonModel3" parent="." unique_id=1240709033 instance=ExtResource("12_dinhu")]
+transform = Transform3D(0.7547096, 0, 0.656059, 0, 1, 0, -0.656059, 0, 0.7547096, -4.331, 2.601, 9.135)
