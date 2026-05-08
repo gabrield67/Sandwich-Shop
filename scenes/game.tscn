@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b4kkoakbexh8r" path="res://models/walls.tscn" id="9_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://yahuxvrjhitd" path="res://models/trash_base.tscn" id="10_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://dt2rm3uiki2lg" path="res://models/trash_lid.tscn" id="11_dinhu"]
+[ext_resource type="PackedScene" uid="uid://c124rtdal8yfg" path="res://whole_raccoon_model.tscn" id="12_dinhu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8cj0n"]
 
@@ -116,3 +117,6 @@ transform = Transform3D(0.6465175, 2.0476813, 0.10731447, 0, 0.11252235, -2.1470
 
 [node name="trashLid" parent="LevelSet/WholeTrash" unique_id=1689766337 instance=ExtResource("11_dinhu")]
 transform = Transform3D(-0.53685117, -2.3161678, -0.77275985, -1.9109306, 0.89108145, -1.3432491, 1.519913, 0.30222622, -1.9617655, 11.705, 3.005, 1.74)
+
+[node name="WholeRaccoonModel" parent="." unique_id=1874828909 instance=ExtResource("12_dinhu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6593013, 2.6005845, -5.924519)
