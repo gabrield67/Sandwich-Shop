@@ -1,10 +1,12 @@
-
+class_name Bread
 extends Area3D
 
 var bread_scene = preload("res://scenes/Ingredients/Bread.tscn")
 
 var on_material 
 var off_material 
+
+var is_active = true;
 
 var original_size
 
@@ -16,10 +18,21 @@ func _ready() -> void:
 	$MeshInstance3D.visible = false
 	original_size = scale
 	on_material = StandardMaterial3D.new()
-	on_material.albedo_color = Color.RED
+	on_material.albedo_color = Color.PINK
 	
 	off_material = StandardMaterial3D.new()
-	off_material.albedo_color = Color.YELLOW
+	off_material.albedo_color = Color.WHITE
+	randomize_target()
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func randomize_target() -> void:
+	$TargetFlavorProfile.clear()
+	
 	randomize()
 	
 	var total = randi_range(3,5)
@@ -34,50 +47,61 @@ func _ready() -> void:
 		,a[2]
 		,a[3]
 		)
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 
 func on_entered(body: Node3D) -> void:
-	if body is Ingredient:
-		#print (body.name)
-		if(body):
-			body.bread = self;
-			$MeshInstance3D.visible = true
-			#$MeshInstance3D.set_surface_override_material(0, on_material)
-			scale = original_size*1.2
+	if is_active:
+		if body is Ingredient:
+			#print (body.name)
+			if(body):
+				body.bread = self;
+				$MeshInstance3D.visible = true
+				$Plate.set_surface_override_material(0, on_material)
+				scale = original_size*1.2
 			
 
 func on_exited(body: Node3D) -> void:
-	if body is Ingredient:
-		#print (body.name)
-		if body:
-			if body.bread == self:
-				body.bread = null
-			self.material_off()
+	if is_active:
+		if body is Ingredient:
+			#print (body.name)
+			if body:
+				if body.bread == self:
+					body.bread = null
+				self.material_off()
 			
 func material_off() -> void:
-	#$MeshInstance3D.set_surface_override_material(0, off_material)
+	$Plate.set_surface_override_material(0, off_material)
 	$MeshInstance3D.visible = false
 	scale = original_size
 	
 func add_to_sandwich(ingredient: Node3D):
-	ingredients.push_back(ingredient)
-	var a = ingredient.get_flavor_amounts()
-	ingredient.play_add_to_sandwich()
-	$ActualFlavorProfile.add_flavor(a[0],a[1], a[2], a[3])
-	if $ActualFlavorProfile.compare($TargetFlavorProfile):
-		off_material.albedo_color = Color.DARK_GREEN
-		on_material.albedo_color = Color.GREEN
-	update_positions()
-	if ingredient.type_index == 3:
-		on_finished()
+	if ingredient.isSauce:
+		
+		var material = StandardMaterial3D.new()
+		material.albedo_color = ingredient.sauce_colors[ingredient.sauce_index]
+		var particle_material = $"Sauce Particles".process_material as ParticleProcessMaterial
+
+		if particle_material:
+			particle_material.color = ingredient.sauce_colors[ingredient.sauce_index]
+		ingredient.handle_sauce($ActualFlavorProfile)
+		
+		$"Sauce Particles".restart()
+		$"Sauce Particles".emitting = true
+		pass 
+	else:
+		ingredients.push_back(ingredient)
+		var a = ingredient.get_flavor_amounts()
+		ingredient.play_add_to_sandwich()
+		$ActualFlavorProfile.add_flavor(a[0],a[1], a[2], a[3])
+		if $ActualFlavorProfile.compare($TargetFlavorProfile):
+			off_material.albedo_color = Color.LIGHT_GREEN
+			on_material.albedo_color = Color.GREEN
+		update_positions()
+		if ingredient.type_index == 3:
+			on_finished()
 	
 func on_finished():
+	$SandwichEatParticles.restart()
+	$SandwichEatParticles.emitting = true
 	if $ActualFlavorProfile.compare($TargetFlavorProfile):
 		get_parent().good_sandwich_event()
 	else:
@@ -91,7 +115,11 @@ func on_finished():
 func clean_up_bread():
 	for i in ingredients:
 		i.queue_free()
-	queue_free()
+	ingredients.clear()
+	$ActualFlavorProfile.clear()
+	on_material.albedo_color = Color.PINK
+	off_material.albedo_color = Color.WHITE
+	randomize_target()
 	
 func remove_from_sandwich(ingredient: Node3D):
 	var a = ingredient.get_flavor_amounts()
@@ -102,5 +130,18 @@ func remove_from_sandwich(ingredient: Node3D):
 func update_positions():
 	var i = 0
 	for a in ingredients:
-		a.position = self.position + Vector3(0,1,0) + Vector3(0,.35,-.25		)*i
+		a.position = self.position + Vector3(0,2.25,-2.5) + Vector3(0,.35,-.25		)*i
 		i = i+1
+
+
+func make_active() -> void:
+	is_active  = true
+	$TargetFlavorProfile.visible = true
+	$bread.visible = true
+	pass 
+	
+func make_inactive() -> void:
+	is_active = false
+	$bread.visible = false
+	$TargetFlavorProfile.visible = false
+	pass

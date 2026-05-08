@@ -19,6 +19,8 @@ var prev_grabbed_object = null
 var grab_position = Vector2()
 var firstPress = true
 
+var upgradeTime = false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -48,6 +50,8 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == 1 and event.is_pressed():
 			if firstPress:
+				#get_mouse_world_pos also gets the grabbed object if its an ingredient
+				#In upgrade time it handles the upgrade on click
 				get_mouse_world_pos(mouse, true)
 				if grabbed_object:
 					grabbed_object.on_grab()
@@ -80,6 +84,8 @@ func get_mouse_world_pos(mouse_in:Vector2, try_grab:bool):
 	var params = PhysicsRayQueryParameters3D.new()
 	params.from = start
 	params.to = end 
+	if upgradeTime:
+		params.collide_with_areas = true
 	
 	var result = space.intersect_ray(params)
 	
@@ -87,25 +93,42 @@ func get_mouse_world_pos(mouse_in:Vector2, try_grab:bool):
 		
 		#print(result.collider.get_class())
 		#print("here0")
-		if result.collider is Ingredient:
-			#print("here1")
-			if try_grab:
-				grabbed_object = result.collider
-				grabbed_object.isHeld = true
-				#print("here2")
-				cardHeight = 0
+		if upgradeTime and false:
+			print('upgrade time')
+			print(result.collider.get_class())
+			if result.collider is Upgrade_Manager:
+				print('upgrade manager')
+			if result.collider is Ingredient:
+				print('ingredient')
+			if hover_object:
+					hover_object.isHovered = false
+					hover_object.on_stop_hover()
+			if result.collider is Bread:
+				print('bread')
+				if try_grab:
+					if not result.collider.is_active:
+						result.collider.make_active()
+						stopUpgradeTime()
+		else:
+			if result.collider is Ingredient:
+				#print("here1")
+				if try_grab:
+					grabbed_object = result.collider
+					grabbed_object.isHeld = true
+					#print("here2")
+					cardHeight = 0
+				else:
+					if hover_object:
+						if hover_object != result.collider:
+							hover_object.isHovered = false
+							hover_object.on_stop_hover()
+					hover_object = result.collider;
+					hover_object.isHovered = true
+					hover_object.on_hover()
 			else:
 				if hover_object:
-					if hover_object != result.collider:
-						hover_object.isHovered = false
-						hover_object.on_stop_hover()
-				hover_object = result.collider;
-				hover_object.isHovered = true
-				hover_object.on_hover()
-		else:
-			if hover_object:
-				hover_object.isHovered = false
-				hover_object.on_stop_hover()
+					hover_object.isHovered = false
+					hover_object.on_stop_hover()
 	else:
 		if hover_object:
 			hover_object.isHovered = false
@@ -126,8 +149,19 @@ func play_lose_sound():
 	
 func good_sandwich_event():
 	play_win_sound()
+	$HUD.addGoodSandwich()
 	pass
 	
 func bad_sandwich_event():
 	play_lose_sound()
+	$HUD.addBadSandwich()
 	pass
+
+func startUpgradeTime():
+	upgradeTime = true
+	$IngredientSpawner.upgradeTime = true
+	pass
+	
+func stopUpgradeTime():
+	upgradeTime = false
+	$IngredientSpawner.upgradeTime = false

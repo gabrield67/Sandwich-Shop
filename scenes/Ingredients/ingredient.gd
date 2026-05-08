@@ -9,6 +9,7 @@ var breadMesh = preload("res://models/breadMesh.tscn")
 
 
 var isHeld = false
+var isSauce = false
 var isHovered = false
 var move_on_start = false
 var despawn = false
@@ -23,17 +24,16 @@ var meshes = [tomatoMesh , lettuceMesh,fishMesh, breadMesh]
 var spawnedMesh
 var type_index = 0
 
+var spawner
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	original_size = scale
 	$tomatoMesh.queue_free()
 	
 	randomize()
-	type_index = randi_range(0, 3)
-	if type_index == 3:
-		var test = randi_range(0,3)
-		if test >= 3:
-			type_index = randi_range(0, 3)
+	assign_type_index()
+	
 	spawnedMesh = meshes[type_index].instantiate()
 	spawnedMesh.scale = Vector3(ingredient_scales [type_index],ingredient_scales [type_index],ingredient_scales [type_index])
 	add_child(spawnedMesh)
@@ -45,17 +45,24 @@ func _ready() -> void:
 	#print("new ingredient")
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if move_on_start:
-		position = position + (move_direction*move_speed*delta)
-		time_to_despawn = time_to_despawn-delta 
-		if time_to_despawn <= 0:
-			queue_free()
-			GlobalEvents.ingredients_wasted.emit()
+		if not spawner.upgradeTime:
+			position = position + (move_direction*move_speed*delta)
+			time_to_despawn = time_to_despawn-delta 
+			if time_to_despawn <= 0:
+				queue_free()
+				GlobalEvents.ingredients_wasted.emit()
 	pass
 	
+func assign_type_index() ->void:
+	type_index = randi_range(0, 3)
+	if type_index == 3:
+		var test = randi_range(0,3)
+		if test >= 3:
+			type_index = randi_range(0, 3)
+
 func on_grab():
 	move_on_start = false
 	despawn = false
