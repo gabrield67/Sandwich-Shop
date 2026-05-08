@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cmanph4x4jobr"]
 
-[ext_resource type="Script" path="res://scenes/upgrade_manager.gd" id="1_ssrsn"]
+[ext_resource type="Script" uid="uid://ccjc7jb5iqi23" path="res://scenes/upgrade_manager.gd" id="1_ssrsn"]
 [ext_resource type="PackedScene" uid="uid://c54v7gf8e74j5" path="res://scenes/Ingredients/Bread.tscn" id="2_076jq"]
 
 [node name="UpgradeManager" type="Node3D" unique_id=357130373]
@@ -8,12 +8,16 @@ script = ExtResource("1_ssrsn")
 
 [node name="Bread" parent="." unique_id=1187585206 instance=ExtResource("2_076jq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7874794, 0, 0)
+ingredients = []
 
 [node name="Bread2" parent="." unique_id=673511391 instance=ExtResource("2_076jq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6648092, 0, 0)
+ingredients = []
 
 [node name="Bread3" parent="." unique_id=1372513161 instance=ExtResource("2_076jq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.02864, 0, 0)
+ingredients = []
 
 [node name="Bread4" parent="." unique_id=238430442 instance=ExtResource("2_076jq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9935837, 0, 0)
+ingredients = []

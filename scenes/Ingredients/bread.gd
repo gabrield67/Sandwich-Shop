@@ -1,4 +1,4 @@
-
+class_name Bread
 extends Area3D
 
 var bread_scene = preload("res://scenes/Ingredients/Bread.tscn")
@@ -45,22 +45,24 @@ func _process(delta: float) -> void:
 
 
 func on_entered(body: Node3D) -> void:
-	if body is Ingredient:
-		#print (body.name)
-		if(body):
-			body.bread = self;
-			$MeshInstance3D.visible = true
-			$Plate.set_surface_override_material(0, on_material)
-			scale = original_size*1.2
+	if is_active:
+		if body is Ingredient:
+			#print (body.name)
+			if(body):
+				body.bread = self;
+				$MeshInstance3D.visible = true
+				$Plate.set_surface_override_material(0, on_material)
+				scale = original_size*1.2
 			
 
 func on_exited(body: Node3D) -> void:
-	if body is Ingredient:
-		#print (body.name)
-		if body:
-			if body.bread == self:
-				body.bread = null
-			self.material_off()
+	if is_active:
+		if body is Ingredient:
+			#print (body.name)
+			if body:
+				if body.bread == self:
+					body.bread = null
+				self.material_off()
 			
 func material_off() -> void:
 	$Plate.set_surface_override_material(0, off_material)
@@ -104,10 +106,18 @@ func remove_from_sandwich(ingredient: Node3D):
 func update_positions():
 	var i = 0
 	for a in ingredients:
-		a.position = self.position + Vector3(0,1,0) + Vector3(0,.35,-.25		)*i
+		a.position = self.position + Vector3(0,2.25,-2.5) + Vector3(0,.35,-.25		)*i
 		i = i+1
 
-func make_active() -> void:
-	pass
 
+func make_active() -> void:
+	is_active  = true
+	$TargetFlavorProfile.visible = true
+	$bread.visible = true
+	pass 
+	
 func make_inactive() -> void:
+	is_active = false
+	$bread.visible = false
+	$TargetFlavorProfile.visible = false
+	pass

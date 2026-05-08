@@ -13,28 +13,28 @@ height = 0.001
 [node name="fishBones" unique_id=978523315 instance=ExtResource("1_iwl0q")]
 transform = Transform3D(0.63639605, 0, 0.63639605, 0, 0.9, 0, -0.63639605, 0, 0.63639605, 0, 0, 0)
 
-[node name="Cube" parent="." index="0" unique_id=679532409]
-transform = Transform3D(-4.371139e-08, -1, 0, 0.9659258, -4.222196e-08, -0.25881904, 0.25881904, -1.131334e-08, 0.9659258, 0, -0.53694236, 2.1376574)
+[node name="Cube" parent="." index="0" unique_id=535075048]
+transform = Transform3D(-4.4703484e-08, -0.9999998, 0, 0.9659258, -4.222196e-08, -0.25881904, 0.25881904, 0, 0.96592563, 0, -0.07003149, 2.1376572)
 material_override = ExtResource("2_q585f")
 
-[node name="Cube_001" parent="." index="1" unique_id=1248033416]
-transform = Transform3D(-4.371139e-08, -1, 0, 0.9650165, -4.218221e-08, 0.26218918, -0.26218918, 1.1460653e-08, 0.9650165, 0, -0.2671969, -2.2662885)
+[node name="Cube_001" parent="." index="1" unique_id=473465004]
+transform = Transform3D(-4.4703484e-08, -0.9999998, 0, 0.9650166, -4.218221e-08, 0.26218918, -0.26218915, 0, 0.9650165, 0, 0.19971398, -2.266288)
 material_override = ExtResource("2_q585f")
 
-[node name="Cube_002" parent="." index="2" unique_id=390694942]
-transform = Transform3D(-4.371139e-08, -1, 0, 0.9879787, -4.318592e-08, -0.15459, 0.15459, -6.757343e-09, 0.9879787, 0, -0.09948616, 0.3336916)
+[node name="Cube_002" parent="." index="2" unique_id=1528128726]
+transform = Transform3D(-5.2154064e-08, -0.9999998, 0, 0.9879787, -4.318592e-08, -0.15459, 0.15458998, 0, 0.9879785, 0, 0.36742476, 0.33369154)
 material_override = ExtResource("2_q585f")
 
-[node name="Cube_003" parent="." index="3" unique_id=754198302]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, -0.4851637)
+[node name="Cube_003" parent="." index="3" unique_id=1265772491]
+transform = Transform3D(-4.3711385e-08, -0.9999998, 0, 1, -4.3711392e-08, 0, 0, 0, 0.9999998, 0, 0.4669109, -0.48516363)
 material_override = ExtResource("2_q585f")
 
-[node name="Cube_004" parent="." index="4" unique_id=1355058751]
-transform = Transform3D(-4.371139e-08, -1, 0, 0.95966, -4.194807e-08, 0.28116313, -0.28116313, 1.229003e-08, 0.95966, 0, -0.032438993, -1.2659214)
+[node name="Cube_004" parent="." index="4" unique_id=346951691]
+transform = Transform3D(-4.4703484e-08, -0.9999998, 0, 0.95966, -4.1948073e-08, 0.28116313, -0.2811631, 0, 0.95966, 0, 0.4344719, -1.2659211)
 material_override = ExtResource("2_q585f")
 
-[node name="Cube_005" parent="." index="5" unique_id=1413507430]
-transform = Transform3D(-5.429716e-09, -0.124217436, 0, 0.12187519, -5.327334e-09, -0.024008473, 0.02400847, -1.0494436e-09, 0.121875204, -0.17688401, -0.27132374, 1.3328159)
+[node name="Cube_005" parent="." index="5" unique_id=1472125329]
+transform = Transform3D(-6.519258e-09, -0.12421742, 0, 0.1218752, -5.3273355e-09, -0.024008475, 0.024008468, 0, 0.121875204, -0.0049835443, -0.11886776, 1.0642117)
 material_override = ExtResource("2_q585f")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." index="6" unique_id=1752478591]
