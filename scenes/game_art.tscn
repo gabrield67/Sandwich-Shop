@@ -52,6 +52,9 @@ material = ExtResource("12_ojg76")
 radius = 0.6
 height = 3.5
 
+[sub_resource type="SphereMesh" id="SphereMesh_qosn7"]
+material = ExtResource("12_ojg76")
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_qosn7"]
 height = 0.515
 
@@ -129,6 +132,17 @@ speed_scale = 0.35
 mesh = SubResource("CapsuleMesh_txiir")
 emission_shape = 3
 emission_box_extents = Vector3(0, 0, 1)
+direction = Vector3(0, 0, 1)
+gravity = Vector3(3.035, -0.15, 0)
+
+[node name="SlimeParticles2" type="CPUParticles3D" parent="WholeTrash/SlimeParticles1" unique_id=1599175829]
+transform = Transform3D(0.6, 3.1432137e-10, -2.7939678e-10, -3.1432137e-10, 0.6, 4.4703485e-09, 2.7939678e-10, -4.4703485e-09, 0.6, 0, 0, 0)
+amount = 20
+lifetime = 3.3
+speed_scale = 0.35
+mesh = SubResource("SphereMesh_qosn7")
+emission_shape = 3
+emission_box_extents = Vector3(1, 0, 2.2)
 direction = Vector3(0, 0, 1)
 gravity = Vector3(3.035, -0.15, 0)
 
