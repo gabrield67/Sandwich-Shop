@@ -34,8 +34,6 @@ fill_mode = 5
 nine_patch_stretch = true
 texture_progress = ExtResource("1_fls4u")
 
-[node name="Level Timer" type="Timer" parent="Control/Timer Container/Radial Timer" unique_id=1849427169]
-
 [node name="Waste Container" type="MarginContainer" parent="Control" unique_id=1267399968]
 layout_mode = 1
 anchors_preset = 3

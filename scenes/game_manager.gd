@@ -2,8 +2,10 @@ extends Node3D
 
 const DIST = 1000
 
+@onready var timer: Timer = $"Game Timer"
+@onready var hud: CanvasLayer = $"HUD"
 
-
+# drag and drop functionality
 var grabbed_object = null
 var hover_object = null
 var mouse = Vector2()
@@ -19,17 +21,40 @@ var prev_grabbed_object = null
 var grab_position = Vector2()
 var firstPress = true
 
+# sauce upgrades
 var upgradeTime = false
+
+# game data
+var wasteCount: int = 0
+
+var goodSandwichCount: int = 0
+var badSandwichCount: int = 0
+
+@export var gameTime: int = 30
+@export var maxWaste: int = 10
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#@$AudioStreamPlayer.play()
-	pass # Replace with function body.
+
+	# Game Timer
+	hud.setMaxTimer(gameTime)
+	timer.wait_time = gameTime
+	timer.one_shot = true
+	timer.start()
+
+	# Waste Tracking
+	hud.setMaxWaste(maxWaste)
+	
+	# listeners
+	GlobalEvents.ingredients_wasted.connect(_on_ingredients_wasted)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+
+	# handle grabbed object
 	if grabbed_object:
 		#cardHeight = clamp(cardHeight+delta*6,0,liftHeight);
 		grabbed_object.position = get_grab_position()
@@ -40,7 +65,9 @@ func _process(delta: float) -> void:
 			#prevCardHeight = clamp(prevCardHeight+delta*-5	,0,liftHeight);
 			#prev_grabbed_object.position[1] = cardHeightOrig +  prevCardHeight
 			pass
-	pass
+	
+	# handle game timer
+	hud.updateTimer(timer.time_left)
 
 
 func _input(event: InputEvent) -> void:
@@ -165,3 +192,16 @@ func startUpgradeTime():
 func stopUpgradeTime():
 	upgradeTime = false
 	$IngredientSpawner.upgradeTime = false
+
+# Time Functions
+func _on_game_timer_timeout():
+	print("Time's Up")
+	GlobalEvents.level_timer_end.emit()
+	
+# update Trash Progress Bar every time there's a wasted ingredient
+func _on_ingredients_wasted():
+	wasteCount += 1
+	hud.updateWaste(wasteCount)
+	if wasteCount > maxWaste:
+		print("Max Ingredients Wasted")
+		GlobalEvents.max_ingredients_wasted.emit()
