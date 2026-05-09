@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://yahuxvrjhitd" path="res://models/trash_base.tscn" id="10_oigvx"]
 [ext_resource type="PackedScene" uid="uid://dt2rm3uiki2lg" path="res://models/trash_lid.tscn" id="11_28nyi"]
 [ext_resource type="PackedScene" uid="uid://c124rtdal8yfg" path="res://models/whole_raccoon_model.tscn" id="12_28nyi"]
+[ext_resource type="Material" uid="uid://sb1tl5fge5x2" path="res://colors/slimeYellow.tres" id="12_ojg76"]
+[ext_resource type="Material" uid="uid://7gn0t4diki3s" path="res://colors/eyeDarkCharcoal.tres" id="14_txiir"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8cj0n"]
 
@@ -44,7 +46,13 @@ tags = {
 "genre": "sound effect"
 }
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_ojg76"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_txiir"]
+material = ExtResource("12_ojg76")
+radius = 0.6
+height = 3.5
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qosn7"]
+height = 0.515
 
 [node name="Game_Art" type="Node3D" unique_id=1126054119]
 script = ExtResource("1_egqwa")
@@ -108,13 +116,16 @@ transform = Transform3D(-0.003483935, 1.9960794, -0.65242034, -2.0999963, -0.003
 [node name="trashLid" parent="WholeTrash" unique_id=1689766337 instance=ExtResource("11_28nyi")]
 transform = Transform3D(-0.9150461, -2.040979, -0.535812, -2.1092823, 0.86804664, 0.29567432, -0.060154475, 0.6090151, -2.2170887, 12.49, 2.873, 1.411)
 
-[node name="CPUParticles3D" type="CPUParticles3D" parent="WholeTrash" unique_id=1484742347]
-transform = Transform3D(0.9997851, 0.020733062, 0, -0.020733062, 0.9997851, 0, 0, 0, 1, -0.7929859, 1.2047491, 9.257409)
-mesh = SubResource("PlaneMesh_ojg76")
+[node name="SlimeParticles1" type="CPUParticles3D" parent="WholeTrash" unique_id=1484742347]
+transform = Transform3D(0.061902218, -0.9980823, 0, 0.9980823, 0.061902218, 0, 0, 0, 1, -6.6029234, 1.1648922, 8.971698)
+amount = 20
+lifetime = 3.3
+speed_scale = 0.35
+mesh = SubResource("CapsuleMesh_txiir")
 emission_shape = 3
-emission_box_extents = Vector3(1, 1, 1)
+emission_box_extents = Vector3(0, 0, 1)
 direction = Vector3(0, 0, 1)
-gravity = Vector3(3.035, 0, 0)
+gravity = Vector3(3.035, -0.15, 0)
 
 [node name="WholeRaccoonModel" parent="." unique_id=1874828909 instance=ExtResource("12_28nyi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3718157, 2.80274, -5.5859857)
@@ -123,4 +134,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3718157, 2.80274, -5.585985
 transform = Transform3D(0.5284532, 0, -0.8489624, 0, 1, 0, 0.8489624, 0, 0.5284532, 9.3198595, 2.80274, 6.7742877)
 
 [node name="WholeRaccoonModel3" parent="." unique_id=1311599801 instance=ExtResource("12_28nyi")]
-transform = Transform3D(0.5174297, 0, 0.8557257, 0, 1, 0, -0.8557257, 0, 0.5174297, -4.061961, 2.80274, 8.292091)
+transform = Transform3D(0.5174297, 0, 0.8557257, 0, 1, 0, -0.8557257, 0, 0.5174297, -4.061961, 2.80274, 7.156357)
+
+[node name="SewerHole" type="Node3D" parent="." unique_id=1301368767]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SewerHole" unique_id=1043650768]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 12.825, -0.057, 9.341)
+mesh = SubResource("CylinderMesh_qosn7")
+surface_material_override/0 = ExtResource("14_txiir")
