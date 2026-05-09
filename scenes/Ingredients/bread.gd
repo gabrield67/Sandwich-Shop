@@ -9,6 +9,7 @@ var off_material
 var is_active = true;
 
 var original_size
+var original_size_plate
 
 
 @export var ingredients = [];
@@ -16,7 +17,8 @@ var original_size
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$MeshInstance3D.visible = false
-	original_size = scale
+	original_size = $bread.scale
+	original_size_plate =  $Plate.scale
 	on_material = StandardMaterial3D.new()
 	on_material.albedo_color = Color.PINK
 	
@@ -56,7 +58,8 @@ func on_entered(body: Node3D) -> void:
 				body.bread = self;
 				$MeshInstance3D.visible = true
 				$Plate.set_surface_override_material(0, on_material)
-				scale = original_size*1.2
+				$bread.scale = original_size*1.2
+				$Plate.scale = original_size_plate*1.2
 			
 
 func on_exited(body: Node3D) -> void:
@@ -71,7 +74,8 @@ func on_exited(body: Node3D) -> void:
 func material_off() -> void:
 	$Plate.set_surface_override_material(0, off_material)
 	$MeshInstance3D.visible = false
-	scale = original_size
+	$bread.scale = original_size*1
+	$Plate.scale = original_size_plate*1
 	
 func add_to_sandwich(ingredient: Node3D):
 	if ingredient.isSauce:
@@ -109,7 +113,7 @@ func on_finished():
 	
 	var newBread = bread_scene.instantiate()
 	newBread.position = position
-	get_parent().add_child(newBread)
+	#get_parent().add_child(newBread)
 	clean_up_bread()
 	
 func clean_up_bread():
