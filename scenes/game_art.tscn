@@ -9,6 +9,9 @@
 [ext_resource type="AudioStream" uid="uid://cuwtp2lhf4g5" path="res://sounds/music/rpg_brandon_morris_oga_hael_DB.ogg" id="7_qosn7"]
 [ext_resource type="PackedScene" uid="uid://b4kkoakbexh8r" path="res://models/walls.tscn" id="8_cccns"]
 [ext_resource type="PackedScene" uid="uid://cmanph4x4jobr" path="res://scenes/upgrade_manager.tscn" id="9_6esf2"]
+[ext_resource type="PackedScene" uid="uid://yahuxvrjhitd" path="res://models/trash_base.tscn" id="10_oigvx"]
+[ext_resource type="PackedScene" uid="uid://dt2rm3uiki2lg" path="res://models/trash_lid.tscn" id="11_28nyi"]
+[ext_resource type="PackedScene" uid="uid://c124rtdal8yfg" path="res://models/whole_raccoon_model.tscn" id="12_28nyi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8cj0n"]
 
@@ -40,6 +43,8 @@ tags = {
 "artist": "rubberduck",
 "genre": "sound effect"
 }
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ojg76"]
 
 [node name="Game_Art" type="Node3D" unique_id=1126054119]
 script = ExtResource("1_egqwa")
@@ -94,3 +99,28 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6.0186763, 0, 0)
 
 [node name="UpgradeManager" parent="." unique_id=357130373 instance=ExtResource("9_6esf2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38257766, 1.62287, -2.3773456)
+
+[node name="WholeTrash" type="Node3D" parent="." unique_id=527124321]
+
+[node name="trashBase" parent="WholeTrash" unique_id=1689667389 instance=ExtResource("10_oigvx")]
+transform = Transform3D(-0.003483935, 1.9960794, -0.65242034, -2.0999963, -0.0036653096, 0, -0.0011387254, 0.6524193, 1.9960825, -8.052, 2.82, 8.88)
+
+[node name="trashLid" parent="WholeTrash" unique_id=1689766337 instance=ExtResource("11_28nyi")]
+transform = Transform3D(-0.9150461, -2.040979, -0.535812, -2.1092823, 0.86804664, 0.29567432, -0.060154475, 0.6090151, -2.2170887, 12.49, 2.873, 1.411)
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="WholeTrash" unique_id=1484742347]
+transform = Transform3D(0.9997851, 0.020733062, 0, -0.020733062, 0.9997851, 0, 0, 0, 1, -0.7929859, 1.2047491, 9.257409)
+mesh = SubResource("PlaneMesh_ojg76")
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(0, 0, 1)
+gravity = Vector3(3.035, 0, 0)
+
+[node name="WholeRaccoonModel" parent="." unique_id=1874828909 instance=ExtResource("12_28nyi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3718157, 2.80274, -5.5859857)
+
+[node name="WholeRaccoonModel2" parent="." unique_id=1225294822 instance=ExtResource("12_28nyi")]
+transform = Transform3D(0.5284532, 0, -0.8489624, 0, 1, 0, 0.8489624, 0, 0.5284532, 9.3198595, 2.80274, 6.7742877)
+
+[node name="WholeRaccoonModel3" parent="." unique_id=1311599801 instance=ExtResource("12_28nyi")]
+transform = Transform3D(0.5174297, 0, 0.8557257, 0, 1, 0, -0.8557257, 0, 0.5174297, -4.061961, 2.80274, 8.292091)
