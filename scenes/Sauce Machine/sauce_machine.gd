@@ -7,6 +7,7 @@ var sauce_index = 0;
 var spawned = false;
 var timer = 1	
 var current_timer = 0
+var is_active = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
@@ -16,17 +17,18 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	current_timer = current_timer + delta 
-	if current_timer >= timer:
-		if not spawned:
-			print("spawn sauce")
-			var s = sauce_scene.instantiate()
-			
-			get_parent().get_parent().add_child(s)
-			s.position = $"Spawn Point".global_position
-			s.init_sauce(sauce_index, colors, self)
-			spawned = true
-		current_timer = 0
+	if is_active:
+		current_timer = current_timer + delta 
+		if current_timer >= timer:
+			if not spawned:
+				print("spawn sauce")
+				var s = sauce_scene.instantiate()
+				
+				get_parent().get_parent().add_child(s)
+				s.position = $"Spawn Point".global_position
+				s.init_sauce(sauce_index, colors, self)
+				spawned = true
+			current_timer = 0
 	pass
 	
 func init_machine(index:int):
