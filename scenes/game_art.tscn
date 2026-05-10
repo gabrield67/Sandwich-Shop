@@ -33,7 +33,6 @@ frequency = 0.015
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_25n2r"]
 width = 69
-height = 63
 noise = SubResource("FastNoiseLite_6esf2")
 in_3d_space = true
 
@@ -90,7 +89,7 @@ mesh = SubResource("TorusMesh_qosn7")
 surface_material_override/0 = SubResource("StandardMaterial3D_cccns")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1180750594]
-transform = Transform3D(0.96228284, -0.25890213, -0.08355648, 0.11845097, 0.12223191, 0.985408, -0.24491102, -0.95813835, 0.14828888, 0, 8.340313, -0.60483086)
+transform = Transform3D(-0.7848318, -0.61970395, -0.0024859384, 0.044493772, -0.060349878, 0.99718523, -0.6181097, 0.7825119, 0.07493747, 0, 8.340313, -0.60483086)
 shadow_enabled = true
 shadow_bias = 0.135
 shadow_blur = 1.506
@@ -109,9 +108,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_gee14")
 transform = Transform3D(1, 0, 0, 0, 0.25881907, 0.9659258, 0, -0.9659258, 0.25881907, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Camera Pivot" unique_id=1031999790]
-transform = Transform3D(1, 0, 0, 0, 0.6073758, -0.7944146, 0, 0.7944146, 0.6073758, 0.28, -9.57, 8.5)
+transform = Transform3D(1, 0, 0, 0, 0.5792811, -0.81512773, 0, 0.81512773, 0.5792811, 0.28, -9.57, 8.5)
 environment = SubResource("Environment_0tnpc")
-fov = 72.8
+fov = 72.3
 
 [node name="IngredientSpawner" parent="." unique_id=1365398154 instance=ExtResource("2_030r3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.328553, 1.3971848, 6.0316615)
@@ -137,7 +136,7 @@ autoplay = true
 parameters/looping = true
 
 [node name="Walls" parent="." unique_id=915657737 instance=ExtResource("8_cccns")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6.0186763, 0, 0)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 7.069, 0, 0.655)
 
 [node name="UpgradeManager" parent="." unique_id=357130373 instance=ExtResource("9_6esf2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38257766, 1.62287, -2.3773456)
@@ -150,7 +149,7 @@ transform = Transform3D(0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, 0.997
 transform = Transform3D(-0.00252725, 1.4479584, -1.135346, -1.8399972, -0.0032115104, -9.5710474e-11, -0.0019816172, 1.1353443, 1.4479605, -8.052, 2.445, 8.05)
 
 [node name="trashLid" parent="WholeTrash" unique_id=1689766337 instance=ExtResource("11_28nyi")]
-transform = Transform3D(-0.9150461, -2.040979, -0.535812, -2.1092823, 0.86804664, 0.29567432, -0.060154475, 0.6090151, -2.2170887, 12.17, 2.873, 1.411)
+transform = Transform3D(-0.99772173, 1.6513226, 1.2520721, -1.3353357, 0.5503856, -1.7899593, -1.5847491, -1.5033988, 0.7199734, -6.28, 2.528, 6.766)
 
 [node name="SlimeParticles1" type="CPUParticles3D" parent="WholeTrash" unique_id=1484742347]
 transform = Transform3D(0.06189458, -0.997959, 0.015707318, 0.9980822, 0.061902214, -1.1530187e-10, -0.0009723178, 0.015677195, 0.99987656, -6.603, 0.93, 8.972)
@@ -181,7 +180,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.052, 2.803, -2.706)
 transform = Transform3D(-0.98875636, 0, 0.14953543, 0, 1, 0, -0.14953543, 0, -0.98875636, 8.045, 2.803, -4.651)
 
 [node name="WholeRaccoonModel3" parent="." unique_id=1311599801 instance=ExtResource("12_28nyi")]
-transform = Transform3D(0.99844074, 0, -0.055821504, 0, 1, 0, 0.055821504, 0, 0.99844074, -7.642, 3.073, -8.524)
+transform = Transform3D(0.99844074, 0, -0.055821504, 0, 1, 0, 0.055821504, 0, 0.99844074, -7.692, 2.528, -8.069)
 
 [node name="SewerHole" type="Node3D" parent="." unique_id=1301368767]
 transform = Transform3D(0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, 0.9975641, -3.09, 0, -2.893)

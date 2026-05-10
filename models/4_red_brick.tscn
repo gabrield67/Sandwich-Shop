@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bxjs8jmi1nepo"]
+
+[ext_resource type="PackedScene" uid="uid://d35ol1jd6q4yx" path="res://red_brick_mesh.tscn" id="1_68yeu"]
+
+[node name="4RedBrick" type="Node3D" unique_id=541584649]
+
+[node name="redBrickMesh" parent="." unique_id=1588516522 instance=ExtResource("1_68yeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25094032, 0, 0)
+
+[node name="redBrickMesh2" parent="." unique_id=605359583 instance=ExtResource("1_68yeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25094032, 0, 2.0924807)
+
+[node name="redBrickMesh3" parent="." unique_id=2069788861 instance=ExtResource("1_68yeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25094032, 0.7825186, -1.0418608)
+
+[node name="redBrickMesh4" parent="." unique_id=939937160 instance=ExtResource("1_68yeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25094032, 0.7825186, 1.0506198)

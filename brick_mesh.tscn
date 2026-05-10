@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://peguwn63yiga"]
+
+[ext_resource type="PackedScene" uid="uid://df5bx5gpk613a" path="res://models/brickMesh.glb" id="1_7fas0"]
+[ext_resource type="Material" uid="uid://c41cdur73twra" path="res://colors/tomatoLightRed.tres" id="2_c6hi1"]
+
+[node name="redBrickMesh" unique_id=1588516522 instance=ExtResource("1_7fas0")]
+
+[node name="Cube" parent="." index="0" unique_id=114297817]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6387155, 0)
+surface_material_override/0 = ExtResource("2_c6hi1")

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://caddp2wlf43k2" path="res://models/raccoon_head.tscn" id="1_0doq1"]
 [ext_resource type="Material" uid="uid://cujwxnb7cugkl" path="res://colors/trashGray.tres" id="2_0doq1"]
+[ext_resource type="PackedScene" uid="uid://i47o6l2cwokv" path="res://raccoon_tail.tscn" id="3_e0ccr"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_ka5vx"]
 
@@ -14,3 +15,6 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -1.3564084, -0.15925771)
 mesh = SubResource("SphereMesh_ka5vx")
 surface_material_override/0 = ExtResource("2_0doq1")
+
+[node name="raccoonTail" parent="." unique_id=687596290 instance=ExtResource("3_e0ccr")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -1.22, -1)
