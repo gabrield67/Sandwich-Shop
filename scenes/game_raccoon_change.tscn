@@ -1,21 +1,23 @@
-[gd_scene format=4 uid="uid://bpfynrkdc3kbq"]
+[gd_scene format=4 uid="uid://c8wlro0vtxqnf"]
 
-[ext_resource type="Script" uid="uid://dnsby02e4apsw" path="res://scenes/game_manager.gd" id="1_egqwa"]
-[ext_resource type="PackedScene" uid="uid://drkevmp0aiaxv" path="res://scenes/Ingredients/Ingredient Spawner.tscn" id="2_030r3"]
-[ext_resource type="AudioStream" uid="uid://dqndtmnajwa2x" path="res://sounds/plop_01_rubber_duck_oga.ogg" id="3_oigvx"]
-[ext_resource type="PackedScene" uid="uid://bkd5kxair4hmq" path="res://scenes/UI/HUD.tscn" id="4_28nyi"]
-[ext_resource type="AudioStream" uid="uid://bhebxqcor48g" path="res://sounds/bell_01_rubber_duck_oga.ogg" id="5_ojg76"]
-[ext_resource type="AudioStream" uid="uid://b54m7lsq21hkc" path="res://sounds/spring_07_rubber_duck.ogg" id="6_txiir"]
-[ext_resource type="AudioStream" uid="uid://cuwtp2lhf4g5" path="res://sounds/music/rpg_brandon_morris_oga_hael_DB.ogg" id="7_qosn7"]
-[ext_resource type="PackedScene" uid="uid://b4kkoakbexh8r" path="res://models/walls.tscn" id="8_cccns"]
-[ext_resource type="PackedScene" uid="uid://cmanph4x4jobr" path="res://scenes/upgrade_manager.tscn" id="9_6esf2"]
-[ext_resource type="PackedScene" path="res://models/trash_base.tscn" id="10_oigvx"]
-[ext_resource type="PackedScene" path="res://models/trash_lid.tscn" id="11_28nyi"]
-[ext_resource type="PackedScene" path="res://models/whole_raccoon_model.tscn" id="12_28nyi"]
-[ext_resource type="Material" path="res://colors/slimeYellow.tres" id="12_ojg76"]
-[ext_resource type="Material" path="res://colors/eyeDarkCharcoal.tres" id="14_txiir"]
-[ext_resource type="PackedScene" uid="uid://ju7u3wbxyx7i" path="res://models/breadMesh.tscn" id="15_qosn7"]
-[ext_resource type="PackedScene" uid="uid://bfd7ic8voya81" path="res://scenes/game_timer.tscn" id="16_cccns"]
+[ext_resource type="Script" uid="uid://dnsby02e4apsw" path="res://scenes/game_manager.gd" id="1_oxafw"]
+[ext_resource type="PackedScene" uid="uid://drkevmp0aiaxv" path="res://scenes/Ingredients/Ingredient Spawner.tscn" id="2_6nw5r"]
+[ext_resource type="AudioStream" uid="uid://dqndtmnajwa2x" path="res://sounds/plop_01_rubber_duck_oga.ogg" id="3_ianhv"]
+[ext_resource type="PackedScene" uid="uid://bkd5kxair4hmq" path="res://scenes/UI/HUD.tscn" id="4_ku6qt"]
+[ext_resource type="AudioStream" uid="uid://bhebxqcor48g" path="res://sounds/bell_01_rubber_duck_oga.ogg" id="5_xcf35"]
+[ext_resource type="AudioStream" uid="uid://b54m7lsq21hkc" path="res://sounds/spring_07_rubber_duck.ogg" id="6_ms6qd"]
+[ext_resource type="AudioStream" uid="uid://cuwtp2lhf4g5" path="res://sounds/music/rpg_brandon_morris_oga_hael_DB.ogg" id="7_h3poq"]
+[ext_resource type="PackedScene" uid="uid://b4kkoakbexh8r" path="res://models/walls.tscn" id="8_q6h12"]
+[ext_resource type="PackedScene" uid="uid://cmanph4x4jobr" path="res://scenes/upgrade_manager.tscn" id="9_ooa0w"]
+[ext_resource type="PackedScene" path="res://models/trash_base.tscn" id="10_t6wmy"]
+[ext_resource type="PackedScene" path="res://models/trash_lid.tscn" id="11_2h5sn"]
+[ext_resource type="Material" path="res://colors/slimeYellow.tres" id="12_ic31d"]
+[ext_resource type="Material" path="res://colors/eyeDarkCharcoal.tres" id="14_w1l2r"]
+[ext_resource type="PackedScene" uid="uid://ju7u3wbxyx7i" path="res://models/breadMesh.tscn" id="15_jm06j"]
+[ext_resource type="PackedScene" uid="uid://bfd7ic8voya81" path="res://scenes/game_timer.tscn" id="16_6nw5r"]
+[ext_resource type="Script" uid="uid://sri5f1gjv6sc" path="res://scenes/raccoon_manager.gd" id="17_ianhv"]
+[ext_resource type="Script" uid="uid://b67lox2qabkcr" path="res://scenes/slot.gd" id="17_ku6qt"]
+[ext_resource type="PackedScene" uid="uid://ccbffutqtq21k" path="res://scenes/Raccoon/raccoon.tscn" id="18_ku6qt"]
 
 [sub_resource type="TorusMesh" id="TorusMesh_qosn7"]
 
@@ -66,20 +68,20 @@ tags = {
 }
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_txiir"]
-material = ExtResource("12_ojg76")
+material = ExtResource("12_ic31d")
 radius = 0.6
 height = 3.5
 
 [sub_resource type="SphereMesh" id="SphereMesh_qosn7"]
-material = ExtResource("12_ojg76")
+material = ExtResource("12_ic31d")
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_qosn7"]
 height = 0.515
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_cccns"]
 
-[node name="Game_Art" type="Node3D" unique_id=1126054119]
-script = ExtResource("1_egqwa")
+[node name="Game Dev 2" type="Node3D" unique_id=1126054119]
+script = ExtResource("1_oxafw")
 
 [node name="IndoorLighting" type="Node3D" parent="." unique_id=1607209306]
 visible = false
@@ -113,43 +115,40 @@ transform = Transform3D(1, 0, 0, 0, 0.5792811, -0.81512773, 0, 0.81512773, 0.579
 environment = SubResource("Environment_0tnpc")
 fov = 72.3
 
-[node name="IngredientSpawner" parent="." unique_id=1365398154 instance=ExtResource("2_030r3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.328553, 1.3971848, 6.0316615)
-
 [node name="Pickup Sound" type="AudioStreamPlayer" parent="." unique_id=1434898793]
-stream = ExtResource("3_oigvx")
+stream = ExtResource("3_ianhv")
 
 [node name="Drop Sound" type="AudioStreamPlayer" parent="." unique_id=1576941343]
 stream = SubResource("AudioStreamOggVorbis_u5sy4")
 volume_db = -5.0
 
-[node name="HUD" parent="." unique_id=1287460498 instance=ExtResource("4_28nyi")]
+[node name="HUD" parent="." unique_id=1287460498 instance=ExtResource("4_ku6qt")]
 
 [node name="WinSound" type="AudioStreamPlayer" parent="." unique_id=699382802]
-stream = ExtResource("5_ojg76")
+stream = ExtResource("5_xcf35")
 
 [node name="LoseSound" type="AudioStreamPlayer" parent="." unique_id=178496200]
-stream = ExtResource("6_txiir")
+stream = ExtResource("6_ms6qd")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1534530507]
-stream = ExtResource("7_qosn7")
+stream = ExtResource("7_h3poq")
 autoplay = true
 parameters/looping = true
 
-[node name="Walls" parent="." unique_id=915657737 instance=ExtResource("8_cccns")]
+[node name="Walls" parent="." unique_id=915657737 instance=ExtResource("8_q6h12")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 7.069, 0, 0.655)
 
-[node name="UpgradeManager" parent="." unique_id=357130373 instance=ExtResource("9_6esf2")]
+[node name="UpgradeManager" parent="." unique_id=357130373 instance=ExtResource("9_ooa0w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38257766, 1.62287, -2.3773456)
 visible = false
 
 [node name="WholeTrash" type="Node3D" parent="." unique_id=527124321]
 transform = Transform3D(0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, 0.9975641, 0, 0, -3.7129178)
 
-[node name="trashBase" parent="WholeTrash" unique_id=1689667389 instance=ExtResource("10_oigvx")]
+[node name="trashBase" parent="WholeTrash" unique_id=1689667389 instance=ExtResource("10_t6wmy")]
 transform = Transform3D(-0.00252725, 1.4479584, -1.135346, -1.8399972, -0.0032115104, -9.5710474e-11, -0.0019816172, 1.1353443, 1.4479605, -8.052, 2.445, 8.05)
 
-[node name="trashLid" parent="WholeTrash" unique_id=1689766337 instance=ExtResource("11_28nyi")]
+[node name="trashLid" parent="WholeTrash" unique_id=1689766337 instance=ExtResource("11_2h5sn")]
 transform = Transform3D(-0.99772173, 1.6513226, 1.2520721, -1.3353357, 0.5503856, -1.7899593, -1.5847491, -1.5033988, 0.7199734, -6.28, 2.528, 6.766)
 
 [node name="SlimeParticles1" type="CPUParticles3D" parent="WholeTrash" unique_id=1484742347]
@@ -174,22 +173,13 @@ emission_box_extents = Vector3(1, 0, 2.2)
 direction = Vector3(0, 0, 1)
 gravity = Vector3(3.035, -0.15, 0)
 
-[node name="WholeRaccoonModel" parent="." unique_id=1874828909 instance=ExtResource("12_28nyi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.052, 2.803, -2.706)
-
-[node name="WholeRaccoonModel2" parent="." unique_id=1225294822 instance=ExtResource("12_28nyi")]
-transform = Transform3D(-0.98875636, 0, 0.14953543, 0, 1, 0, -0.14953543, 0, -0.98875636, 8.045, 2.803, -4.651)
-
-[node name="WholeRaccoonModel3" parent="." unique_id=1311599801 instance=ExtResource("12_28nyi")]
-transform = Transform3D(0.99844074, 0, -0.055821504, 0, 1, 0, 0.055821504, 0, 0.99844074, -7.692, 2.528, -8.069)
-
 [node name="SewerHole" type="Node3D" parent="." unique_id=1301368767]
 transform = Transform3D(0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, 0.9975641, -3.09, 0, -2.893)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SewerHole" unique_id=1043650768]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 12.825, -0.057, 9.341)
 mesh = SubResource("CylinderMesh_qosn7")
-surface_material_override/0 = ExtResource("14_txiir")
+surface_material_override/0 = ExtResource("14_w1l2r")
 
 [node name="SecretSauceApparatus" type="Node3D" parent="." unique_id=1782365273]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005, -0.59, 4.9)
@@ -212,16 +202,16 @@ mesh = SubResource("CylinderMesh_cccns")
 
 [node name="BreadPlaceholder" type="Node3D" parent="." unique_id=1517644726]
 
-[node name="bread" parent="BreadPlaceholder" unique_id=338320632 instance=ExtResource("15_qosn7")]
+[node name="bread" parent="BreadPlaceholder" unique_id=338320632 instance=ExtResource("15_jm06j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.24, 1.582, 0)
 
-[node name="bread2" parent="BreadPlaceholder" unique_id=1659412931 instance=ExtResource("15_qosn7")]
+[node name="bread2" parent="BreadPlaceholder" unique_id=1659412931 instance=ExtResource("15_jm06j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.025, 1.582, 0)
 
-[node name="bread3" parent="BreadPlaceholder" unique_id=1448460398 instance=ExtResource("15_qosn7")]
+[node name="bread3" parent="BreadPlaceholder" unique_id=1448460398 instance=ExtResource("15_jm06j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, 1.582, 0)
 
-[node name="bread4" parent="BreadPlaceholder" unique_id=1841593911 instance=ExtResource("15_qosn7")]
+[node name="bread4" parent="BreadPlaceholder" unique_id=1841593911 instance=ExtResource("15_jm06j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.73, 1.582, 0)
 
 [node name="SewerDoorsPlaceholder" type="Node3D" parent="." unique_id=1861657235]
@@ -229,21 +219,48 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.73, 1.582, 0)
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="SewerDoorsPlaceholder" unique_id=621694390]
 transform = Transform3D(3.9610722, -0.55412954, -0.053356607, 0, 0.38338304, -3.9815848, 0.5566924, 3.9428363, 0.37965196, 9.745, 2.103, -9.331)
 mesh = SubResource("CylinderMesh_qosn7")
-surface_material_override/0 = ExtResource("14_txiir")
+surface_material_override/0 = ExtResource("14_w1l2r")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="SewerDoorsPlaceholder" unique_id=376586994]
 transform = Transform3D(3.9610722, -0.55412954, -0.053356607, 0, 0.38338304, -3.9815848, 0.5566924, 3.9428363, 0.37965196, 4.035, 2.103, -9.331)
 mesh = SubResource("CylinderMesh_qosn7")
-surface_material_override/0 = ExtResource("14_txiir")
+surface_material_override/0 = ExtResource("14_w1l2r")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="SewerDoorsPlaceholder" unique_id=2105922762]
 transform = Transform3D(3.9610722, -0.55412954, -0.053356607, 0, 0.38338304, -3.9815848, 0.5566924, 3.9428363, 0.37965196, -1.795, 2.103, -9.331)
 mesh = SubResource("CylinderMesh_qosn7")
-surface_material_override/0 = ExtResource("14_txiir")
+surface_material_override/0 = ExtResource("14_w1l2r")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="SewerDoorsPlaceholder" unique_id=464680717]
 transform = Transform3D(3.9610722, -0.55412954, -0.053356607, 0, 0.38338304, -3.9815848, 0.5566924, 3.9428363, 0.37965196, -7.63, 2.103, -9.331)
 mesh = SubResource("CylinderMesh_qosn7")
-surface_material_override/0 = ExtResource("14_txiir")
+surface_material_override/0 = ExtResource("14_w1l2r")
 
-[node name="Game Timer" parent="." unique_id=936284248 instance=ExtResource("16_cccns")]
+[node name="Game Timer" parent="." unique_id=936284248 instance=ExtResource("16_6nw5r")]
+
+[node name="Raccoon Manager" type="Node" parent="." unique_id=1869960919]
+script = ExtResource("17_ianhv")
+raccoon_scene = ExtResource("18_ku6qt")
+
+[node name="Slots" type="Node3D" parent="Raccoon Manager" unique_id=611878047]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2990437, 0.5184207)
+
+[node name="Slot" type="Node3D" parent="Raccoon Manager/Slots" unique_id=1273449844]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.133707, 0, -3.0857244)
+script = ExtResource("17_ku6qt")
+
+[node name="Slot2" type="Node3D" parent="Raccoon Manager/Slots" unique_id=731970625]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.81509566, 0, -3.0857244)
+script = ExtResource("17_ku6qt")
+
+[node name="Slot3" type="Node3D" parent="Raccoon Manager/Slots" unique_id=1482992697]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9692862, 0, -3.0857244)
+script = ExtResource("17_ku6qt")
+
+[node name="Slot4" type="Node3D" parent="Raccoon Manager/Slots" unique_id=560627413]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.782774, 0, -3.0857244)
+script = ExtResource("17_ku6qt")
+
+[node name="Raccoons" type="Node" parent="Raccoon Manager" unique_id=1074432555]
+
+[node name="IngredientSpawner" parent="." unique_id=1365398154 instance=ExtResource("2_6nw5r")]

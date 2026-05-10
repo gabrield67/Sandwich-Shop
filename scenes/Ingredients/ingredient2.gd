@@ -1,5 +1,5 @@
-# class_name Ingredient
-extends StaticBody3D
+class_name Ingredient
+extends FlavorManager
 
 
 var tomatoMesh = preload("res://models/tomato_mesh.tscn")
@@ -26,6 +26,8 @@ var type_index = 0
 
 var spawner
 
+var flavors: Array
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	original_size = scale
@@ -37,13 +39,7 @@ func _ready() -> void:
 	spawnedMesh = meshes[type_index].instantiate()
 	spawnedMesh.scale = Vector3(ingredient_scales [type_index],ingredient_scales [type_index],ingredient_scales [type_index])
 	add_child(spawnedMesh)
-	add_flavor(type_index + 1)
-	var dub = randi_range(0,1)
-	if dub >= 1:
-		add_flavor(randi_range(1,4))
-	#$FlavorProfile.add_flavor(3,4,2,3)
-	#print("new ingredient")
-	pass # Replace with function body.
+	flavors = generate_ingredient_flavors()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -54,7 +50,7 @@ func _process(delta: float) -> void:
 			if time_to_despawn <= 0:
 				queue_free()
 				GlobalEvents.ingredients_wasted.emit()
-	pass
+	
 	
 func assign_type_index() ->void:
 	type_index = randi_range(0, 3)
@@ -76,19 +72,9 @@ func on_hover():
 func on_stop_hover():
 	scale = original_size
 	pass
-	
-func add_flavor(f:int ) -> void:
-	if f == 1:
-		$FlavorProfile.add_flavor(1,0,0,0)
-	elif f == 2:
-		$FlavorProfile.add_flavor(0,1,0,0)
-	elif f == 3:
-		$FlavorProfile.add_flavor(0,0,1,0)
-	elif f == 4:
-		$FlavorProfile.add_flavor(0,0,0,1)
 
 func get_flavor_amounts() -> Array:
-	return $FlavorProfile.get_flavor_amounts()
+	return flavors
 
 func play_add_to_sandwich() -> void:
 	$AddToSandwichSound.play()

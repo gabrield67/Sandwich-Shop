@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdqawm5wejg8a"
-path="res://.godot/imported/timer_circle_hot_red.png-a6bde882375a18356587987b5c25f984.ctex"
+uid="uid://bh5epw1konr3x"
+path="res://.godot/imported/trash_empty.png-9842c3c86e43ef321f2259008f1f4bd4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/timer_circle_hot_red.png"
-dest_files=["res://.godot/imported/timer_circle_hot_red.png-a6bde882375a18356587987b5c25f984.ctex"]
+source_file="res://assets/waste/trash_empty.png"
+dest_files=["res://.godot/imported/trash_empty.png-9842c3c86e43ef321f2259008f1f4bd4.ctex"]
 
 [params]
 

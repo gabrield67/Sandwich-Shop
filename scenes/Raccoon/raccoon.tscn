@@ -1,19 +1,20 @@
 [gd_scene format=3 uid="uid://ccbffutqtq21k"]
 
 [ext_resource type="Script" uid="uid://c3jhtrqw8x8yr" path="res://scenes/Raccoon/raccoon.gd" id="1_fnbhh"]
+[ext_resource type="PackedScene" path="res://models/whole_raccoon_model.tscn" id="2_gvxd3"]
 [ext_resource type="PackedScene" uid="uid://g3ri2k46mdch" path="res://scenes/UI/timer_3d.tscn" id="2_wngsp"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_iywne"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_fnbhh"]
 viewport_path = NodePath("SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gvxd3"]
+size = Vector3(2.4746704, 4.585205, 4.6901636)
 
 [node name="Raccoon" type="Node3D" unique_id=1781054978]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 script = ExtResource("1_fnbhh")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=597328141]
-mesh = SubResource("CapsuleMesh_iywne")
+[node name="WholeRaccoonModel" parent="." unique_id=1874828909 instance=ExtResource("2_gvxd3")]
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1604732233]
 disable_3d = true
@@ -22,8 +23,26 @@ transparent_bg = true
 [node name="Timer 3D" parent="SubViewport" unique_id=1129717321 instance=ExtResource("2_wngsp")]
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=2102177136]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8734615, 0.67222595, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2783108, 0.67222595, 0)
 billboard = 1
 texture = SubResource("ViewportTexture_fnbhh")
 
 [node name="Raccoon Timer" type="Timer" parent="." unique_id=2134176697]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=560877243]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1986844369]
+visible = false
+offset_top = -95.0
+offset_right = 57.0
+offset_bottom = 27.0
+
+[node name="Area3D" type="StaticBody3D" parent="." unique_id=735071723]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1201567582]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009857178, -0.25500488, -0.049838543)
+shape = SubResource("BoxShape3D_gvxd3")
+debug_color = Color(0.9911961, 0, 0.27465352, 0.41960785)

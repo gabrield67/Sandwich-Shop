@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxqhivndx050a"
-path="res://.godot/imported/progress_circle_lime_green.png-cdbf03f27eff96d1c74c0cf7ddf0acad.ctex"
+uid="uid://kukxhywuqh7o"
+path="res://.godot/imported/trash_full.png-a2aa039a0e3bbf656c5277d6e3b1a5b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/progress_circle_lime_green.png"
-dest_files=["res://.godot/imported/progress_circle_lime_green.png-cdbf03f27eff96d1c74c0cf7ddf0acad.ctex"]
+source_file="res://assets/waste/trash_full.png"
+dest_files=["res://.godot/imported/trash_full.png-a2aa039a0e3bbf656c5277d6e3b1a5b2.ctex"]
 
 [params]
 

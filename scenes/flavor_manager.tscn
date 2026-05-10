@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bjxqy8lklei8g"]
+
+[ext_resource type="Script" uid="uid://cnjh7aceyrug8" path="res://scenes/flavor_manager.gd" id="1_oxm28"]
+
+[node name="FlavorManager" type="Node3D" unique_id=119365533]
+script = ExtResource("1_oxm28")

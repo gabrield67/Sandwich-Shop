@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://bkd5kxair4hmq"]
 
 [ext_resource type="Script" uid="uid://2we5k3tji1q1" path="res://scenes/UI/hud.gd" id="1_1etfg"]
-[ext_resource type="Texture2D" uid="uid://cxqhivndx050a" path="res://assets/progress_circle_lime_green.png" id="1_fls4u"]
-[ext_resource type="Texture2D" uid="uid://kukxhywuqh7o" path="res://assets/trash_full.png" id="3_5ip4n"]
-[ext_resource type="Texture2D" uid="uid://bh5epw1konr3x" path="res://assets/trash_empty.png" id="4_l8xe2"]
+[ext_resource type="Texture2D" uid="uid://cxqhivndx050a" path="res://assets/timers/progress_circle_lime_green.png" id="1_fls4u"]
+[ext_resource type="Texture2D" uid="uid://bdqawm5wejg8a" path="res://assets/timers/timer_circle_hot_red.png" id="2_l8xe2"]
+[ext_resource type="Texture2D" uid="uid://kukxhywuqh7o" path="res://assets/waste/trash_full.png" id="3_5ip4n"]
+[ext_resource type="Texture2D" uid="uid://bh5epw1konr3x" path="res://assets/waste/trash_empty.png" id="4_l8xe2"]
 
 [node name="HUD" type="CanvasLayer" unique_id=1287460498]
 script = ExtResource("1_1etfg")
@@ -16,6 +17,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+mouse_filter = 2
 
 [node name="Timer Container" type="MarginContainer" parent="Control" unique_id=1001362588]
 layout_mode = 1
@@ -32,6 +34,7 @@ grow_horizontal = 0
 layout_mode = 2
 fill_mode = 5
 nine_patch_stretch = true
+texture_under = ExtResource("2_l8xe2")
 texture_progress = ExtResource("1_fls4u")
 
 [node name="Waste Container" type="MarginContainer" parent="Control" unique_id=1267399968]
