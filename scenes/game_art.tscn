@@ -16,14 +16,32 @@
 [ext_resource type="Material" uid="uid://7gn0t4diki3s" path="res://colors/eyeDarkCharcoal.tres" id="14_txiir"]
 [ext_resource type="PackedScene" uid="uid://ju7u3wbxyx7i" path="res://models/breadMesh.tscn" id="15_qosn7"]
 
+[sub_resource type="TorusMesh" id="TorusMesh_qosn7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cccns"]
+emission_enabled = true
+emission = Color(0.8089983, 0.8089983, 0.8089982, 1)
+emission_energy_multiplier = 11.3
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_8cj0n"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_uwrxv"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6esf2"]
+seed = 6
+frequency = 0.015
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_25n2r"]
+width = 69
+height = 63
+noise = SubResource("FastNoiseLite_6esf2")
+in_3d_space = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gee14"]
 diffuse_mode = 3
 specular_mode = 1
 albedo_color = Color(0.49803922, 0.6509804, 0.61960787, 1)
+normal_texture = SubResource("NoiseTexture2D_25n2r")
 
 [sub_resource type="Environment" id="Environment_0tnpc"]
 tonemap_mode = 4
@@ -63,9 +81,19 @@ height = 0.515
 [node name="Game_Art" type="Node3D" unique_id=1126054119]
 script = ExtResource("1_egqwa")
 
+[node name="IndoorLighting" type="Node3D" parent="." unique_id=1607209306]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="IndoorLighting" unique_id=1376549775]
+transform = Transform3D(-1.0184319, -0.9673041, 0.033825558, -0.05971443, 0.013786161, -1.4036627, 0.9660515, -1.0189003, -0.05110483, -7.24, 2.385, 5.025)
+mesh = SubResource("TorusMesh_qosn7")
+surface_material_override/0 = SubResource("StandardMaterial3D_cccns")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1180750594]
 transform = Transform3D(0.96228284, -0.25890213, -0.08355648, 0.11845097, 0.12223191, 0.985408, -0.24491102, -0.95813835, 0.14828888, 0, 8.340313, -0.60483086)
 shadow_enabled = true
+shadow_bias = 0.135
+shadow_blur = 1.506
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=314118659]
 
@@ -81,7 +109,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_gee14")
 transform = Transform3D(1, 0, 0, 0, 0.25881907, 0.9659258, 0, -0.9659258, 0.25881907, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Camera Pivot" unique_id=1031999790]
-transform = Transform3D(1, 0, 0, 0, 0.6870875, -0.72657466, 0, 0.72657466, 0.6870875, 0.28, -10.375, 9.535)
+transform = Transform3D(1, 0, 0, 0, 0.6073758, -0.7944146, 0, 0.7944146, 0.6073758, 0.28, -9.57, 8.5)
 environment = SubResource("Environment_0tnpc")
 fov = 72.8
 
@@ -116,16 +144,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38257766, 1.62287, -2.37734
 visible = false
 
 [node name="WholeTrash" type="Node3D" parent="." unique_id=527124321]
-transform = Transform3D(0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, 0.9975641, 0, 0, -2.475)
+transform = Transform3D(0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, 0.9975641, 0, 0, -3.7129178)
 
 [node name="trashBase" parent="WholeTrash" unique_id=1689667389 instance=ExtResource("10_oigvx")]
-transform = Transform3D(-0.002747011, 1.5738677, -1.2340717, -1.9999969, -0.003490772, 0, -0.0021539317, 1.2340698, 1.5738701, -8.052, 2.82, 8.05)
+transform = Transform3D(-0.00252725, 1.4479584, -1.135346, -1.8399972, -0.0032115104, -9.5710474e-11, -0.0019816172, 1.1353443, 1.4479605, -8.052, 2.445, 8.05)
 
 [node name="trashLid" parent="WholeTrash" unique_id=1689766337 instance=ExtResource("11_28nyi")]
 transform = Transform3D(-0.9150461, -2.040979, -0.535812, -2.1092823, 0.86804664, 0.29567432, -0.060154475, 0.6090151, -2.2170887, 12.17, 2.873, 1.411)
 
 [node name="SlimeParticles1" type="CPUParticles3D" parent="WholeTrash" unique_id=1484742347]
-transform = Transform3D(0.06189458, -0.9979591, 0.015707318, 0.9980822, 0.061902218, 0, -0.0009723178, 0.015677195, 0.9998766, -6.603, 1.12, 8.972)
+transform = Transform3D(0.06189458, -0.997959, 0.015707318, 0.9980822, 0.061902214, -1.1530187e-10, -0.0009723178, 0.015677195, 0.99987656, -6.603, 0.93, 8.972)
 amount = 20
 lifetime = 3.3
 speed_scale = 0.35
@@ -156,7 +184,7 @@ transform = Transform3D(-0.98875636, 0, 0.14953543, 0, 1, 0, -0.14953543, 0, -0.
 transform = Transform3D(0.99844074, 0, -0.055821504, 0, 1, 0, 0.055821504, 0, 0.99844074, -7.642, 3.073, -8.524)
 
 [node name="SewerHole" type="Node3D" parent="." unique_id=1301368767]
-transform = Transform3D(0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, 0.9975641, -2.07, 0, -1.655)
+transform = Transform3D(0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, 0.9975641, -3.09, 0, -2.893)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SewerHole" unique_id=1043650768]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 12.825, -0.057, 9.341)
