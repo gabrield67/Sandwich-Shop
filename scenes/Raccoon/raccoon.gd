@@ -3,10 +3,10 @@ extends Node3D
 @export var raccoonTime: int = 10
 
 @onready var timer: Timer = $"Raccoon Timer"
-@onready var progressBar = $"Timer/Timer Viewport/Timer 3D"
+@onready var progressBar = $"Timer Display/Timer Viewport/Timer 3D"
 @onready var raccoon_click = $"Raccoon Click"
-@onready var thought_bubble_display = $"Flavor"
-@onready var timer_display = $"Timer"
+@onready var thought_bubble_display = $"Flavor Display"
+@onready var timer_display = $"Timer Display"
 @export var test_raccoon_spawn: bool = false
 
 signal sandwich_completed(raccoon)

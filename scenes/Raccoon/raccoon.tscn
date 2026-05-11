@@ -7,13 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://d2r8uv00axk3i" path="res://scenes/Raccoon/thought_bubble.tscn" id="5_axfwu"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_fnbhh"]
-viewport_path = NodePath("Timer/Timer Viewport")
+viewport_path = NodePath("Timer Display/Timer Viewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gvxd3"]
 size = Vector3(1.4257813, 4.585205, 3.2268012)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_axfwu"]
-viewport_path = NodePath("Flavor/Flavor Viewport")
+viewport_path = NodePath("Flavor Display/Flavor Viewport")
 
 [node name="Raccoon" type="Node3D" unique_id=1781054978]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
@@ -25,16 +25,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0925939, 2.873206)
 
 [node name="WholeRaccoonModel" parent="." unique_id=1874828909 instance=ExtResource("2_gvxd3")]
 
-[node name="Timer" type="Sprite3D" parent="." unique_id=2102177136]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0103045, 1.2473367, 0.72465885)
+[node name="Timer Display" type="Sprite3D" parent="." unique_id=2102177136]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0103045, -0.82335067, 3.6231132)
 billboard = 1
 texture = SubResource("ViewportTexture_fnbhh")
 
-[node name="Timer Viewport" type="SubViewport" parent="Timer" unique_id=1604732233]
+[node name="Timer Viewport" type="SubViewport" parent="Timer Display" unique_id=1604732233]
 disable_3d = true
 transparent_bg = true
 
-[node name="Timer 3D" parent="Timer/Timer Viewport" unique_id=1129717321 instance=ExtResource("2_wngsp")]
+[node name="Timer 3D" parent="Timer Display/Timer Viewport" unique_id=1129717321 instance=ExtResource("2_wngsp")]
 
 [node name="Raccoon Timer" type="Timer" parent="." unique_id=2134176697]
 
@@ -44,13 +44,14 @@ transparent_bg = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.059631348, -0.25500488, -0.4433905)
 shape = SubResource("BoxShape3D_gvxd3")
 debug_color = Color(0.9911961, 0, 0.27465352, 0.41960785)
+debug_fill = false
 
-[node name="Flavor" type="Sprite3D" parent="." unique_id=1953032506]
+[node name="Flavor Display" type="Sprite3D" parent="." unique_id=1953032506]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.536615, 1.1326852)
 billboard = 1
 texture = SubResource("ViewportTexture_axfwu")
 
-[node name="Flavor Viewport" type="SubViewport" parent="Flavor" unique_id=1291121983]
+[node name="Flavor Viewport" type="SubViewport" parent="Flavor Display" unique_id=1291121983]
 transparent_bg = true
 
-[node name="Thought Bubble" parent="Flavor/Flavor Viewport" unique_id=1401371206 instance=ExtResource("5_axfwu")]
+[node name="Thought Bubble" parent="Flavor Display/Flavor Viewport" unique_id=1401371206 instance=ExtResource("5_axfwu")]
