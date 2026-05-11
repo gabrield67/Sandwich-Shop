@@ -1,3 +1,4 @@
+class_name SauceMachine
 extends StaticBody3D
 
 var sauce_scene = preload("res://scenes/Ingredients/Sauce.tscn")
@@ -37,3 +38,7 @@ func init_machine(index:int):
 	$Back.set_surface_override_material(0, material)
 	$Spawner.set_surface_override_material(0, material)
 	sauce_index = index
+	
+func make_active():
+	is_active= true
+	current_timer = timer

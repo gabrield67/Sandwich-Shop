@@ -6,6 +6,7 @@ var moving_ingredients = true
 var despawn_count: int = 0
 var upgradeTime = false
 var conveyor_move_speed = 1
+var bread_ingredient_frequency = .25
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -23,12 +24,16 @@ func _process(delta: float) -> void:
 			var ingredient = ingredient_scene.instantiate()
 			ingredient.move_speed = conveyor_move_speed
 			ingredient.time_to_despawn = 16.0/conveyor_move_speed
+			ingredient.bread_ingredient_frequency = bread_ingredient_frequency
+			randomize()
+			ingredient.assign_type_index()
 			#print(position)
 			ingredient.spawner = self
 			get_parent().add_child(ingredient)
 			ingredient.position = position
 			ingredient.move_on_start = moving_ingredients
 			ingredient.despawn = true
+			
 			#randomize() 
 			#var my_random_int = randi_range(1, 4)
 			#ingredient.add_flavor(my_random_int)

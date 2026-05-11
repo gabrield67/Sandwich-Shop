@@ -7,6 +7,8 @@ extends CanvasLayer
 @export var levelTime: int = 30
 @export var maxWaste: int = 10
 
+var debug_upgrades = false
+
 var goodSandwichCount: int = 0
 var badSandwichCount: int = 0
 
@@ -23,11 +25,13 @@ func _process(_delta: float) -> void:
 # update sandwiches		
 func addGoodSandwich() -> void:
 	goodSandwichCount = goodSandwichCount + 1
-	#get_parent().startUpgradeTime()
+	if debug_upgrades:
+		get_parent().startUpgradeTime()
 	
 func addBadSandwich() -> void:
 	badSandwichCount = badSandwichCount + 1
-	#get_parent().startUpgradeTime()
+	if debug_upgrades:
+		get_parent().startUpgradeTime()
 	
 # update timer
 func setMaxTimer(max_time) -> void:

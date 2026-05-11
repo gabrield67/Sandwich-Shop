@@ -73,9 +73,13 @@ func _process(delta: float) -> void:
 func set_parameters():
 	$IngredientSpawner.conveyor_move_speed= $Parameters.conveyor_move_speed
 	$IngredientSpawner.spawn_wait_time= $Parameters.ingredient_spawn_wait_time
+	$IngredientSpawner.bread_ingredient_frequency= $Parameters.bread_ingredient_frequency
+	
 	$UpgradeManager.min_target_flavors = $Parameters.min_target_flavors
 	$UpgradeManager.max_target_flavors = $Parameters.max_target_flavors
-	$UpgradeManager.init_bread()
+	$UpgradeManager.init_bread() 
+	
+	$HUD.debug_upgrades =  $Parameters.debug_upgrades
 	
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -127,7 +131,7 @@ func get_mouse_world_pos(mouse_in:Vector2, try_grab:bool):
 		
 		#print(result.collider.get_class())
 		#print("here0")
-		if upgradeTime and false:
+		if upgradeTime:
 			print('upgrade time')
 			print(result.collider.get_class())
 			if result.collider is Upgrade_Manager:
@@ -139,6 +143,13 @@ func get_mouse_world_pos(mouse_in:Vector2, try_grab:bool):
 					hover_object.on_stop_hover()
 			if result.collider is Bread:
 				print('bread')
+				if try_grab:
+					if not result.collider.is_active:
+						result.collider.make_active()
+						stopUpgradeTime()
+						
+			if result.collider is SauceMachine:
+				print('sauce')
 				if try_grab:
 					if not result.collider.is_active:
 						result.collider.make_active()

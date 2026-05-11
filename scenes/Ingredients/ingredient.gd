@@ -1,4 +1,4 @@
-# class_name Ingredient
+#class_name Ingredient
 extends StaticBody3D
 
 
@@ -23,7 +23,8 @@ var ingredient_scales = [1, 1,.75, 1.5	]
 var meshes = [tomatoMesh , lettuceMesh,fishMesh, breadMesh]
 var spawnedMesh
 var type_index = 0
-
+var conveyor_move_speed = 1
+var bread_ingredient_frequency = .25
 
 var spawner
 
@@ -33,7 +34,7 @@ func _ready() -> void:
 	$tomatoMesh.queue_free()
 	
 	randomize()
-	assign_type_index()
+	
 	
 	spawnedMesh = meshes[type_index].instantiate()
 	spawnedMesh.scale = Vector3(ingredient_scales [type_index],ingredient_scales [type_index],ingredient_scales [type_index])
@@ -60,9 +61,9 @@ func _process(delta: float) -> void:
 func assign_type_index() ->void:
 	type_index = randi_range(0, 3)
 	if type_index == 3:
-		var test = randi_range(0,3)
-		if test >= 3:
-			type_index = randi_range(0, 3)
+		var test = randf()
+		if test > bread_ingredient_frequency:
+			type_index = randi_range(0, 2)
 
 func on_grab():
 	move_on_start = false

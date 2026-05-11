@@ -8,6 +8,7 @@ var max_target_flavors = 4
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Bread4.make_inactive()
+	$Bread3.make_inactive()
 	init_bread()
 	pass # Replace with function body.
 
