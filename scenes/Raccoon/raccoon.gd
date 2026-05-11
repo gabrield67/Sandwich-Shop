@@ -3,8 +3,10 @@ extends Node3D
 @export var raccoonTime: int = 10
 
 @onready var timer: Timer = $"Raccoon Timer"
-@onready var progressBar = $"SubViewport/Timer 3D"
-
+@onready var progressBar = $"Timer/Timer Viewport/Timer 3D"
+@onready var raccoon_click = $"Raccoon Click"
+@onready var thought_bubble_display = $"Flavor"
+@onready var timer_display = $"Timer"
 @export var test_raccoon_spawn: bool = false
 
 signal sandwich_completed(raccoon)
@@ -16,10 +18,17 @@ func _ready() -> void:
 	timer.wait_time = raccoonTime
 	progressBar.max_value = raccoonTime
 	timer.one_shot = true
+	thought_bubble_display.hide()
+	timer_display.hide()
+	
+	#TODO change this after animations come in
+	await get_tree().create_timer(.5).timeout
+	thought_bubble_display.show()
+	timer_display.show()
 	timer.start()
 	
 	if test_raccoon_spawn:
-		$Area3D.input_event.connect(_on_input_event)
+		raccoon_click.input_event.connect(_on_input_event)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

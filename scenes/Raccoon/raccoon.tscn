@@ -4,12 +4,16 @@
 [ext_resource type="PackedScene" path="res://models/whole_raccoon_model.tscn" id="2_gvxd3"]
 [ext_resource type="PackedScene" uid="uid://bp6uicgtfnymv" path="res://scenes/Ingredients/Bread2.tscn" id="2_vwr5m"]
 [ext_resource type="PackedScene" uid="uid://g3ri2k46mdch" path="res://scenes/UI/timer_3d.tscn" id="2_wngsp"]
+[ext_resource type="PackedScene" uid="uid://d2r8uv00axk3i" path="res://scenes/Raccoon/thought_bubble.tscn" id="5_axfwu"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_fnbhh"]
-viewport_path = NodePath("SubViewport")
+viewport_path = NodePath("Timer/Timer Viewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gvxd3"]
 size = Vector3(1.4257813, 4.585205, 3.2268012)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_axfwu"]
+viewport_path = NodePath("Flavor/Flavor Viewport")
 
 [node name="Raccoon" type="Node3D" unique_id=1781054978]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
@@ -21,33 +25,32 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0925939, 2.873206)
 
 [node name="WholeRaccoonModel" parent="." unique_id=1874828909 instance=ExtResource("2_gvxd3")]
 
-[node name="SubViewport" type="SubViewport" parent="." unique_id=1604732233]
-disable_3d = true
-transparent_bg = true
-
-[node name="Timer 3D" parent="SubViewport" unique_id=1129717321 instance=ExtResource("2_wngsp")]
-
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=2102177136]
+[node name="Timer" type="Sprite3D" parent="." unique_id=2102177136]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0103045, 1.2473367, 0.72465885)
 billboard = 1
 texture = SubResource("ViewportTexture_fnbhh")
 
+[node name="Timer Viewport" type="SubViewport" parent="Timer" unique_id=1604732233]
+disable_3d = true
+transparent_bg = true
+
+[node name="Timer 3D" parent="Timer/Timer Viewport" unique_id=1129717321 instance=ExtResource("2_wngsp")]
+
 [node name="Raccoon Timer" type="Timer" parent="." unique_id=2134176697]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=560877243]
-visible = false
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Raccoon Click" type="StaticBody3D" parent="." unique_id=735071723]
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1986844369]
-visible = false
-offset_top = -95.0
-offset_right = 57.0
-offset_bottom = 27.0
-
-[node name="Area3D" type="StaticBody3D" parent="." unique_id=735071723]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1201567582]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Raccoon Click" unique_id=1201567582]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.059631348, -0.25500488, -0.4433905)
 shape = SubResource("BoxShape3D_gvxd3")
 debug_color = Color(0.9911961, 0, 0.27465352, 0.41960785)
+
+[node name="Flavor" type="Sprite3D" parent="." unique_id=1953032506]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.536615, 1.1326852)
+billboard = 1
+texture = SubResource("ViewportTexture_axfwu")
+
+[node name="Flavor Viewport" type="SubViewport" parent="Flavor" unique_id=1291121983]
+transparent_bg = true
+
+[node name="Thought Bubble" parent="Flavor/Flavor Viewport" unique_id=1401371206 instance=ExtResource("5_axfwu")]
