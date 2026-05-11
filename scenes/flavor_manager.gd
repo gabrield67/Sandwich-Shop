@@ -26,14 +26,19 @@ func generate_ingredient_flavors() -> Array:
 
 	for i in totalSum:
 		a[randi() % 4] += 1
-		
-	set_target_flavors(a)
-	return targetFlavors
 
-func add_new_current_flavors(newFlavors: Array, currentFlavors: Array) -> Array:
+	return a
+
+func add_new_flavors( currentFlavors: Array, newFlavors: Array) -> Array:
 	var sum = []
 	for i in newFlavors.size():
 		sum.append(currentFlavors[i] + newFlavors[i])
+	return sum
+	
+func remove_new_flavors(currentFlavors: Array, newFlavors: Array) -> Array:
+	var sum = []
+	for i in newFlavors.size():
+		sum.append(currentFlavors[i] - newFlavors[i])
 	return sum
 
 # getters + setters

@@ -7,8 +7,13 @@ var is_active = true;
 
 var original_size
 
+# capture ingredient flavors
 var target_flavors: Array
 var current_flavors: Array = [0, 0, 0, 0]
+var ingredient_flavors: Array
+
+signal ingredient_hovered(ingredient_flavors)
+signal ingredient_exited(ingredient_flavors)
 
 
 @export var ingredients = [];
@@ -17,12 +22,6 @@ var current_flavors: Array = [0, 0, 0, 0]
 func _ready() -> void:
 	$MeshInstance3D.visible = false
 	original_size = scale
-	on_material = StandardMaterial3D.new()
-	on_material.albedo_color = Color.PINK
-	
-	off_material = StandardMaterial3D.new()
-	off_material.albedo_color = Color.WHITE
-	
 	target_flavors = generate_target_flavors()
 
 
@@ -34,6 +33,8 @@ func on_entered(body: Node3D) -> void:
 				body.bread = self;
 				$MeshInstance3D.visible = true
 				scale = original_size*1.2
+				ingredient_flavors = body.flavors
+				ingredient_hovered.emit(ingredient_flavors)
 			
 
 func on_exited(body: Node3D) -> void:
@@ -44,6 +45,7 @@ func on_exited(body: Node3D) -> void:
 				if body.bread == self:
 					body.bread = null
 				self.material_off()
+				ingredient_exited.emit(ingredient_flavors)
 			
 func material_off() -> void:
 	$MeshInstance3D.visible = false
@@ -68,7 +70,7 @@ func add_to_sandwich(ingredient: Node3D):
 		var new_flavors = ingredient.get_flavor_amounts()
 		print(new_flavors)
 		ingredient.play_add_to_sandwich()
-		current_flavors = add_new_current_flavors(new_flavors, current_flavors)
+		current_flavors = add_new_flavors(new_flavors, current_flavors)
 		if current_flavors == target_flavors:
 			off_material.albedo_color = Color.LIGHT_GREEN
 			on_material.albedo_color = Color.GREEN
