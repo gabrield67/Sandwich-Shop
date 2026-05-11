@@ -44,6 +44,7 @@ func _ready() -> void:
 	timer.one_shot = true
 	timer.start()
 
+	set_parameters()
 	# Waste Tracking
 	hud.setMaxWaste(maxWaste)
 	
@@ -69,7 +70,13 @@ func _process(delta: float) -> void:
 	# handle game timer
 	hud.updateTimer(timer.time_left)
 
-
+func set_parameters():
+	$IngredientSpawner.conveyor_move_speed= $Parameters.conveyor_move_speed
+	$IngredientSpawner.spawn_wait_time= $Parameters.ingredient_spawn_wait_time
+	$UpgradeManager.min_target_flavors = $Parameters.min_target_flavors
+	$UpgradeManager.max_target_flavors = $Parameters.max_target_flavors
+	$UpgradeManager.init_bread()
+	
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		mouse =event.position

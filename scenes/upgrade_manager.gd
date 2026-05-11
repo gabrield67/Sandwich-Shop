@@ -2,11 +2,13 @@ class_name Upgrade_Manager
 extends Node3D
 
 var init = true
+var min_target_flavors = 2
+var max_target_flavors = 4
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Bread4.make_inactive()
-	
+	init_bread()
 	pass # Replace with function body.
 
 
@@ -28,3 +30,17 @@ func good_sandwich_event():
 func bad_sandwich_event():
 	get_parent().bad_sandwich_event()
 	pass
+	
+func init_bread():
+	$Bread.min_target_flavors = min_target_flavors
+	$Bread.max_target_flavors = max_target_flavors
+	$Bread. randomize_target()
+	$Bread2.max_target_flavors = max_target_flavors
+	$Bread2.min_target_flavors = min_target_flavors
+	$Bread2. randomize_target()
+	$Bread3.max_target_flavors = max_target_flavors
+	$Bread3.min_target_flavors = min_target_flavors
+	$Bread3. randomize_target()
+	$Bread4.max_target_flavors = max_target_flavors
+	$Bread4.min_target_flavors = min_target_flavors
+	$Bread4. randomize_target()

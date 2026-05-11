@@ -24,6 +24,7 @@ var meshes = [tomatoMesh , lettuceMesh,fishMesh, breadMesh]
 var spawnedMesh
 var type_index = 0
 
+
 var spawner
 
 # Called when the node enters the scene tree for the first time.

@@ -5,7 +5,7 @@ var timer = 0
 var moving_ingredients = true
 var despawn_count: int = 0
 var upgradeTime = false
-
+var conveyor_move_speed = 1
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -21,6 +21,8 @@ func _process(delta: float) -> void:
 			pass
 		else:
 			var ingredient = ingredient_scene.instantiate()
+			ingredient.move_speed = conveyor_move_speed
+			ingredient.time_to_despawn = 16.0/conveyor_move_speed
 			#print(position)
 			ingredient.spawner = self
 			get_parent().add_child(ingredient)

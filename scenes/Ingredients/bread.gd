@@ -4,7 +4,10 @@ extends Area3D
 var bread_scene = preload("res://scenes/Ingredients/Bread.tscn")
 
 var on_material 
-var off_material 
+var off_material
+
+var min_target_flavors = 2
+var max_target_flavors = 4
 
 var is_active = true;
 
@@ -37,7 +40,7 @@ func randomize_target() -> void:
 	
 	randomize()
 	
-	var total = randi_range(3,5)
+	var total = randi_range(min_target_flavors,max_target_flavors)
 	
 	for i in range(total):
 		var a = [0,0,0,0]
