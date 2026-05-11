@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bgu50auo18ypd"]
 
 [ext_resource type="PackedScene" uid="uid://b6uqd7cn3xg0x" path="res://models/tomato_mesh.tscn" id="1_weumo"]
-[ext_resource type="Script" uid="uid://bg4sw4604i1r" path="res://scenes/Ingredients/ingredient2.gd" id="1_y8d8e"]
+[ext_resource type="Script" uid="uid://dlcqiqygwtmgd" path="res://scenes/Ingredients/ingredient.gd" id="1_y8d8e"]
 [ext_resource type="PackedScene" uid="uid://ecpkd4q734jf" path="res://scenes/FlavorProfile.tscn" id="3_b12no"]
 [ext_resource type="AudioStream" uid="uid://8cytiw0cfaxq" path="res://sounds/random2_oga_artisticdude.wav" id="4_y8d8e"]
 

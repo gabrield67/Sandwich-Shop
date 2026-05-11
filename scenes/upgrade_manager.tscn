@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ccjc7jb5iqi23" path="res://scenes/upgrade_manager.gd" id="1_ssrsn"]
 [ext_resource type="PackedScene" uid="uid://c54v7gf8e74j5" path="res://scenes/Ingredients/Bread.tscn" id="2_076jq"]
 [ext_resource type="PackedScene" uid="uid://b8kmk2ebsnyy5" path="res://scenes/Sauce Machine/SauceMachine.tscn" id="3_076jq"]
+[ext_resource type="PackedScene" uid="uid://drqoaqwvff31j" path="res://scenes/UI/Sandwich Counter.tscn" id="4_p44lo"]
 
 [node name="UpgradeManager" type="Node3D" unique_id=357130373]
 script = ExtResource("1_ssrsn")
@@ -30,3 +31,6 @@ transform = Transform3D(0.53091055, 0, -0.84742785, 0, 1, 0, 0.84742785, 0, 0.53
 
 [node name="SauceMachine4" parent="." unique_id=1172735737 instance=ExtResource("3_076jq")]
 transform = Transform3D(0.5802482, 0, -0.8144397, 0, 1, 0, 0.8144397, 0, 0.5802482, 10.431595, 0, 6.1263647)
+
+[node name="SandwichCounter" parent="." unique_id=374579233 instance=ExtResource("4_p44lo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4717474, -0.2918973)

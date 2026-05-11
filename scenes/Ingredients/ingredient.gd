@@ -1,4 +1,4 @@
-#class_name Ingredient
+class_name Ingredient
 extends StaticBody3D
 
 
@@ -42,7 +42,7 @@ func _ready() -> void:
 	add_flavor(type_index + 1)
 	var dub = randi_range(0,1)
 	if dub >= 1:
-		add_flavor(randi_range(1,4))
+		add_flavor(randi_range(1,3))
 	#$FlavorProfile.add_flavor(3,4,2,3)
 	#print("new ingredient")
 	pass # Replace with function body.
@@ -59,7 +59,7 @@ func _process(delta: float) -> void:
 	pass
 	
 func assign_type_index() ->void:
-	type_index = randi_range(0, 3)
+	type_index = randi_range(0, 2)
 	if type_index == 3:
 		var test = randf()
 		if test > bread_ingredient_frequency:

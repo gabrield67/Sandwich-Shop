@@ -44,7 +44,7 @@ func randomize_target() -> void:
 	
 	for i in range(total):
 		var a = [0,0,0,0]
-		var ind = randi_range(0,3)
+		var ind = randi_range(0,2	)
 		a[ind] = 1
 	
 		$TargetFlavorProfile.add_flavor( a[0]
@@ -90,7 +90,10 @@ func add_to_sandwich(ingredient: Node3D):
 		if particle_material:
 			particle_material.color = ingredient.sauce_colors[ingredient.sauce_index]
 		ingredient.handle_sauce($ActualFlavorProfile)
-		
+		if $ActualFlavorProfile.compare($TargetFlavorProfile):
+			#off_material.albedo_color = Color.LIGHT_GREEN
+			#on_material.albedo_color = Color.GREEN
+			on_finished()
 		$"Sauce Particles".restart()
 		$"Sauce Particles".emitting = true
 		pass 
@@ -100,8 +103,9 @@ func add_to_sandwich(ingredient: Node3D):
 		ingredient.play_add_to_sandwich()
 		$ActualFlavorProfile.add_flavor(a[0],a[1], a[2], a[3])
 		if $ActualFlavorProfile.compare($TargetFlavorProfile):
-			off_material.albedo_color = Color.LIGHT_GREEN
-			on_material.albedo_color = Color.GREEN
+			#off_material.albedo_color = Color.LIGHT_GREEN
+			#on_material.albedo_color = Color.GREEN
+			on_finished()
 		update_positions()
 		if ingredient.type_index == 3:
 			on_finished()

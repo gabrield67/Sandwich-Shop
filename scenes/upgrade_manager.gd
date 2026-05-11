@@ -26,6 +26,7 @@ func _process(delta: float) -> void:
 
 func good_sandwich_event():
 	get_parent().good_sandwich_event()
+	$SandwichCounter.addSandwich()
 	pass
 	
 func bad_sandwich_event():
@@ -45,3 +46,6 @@ func init_bread():
 	$Bread4.max_target_flavors = max_target_flavors
 	$Bread4.min_target_flavors = min_target_flavors
 	$Bread4. randomize_target()
+	
+func startUpgradeTime():
+	get_parent().startUpgradeTime()

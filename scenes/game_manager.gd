@@ -205,6 +205,11 @@ func bad_sandwich_event():
 func startUpgradeTime():
 	upgradeTime = true
 	$IngredientSpawner.upgradeTime = true
+	$Parameters.conveyor_move_speed = $Parameters.conveyor_move_speed*1.03
+	$Parameters.max_target_flavors =$Parameters.max_target_flavors+.5
+	$Parameters.ingredient_spawn_wait_time =$Parameters.ingredient_spawn_wait_time*.95
+	
+	set_parameters()
 	pass
 	
 func stopUpgradeTime():
