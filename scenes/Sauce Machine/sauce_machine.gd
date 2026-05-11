@@ -3,10 +3,10 @@ extends StaticBody3D
 
 var sauce_scene = preload("res://scenes/Ingredients/Sauce.tscn")
 
-var colors = [ Color.PURPLE,  Color.GREEN, Color.ORANGE, Color.WHITE]
+var colors = [ Color.RED,  Color.YELLOW, Color.BLUE, Color.WHITE]
 var sauce_index = 0;
 var spawned = false;
-var timer = 1	
+var timer = 5	
 var current_timer = 0
 var is_active = false
 # Called when the node enters the scene tree for the first time.
