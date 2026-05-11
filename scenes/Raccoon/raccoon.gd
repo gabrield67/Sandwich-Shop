@@ -5,6 +5,8 @@ extends Node3D
 @onready var timer: Timer = $"Raccoon Timer"
 @onready var progressBar = $"SubViewport/Timer 3D"
 
+@export var test_raccoon_spawn: bool = false
+
 signal sandwich_completed(raccoon)
 
 var slot: Node = null
@@ -16,7 +18,8 @@ func _ready() -> void:
 	timer.one_shot = true
 	timer.start()
 	
-	$Area3D.input_event.connect(_on_input_event)
+	if test_raccoon_spawn:
+		$Area3D.input_event.connect(_on_input_event)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

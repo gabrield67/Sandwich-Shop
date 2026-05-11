@@ -15,7 +15,7 @@
 [ext_resource type="Material" path="res://colors/slimeYellow.tres" id="12_ojg76"]
 [ext_resource type="Material" path="res://colors/eyeDarkCharcoal.tres" id="14_txiir"]
 [ext_resource type="PackedScene" uid="uid://ju7u3wbxyx7i" path="res://models/breadMesh.tscn" id="15_qosn7"]
-[ext_resource type="PackedScene" uid="uid://bfd7ic8voya81" path="res://scenes/game_timer.tscn" id="16_cccns"]
+[ext_resource type="PackedScene" uid="uid://bfd7ic8voya81" path="res://scenes/UI/game_timer.tscn" id="16_cccns"]
 
 [sub_resource type="TorusMesh" id="TorusMesh_qosn7"]
 

@@ -3,10 +3,10 @@ extends Node
 @export var raccoon_scene : PackedScene
 
 @onready var slots = [
-	$"Slots/Slot",
-	$"Slots/Slot2",
-	$"Slots/Slot3",
-	$"Slots/Slot4"
+	$"Raccoon Placement/Slot",
+	$"Raccoon Placement/Slot2",
+	$"Raccoon Placement/Slot3",
+	$"Raccoon Placement/Slot4"
 ]
 
 @onready var raccoons_node = $"Raccoons"
@@ -19,6 +19,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
 
 func spawn_raccoon_in_slot(slot):
 	var raccoon = raccoon_scene.instantiate()
@@ -34,7 +35,6 @@ func fill_empty_slots():
 		if slot.is_empty():
 			spawn_raccoon_in_slot(slot)
 	
-
 	
 func _on_sandwich_completion(raccoon):
 	#TODO set raccoon reaction

@@ -1,7 +1,5 @@
 extends FlavorManager
 
-var bread_scene = preload("res://scenes/Ingredients/Bread.tscn")
-
 var on_material 
 var off_material 
 
@@ -35,7 +33,6 @@ func on_entered(body: Node3D) -> void:
 			if(body):
 				body.bread = self;
 				$MeshInstance3D.visible = true
-				$Plate.set_surface_override_material(0, on_material)
 				scale = original_size*1.2
 			
 
@@ -49,7 +46,6 @@ func on_exited(body: Node3D) -> void:
 				self.material_off()
 			
 func material_off() -> void:
-	$Plate.set_surface_override_material(0, off_material)
 	$MeshInstance3D.visible = false
 	scale = original_size
 	
@@ -84,13 +80,13 @@ func on_finished():
 	$SandwichEatParticles.restart()
 	$SandwichEatParticles.emitting = true
 	if $ActualFlavorProfile.compare($TargetFlavorProfile):
-		get_parent().good_sandwich_event()
+		# get_parent().good_sandwich_event()
+		print("Good Sandwich")
 	else:
-		get_parent().bad_sandwich_event()
-	
-	var newBread = bread_scene.instantiate()
-	newBread.position = position
-	get_parent().add_child(newBread)
+		# get_parent().bad_sandwich_event()
+		print("Bad Sandwich")
+		
+	GlobalEvents.sandwich_completed.emit(get_parent())
 	clean_up_bread()
 	
 func clean_up_bread():
@@ -98,8 +94,6 @@ func clean_up_bread():
 		i.queue_free()
 	ingredients.clear()
 	$ActualFlavorProfile.clear()
-	on_material.albedo_color = Color.PINK
-	off_material.albedo_color = Color.WHITE
 	# randomize_target()
 	
 func remove_from_sandwich(ingredient: Node3D):

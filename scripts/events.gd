@@ -11,3 +11,4 @@ signal level_timer_end
 # Sandwich Info
 signal bad_sandwich
 signal good_sandwich
+signal sandwich_completed(raccoon)

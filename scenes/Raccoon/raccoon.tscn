@@ -2,17 +2,22 @@
 
 [ext_resource type="Script" uid="uid://c3jhtrqw8x8yr" path="res://scenes/Raccoon/raccoon.gd" id="1_fnbhh"]
 [ext_resource type="PackedScene" path="res://models/whole_raccoon_model.tscn" id="2_gvxd3"]
+[ext_resource type="PackedScene" uid="uid://bp6uicgtfnymv" path="res://scenes/Ingredients/Bread2.tscn" id="2_vwr5m"]
 [ext_resource type="PackedScene" uid="uid://g3ri2k46mdch" path="res://scenes/UI/timer_3d.tscn" id="2_wngsp"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_fnbhh"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gvxd3"]
-size = Vector3(2.4746704, 4.585205, 4.6901636)
+size = Vector3(1.4257813, 4.585205, 3.2268012)
 
 [node name="Raccoon" type="Node3D" unique_id=1781054978]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 script = ExtResource("1_fnbhh")
+test_raccoon_spawn = true
+
+[node name="Bread" parent="." unique_id=1187585206 instance=ExtResource("2_vwr5m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0925939, 2.873206)
 
 [node name="WholeRaccoonModel" parent="." unique_id=1874828909 instance=ExtResource("2_gvxd3")]
 
@@ -23,7 +28,7 @@ transparent_bg = true
 [node name="Timer 3D" parent="SubViewport" unique_id=1129717321 instance=ExtResource("2_wngsp")]
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=2102177136]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2783108, 0.67222595, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0103045, 1.2473367, 0.72465885)
 billboard = 1
 texture = SubResource("ViewportTexture_fnbhh")
 
@@ -43,6 +48,6 @@ offset_bottom = 27.0
 [node name="Area3D" type="StaticBody3D" parent="." unique_id=735071723]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1201567582]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009857178, -0.25500488, -0.049838543)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.059631348, -0.25500488, -0.4433905)
 shape = SubResource("BoxShape3D_gvxd3")
 debug_color = Color(0.9911961, 0, 0.27465352, 0.41960785)
