@@ -61,13 +61,21 @@ transform = Transform3D(1, 0, 0, 0, -0.055786643, 0.9984427, 0, -0.9984427, -0.0
 light_energy = 0.0
 
 [node name="Racoon" parent="." unique_id=123046126 instance=ExtResource("5_yx8ru")]
-transform = Transform3D(-0.9999304, 0, 0.011798259, 0, 1, 0, -0.011798259, 0, -0.9999304, -2.401972, 2.0488968, -6.7798147)
+transform = Transform3D(-0.9999304, 0, 0.011798259, 0, 1, 0, -0.011798259, 0, -0.9999304, -3.0064948, 2.0488968, -5.3898444)
 
 [node name="Racoon2" parent="." unique_id=1479532961 instance=ExtResource("5_yx8ru")]
-transform = Transform3D(-0.9999304, 0, 0.011798259, 0, 1, 0, -0.011798259, 0, -0.9999304, -9.4286375, 2.0488968, -6.7798147)
+transform = Transform3D(-0.9999304, 0, 0.011798259, 0, 1, 0, -0.011798259, 0, -0.9999304, -9.4286375, 2.0488968, -5.3898444)
 
 [node name="Racoon3" parent="." unique_id=326963401 instance=ExtResource("5_yx8ru")]
-transform = Transform3D(-0.9999304, 0, 0.011798259, 0, 1, 0, -0.011798259, 0, -0.9999304, 9.494832, 2.0488968, -6.7798147)
+transform = Transform3D(-0.9999304, 0, 0.011798259, 0, 1, 0, -0.011798259, 0, -0.9999304, 9.494832, 2.0488968, -5.3898444)
 
 [node name="Racoon4" parent="." unique_id=262371745 instance=ExtResource("5_yx8ru")]
-transform = Transform3D(-0.9999304, 0, 0.011798259, 0, 1, 0, -0.011798259, 0, -0.9999304, 2.4681664, 2.0488968, -6.7798147)
+transform = Transform3D(-0.9999304, 0, 0.011798259, 0, 1, 0, -0.011798259, 0, -0.9999304, 2.8363228, 2.0488968, -5.3898444)
+
+[node name="Bread4_light2" type="SpotLight3D" parent="." unique_id=1764145092]
+transform = Transform3D(1, 0, 0, 0, -0.055786643, 0.9984427, 0, -0.9984427, -0.055786643, -9.512793, 6.2835207, -4.2058907)
+light_energy = 0.0
+
+[node name="Bread3_light2" type="SpotLight3D" parent="." unique_id=1787639734]
+transform = Transform3D(1, 0, 0, 0, -0.055786643, 0.9984427, 0, -0.9984427, -0.055786643, 10.161945, 6.2835207, -5.1024537)
+light_energy = 0.0

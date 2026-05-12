@@ -124,11 +124,9 @@ func update_positions():
 func make_active() -> void:
 	is_active  = true
 	$TargetFlavorProfile.visible = true
-	$bread.visible = true
 	pass 
 	
 func make_inactive() -> void:
 	is_active = false
-	$bread.visible = false
 	$TargetFlavorProfile.visible = false
 	pass

@@ -151,6 +151,12 @@ func get_mouse_world_pos(mouse_in:Vector2, try_grab:bool):
 					if not result.collider.is_active:
 						result.collider.make_active()
 						stopUpgradeTime()
+			if result.collider is Bread2:
+				print('bread2')
+				if try_grab:
+					if not result.collider.is_active:
+						result.collider.make_active()
+						stopUpgradeTime()
 						
 			if result.collider is SauceMachine:
 				print('sauce')

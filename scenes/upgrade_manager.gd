@@ -9,6 +9,9 @@ var max_target_flavors = 4
 func _ready() -> void:
 	$Bread4.make_inactive()
 	$Bread3.make_inactive()
+	
+	$Racoon2.make_inactive()
+	$Racoon3.make_inactive()
 	init_bread()
 	pass # Replace with function body.
 
@@ -68,6 +71,10 @@ func startUpgradeLights():
 		$Bread3_light.light_energy = 10
 	if not $Bread4.is_active:
 		$Bread4_light.light_energy = 10
+	if not $Racoon3.is_active:
+		$Bread3_light2.light_energy = 10
+	if not $Racoon2.is_active:
+		$Bread4_light2.light_energy = 10
 	if not $SauceMachine.is_active:
 		$SauceMachine_light.light_energy = 10
 	if not $SauceMachine2.is_active:
@@ -80,6 +87,8 @@ func startUpgradeLights():
 func stopUpgradeTime():
 	$Bread4_light.light_energy = 0
 	$Bread3_light.light_energy = 0
+	$Bread4_light2.light_energy = 0
+	$Bread3_light2.light_energy = 0
 	$SauceMachine_light.light_energy = 0
 	$SauceMachine2_light.light_energy = 0
 	$SauceMachine4_light.light_energy = 0
