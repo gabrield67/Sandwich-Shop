@@ -58,7 +58,7 @@ func _process(delta: float) -> void:
 	# handle grabbed object
 	if grabbed_object:
 		#cardHeight = clamp(cardHeight+delta*6,0,liftHeight);
-		grabbed_object.position = get_grab_position()
+		grabbed_object.update_position( get_grab_position())
 		
 			
 	if prev_grabbed_object:
@@ -94,22 +94,28 @@ func _input(event: InputEvent) -> void:
 				if grabbed_object:
 					grabbed_object.on_grab()
 					$"Pickup Sound".play()
-					
-					if grabbed_object.bread:
-						grabbed_object.bread.remove_from_sandwich(grabbed_object)
+					if grabbed_object is Ingredient:
+						if grabbed_object.bread:
+							grabbed_object.bread.remove_from_sandwich(grabbed_object)
 				firstPress = false
 		elif event.button_index == 1 and not event.is_pressed():
 			
 			#prevCardHeight = 3
 			if grabbed_object:
-				
-				if grabbed_object.bread:
-					grabbed_object.bread.material_off()
-					grabbed_object.bread.add_to_sandwich(grabbed_object)
-				else:
-					$"Drop Sound".play()
-				grabbed_object.isHeld = false
-				prev_grabbed_object = grabbed_object
+				if grabbed_object is Ingredient:
+					if grabbed_object.bread:
+						#print('drop bread')
+						grabbed_object.bread.material_off()
+						grabbed_object.bread.add_to_sandwich(grabbed_object)
+					else:
+						$"Drop Sound".play()
+						grabbed_object.queue_free()
+					grabbed_object.isHeld = false
+					prev_grabbed_object = grabbed_object
+				elif grabbed_object is Bread:
+					if grabbed_object.bread2:
+						grabbed_object.bread2.eat_sandwich(grabbed_object)
+					grabbed_object.return_to_position()
 				
 				grabbed_object = null
 			firstPress = true
@@ -122,8 +128,7 @@ func get_mouse_world_pos(mouse_in:Vector2, try_grab:bool):
 	var params = PhysicsRayQueryParameters3D.new()
 	params.from = start
 	params.to = end 
-	if upgradeTime:
-		params.collide_with_areas = true
+	params.collide_with_areas = true
 	
 	var result = space.intersect_ray(params)
 	
@@ -132,24 +137,32 @@ func get_mouse_world_pos(mouse_in:Vector2, try_grab:bool):
 		#print(result.collider.get_class())
 		#print("here0")
 		if upgradeTime:
-			print('upgrade time')
+			#print('upgrade time')
 			print(result.collider.get_class())
 			if result.collider is Upgrade_Manager:
-				print('upgrade manager')
+				#print('upgrade manager')
+				pass
 			if result.collider is Ingredient:
-				print('ingredient')
+				#print('ingredient')
+				pass
 			if hover_object:
 					hover_object.isHovered = false
 					hover_object.on_stop_hover()
 			if result.collider is Bread:
-				print('bread')
+				#print('bread')
+				if try_grab:
+					if not result.collider.is_active:
+						result.collider.make_active()
+						stopUpgradeTime()
+			if result.collider is Raccoon:
+				#print('bread2')
 				if try_grab:
 					if not result.collider.is_active:
 						result.collider.make_active()
 						stopUpgradeTime()
 						
 			if result.collider is SauceMachine:
-				print('sauce')
+				#print('sauce')
 				if try_grab:
 					if not result.collider.is_active:
 						result.collider.make_active()
@@ -158,10 +171,13 @@ func get_mouse_world_pos(mouse_in:Vector2, try_grab:bool):
 			if result.collider is Ingredient:
 				#print("here1")
 				if try_grab:
-					grabbed_object = result.collider
-					grabbed_object.isHeld = true
-					#print("here2")
-					cardHeight = 0
+					if result.collider.onBread:
+						grabbed_object = result.collider.bread
+					else:
+						grabbed_object = result.collider
+						grabbed_object.isHeld = true
+						#print("here2")
+						cardHeight = 0
 				else:
 					if hover_object:
 						if hover_object != result.collider:
@@ -171,6 +187,9 @@ func get_mouse_world_pos(mouse_in:Vector2, try_grab:bool):
 					hover_object.isHovered = true
 					hover_object.on_hover()
 			else:
+				if try_grab:
+					if result.collider is Bread:
+						grabbed_object = result.collider
 				if hover_object:
 					hover_object.isHovered = false
 					hover_object.on_stop_hover()
@@ -205,11 +224,19 @@ func bad_sandwich_event():
 func startUpgradeTime():
 	upgradeTime = true
 	$IngredientSpawner.upgradeTime = true
+	$Parameters.conveyor_move_speed = $Parameters.conveyor_move_speed*1.02
+	$Parameters.max_target_flavors =$Parameters.max_target_flavors+.5
+	$Parameters.ingredient_spawn_wait_time =$Parameters.ingredient_spawn_wait_time*.99
+	$DirectionalLight3D.light_energy =0
+	set_parameters()
+	$UpgradeManager.startUpgradeLights()
 	pass
 	
 func stopUpgradeTime():
 	upgradeTime = false
 	$IngredientSpawner.upgradeTime = false
+	$DirectionalLight3D.light_energy =1
+	$UpgradeManager.stopUpgradeTime()
 
 # Time Functions
 func _on_game_timer_timeout():

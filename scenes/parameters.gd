@@ -1,8 +1,8 @@
 extends Node
 
 #ingredient spawner
-var conveyor_move_speed = 1
-var ingredient_spawn_wait_time = 1.8
+var conveyor_move_speed = .5
+var ingredient_spawn_wait_time = 3
 
 ##Chance when bread randomly selected it will stay bread 
 var bread_ingredient_frequency = .75
@@ -12,7 +12,7 @@ var min_target_flavors = 2
 var max_target_flavors = 4
 
 #HUD
-var debug_upgrades = true
+var debug_upgrades = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

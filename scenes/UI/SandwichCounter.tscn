@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dite4secijj4j"]
+
+[ext_resource type="Script" uid="uid://de7epvras3bru" path="res://scenes/UI/sandwich_counter.gd" id="1_vanwk"]
+
+[node name="SandwichCounter" type="Node3D" unique_id=889999482]
+script = ExtResource("1_vanwk")

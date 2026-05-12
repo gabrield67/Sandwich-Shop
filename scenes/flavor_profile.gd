@@ -9,6 +9,8 @@ var colors = [ Color.RED,  Color.YELLOW, Color.BLUE, Color.GREEN]
 
 var points = []
 
+var isVisible = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	points.push_back($Flavor1)
@@ -81,7 +83,8 @@ func add_flavor_block(f_arr:Array,f):
 	on_material.albedo_color = colors[f]
 	mesh_instance.set_surface_override_material(0, on_material)
 	f_arr.push_back(static_body)
-	self.add_child(static_body)
+	if isVisible:
+		self.add_child(static_body)
 	static_body.position = points[f].position + Vector3(0,f_arr.size()*.6,0)
 	static_body.scale = Vector3(.5,.5,.5)	
 	pass

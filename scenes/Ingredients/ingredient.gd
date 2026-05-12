@@ -1,4 +1,4 @@
-#class_name Ingredient
+class_name Ingredient
 extends StaticBody3D
 
 
@@ -25,6 +25,7 @@ var spawnedMesh
 var type_index = 0
 var conveyor_move_speed = 1
 var bread_ingredient_frequency = .25
+var onBread = false
 
 var spawner
 
@@ -42,7 +43,7 @@ func _ready() -> void:
 	add_flavor(type_index + 1)
 	var dub = randi_range(0,1)
 	if dub >= 1:
-		add_flavor(randi_range(1,4))
+		add_flavor(randi_range(1,3))
 	#$FlavorProfile.add_flavor(3,4,2,3)
 	#print("new ingredient")
 	pass # Replace with function body.
@@ -59,7 +60,7 @@ func _process(delta: float) -> void:
 	pass
 	
 func assign_type_index() ->void:
-	type_index = randi_range(0, 3)
+	type_index = randi_range(0, 2)
 	if type_index == 3:
 		var test = randf()
 		if test > bread_ingredient_frequency:
@@ -94,3 +95,5 @@ func get_flavor_amounts() -> Array:
 
 func play_add_to_sandwich() -> void:
 	$AddToSandwichSound.play()
+func update_position(position) -> void:
+	self.position = position

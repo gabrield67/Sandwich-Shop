@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://ccbffutqtq21k"]
 
 [ext_resource type="Script" uid="uid://c3jhtrqw8x8yr" path="res://scenes/Raccoon/raccoon.gd" id="1_fnbhh"]
-[ext_resource type="PackedScene" path="res://models/whole_raccoon_model.tscn" id="2_gvxd3"]
-[ext_resource type="PackedScene" uid="uid://bp6uicgtfnymv" path="res://scenes/Ingredients/Bread2.tscn" id="2_vwr5m"]
+[ext_resource type="PackedScene" uid="uid://c124rtdal8yfg" path="res://models/whole_raccoon_model.tscn" id="2_gvxd3"]
 [ext_resource type="PackedScene" uid="uid://g3ri2k46mdch" path="res://scenes/UI/timer_3d.tscn" id="2_wngsp"]
 [ext_resource type="PackedScene" uid="uid://d2r8uv00axk3i" path="res://scenes/Raccoon/thought_bubble.tscn" id="5_axfwu"]
+[ext_resource type="PackedScene" uid="uid://bdh8u52n0jw4m" path="res://assets/Sandwich Eat Particles.tscn" id="5_epiun"]
+[ext_resource type="PackedScene" uid="uid://ecpkd4q734jf" path="res://scenes/FlavorProfile.tscn" id="6_epiun"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_fnbhh"]
 viewport_path = NodePath("Timer Display/Timer Viewport")
@@ -15,13 +16,13 @@ size = Vector3(1.4257813, 4.585205, 3.2268012)
 [sub_resource type="ViewportTexture" id="ViewportTexture_axfwu"]
 viewport_path = NodePath("Flavor Display/Flavor Viewport")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_vwr5m"]
+size = Vector3(4, 5, 5)
+
 [node name="Raccoon" type="Node3D" unique_id=1781054978]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 script = ExtResource("1_fnbhh")
 test_raccoon_spawn = true
-
-[node name="Bread" parent="." unique_id=1187585206 instance=ExtResource("2_vwr5m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0925939, 2.873206)
 
 [node name="WholeRaccoonModel" parent="." unique_id=1874828909 instance=ExtResource("2_gvxd3")]
 
@@ -55,3 +56,15 @@ texture = SubResource("ViewportTexture_axfwu")
 transparent_bg = true
 
 [node name="Thought Bubble" parent="Flavor Display/Flavor Viewport" unique_id=1401371206 instance=ExtResource("5_axfwu")]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1993844728]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1394801554]
+shape = SubResource("BoxShape3D_vwr5m")
+
+[node name="SandwichEatParticles" parent="." unique_id=2146837341 instance=ExtResource("5_epiun")]
+
+[node name="TargetFlavorProfile" parent="." unique_id=414758302 instance=ExtResource("6_epiun")]
+
+[connection signal="area_entered" from="Area3D" to="." method="on_entered_area"]
+[connection signal="area_exited" from="Area3D" to="." method="on_exited_area"]

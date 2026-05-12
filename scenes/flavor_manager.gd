@@ -12,7 +12,7 @@ func generate_target_flavors() -> Array:
 	var totalSum = randi_range(3, 5)
 
 	for i in totalSum:
-		a[randi() % 4] += 1
+		a[randi() % 3] += 1
 		
 	set_target_flavors(a)
 	return targetFlavors
@@ -25,7 +25,7 @@ func generate_ingredient_flavors() -> Array:
 	var totalSum = randi_range(1, 2)
 
 	for i in totalSum:
-		a[randi() % 4] += 1
+		a[randi() % 3] += 1
 
 	return a
 

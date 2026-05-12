@@ -1,4 +1,4 @@
-class_name Ingredient
+#class_name Ingredient
 extends FlavorManager
 
 @onready var flavor_display = $"Flavor Display/Flavor Viewport/Label"
@@ -25,7 +25,7 @@ var meshes = [tomatoMesh , lettuceMesh,fishMesh, breadMesh]
 var spawnedMesh
 var type_index = 0
 var bread_ingredient_frequency = .25
-
+var onBread = false
 var spawner
 
 var flavors: Array
@@ -81,3 +81,13 @@ func get_flavor_amounts() -> Array:
 
 func play_add_to_sandwich() -> void:
 	$AddToSandwichSound.play()
+	
+func add_flavor(f:int ) -> void:
+	if f == 1:
+		$FlavorProfile.add_flavor(1,0,0,0)
+	elif f == 2:
+		$FlavorProfile.add_flavor(0,1,0,0)
+	elif f == 3:
+		$FlavorProfile.add_flavor(0,0,1,0)
+	elif f == 4:
+		$FlavorProfile.add_flavor(0,0,0,1)
