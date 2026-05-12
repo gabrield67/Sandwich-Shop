@@ -2,11 +2,11 @@ extends Node3D
 
 var ui_array =[]
 var totalLength = 15.0
-var number_of_sandwiches = 4
+var number_of_sandwiches = 2
 var current_sandwich= 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	initCounterUI(4)
+	initCounterUI(2)
 	pass # Replace with function body.
 
 
