@@ -8,8 +8,6 @@ var is_active = true;
 var original_size
 
 # capture ingredient flavors
-var target_flavors: Array
-var current_flavors: Array = [0, 0, 0, 0]
 var ingredient_flavors: Array
 
 signal ingredient_hovered(ingredient_flavors)
@@ -22,7 +20,6 @@ signal ingredient_exited(ingredient_flavors)
 func _ready() -> void:
 	$MeshInstance3D.visible = false
 	original_size = scale
-	target_flavors = generate_target_flavors()
 
 
 func on_entered(body: Node3D) -> void:
@@ -70,10 +67,10 @@ func add_to_sandwich(ingredient: Node3D):
 		var new_flavors = ingredient.get_flavor_amounts()
 		print(new_flavors)
 		ingredient.play_add_to_sandwich()
-		current_flavors = add_new_flavors(new_flavors, current_flavors)
-		if current_flavors == target_flavors:
-			off_material.albedo_color = Color.LIGHT_GREEN
-			on_material.albedo_color = Color.GREEN
+		#current_flavors = add_new_flavors(new_flavors, current_flavors)
+		#if current_flavors == target_flavors:
+			#off_material.albedo_color = Color.LIGHT_GREEN
+			#on_material.albedo_color = Color.GREEN
 		update_positions()
 		if ingredient.type_index == 3:
 			on_finished()
@@ -98,6 +95,7 @@ func clean_up_bread():
 	$ActualFlavorProfile.clear()
 	# randomize_target()
 	
+# TODO remove this from game manager as well
 func remove_from_sandwich(ingredient: Node3D):
 	var a = ingredient.get_flavor_amounts()
 	# remove flavor

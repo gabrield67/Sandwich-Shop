@@ -8,6 +8,9 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_1am71"]
 size = Vector3(2, 0.4, 2)
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_i2ser"]
+viewport_path = NodePath("Flavor Display/Flavor Viewport")
+
 [node name="Ingredient" type="StaticBody3D" unique_id=1817893045]
 script = ExtResource("1_y8d8e")
 
@@ -22,3 +25,27 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.66455185, 0.2718928, 
 [node name="AddToSandwichSound" type="AudioStreamPlayer" parent="." unique_id=1021067203]
 stream = ExtResource("4_y8d8e")
 pitch_scale = 1.8
+
+[node name="Flavor Display" type="Sprite3D" parent="." unique_id=437178471]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40450048, 0.4166764, 0.8609812)
+billboard = 1
+texture = SubResource("ViewportTexture_i2ser")
+
+[node name="Flavor Viewport" type="SubViewport" parent="Flavor Display" unique_id=1092217114]
+transparent_bg = true
+
+[node name="Label" type="Label" parent="Flavor Display/Flavor Viewport" unique_id=1645579572]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -21.0
+offset_right = 61.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "TESTING"

@@ -1,6 +1,7 @@
 class_name Ingredient
 extends FlavorManager
 
+@onready var flavor_display = $"Flavor Display/Flavor Viewport/Label"
 
 var tomatoMesh = preload("res://models/tomato_mesh.tscn")
 var fishMesh = preload("res://models/fishBonesMesh.tscn")
@@ -41,6 +42,7 @@ func _ready() -> void:
 	spawnedMesh.scale = Vector3(ingredient_scales [type_index],ingredient_scales [type_index],ingredient_scales [type_index])
 	add_child(spawnedMesh)
 	flavors = generate_ingredient_flavors()
+	flavor_display.text = str(flavors)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
