@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://8cytiw0cfaxq" path="res://sounds/random2_oga_artisticdude.wav" id="4_y8d8e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1am71"]
-size = Vector3(2, 0.4, 2)
+size = Vector3(2.5, 0.4, 2.5)
 
 [node name="Ingredient" type="StaticBody3D" unique_id=1817893045]
 script = ExtResource("1_y8d8e")

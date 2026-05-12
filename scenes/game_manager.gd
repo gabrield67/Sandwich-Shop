@@ -77,7 +77,7 @@ func set_parameters():
 	
 	$UpgradeManager.min_target_flavors = $Parameters.min_target_flavors
 	$UpgradeManager.max_target_flavors = $Parameters.max_target_flavors
-	$UpgradeManager.init_bread() 
+	#$UpgradeManager.init_bread() 
 	
 	$HUD.debug_upgrades =  $Parameters.debug_upgrades
 	

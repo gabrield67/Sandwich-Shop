@@ -118,8 +118,8 @@ func on_finished():
 	else:
 		get_parent().bad_sandwich_event()
 	
-	var newBread = bread_scene.instantiate()
-	newBread.position = position
+	#var newBread = bread_scene.instantiate()
+	#newBread.position = position
 	#get_parent().add_child(newBread)
 	clean_up_bread()
 	
