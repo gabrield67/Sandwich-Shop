@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://b60vg43gdsml4"]
 
 [ext_resource type="PackedScene" uid="uid://8bf2qyi134c5" path="res://models/monserHand.glb" id="1_gqnhx"]
-[ext_resource type="Material" uid="uid://8kf6dv73p3lv" path="res://colors/fishCharcoal.tres" id="2_gqnhx"]
+[ext_resource type="Material" uid="uid://dttrd5o6p1gsg" path="res://colors/monsterPink.tres" id="2_esa6o"]
 
 [node name="monsterHand" unique_id=25484297 instance=ExtResource("1_gqnhx")]
 
 [node name="Cube" parent="." index="0" unique_id=772115163]
-surface_material_override/0 = ExtResource("2_gqnhx")
+surface_material_override/0 = ExtResource("2_esa6o")
 
 [node name="Cube_001" parent="." index="1" unique_id=2071544464]
-surface_material_override/0 = ExtResource("2_gqnhx")
+surface_material_override/0 = ExtResource("2_esa6o")
