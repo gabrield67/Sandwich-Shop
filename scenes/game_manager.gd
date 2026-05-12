@@ -208,14 +208,16 @@ func startUpgradeTime():
 	$Parameters.conveyor_move_speed = $Parameters.conveyor_move_speed*1.03
 	$Parameters.max_target_flavors =$Parameters.max_target_flavors+.5
 	$Parameters.ingredient_spawn_wait_time =$Parameters.ingredient_spawn_wait_time*.95
-	
+	$DirectionalLight3D.light_energy =0
 	set_parameters()
+	$UpgradeManager.startUpgradeLights()
 	pass
 	
 func stopUpgradeTime():
 	upgradeTime = false
 	$IngredientSpawner.upgradeTime = false
-
+	$DirectionalLight3D.light_energy =1
+	$UpgradeManager.stopUpgradeTime()
 # Time Functions
 func _on_game_timer_timeout():
 	print("Time's Up")

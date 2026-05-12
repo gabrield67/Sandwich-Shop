@@ -49,3 +49,25 @@ func init_bread():
 	
 func startUpgradeTime():
 	get_parent().startUpgradeTime()
+	
+func startUpgradeLights():
+	if not $Bread3.is_active:
+		$Bread3_light.light_energy = 10
+	if not $Bread4.is_active:
+		$Bread4_light.light_energy = 10
+	if not $SauceMachine.is_active:
+		$SauceMachine_light.light_energy = 10
+	if not $SauceMachine2.is_active:
+		$SauceMachine2_light.light_energy = 10
+	if not $SauceMachine3.is_active:
+		$SauceMachine3_light.light_energy = 10
+	if not $SauceMachine4.is_active:
+		$SauceMachine4_light.light_energy = 10
+	
+func stopUpgradeTime():
+	$Bread4_light.light_energy = 0
+	$Bread3_light.light_energy = 0
+	$SauceMachine_light.light_energy = 0
+	$SauceMachine2_light.light_energy = 0
+	$SauceMachine4_light.light_energy = 0
+	$SauceMachine3_light.light_energy = 0
