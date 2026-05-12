@@ -25,6 +25,7 @@ var spawnedMesh
 var type_index = 0
 var conveyor_move_speed = 1
 var bread_ingredient_frequency = .25
+var onBread = false
 
 var spawner
 
@@ -94,3 +95,6 @@ func get_flavor_amounts() -> Array:
 
 func play_add_to_sandwich() -> void:
 	$AddToSandwichSound.play()
+
+func update_position(position) -> void:
+	self.position = position

@@ -1,3 +1,4 @@
+class_name Bread2
 extends FlavorManager
 
 var on_material 
@@ -22,16 +23,29 @@ func _ready() -> void:
 	
 	off_material = StandardMaterial3D.new()
 	off_material.albedo_color = Color.WHITE
-	
-	target_flavors = generate_target_flavors()
+	randomize()
+	randomize_target()
 
+func randomize_target() -> void:
+	$TargetFlavorProfile.clear()
+	
+	randomize()
+	
+	var total = randi_range(3,5)
+	
+	for i in range(total):
+		var a = [0,0,0,0]
+		var ind = randi_range(0,2	)
+		a[ind] = 1
+	
+		$TargetFlavorProfile.add_flavor( a[0],a[1],a[2],a[3])
 
 func on_entered(body: Node3D) -> void:
 	if is_active:
-		if body is Ingredient:
+		if body is Bread:
 			#print (body.name)
 			if(body):
-				body.bread = self;
+				body.bread2 = self;
 				$MeshInstance3D.visible = true
 				scale = original_size*1.2
 			
@@ -44,57 +58,52 @@ func on_exited(body: Node3D) -> void:
 				if body.bread == self:
 					body.bread = null
 				self.material_off()
+				
+func on_entered_area(area: Area3D) -> void:
+	if is_active:
+		if area is Bread:
+			#print (body.name)
+			if(area):
+				area.bread2 = self;
+				$MeshInstance3D.visible = true
+				scale = original_size*1.2
+			
+
+func on_exited_area(area: Area3D) -> void:
+	if is_active:
+		if area is Bread:
+			#print (body.name)
+			if area:
+				if area.bread2 == self:
+					area.bread2 = null
+				self.material_off()
 			
 func material_off() -> void:
 	$MeshInstance3D.visible = false
 	scale = original_size
 	
 func add_to_sandwich(ingredient: Node3D):
-	if ingredient.isSauce:
-		
-		var material = StandardMaterial3D.new()
-		material.albedo_color = ingredient.sauce_colors[ingredient.sauce_index]
-		var particle_material = $"Sauce Particles".process_material as ParticleProcessMaterial
-
-		if particle_material:
-			particle_material.color = ingredient.sauce_colors[ingredient.sauce_index]
-		ingredient.handle_sauce($ActualFlavorProfile)
-		
-		$"Sauce Particles".restart()
-		$"Sauce Particles".emitting = true
-		pass 
-	else:
-		ingredients.push_back(ingredient)
-		var new_flavors = ingredient.get_flavor_amounts()
-		print(new_flavors)
-		ingredient.play_add_to_sandwich()
-		current_flavors = add_new_current_flavors(new_flavors, current_flavors)
-		if current_flavors == target_flavors:
-			off_material.albedo_color = Color.LIGHT_GREEN
-			on_material.albedo_color = Color.GREEN
-		update_positions()
-		if ingredient.type_index == 3:
-			on_finished()
+	if ingredient is Bread:
+		on_finished(ingredient)
+		ingredient. clean_up_bread()
 	
-func on_finished():
+func on_finished(ingredient: Node3D):
 	$SandwichEatParticles.restart()
 	$SandwichEatParticles.emitting = true
-	if $ActualFlavorProfile.compare($TargetFlavorProfile):
-		# get_parent().good_sandwich_event()
+	if ingredient.get_actual_flavor_profile() .compare($TargetFlavorProfile):
+		get_parent().good_sandwich_event()
 		print("Good Sandwich")
 	else:
-		# get_parent().bad_sandwich_event()
+		get_parent().bad_sandwich_event()
 		print("Bad Sandwich")
 		
 	GlobalEvents.sandwich_completed.emit(get_parent())
 	clean_up_bread()
 	
 func clean_up_bread():
-	for i in ingredients:
-		i.queue_free()
-	ingredients.clear()
+	
 	$ActualFlavorProfile.clear()
-	# randomize_target()
+	randomize_target()
 	
 func remove_from_sandwich(ingredient: Node3D):
 	var a = ingredient.get_flavor_amounts()

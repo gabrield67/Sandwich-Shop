@@ -58,7 +58,7 @@ func _process(delta: float) -> void:
 	# handle grabbed object
 	if grabbed_object:
 		#cardHeight = clamp(cardHeight+delta*6,0,liftHeight);
-		grabbed_object.position = get_grab_position()
+		grabbed_object.update_position( get_grab_position())
 		
 			
 	if prev_grabbed_object:
@@ -94,22 +94,26 @@ func _input(event: InputEvent) -> void:
 				if grabbed_object:
 					grabbed_object.on_grab()
 					$"Pickup Sound".play()
-					
-					if grabbed_object.bread:
-						grabbed_object.bread.remove_from_sandwich(grabbed_object)
+					if grabbed_object is Ingredient:
+						if grabbed_object.bread:
+							grabbed_object.bread.remove_from_sandwich(grabbed_object)
 				firstPress = false
 		elif event.button_index == 1 and not event.is_pressed():
 			
 			#prevCardHeight = 3
 			if grabbed_object:
-				
-				if grabbed_object.bread:
-					grabbed_object.bread.material_off()
-					grabbed_object.bread.add_to_sandwich(grabbed_object)
-				else:
-					$"Drop Sound".play()
-				grabbed_object.isHeld = false
-				prev_grabbed_object = grabbed_object
+				if grabbed_object is Ingredient:
+					if grabbed_object.bread:
+						grabbed_object.bread.material_off()
+						grabbed_object.bread.add_to_sandwich(grabbed_object)
+					else:
+						$"Drop Sound".play()
+					grabbed_object.isHeld = false
+					prev_grabbed_object = grabbed_object
+				elif grabbed_object is Bread:
+					if grabbed_object.bread2:
+						grabbed_object.bread2. add_to_sandwich(grabbed_object)
+					grabbed_object.return_to_position()
 				
 				grabbed_object = null
 			firstPress = true
@@ -122,8 +126,7 @@ func get_mouse_world_pos(mouse_in:Vector2, try_grab:bool):
 	var params = PhysicsRayQueryParameters3D.new()
 	params.from = start
 	params.to = end 
-	if upgradeTime:
-		params.collide_with_areas = true
+	params.collide_with_areas = true
 	
 	var result = space.intersect_ray(params)
 	
@@ -158,10 +161,13 @@ func get_mouse_world_pos(mouse_in:Vector2, try_grab:bool):
 			if result.collider is Ingredient:
 				#print("here1")
 				if try_grab:
-					grabbed_object = result.collider
-					grabbed_object.isHeld = true
-					#print("here2")
-					cardHeight = 0
+					if result.collider.onBread:
+						grabbed_object = result.collider.bread
+					else:
+						grabbed_object = result.collider
+						grabbed_object.isHeld = true
+						#print("here2")
+						cardHeight = 0
 				else:
 					if hover_object:
 						if hover_object != result.collider:
@@ -171,6 +177,9 @@ func get_mouse_world_pos(mouse_in:Vector2, try_grab:bool):
 					hover_object.isHovered = true
 					hover_object.on_hover()
 			else:
+				if try_grab:
+					if result.collider is Bread:
+						grabbed_object = result.collider
 				if hover_object:
 					hover_object.isHovered = false
 					hover_object.on_stop_hover()

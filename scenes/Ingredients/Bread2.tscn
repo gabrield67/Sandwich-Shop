@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" uid="uid://b3riyemk3xika" path="res://scenes/Ingredients/bread2.gd" id="1_l08gk"]
 [ext_resource type="PackedScene" uid="uid://ecpkd4q734jf" path="res://scenes/FlavorProfile.tscn" id="2_3axwd"]
-[ext_resource type="PackedScene" uid="uid://ju7u3wbxyx7i" path="res://models/breadMesh.tscn" id="3_wj4c1"]
 [ext_resource type="AudioStream" uid="uid://bhebxqcor48g" path="res://sounds/bell_01_rubber_duck_oga.ogg" id="4_x1367"]
 [ext_resource type="AudioStream" uid="uid://b54m7lsq21hkc" path="res://sounds/spring_07_rubber_duck.ogg" id="5_d22a3"]
 [ext_resource type="PackedScene" uid="uid://bdh8u52n0jw4m" path="res://assets/Sandwich Eat Particles.tscn" id="6_3oe6v"]
+[ext_resource type="PackedScene" uid="uid://caddp2wlf43k2" path="res://models/raccoon_head.tscn" id="7_l08gk"]
 [ext_resource type="PackedScene" uid="uid://bsdvlbrb60p7d" path="res://assets/Sauce Particles.tscn" id="7_wk8s5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kf4f7"]
-size = Vector3(3.1587524, 1.6318493, 3)
+size = Vector3(3.159, 10, 3)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3deqp"]
 transparency = 1
@@ -30,14 +30,11 @@ debug_fill = false
 [node name="ActualFlavorProfile" parent="." unique_id=414758302 instance=ExtResource("2_3axwd")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.5407626, 1.6563432)
 
-[node name="bread" parent="." unique_id=338320632 instance=ExtResource("3_wj4c1")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
-
 [node name="WinSound" type="AudioStreamPlayer" parent="." unique_id=1122598284]
 stream = ExtResource("4_x1367")
 
 [node name="TargetFlavorProfile" parent="." unique_id=443898979 instance=ExtResource("2_3axwd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9594035, -1.6379085)
+transform = Transform3D(-0.9999247, 0, 0.01226934, 0, 1, 0, -0.01226934, 0, -0.9999247, 0, 2.5105295, -1.6379085)
 
 [node name="LoseSound" type="AudioStreamPlayer" parent="." unique_id=859498381]
 stream = ExtResource("5_d22a3")
@@ -50,5 +47,10 @@ mesh = SubResource("BoxMesh_4ncmt")
 
 [node name="Sauce Particles" parent="." unique_id=1058675559 instance=ExtResource("7_wk8s5")]
 
+[node name="raccoonHead" parent="." unique_id=1241450067 instance=ExtResource("7_l08gk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2457006, 0)
+
+[connection signal="area_entered" from="." to="." method="on_entered_area"]
+[connection signal="area_exited" from="." to="." method="on_exited_area"]
 [connection signal="body_entered" from="." to="." method="on_entered"]
 [connection signal="body_exited" from="." to="." method="on_exited"]

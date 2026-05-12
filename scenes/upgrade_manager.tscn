@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c54v7gf8e74j5" path="res://scenes/Ingredients/Bread.tscn" id="2_076jq"]
 [ext_resource type="PackedScene" uid="uid://b8kmk2ebsnyy5" path="res://scenes/Sauce Machine/SauceMachine.tscn" id="3_076jq"]
 [ext_resource type="PackedScene" uid="uid://drqoaqwvff31j" path="res://scenes/UI/Sandwich Counter.tscn" id="4_p44lo"]
+[ext_resource type="PackedScene" uid="uid://bp6uicgtfnymv" path="res://scenes/Ingredients/Bread2.tscn" id="5_yx8ru"]
 
 [node name="UpgradeManager" type="Node3D" unique_id=357130373]
 script = ExtResource("1_ssrsn")
@@ -58,3 +59,15 @@ light_energy = 0.0
 [node name="SauceMachine4_light" type="SpotLight3D" parent="." unique_id=553656335]
 transform = Transform3D(1, 0, 0, 0, -0.055786643, 0.9984427, 0, -0.9984427, -0.055786643, 10.604224, 2.501734, 5.912757)
 light_energy = 0.0
+
+[node name="Racoon" parent="." unique_id=123046126 instance=ExtResource("5_yx8ru")]
+transform = Transform3D(-0.9999304, 0, 0.011798259, 0, 1, 0, -0.011798259, 0, -0.9999304, -2.401972, 2.0488968, -6.7798147)
+
+[node name="Racoon2" parent="." unique_id=1479532961 instance=ExtResource("5_yx8ru")]
+transform = Transform3D(-0.9999304, 0, 0.011798259, 0, 1, 0, -0.011798259, 0, -0.9999304, -9.4286375, 2.0488968, -6.7798147)
+
+[node name="Racoon3" parent="." unique_id=326963401 instance=ExtResource("5_yx8ru")]
+transform = Transform3D(-0.9999304, 0, 0.011798259, 0, 1, 0, -0.011798259, 0, -0.9999304, 9.494832, 2.0488968, -6.7798147)
+
+[node name="Racoon4" parent="." unique_id=262371745 instance=ExtResource("5_yx8ru")]
+transform = Transform3D(-0.9999304, 0, 0.011798259, 0, 1, 0, -0.011798259, 0, -0.9999304, 2.4681664, 2.0488968, -6.7798147)

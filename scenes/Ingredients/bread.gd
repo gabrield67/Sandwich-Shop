@@ -13,12 +13,16 @@ var is_active = true;
 
 var original_size
 var original_size_plate
+var final_bread = false
+var original_position
 
+var bread2
 
 @export var ingredients = [];
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	original_position = position
 	$MeshInstance3D.visible = false
 	original_size = $bread.scale
 	original_size_plate =  $Plate.scale
@@ -47,11 +51,7 @@ func randomize_target() -> void:
 		var ind = randi_range(0,2	)
 		a[ind] = 1
 	
-		$TargetFlavorProfile.add_flavor( a[0]
-		,a[1]
-		,a[2]
-		,a[3]
-		)
+		#$TargetFlavorProfile.add_flavor( a[0],a[1],a[2],a[3])
 
 func on_entered(body: Node3D) -> void:
 	if is_active:
@@ -91,21 +91,24 @@ func add_to_sandwich(ingredient: Node3D):
 			particle_material.color = ingredient.sauce_colors[ingredient.sauce_index]
 		ingredient.handle_sauce($ActualFlavorProfile)
 		if $ActualFlavorProfile.compare($TargetFlavorProfile):
+			pass
 			#off_material.albedo_color = Color.LIGHT_GREEN
 			#on_material.albedo_color = Color.GREEN
-			on_finished()
+			#on_finished()
 		$"Sauce Particles".restart()
 		$"Sauce Particles".emitting = true
 		pass 
 	else:
 		ingredients.push_back(ingredient)
+		ingredient.onBread = true
 		var a = ingredient.get_flavor_amounts()
 		ingredient.play_add_to_sandwich()
 		$ActualFlavorProfile.add_flavor(a[0],a[1], a[2], a[3])
 		if $ActualFlavorProfile.compare($TargetFlavorProfile):
+			pass
 			#off_material.albedo_color = Color.LIGHT_GREEN
 			#on_material.albedo_color = Color.GREEN
-			on_finished()
+			#on_finished()
 		update_positions()
 		if ingredient.type_index == 3:
 			on_finished()
@@ -131,7 +134,10 @@ func clean_up_bread():
 	on_material.albedo_color = Color.PINK
 	off_material.albedo_color = Color.WHITE
 	randomize_target()
+	return_to_position()
 	
+func get_actual_flavor_profile() -> Node3D:
+	return $ActualFlavorProfile
 func remove_from_sandwich(ingredient: Node3D):
 	var a = ingredient.get_flavor_amounts()
 	$ActualFlavorProfile.remove_flavor(a[0],a[1], a[2], a[3])
@@ -156,3 +162,14 @@ func make_inactive() -> void:
 	$bread.visible = false
 	$TargetFlavorProfile.visible = false
 	pass
+	
+func return_to_position()  -> void:
+	position = original_position
+	update_positions()
+	
+func on_grab() -> void:
+	pass
+
+func update_position(position) -> void:
+	self.position = position
+	update_positions()
