@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://3w0ijqffplj7"]
+
+[ext_resource type="PackedScene" uid="uid://bl0sqjucedn1b" path="res://models/largeCrystal.glb" id="1_bd5eq"]
+[ext_resource type="Material" uid="uid://dpsrxlweilyva" path="res://colors/lettuceGreen.tres" id="2_ul7d2"]
+
+[node name="radiationCrystal" unique_id=1601865548 instance=ExtResource("1_bd5eq")]
+transform = Transform3D(-0.8660254, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, -0.8660254, 0, 0, 0)
+
+[node name="Cube" parent="." index="0" unique_id=377689673]
+transform = Transform3D(0.49107096, 0, -0.87111956, 0, 1, 0, 0.87111956, 0, 0.49107096, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_ul7d2")
