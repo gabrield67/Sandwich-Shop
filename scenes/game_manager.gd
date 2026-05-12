@@ -104,7 +104,7 @@ func _input(event: InputEvent) -> void:
 			if grabbed_object:
 				if grabbed_object is Ingredient:
 					if grabbed_object.bread:
-						print('drop bread')
+						#print('drop bread')
 						grabbed_object.bread.material_off()
 						grabbed_object.bread.add_to_sandwich(grabbed_object)
 					else:

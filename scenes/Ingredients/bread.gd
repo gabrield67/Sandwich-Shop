@@ -58,7 +58,7 @@ func on_entered(body: Node3D) -> void:
 		if body is Ingredient:
 			
 			if(body):
-				print ('Entered Bread')
+				#print ('Entered Bread')
 				body.bread = self;
 				$MeshInstance3D.visible = true
 				$Plate.set_surface_override_material(0, on_material)
@@ -69,7 +69,7 @@ func on_entered(body: Node3D) -> void:
 func on_exited(body: Node3D) -> void:
 	if is_active:
 		if body is Ingredient:
-			print ('Exit Bread')
+			#print ('Exit Bread')
 			if body:
 				if body.bread == self:
 					body.bread = null
