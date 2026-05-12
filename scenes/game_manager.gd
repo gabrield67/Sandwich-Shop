@@ -104,6 +104,7 @@ func _input(event: InputEvent) -> void:
 			if grabbed_object:
 				if grabbed_object is Ingredient:
 					if grabbed_object.bread:
+						print('drop bread')
 						grabbed_object.bread.material_off()
 						grabbed_object.bread.add_to_sandwich(grabbed_object)
 					else:
@@ -136,30 +137,32 @@ func get_mouse_world_pos(mouse_in:Vector2, try_grab:bool):
 		#print(result.collider.get_class())
 		#print("here0")
 		if upgradeTime:
-			print('upgrade time')
+			#print('upgrade time')
 			print(result.collider.get_class())
 			if result.collider is Upgrade_Manager:
-				print('upgrade manager')
+				#print('upgrade manager')
+				pass
 			if result.collider is Ingredient:
-				print('ingredient')
+				#print('ingredient')
+				pass
 			if hover_object:
 					hover_object.isHovered = false
 					hover_object.on_stop_hover()
 			if result.collider is Bread:
-				print('bread')
+				#print('bread')
 				if try_grab:
 					if not result.collider.is_active:
 						result.collider.make_active()
 						stopUpgradeTime()
 			if result.collider is Bread2:
-				print('bread2')
+				#print('bread2')
 				if try_grab:
 					if not result.collider.is_active:
 						result.collider.make_active()
 						stopUpgradeTime()
 						
 			if result.collider is SauceMachine:
-				print('sauce')
+				#print('sauce')
 				if try_grab:
 					if not result.collider.is_active:
 						result.collider.make_active()

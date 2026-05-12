@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bsdvlbrb60p7d" path="res://assets/Sauce Particles.tscn" id="7_ok4gj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kf4f7"]
-size = Vector3(4, 5, 6)
+size = Vector3(2.5, 3, 6)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3deqp"]
 transparency = 1
