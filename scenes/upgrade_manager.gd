@@ -47,6 +47,19 @@ func init_bread():
 	$Bread4.min_target_flavors = min_target_flavors
 	$Bread4. randomize_target()
 	
+	$Racoon.min_target_flavors = min_target_flavors
+	$Racoon.max_target_flavors = max_target_flavors
+	#$Racoon. randomize_target()
+	$Racoon2.max_target_flavors = max_target_flavors
+	$Racoon2.min_target_flavors = min_target_flavors
+	#$Racoon2. randomize_target()
+	$Racoon3.max_target_flavors = max_target_flavors
+	$Racoon3.min_target_flavors = min_target_flavors
+	#$Racoon3. randomize_target()
+	$Racoon4.max_target_flavors = max_target_flavors
+	$Racoon4.min_target_flavors = min_target_flavors
+	#$Racoon4. randomize_target()
+	
 func startUpgradeTime():
 	get_parent().startUpgradeTime()
 	

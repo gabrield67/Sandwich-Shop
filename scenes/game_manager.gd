@@ -77,7 +77,7 @@ func set_parameters():
 	
 	$UpgradeManager.min_target_flavors = $Parameters.min_target_flavors
 	$UpgradeManager.max_target_flavors = $Parameters.max_target_flavors
-	#$UpgradeManager.init_bread() 
+	$UpgradeManager.init_bread() 
 	
 	$HUD.debug_upgrades =  $Parameters.debug_upgrades
 	
@@ -108,6 +108,7 @@ func _input(event: InputEvent) -> void:
 						grabbed_object.bread.add_to_sandwich(grabbed_object)
 					else:
 						$"Drop Sound".play()
+						grabbed_object.queue_free()
 					grabbed_object.isHeld = false
 					prev_grabbed_object = grabbed_object
 				elif grabbed_object is Bread:
@@ -214,9 +215,9 @@ func bad_sandwich_event():
 func startUpgradeTime():
 	upgradeTime = true
 	$IngredientSpawner.upgradeTime = true
-	$Parameters.conveyor_move_speed = $Parameters.conveyor_move_speed*1.03
+	$Parameters.conveyor_move_speed = $Parameters.conveyor_move_speed*1.02
 	$Parameters.max_target_flavors =$Parameters.max_target_flavors+.5
-	$Parameters.ingredient_spawn_wait_time =$Parameters.ingredient_spawn_wait_time*.95
+	$Parameters.ingredient_spawn_wait_time =$Parameters.ingredient_spawn_wait_time*.99
 	$DirectionalLight3D.light_energy =0
 	set_parameters()
 	$UpgradeManager.startUpgradeLights()

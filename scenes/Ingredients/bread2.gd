@@ -7,7 +7,8 @@ var off_material
 var is_active = true;
 
 var original_size
-
+var min_target_flavors = 2
+var max_target_flavors = 4
 var target_flavors: Array
 var current_flavors: Array = [0, 0, 0, 0]
 
@@ -31,7 +32,7 @@ func randomize_target() -> void:
 	
 	randomize()
 	
-	var total = randi_range(3,5)
+	var total = randi_range(min_target_flavors,max_target_flavors)
 	
 	for i in range(total):
 		var a = [0,0,0,0]
@@ -93,6 +94,8 @@ func on_finished(ingredient: Node3D):
 	if ingredient.get_actual_flavor_profile() .compare($TargetFlavorProfile):
 		get_parent().good_sandwich_event()
 		print("Good Sandwich")
+		if ingredient.get_actual_flavor_profile() .compare_exact($TargetFlavorProfile):
+			get_parent().good_sandwich_event()
 	else:
 		get_parent().bad_sandwich_event()
 		print("Bad Sandwich")

@@ -99,6 +99,12 @@ func compare(other:Node3D) -> bool:
 		return true
 	else:
 		return false
+
+func compare_exact(other:Node3D) -> bool:
+	if other.flavor1.size() == flavor1.size() and other.flavor2.size() == flavor2.size()  and other.flavor3.size() == flavor3.size()  and other.flavor4.size() == flavor4.size():
+		return true
+	else:
+		return false
 		
 func clear() -> void:
 	for i in flavor1:
