@@ -1,8 +1,8 @@
 extends Node
 
 #ingredient spawner
-var conveyor_move_speed = .5
-var ingredient_spawn_wait_time = 3
+var conveyor_move_speed = .9
+var ingredient_spawn_wait_time = 2.5
 
 ##Chance when bread randomly selected it will stay bread 
 var bread_ingredient_frequency = .75

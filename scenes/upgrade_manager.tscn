@@ -34,12 +34,17 @@ transform = Transform3D(0.53091055, 0, -0.84742785, 0, 1, 0, 0.84742785, 0, 0.53
 transform = Transform3D(0.5802482, 0, -0.8144397, 0, 1, 0, 0.8144397, 0, 0.5802482, 10.431595, 0, 6.1263647)
 
 [node name="Bread4_light" type="SpotLight3D" parent="." unique_id=1387518698]
+transform = Transform3D(1, 0, 0, 0, -0.03127117, 0.99951094, 0, -0.99951094, -0.03127117, -7.8838153, 3.1463041, 0)
 
 [node name="Bread3_light" type="SpotLight3D" parent="." unique_id=1258138221]
+transform = Transform3D(1, 0, 0, 0, -0.0031764891, 0.99999493, 0, -0.99999493, -0.0031764891, 7.812482, 2.671819, 0)
+spot_range = 3.376309
 
 [node name="Bread4_light2" type="SpotLight3D" parent="." unique_id=593323215]
+transform = Transform3D(1, 0, 0, 0, -0.031445608, 0.99950546, 0, -0.99950546, -0.031445608, -8.139338, 5.756592, -6.1970215)
 
 [node name="Bread3_light2" type="SpotLight3D" parent="." unique_id=1507871108]
+transform = Transform3D(1, 0, 0, 0, -0.10350425, 0.994629, 0, -0.994629, -0.10350425, 8.976089, 5.2397156, -6.681235)
 
 [node name="SauceMachine_light" type="SpotLight3D" parent="." unique_id=772677100]
 
@@ -62,4 +67,4 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 8.818903, 1.3022072, -6
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2.872086, 1.5250144, -6.661956)
 
 [node name="SandwichCounter" parent="." unique_id=889999482 instance=ExtResource("5_yx8ru")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.429047, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26598716, 3.6350398, 0.71710795)

@@ -1,5 +1,5 @@
 class_name Raccoon
-extends Node3D
+extends Area3D
 
 @export var raccoonTime: int = 10
 
@@ -19,6 +19,10 @@ var is_active = true
 var min_target_flavors = 2
 var max_target_flavors = 4
 
+var original_model_pos 
+var needs_to_enter = true
+var enter_timer = 0.0
+
 var original_size	;
 
 signal sandwich_completed(raccoon)
@@ -27,7 +31,7 @@ var slot: Node = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	original_model_pos =$WholeRaccoonModel.position
 	# set up timer
 	timer.wait_time = raccoonTime
 	progressBar.max_value = raccoonTime
@@ -47,14 +51,27 @@ func _ready() -> void:
 	timer.start()
 	
 	if test_raccoon_spawn:
-		raccoon_click.input_event.connect(_on_input_event)
+		pass
+		#raccoon_click.input_event.connect(_on_input_event)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	progressBar.value = timer.time_left
 	thought_bubble_label.text = str(current_flavors)
-
+	if is_active:
+		if needs_to_enter:
+			
+			$TargetFlavorProfile.visible = false
+			$WholeRaccoonModel.position = original_model_pos - Vector3(0,0,(2-enter_timer))
+			enter_timer = enter_timer + delta  
+			if enter_timer >= 2:
+				needs_to_enter = false;
+				$TargetFlavorProfile.visible = true
+				$WholeRaccoonModel.position = original_model_pos
+				enter_timer = 0
+			
+			
 func randomize_target():
 	$TargetFlavorProfile.clear()
 	
@@ -76,20 +93,17 @@ func _on_input_event(camera, event, position, normal, shape_idx):
 			pass
 			#emit_signal("sandwich_completed", self)
 	
-func _on_ingredient_hover(ingredient_flavors):
-	print("hovering")
-	current_flavors = flv.add_new_flavors(current_flavors, ingredient_flavors)
-	return current_flavors
-	
-func _on_ingredient_exit(ingredient_flavors):
-	current_flavors = flv.remove_new_flavors(current_flavors, ingredient_flavors)
-	return current_flavors
-	print("exiting")
+
 
 func make_active() -> void:
-	pass
-
+	is_active  = true
+	$TargetFlavorProfile.visible = true
+	pass 
+	
 func make_inactive() -> void:
+	is_active = false
+	$WholeRaccoonModel.position = original_model_pos - Vector3(0,0,(2))
+	$TargetFlavorProfile.visible = false
 	pass
 	
 func on_entered_area(area: Area3D) -> void:
@@ -136,5 +150,5 @@ func on_finished(ingredient: Node3D):
 	clean_up_raccoon()
 	
 func clean_up_raccoon():
-	
+	needs_to_enter = true
 	randomize_target()

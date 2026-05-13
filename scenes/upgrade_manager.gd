@@ -10,7 +10,7 @@ func _ready() -> void:
 	$Bread4.make_inactive()
 	$Bread3.make_inactive()
 	
-	$Raccoon2.make_inactive()
+	$Raccoon.make_inactive()
 	$Raccoon3.make_inactive()
 	init_bread()
 	pass # Replace with function body.
@@ -73,7 +73,7 @@ func startUpgradeLights():
 		$Bread4_light.light_energy = 10
 	if not $Raccoon3.is_active:
 		$Bread3_light2.light_energy = 10
-	if not $Raccoon2.is_active:
+	if not $Raccoon.is_active:
 		$Bread4_light2.light_energy = 10
 	if not $SauceMachine.is_active:
 		$SauceMachine_light.light_energy = 10

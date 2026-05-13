@@ -39,8 +39,8 @@ func addBox(number_of_sandwiches: float, place: int, filled:bool) ->void:
 	else: 
 		ui_array.push_back(static_body)
 	self.add_child(static_body)
-	static_body.position = position -Vector3(totalLength*1.0/2,0,0) + Vector3((place+.5)*totalLength*1.0/number_of_sandwiches,0,0)
-	static_body.scale = Vector3(totalLength*.9/number_of_sandwiches,.5,.5)	
+	static_body.position = position -Vector3(totalLength*1.5/2,0,0) + Vector3((place+.5)*totalLength*1.5/number_of_sandwiches,0,0)
+	static_body.scale = Vector3(totalLength*1.4/number_of_sandwiches,.5,.5)	
 	pass
 
 func addSandwich():

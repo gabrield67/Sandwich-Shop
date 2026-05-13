@@ -8,18 +8,16 @@
 [ext_resource type="PackedScene" uid="uid://ecpkd4q734jf" path="res://scenes/FlavorProfile.tscn" id="6_epiun"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_fnbhh"]
-viewport_path = NodePath("Timer Display/Timer Viewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gvxd3"]
 size = Vector3(1.4257813, 4.585205, 3.2268012)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_axfwu"]
-viewport_path = NodePath("Flavor Display/Flavor Viewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vwr5m"]
-size = Vector3(4, 5, 5)
+size = Vector3(4, 4, 4)
 
-[node name="Raccoon" type="Node3D" unique_id=1781054978]
+[node name="Raccoon" type="Area3D" unique_id=1000162927]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 script = ExtResource("1_fnbhh")
 test_raccoon_spawn = true
@@ -57,14 +55,14 @@ transparent_bg = true
 
 [node name="Thought Bubble" parent="Flavor Display/Flavor Viewport" unique_id=1401371206 instance=ExtResource("5_axfwu")]
 
-[node name="Area3D" type="Area3D" parent="." unique_id=1993844728]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1394801554]
-shape = SubResource("BoxShape3D_vwr5m")
-
 [node name="SandwichEatParticles" parent="." unique_id=2146837341 instance=ExtResource("5_epiun")]
 
 [node name="TargetFlavorProfile" parent="." unique_id=414758302 instance=ExtResource("6_epiun")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 2.0979843, 1.4099163)
 
-[connection signal="area_entered" from="Area3D" to="." method="on_entered_area"]
-[connection signal="area_exited" from="Area3D" to="." method="on_exited_area"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1394801554]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2670898, -0.36985)
+shape = SubResource("BoxShape3D_vwr5m")
+
+[connection signal="area_entered" from="." to="." method="on_entered_area"]
+[connection signal="area_exited" from="." to="." method="on_exited_area"]

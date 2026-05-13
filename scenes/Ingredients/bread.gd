@@ -104,13 +104,15 @@ func add_to_sandwich(ingredient: Node3D):
 		ingredient.onBread = true
 		var a = ingredient.get_flavor_amounts()
 		ingredient.play_add_to_sandwich()
+		update_positions()
+		print('on bread')
 		$ActualFlavorProfile.add_flavor(a[0],a[1], a[2], a[3])
 		if $ActualFlavorProfile.compare($TargetFlavorProfile):
 			pass
 			#off_material.albedo_color = Color.LIGHT_GREEN
 			#on_material.albedo_color = Color.GREEN
 			#on_finished()
-		update_positions()
+		
 		if ingredient.type_index == 3:
 			on_finished()
 	
