@@ -27,7 +27,7 @@ test_raccoon_spawn = true
 [node name="WholeRaccoonModel" parent="." unique_id=1874828909 instance=ExtResource("2_gvxd3")]
 
 [node name="Timer Display" type="Sprite3D" parent="." unique_id=2102177136]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0103045, -0.82335067, 3.6231132)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0103045, -0.8910922, 0.98120373)
 billboard = 1
 texture = SubResource("ViewportTexture_fnbhh")
 

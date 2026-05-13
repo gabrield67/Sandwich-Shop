@@ -54,8 +54,8 @@ func _ready() -> void:
 	#TODO change this after animations come in
 	await get_tree().create_timer(.5).timeout
 	#thought_bubble_display.show()
-	timer_display.show()
-	timer.start()
+	#timer_display.show()
+	#timer.start()
 	
 	if test_raccoon_spawn:
 		pass
@@ -159,6 +159,7 @@ func on_finished(ingredient: Node3D):
 		
 	GlobalEvents.sandwich_completed.emit(get_parent())
 	thought_bubble_display.hide()
+	timer_display.hide()
 	clean_up_raccoon()
 	
 func clean_up_raccoon():
