@@ -52,3 +52,5 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 
 [node name="Flavor Chart" parent="Flavor Display/Flavor Viewport" unique_id=1923621798 instance=ExtResource("5_ow5cj")]
+notch_outline_color = Color(0, 0, 0, 1)
+notch_outline_width = 1.0

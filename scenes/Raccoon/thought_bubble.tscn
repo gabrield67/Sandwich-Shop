@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://d2r8uv00axk3i"]
 
-[ext_resource type="Texture2D" uid="uid://btgchfc0noln1" path="res://assets/thought_bubble.png" id="1_7s8w5"]
+[ext_resource type="Texture2D" uid="uid://by1fkdmy2g66f" path="res://assets/thought_bubble.svg" id="1_mmgmr"]
 [ext_resource type="PackedScene" uid="uid://cfqqv7ftdfd1g" path="res://scenes/UI/flavor_chart.tscn" id="2_mmgmr"]
 
 [node name="Thought Bubble" type="TextureRect" unique_id=1401371206]
+self_modulate = Color(0.831761, 0.83176106, 0.831761, 1)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -15,7 +16,7 @@ offset_right = 150.0
 offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_7s8w5")
+texture = ExtResource("1_mmgmr")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="." unique_id=428152943]
@@ -37,3 +38,7 @@ theme_override_font_sizes/font_size = 30
 
 [node name="Flavor Chart" parent="." unique_id=1923621798 instance=ExtResource("2_mmgmr")]
 layout_mode = 1
+spacing = 6.0
+notch_outline_color = Color(1, 1, 1, 1)
+notch_outline_width = 2.0
+notch_gap = 8.0

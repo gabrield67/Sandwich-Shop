@@ -61,6 +61,7 @@ mesh = SubResource("CylinderMesh_3deqp")
 
 [node name="Flavor Display" type="Sprite3D" parent="." unique_id=799888542]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5456265, 0.5309634, 2.61056)
+billboard = 1
 texture = SubResource("ViewportTexture_ok4gj")
 
 [node name="Flavor Viewport" type="SubViewport" parent="Flavor Display" unique_id=215884474]
@@ -83,6 +84,8 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 35
 
 [node name="Flavor Chart" parent="Flavor Display/Flavor Viewport" unique_id=1923621798 instance=ExtResource("8_yg326")]
+notch_outline_color = Color(0, 0, 0, 1)
+notch_outline_width = 1.0
 
 [connection signal="body_entered" from="." to="." method="on_entered"]
 [connection signal="body_exited" from="." to="." method="on_exited"]
