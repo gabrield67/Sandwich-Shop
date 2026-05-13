@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bh5epw1konr3x" path="res://assets/waste/trash_empty.png" id="4_l8xe2"]
 [ext_resource type="Texture2D" uid="uid://dw6i7sv2xbbn5" path="res://assets/Pause.png" id="6_0qpk7"]
 [ext_resource type="Texture2D" uid="uid://csjo3m4bfhlub" path="res://assets/Pause_red.png" id="7_ucsqe"]
+[ext_resource type="Texture2D" uid="uid://jvi0ufca2i7" path="res://assets/restart.png" id="8_a0qax"]
 
 [node name="HUD" type="CanvasLayer" unique_id=1287460498]
 process_mode = 3
@@ -72,4 +73,17 @@ texture_pressed = ExtResource("7_ucsqe")
 ignore_texture_size = true
 stretch_mode = 0
 
+[node name="Restart" type="TextureButton" parent="." unique_id=943889311]
+offset_left = 101.0
+offset_top = 25.0
+offset_right = 146.0
+offset_bottom = 79.0
+scale = Vector2(1.1599994, 1)
+toggle_mode = true
+texture_normal = ExtResource("8_a0qax")
+texture_pressed = ExtResource("8_a0qax")
+ignore_texture_size = true
+stretch_mode = 0
+
 [connection signal="pressed" from="TextureButton" to="." method="pause_click"]
+[connection signal="pressed" from="Restart" to="." method="restart_click"]

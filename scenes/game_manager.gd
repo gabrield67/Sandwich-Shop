@@ -250,3 +250,5 @@ func _on_ingredients_wasted():
 	if wasteCount > maxWaste:
 		print("Max Ingredients Wasted")
 		GlobalEvents.max_ingredients_wasted.emit()
+func on_loss() -> void:
+	$LossScreen.show_screen()

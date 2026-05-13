@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://btcll58epxffn"]
+
+[ext_resource type="PackedScene" uid="uid://caddp2wlf43k2" path="res://models/raccoon_head.tscn" id="1_7vpr3"]
+[ext_resource type="Script" uid="uid://yh2jtny4e83h" path="res://scenes/UI/loss_screen.gd" id="1_j75l8"]
+
+[node name="LossScreen" type="Node3D" unique_id=1027865471]
+script = ExtResource("1_j75l8")
+
+[node name="raccoonHead" parent="." unique_id=1241450067 instance=ExtResource("1_7vpr3")]

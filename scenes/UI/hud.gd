@@ -56,3 +56,6 @@ func pause_click() -> void:
 	else:
 		get_tree().paused = true
 		isPaused = true
+		
+func restart_click() -> void:
+	get_tree().reload_current_scene()

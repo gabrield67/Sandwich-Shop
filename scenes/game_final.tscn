@@ -9,13 +9,14 @@
 [ext_resource type="AudioStream" uid="uid://cuwtp2lhf4g5" path="res://sounds/music/rpg_brandon_morris_oga_hael_DB.ogg" id="7_oa7co"]
 [ext_resource type="PackedScene" uid="uid://b4kkoakbexh8r" path="res://models/walls.tscn" id="8_pxs0x"]
 [ext_resource type="PackedScene" uid="uid://cmanph4x4jobr" path="res://scenes/upgrade_manager.tscn" id="9_qu6ye"]
-[ext_resource type="PackedScene" path="res://models/trash_base.tscn" id="10_vdo6g"]
-[ext_resource type="PackedScene" path="res://models/trash_lid.tscn" id="11_hf07t"]
+[ext_resource type="PackedScene" uid="uid://yahuxvrjhitd" path="res://models/trash_base.tscn" id="10_vdo6g"]
+[ext_resource type="PackedScene" uid="uid://dt2rm3uiki2lg" path="res://models/trash_lid.tscn" id="11_hf07t"]
 [ext_resource type="Material" uid="uid://sb1tl5fge5x2" path="res://colors/slimeYellow.tres" id="12_ub81o"]
+[ext_resource type="PackedScene" uid="uid://paloirtdcgga" path="res://scenes/Monster/Monster.tscn" id="13_bxin3"]
 [ext_resource type="Material" uid="uid://7gn0t4diki3s" path="res://colors/eyeDarkCharcoal.tres" id="14_hkjom"]
-[ext_resource type="PackedScene" uid="uid://b60vg43gdsml4" path="res://models/monster_hand.tscn" id="15_21cbb"]
-[ext_resource type="PackedScene" path="res://scenes/parameters.tscn" id="17_ldmpq"]
-[ext_resource type="PackedScene" path="res://scenes/UI/game_timer.tscn" id="17_s2b54"]
+[ext_resource type="PackedScene" uid="uid://co3tj1g5g5g38" path="res://scenes/parameters.tscn" id="17_ldmpq"]
+[ext_resource type="PackedScene" uid="uid://bfd7ic8voya81" path="res://scenes/UI/game_timer.tscn" id="17_s2b54"]
+[ext_resource type="PackedScene" uid="uid://btcll58epxffn" path="res://scenes/UI/Loss Screen.tscn" id="17_xkgmc"]
 
 [sub_resource type="TorusMesh" id="TorusMesh_qosn7"]
 
@@ -174,24 +175,14 @@ direction = Vector3(0, 0, 1)
 gravity = Vector3(3.035, -0.15, 0)
 
 [node name="SewerHole" type="Node3D" parent="." unique_id=1301368767]
-transform = Transform3D(0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, 0.9975641, -2.245, 0, -2.208)
+transform = Transform3D(0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, 0.9975641, 11.032166, 0, 6.264655)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SewerHole" unique_id=1043650768]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 12.825, -0.057, 9.341)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 mesh = SubResource("CylinderMesh_qosn7")
 surface_material_override/0 = ExtResource("14_hkjom")
 
-[node name="AllMonster" type="Node3D" parent="SewerHole" unique_id=1786045459]
-transform = Transform3D(-0.5921214, 0.049014777, -0.8043566, 0.4768584, 0.82594305, -0.30070576, 0.64961374, -0.5616187, -0.5124317, 22.381, -2.955, 5.177)
-
-[node name="monsterHand" parent="SewerHole/AllMonster" unique_id=25484297 instance=ExtResource("15_21cbb")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12.59, 0.225, 5.54)
-
-[node name="monsterHand2" parent="SewerHole/AllMonster" unique_id=703297632 instance=ExtResource("15_21cbb")]
-transform = Transform3D(0.49999994, 0, 0, 0, 0.49999994, 0, 0, 0, 0.49999997, 8.86, 1.485, 5.85)
-
-[node name="monsterHand3" parent="SewerHole/AllMonster" unique_id=495911412 instance=ExtResource("15_21cbb")]
-transform = Transform3D(0.49999994, 0, 0, 0, 0.4999999, 0, 0, 0, 0.49999997, 9.725, 1.525, 4.555)
+[node name="Monster" parent="SewerHole" unique_id=1760694918 instance=ExtResource("13_bxin3")]
 
 [node name="SecretSauceApparatus" type="Node3D" parent="." unique_id=1782365273]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005, -7.8269696, 2.6072478)
@@ -242,3 +233,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.87959313, 1.1091151, -1.756
 [node name="Parameters" parent="." unique_id=1415527279 instance=ExtResource("17_ldmpq")]
 
 [node name="sauceFaucets" type="Node3D" parent="." unique_id=119371215]
+
+[node name="LossScreen" parent="." unique_id=1027865471 instance=ExtResource("17_xkgmc")]
+transform = Transform3D(-0.9999756, 0, 0.0069812285, 0, 1, 0, -0.0069812285, 0, -0.9999756, 0.256, 6.964, 9.162)

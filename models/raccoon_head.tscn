@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bgbau62uytqd5" path="res://models/raccoonHead.glb" id="1_ousl6"]
 [ext_resource type="Material" uid="uid://cujwxnb7cugkl" path="res://colors/trashGray.tres" id="2_f4w7d"]
+[ext_resource type="Script" uid="uid://dn5i1qeaspftt" path="res://models/raccoon_head.gd" id="2_i0lle"]
 [ext_resource type="Material" uid="uid://c58kryccqh2qk" path="res://colors/breadBrown.tres" id="3_eku7j"]
 [ext_resource type="Material" uid="uid://dbct6i3fm0wjg" path="res://colors/tomatoWhite.tres" id="4_lnwa2"]
 [ext_resource type="Material" uid="uid://8kf6dv73p3lv" path="res://colors/fishCharcoal.tres" id="5_ko7r5"]
@@ -10,29 +11,36 @@
 
 [sub_resource type="SphereMesh" id="SphereMesh_b0vlw"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_osptv"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_i0lle"]
+material = SubResource("StandardMaterial3D_osptv")
+
 [node name="raccoonHead" unique_id=1241450067 instance=ExtResource("1_ousl6")]
+script = ExtResource("2_i0lle")
 
-[node name="Cylinder" parent="." index="0" unique_id=690829603]
+[node name="Cylinder" parent="." index="0" unique_id=1387519303]
 surface_material_override/0 = ExtResource("2_f4w7d")
 
-[node name="Cylinder_001" parent="." index="1" unique_id=22450638]
-surface_material_override/0 = ExtResource("2_f4w7d")
-surface_material_override/1 = ExtResource("3_eku7j")
-
-[node name="Cylinder_002" parent="." index="2" unique_id=1762850606]
+[node name="Cylinder_001" parent="." index="1" unique_id=1464094898]
 surface_material_override/0 = ExtResource("2_f4w7d")
 surface_material_override/1 = ExtResource("3_eku7j")
 
-[node name="Cube" parent="." index="3" unique_id=1253062964]
+[node name="Cylinder_002" parent="." index="2" unique_id=288919583]
+surface_material_override/0 = ExtResource("2_f4w7d")
+surface_material_override/1 = ExtResource("3_eku7j")
+
+[node name="Cube" parent="." index="3" unique_id=1236861795]
 surface_material_override/0 = ExtResource("4_lnwa2")
 
-[node name="Cube_001" parent="." index="4" unique_id=98080658]
+[node name="Cube_001" parent="." index="4" unique_id=1476344236]
 surface_material_override/0 = ExtResource("5_ko7r5")
 
-[node name="Cylinder_003" parent="." index="5" unique_id=1476423244]
+[node name="Cylinder_003" parent="." index="5" unique_id=1358880317]
 surface_material_override/0 = ExtResource("5_ko7r5")
 
-[node name="Cylinder_004" parent="." index="6" unique_id=1047620435]
+[node name="Cylinder_004" parent="." index="6" unique_id=185650425]
 surface_material_override/0 = ExtResource("5_ko7r5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." index="7" unique_id=584003007]
@@ -45,3 +53,19 @@ transform = Transform3D(0.325, 0, 0, 0, 0.325, 0, 0, 0, 0.325, 0.3436672, 0.1600
 material_override = ExtResource("6_f4w7d")
 mesh = SubResource("SphereMesh_b0vlw")
 surface_material_override/0 = ExtResource("6_dvv7g")
+
+[node name="DeadInd1" type="MeshInstance3D" parent="." index="9" unique_id=245713086]
+transform = Transform3D(0.10339902, -0.2644174, 0, 0.10448752, 0.26166284, 0, 0, 0, 0.057, 0.337, 0.164, -1.163)
+mesh = SubResource("BoxMesh_i0lle")
+
+[node name="DeadInd2" type="MeshInstance3D" parent="." index="10" unique_id=1563038489]
+transform = Transform3D(-0.10448751, -0.26166287, 0, 0.10339903, -0.26441738, 0, 0, 0, 0.057, 0.337, 0.164, -1.163)
+mesh = SubResource("BoxMesh_i0lle")
+
+[node name="DeadInd3" type="MeshInstance3D" parent="." index="11" unique_id=1081015057]
+transform = Transform3D(0.10339902, -0.2644174, 0, 0.10448752, 0.26166284, 0, 0, 0, 0.057, -0.36, 0.164, -1.163)
+mesh = SubResource("BoxMesh_i0lle")
+
+[node name="DeadInd4" type="MeshInstance3D" parent="." index="12" unique_id=858994975]
+transform = Transform3D(-0.10448751, -0.26166287, 0, 0.10339903, -0.26441738, 0, 0, 0, 0.057, -0.36, 0.164, -1.163)
+mesh = SubResource("BoxMesh_i0lle")
