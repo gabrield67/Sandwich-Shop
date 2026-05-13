@@ -1,6 +1,7 @@
 class_name Ingredient
 extends StaticBody3D
 
+@onready var flavor_display = $"Flavor Display/Flavor Viewport/Label"
 
 var tomatoMesh = preload("res://models/tomato_mesh.tscn")
 var fishMesh = preload("res://models/fishBonesMesh.tscn")
@@ -29,6 +30,10 @@ var onBread = false
 
 var spawner
 
+@export var min_ingredient_flavors: int = 1
+@export var max_ingredient_flavors: int = 2
+var ingredient_flavors: Array[int] = [0, 0, 0, 0]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	original_size = scale
@@ -36,17 +41,16 @@ func _ready() -> void:
 	
 	randomize()
 	
-	
+	# instantiate ingredient
 	spawnedMesh = meshes[type_index].instantiate()
 	spawnedMesh.scale = Vector3(ingredient_scales [type_index],ingredient_scales [type_index],ingredient_scales [type_index])
 	add_child(spawnedMesh)
-	add_flavor(type_index + 1)
-	var dub = randi_range(0,1)
-	if dub >= 1:
-		add_flavor(randi_range(1,3))
+	
+	# handle flavors
+	generate_flavors()
+	flavor_display.text = str(ingredient_flavors)
 	#$FlavorProfile.add_flavor(3,4,2,3)
 	#print("new ingredient")
-	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -57,7 +61,6 @@ func _process(delta: float) -> void:
 			if time_to_despawn <= 0:
 				queue_free()
 				GlobalEvents.ingredients_wasted.emit()
-	pass
 	
 func assign_type_index() ->void:
 	type_index = randi_range(0, 2)
@@ -66,34 +69,36 @@ func assign_type_index() ->void:
 		if test > bread_ingredient_frequency:
 			type_index = randi_range(0, 2)
 
-func on_grab():
+func on_grab() -> void:
 	move_on_start = false
 	despawn = false
-	pass
 	#$MeshInstance3D/GPUParticles3D.restart()
 	#$MeshInstance3D/GPUParticles3D.emitting = true
 
-func on_hover():
+func on_hover() -> void:
 	scale = original_size * 1.2
-	pass
-func on_stop_hover():
+
+func on_stop_hover() -> void:
 	scale = original_size
-	pass
-	
-func add_flavor(f:int ) -> void:
-	if f == 1:
-		$FlavorProfile.add_flavor(1,0,0,0)
-	elif f == 2:
-		$FlavorProfile.add_flavor(0,1,0,0)
-	elif f == 3:
-		$FlavorProfile.add_flavor(0,0,1,0)
-	elif f == 4:
-		$FlavorProfile.add_flavor(0,0,0,1)
+		
+func generate_flavors() -> void:
+	# creates an array of ints where the sum is between the min and max ingredient flavors
+	randomize()
+
+	var final: Array[int] = [0, 0, 0, 0]
+	var total_sum: int = randi_range(min_ingredient_flavors, max_ingredient_flavors)
+
+	for i in total_sum:
+		var random_index: int = randi() % 4
+		final[random_index] += 1
+
+	ingredient_flavors = final
 
 func get_flavor_amounts() -> Array:
-	return $FlavorProfile.get_flavor_amounts()
+	return ingredient_flavors
 
 func play_add_to_sandwich() -> void:
 	$AddToSandwichSound.play()
+
 func update_position(position) -> void:
 	self.position = position

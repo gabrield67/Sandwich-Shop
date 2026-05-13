@@ -8,9 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://ecpkd4q734jf" path="res://scenes/FlavorProfile.tscn" id="6_epiun"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_fnbhh"]
+viewport_path = NodePath("Timer Display/Timer Viewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gvxd3"]
 size = Vector3(1.4257813, 4.585205, 3.2268012)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_epiun"]
+viewport_path = NodePath("Flavor Display/Flavor Viewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vwr5m"]
 size = Vector3(4, 4, 4)
@@ -47,6 +51,16 @@ shape = SubResource("BoxShape3D_gvxd3")
 debug_color = Color(0.9911961, 0, 0.27465352, 0.41960785)
 debug_fill = false
 
+[node name="Flavor Display" type="Sprite3D" parent="." unique_id=1953032506]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.536615, 1.1326852)
+billboard = 1
+texture = SubResource("ViewportTexture_epiun")
+
+[node name="Flavor Viewport" type="SubViewport" parent="Flavor Display" unique_id=1291121983]
+transparent_bg = true
+
+[node name="Thought Bubble" parent="Flavor Display/Flavor Viewport" unique_id=1401371206 instance=ExtResource("5_axfwu")]
+
 [node name="SandwichEatParticles" parent="." unique_id=2146837341 instance=ExtResource("5_epiun")]
 
 [node name="TargetFlavorProfile" parent="." unique_id=414758302 instance=ExtResource("6_epiun")]
@@ -54,6 +68,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 2.0979843, 1.4099163
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1394801554]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2670898, -0.36985)
+visible = false
 shape = SubResource("BoxShape3D_vwr5m")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1939730608]

@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://b60vg43gdsml4" path="res://models/monster_hand.tscn" id="15_21cbb"]
 [ext_resource type="PackedScene" uid="uid://co3tj1g5g5g38" path="res://scenes/parameters.tscn" id="17_ldmpq"]
 [ext_resource type="PackedScene" uid="uid://bfd7ic8voya81" path="res://scenes/UI/game_timer.tscn" id="17_s2b54"]
+[ext_resource type="PackedScene" uid="uid://p76u6bysbig7" path="res://sauce_dispenser.tscn" id="17_xkgmc"]
 
 [sub_resource type="TorusMesh" id="TorusMesh_qosn7"]
 
@@ -85,12 +86,14 @@ script = ExtResource("1_ldmpq")
 visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="IndoorLighting" unique_id=1376549775]
-transform = Transform3D(-1.0184319, -0.9673041, 0.033825558, -0.05971443, 0.013786161, -1.4036627, 0.9660515, -1.0189003, -0.05110483, -7.24, 2.385, 5.025)
+transform = Transform3D(-1.0184319, -0.9673041, 0.033825558, -0.05971443, 0.013786161, -1.4036627, 0.9660515, -1.0189003, -0.05110483, -7.501315, 2.385, 5.025)
 mesh = SubResource("TorusMesh_qosn7")
 surface_material_override/0 = SubResource("StandardMaterial3D_cccns")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1180750594]
-transform = Transform3D(-0.7848318, -0.61970395, -0.0024859384, 0.044493772, -0.060349878, 0.99718523, -0.6181097, 0.7825119, 0.07493747, 0, 8.340313, -0.60483086)
+transform = Transform3D(-0.7847766, -0.6197788, 0.000115731615, -0.0020713904, 0.002809565, 0.99999404, -0.6197755, 0.78477144, -0.003488685, 0, 8.340313, -0.60483086)
+light_color = Color(0.55912375, 0.77097917, 0.94932514, 1)
+light_energy = 0.635
 shadow_enabled = true
 shadow_bias = 0.135
 shadow_blur = 1.506
@@ -109,12 +112,12 @@ surface_material_override/0 = SubResource("StandardMaterial3D_gee14")
 transform = Transform3D(1, 0, 0, 0, 0.25881907, 0.9659258, 0, -0.9659258, 0.25881907, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Camera Pivot" unique_id=1031999790]
-transform = Transform3D(1, 0, 0, 0, 0.5792811, -0.81512773, 0, 0.81512773, 0.5792811, 0.28, -9.57, 8.5)
+transform = Transform3D(1, 0, 0, 0, 0.6996633, -0.7144726, 0, 0.7144726, 0.6996633, 0.28, -9.485, 11.095)
 environment = SubResource("Environment_0tnpc")
 fov = 72.3
 
 [node name="IngredientSpawner" parent="." unique_id=1365398154 instance=ExtResource("2_xkgmc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.328553, 1.8231831, 6.0316615)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.329, 1.823, 7.302)
 
 [node name="Pickup Sound" type="AudioStreamPlayer" parent="." unique_id=1434898793]
 stream = ExtResource("3_iprtr")
@@ -137,10 +140,10 @@ autoplay = true
 parameters/looping = true
 
 [node name="Walls" parent="." unique_id=915657737 instance=ExtResource("8_pxs0x")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 7.069, 0, 0.655)
+transform = Transform3D(1.58, 0, 0, 0, 1.58, 0, 0, 0, 1.58, 7.299, 0, 0.655)
 
 [node name="WholeTrash" type="Node3D" parent="." unique_id=527124321]
-transform = Transform3D(0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, 0.9975641, 0, 0, -3.7129178)
+transform = Transform3D(0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, 0.9975641, 0, 0, -2.633)
 
 [node name="trashBase" parent="WholeTrash" unique_id=1689667389 instance=ExtResource("10_vdo6g")]
 transform = Transform3D(-0.00252725, 1.4479584, -1.135346, -1.8399972, -0.0032115104, -9.5710474e-11, -0.0019816172, 1.1353443, 1.4479605, -8.052, 2.445, 8.05)
@@ -171,7 +174,7 @@ direction = Vector3(0, 0, 1)
 gravity = Vector3(3.035, -0.15, 0)
 
 [node name="SewerHole" type="Node3D" parent="." unique_id=1301368767]
-transform = Transform3D(0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, 0.9975641, -3.72, 0, -2.998)
+transform = Transform3D(0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, 0.9975641, -2.245, 0, -2.208)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SewerHole" unique_id=1043650768]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 12.825, -0.057, 9.341)
@@ -179,16 +182,16 @@ mesh = SubResource("CylinderMesh_qosn7")
 surface_material_override/0 = ExtResource("14_hkjom")
 
 [node name="AllMonster" type="Node3D" parent="SewerHole" unique_id=1786045459]
-transform = Transform3D(0.99756396, 0, -0.06975646, 0, 1, 0, 0.06975646, 0, 0.99756396, 2.8806672, 0, 3.1015)
+transform = Transform3D(-0.5921214, 0.049014777, -0.8043566, 0.4768584, 0.82594305, -0.30070576, 0.64961374, -0.5616187, -0.5124317, 22.381, -2.955, 5.177)
 
 [node name="monsterHand" parent="SewerHole/AllMonster" unique_id=25484297 instance=ExtResource("15_21cbb")]
-transform = Transform3D(-0.1330201, -0.20123203, -0.4379627, -0.19499356, 0.4379627, -0.14200768, 0.44077563, 0.13302006, -0.19499359, 10.065, 1.96, 4.335)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12.59, 0.225, 5.54)
 
 [node name="monsterHand2" parent="SewerHole/AllMonster" unique_id=703297632 instance=ExtResource("15_21cbb")]
-transform = Transform3D(0.29558063, -0.3354583, -0.2238298, 0.09027181, 0.3255096, -0.36863863, 0.3930433, 0.17751385, 0.25299355, 8.86, 1.485, 5.85)
+transform = Transform3D(0.49999994, 0, 0, 0, 0.49999994, 0, 0, 0, 0.49999997, 8.86, 1.485, 5.85)
 
 [node name="monsterHand3" parent="SewerHole/AllMonster" unique_id=495911412 instance=ExtResource("15_21cbb")]
-transform = Transform3D(0.1522475, -0.4273195, -0.2102824, 0.21713047, 0.25876603, -0.36863863, 0.42388088, 0.020931182, 0.26436117, 9.725, 1.525, 4.555)
+transform = Transform3D(0.49999994, 0, 0, 0, 0.4999999, 0, 0, 0, 0.49999997, 9.725, 1.525, 4.555)
 
 [node name="SecretSauceApparatus" type="Node3D" parent="." unique_id=1782365273]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005, -7.8269696, 2.6072478)
@@ -237,3 +240,17 @@ surface_material_override/0 = ExtResource("14_hkjom")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.87959313, 1.1091151, -1.7565265)
 
 [node name="Parameters" parent="." unique_id=1415527279 instance=ExtResource("17_ldmpq")]
+
+[node name="sauceFaucets" type="Node3D" parent="." unique_id=119371215]
+
+[node name="sauceDispenser" parent="sauceFaucets" unique_id=459785786 instance=ExtResource("17_xkgmc")]
+transform = Transform3D(0.18235561, 0, -0.9832327, 0, 1, 0, 0.9832327, 0, 0.18235561, 12.167, 6.01, -3.23)
+
+[node name="sauceDispenser2" parent="sauceFaucets" unique_id=1879547224 instance=ExtResource("17_xkgmc")]
+transform = Transform3D(0.18235561, 0, -0.9832327, 0, 1, 0, 0.9832327, 0, 0.18235561, 12.167, 6.01, 0.63)
+
+[node name="sauceDispenser3" parent="sauceFaucets" unique_id=190957725 instance=ExtResource("17_xkgmc")]
+transform = Transform3D(0.10452842, 0, 0.9945219, 0, 1, 0, -0.9945219, 0, 0.10452842, -10.533, 6.01, -2.87)
+
+[node name="sauceDispenser4" parent="sauceFaucets" unique_id=1256845609 instance=ExtResource("17_xkgmc")]
+transform = Transform3D(0.10452842, 0, 0.9945219, 0, 1, 0, -0.9945219, 0, 0.10452842, -10.533, 6.01, 1.45)
