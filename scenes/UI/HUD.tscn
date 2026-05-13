@@ -63,6 +63,7 @@ texture_under = ExtResource("4_l8xe2")
 texture_progress = ExtResource("3_5ip4n")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1783262630]
+process_mode = 3
 offset_left = 28.0
 offset_top = 25.0
 offset_right = 73.0
@@ -74,6 +75,20 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Restart" type="TextureButton" parent="." unique_id=943889311]
+process_mode = 3
+offset_left = 101.0
+offset_top = 25.0
+offset_right = 146.0
+offset_bottom = 79.0
+scale = Vector2(1.1599994, 1)
+toggle_mode = true
+texture_normal = ExtResource("8_a0qax")
+texture_pressed = ExtResource("8_a0qax")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Restart2" type="TextureButton" parent="." unique_id=1558020652]
+process_mode = 3
 offset_left = 101.0
 offset_top = 25.0
 offset_right = 146.0
@@ -87,3 +102,4 @@ stretch_mode = 0
 
 [connection signal="pressed" from="TextureButton" to="." method="pause_click"]
 [connection signal="pressed" from="Restart" to="." method="restart_click"]
+[connection signal="pressed" from="Restart2" to="." method="restart_click"]

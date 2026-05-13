@@ -51,8 +51,9 @@ func on_entered(body: Node3D) -> void:
 				$Plate.set_surface_override_material(0, on_material)
 				$bread.scale = original_size*1.2
 				$Plate.scale = original_size_plate*1.2
-				body.flavor_chart.hide()
-				flavor_tracker = add_new_flavors(flavor_tracker, body.ingredient_flavors)
+				if not body.isSauce:
+					body.flavor_chart.hide()
+					flavor_tracker = add_new_flavors(flavor_tracker, body.ingredient_flavors)
 				update_display(flavor_tracker)
 
 func on_exited(body: Node3D) -> void:
@@ -66,9 +67,10 @@ func on_exited(body: Node3D) -> void:
 					body.bread = null
 				self.material_off()
 				if finished == false:
-					flavor_tracker = remove_new_flavors(flavor_tracker, body.ingredient_flavors)
-					update_display(flavor_tracker)
-					body.flavor_chart.show()
+					if not body.isSauce:
+						flavor_tracker = remove_new_flavors(flavor_tracker, body.ingredient_flavors)
+						update_display(flavor_tracker)
+						body.flavor_chart.show()
 				
 func material_off() -> void:
 	$Plate.set_surface_override_material(0, off_material)
@@ -85,8 +87,9 @@ func add_to_sandwich(ingredient: Node3D):
 
 		if particle_material:
 			particle_material.color = ingredient.sauce_colors[ingredient.sauce_index]
-		ingredient.handle_sauce($ActualFlavorProfile)
-		
+		flavor_tracker = add_new_flavors(flavor_tracker, ingredient.ingredient_flavors)
+		update_display(flavor_tracker)
+		ingredient.handle_sauce()	
 		$"Sauce Particles".restart()
 		$"Sauce Particles".emitting = true 
 	else:

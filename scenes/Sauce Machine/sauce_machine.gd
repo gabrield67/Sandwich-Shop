@@ -27,6 +27,7 @@ func _process(delta: float) -> void:
 				
 				get_parent().get_parent().add_child(s)
 				s.position = $"Spawn Point".global_position
+				s.original_position = s.position
 				s.init_sauce(sauce_index, colors, self)
 				spawned = true
 			current_timer = 0
@@ -41,3 +42,6 @@ func init_machine(index:int):
 func make_active():
 	is_active= true
 	current_timer = timer
+	
+func play_sound():
+	$SauceSound.play()
