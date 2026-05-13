@@ -12,10 +12,12 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_gvxd3"]
 size = Vector3(1.4257813, 4.585205, 3.2268012)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_axfwu"]
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_vwr5m"]
 size = Vector3(4, 4, 4)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_epiun"]
+resource_local_to_scene = true
+load_path = "res://.godot/imported/thought_bubble.png-98e42356be8c1af10a715601ee48b75f.s3tc.ctex"
 
 [node name="Raccoon" type="Area3D" unique_id=1000162927]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
@@ -45,16 +47,6 @@ shape = SubResource("BoxShape3D_gvxd3")
 debug_color = Color(0.9911961, 0, 0.27465352, 0.41960785)
 debug_fill = false
 
-[node name="Flavor Display" type="Sprite3D" parent="." unique_id=1953032506]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.536615, 1.1326852)
-billboard = 1
-texture = SubResource("ViewportTexture_axfwu")
-
-[node name="Flavor Viewport" type="SubViewport" parent="Flavor Display" unique_id=1291121983]
-transparent_bg = true
-
-[node name="Thought Bubble" parent="Flavor Display/Flavor Viewport" unique_id=1401371206 instance=ExtResource("5_axfwu")]
-
 [node name="SandwichEatParticles" parent="." unique_id=2146837341 instance=ExtResource("5_epiun")]
 
 [node name="TargetFlavorProfile" parent="." unique_id=414758302 instance=ExtResource("6_epiun")]
@@ -63,6 +55,15 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 2.0979843, 1.4099163
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1394801554]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2670898, -0.36985)
 shape = SubResource("BoxShape3D_vwr5m")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1939730608]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 2.536615, 1.1326852)
+texture = SubResource("CompressedTexture2D_epiun")
+
+[node name="Flavor Viewport" type="SubViewport" parent="Sprite3D" unique_id=1291121983]
+transparent_bg = true
+
+[node name="Thought Bubble" parent="Sprite3D/Flavor Viewport" unique_id=1401371206 instance=ExtResource("5_axfwu")]
 
 [connection signal="area_entered" from="." to="." method="on_entered_area"]
 [connection signal="area_exited" from="." to="." method="on_exited_area"]

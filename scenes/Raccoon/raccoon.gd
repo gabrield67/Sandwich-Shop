@@ -6,8 +6,8 @@ extends Area3D
 @onready var timer: Timer = $"Raccoon Timer"
 @onready var progressBar = $"Timer Display/Timer Viewport/Timer 3D"
 @onready var raccoon_click = $"Raccoon Click"
-@onready var thought_bubble_display = $"Flavor Display"
-@onready var thought_bubble_label =$"Flavor Display/Flavor Viewport/Thought Bubble/Label"
+@onready var thought_bubble_display = $"Sprite3D"
+@onready var thought_bubble_label =$"Sprite3D/Flavor Viewport/Thought Bubble/Label"
 @onready var timer_display = $"Timer Display"
 
 @export var test_raccoon_spawn: bool = false
@@ -46,7 +46,7 @@ func _ready() -> void:
 	# start game
 	#TODO change this after animations come in
 	await get_tree().create_timer(.5).timeout
-	thought_bubble_display.show()
+	
 	timer_display.show()
 	timer.start()
 	
@@ -61,11 +61,12 @@ func _process(delta: float) -> void:
 	thought_bubble_label.text = str(current_flavors)
 	if is_active:
 		if needs_to_enter:
-			
+			thought_bubble_display.hide()
 			$TargetFlavorProfile.visible = false
 			$WholeRaccoonModel.position = original_model_pos - Vector3(0,0,(2-enter_timer))
 			enter_timer = enter_timer + delta  
 			if enter_timer >= 2:
+				thought_bubble_display.show()
 				needs_to_enter = false;
 				$TargetFlavorProfile.visible = true
 				$WholeRaccoonModel.position = original_model_pos
@@ -102,6 +103,7 @@ func make_active() -> void:
 	
 func make_inactive() -> void:
 	is_active = false
+	thought_bubble_display.hide()
 	$WholeRaccoonModel.position = original_model_pos - Vector3(0,0,(2))
 	$TargetFlavorProfile.visible = false
 	pass
