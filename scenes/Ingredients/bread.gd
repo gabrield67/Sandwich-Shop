@@ -18,6 +18,9 @@ var original_position
 var onBread = false
 var bread2
 
+@onready var chart_display = $"Flavor Display/Flavor Viewport/Label/Control"
+
+
 var finished: bool = false
 
 @export var ingredients = []
@@ -48,7 +51,7 @@ func on_entered(body: Node3D) -> void:
 				$Plate.set_surface_override_material(0, on_material)
 				$bread.scale = original_size*1.2
 				$Plate.scale = original_size_plate*1.2
-				flavor_tracker = add_new_flavors(flavor_tracker, body.ingredient_flavors)
+				#flavor_tracker = add_new_flavors(flavor_tracker, body.ingredient_flavors)
 				update_display(flavor_tracker)
 
 func on_exited(body: Node3D) -> void:
@@ -61,7 +64,7 @@ func on_exited(body: Node3D) -> void:
 					body.bread = null
 				self.material_off()
 				if finished == false:
-					flavor_tracker = remove_new_flavors(flavor_tracker, body.ingredient_flavors)
+					#flavor_tracker = remove_new_flavors(flavor_tracker, body.ingredient_flavors)
 					update_display(flavor_tracker)
 				
 func material_off() -> void:
@@ -88,6 +91,9 @@ func add_to_sandwich(ingredient: Node3D):
 		ingredient.onBread = true
 		ingredient.play_add_to_sandwich()
 		update_positions()
+		flavor_tracker = add_new_flavors(flavor_tracker, ingredient.ingredient_flavors)
+		chart_display.update_chart_data(flavor_tracker)
+		update_display(flavor_tracker)
 		print('on bread')
 		if ingredient.type_index == 3:
 			on_finished()
@@ -110,6 +116,7 @@ func clean_up_bread():
 	off_material.albedo_color = Color.WHITE
 	flavor_tracker = [0, 0, 0, 0]
 	update_display(flavor_tracker)
+	chart_display.update_chart_data(flavor_tracker)
 	return_to_position()
 	
 func get_actual_flavor_profile() -> Array[int]:
@@ -151,6 +158,7 @@ func add_new_flavors( currentFlavors: Array[int], newFlavors: Array[int]) -> Arr
 	var sum: Array[int] = []
 	for i in newFlavors.size():
 		sum.append(currentFlavors[i] + newFlavors[i])
+	
 	return sum
 	
 func remove_new_flavors(currentFlavors: Array[int], newFlavors: Array[int]) -> Array[int]:
@@ -161,3 +169,4 @@ func remove_new_flavors(currentFlavors: Array[int], newFlavors: Array[int]) -> A
 
 func update_display(newFlavors: Array[int]) -> void:
 	display_label.text = str(newFlavors)
+	chart_display.update_chart_data(flavor_tracker)
