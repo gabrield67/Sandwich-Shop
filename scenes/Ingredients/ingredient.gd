@@ -20,9 +20,9 @@ var move_speed = 2
 var move_direction = Vector3(1,0,0)
 var original_size;
 var bread
-var ingredient_types = ['Tomato', 'Lettuce','Fish Bone', 'Bread']
-var ingredient_scales = [1, 1,.75, 1.5	]
-var meshes = [tomatoMesh , lettuceMesh,fishMesh, breadMesh]
+var ingredient_types = ['Tomato','Fish Bone', 'Lettuce', 'Bread']
+var ingredient_scales = [1,.75, 1, 1.5	]
+var meshes = [tomatoMesh ,fishMesh, lettuceMesh, breadMesh]
 var spawnedMesh
 var type_index = 0
 var conveyor_move_speed = 1

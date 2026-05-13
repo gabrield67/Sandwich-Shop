@@ -47,12 +47,16 @@ transform = Transform3D(1, 0, 0, 0, -0.031445608, 0.99950546, 0, -0.99950546, -0
 transform = Transform3D(1, 0, 0, 0, -0.10350425, 0.994629, 0, -0.994629, -0.10350425, 8.976089, 5.2397156, -6.681235)
 
 [node name="SauceMachine_light" type="SpotLight3D" parent="." unique_id=772677100]
+transform = Transform3D(1, 0, 0, 0, 0.075413875, 0.9971523, 0, -0.9971523, 0.075413875, -11.182748, 8.218652, -0.9198077)
 
 [node name="SauceMachine2_light" type="SpotLight3D" parent="." unique_id=1949320493]
+transform = Transform3D(1, 0, 0, 0, -0.039852716, 0.9992056, 0, -0.9992056, -0.039852716, -11.412082, 8.206162, 2.9391785)
 
 [node name="SauceMachine3_light" type="SpotLight3D" parent="." unique_id=692216209]
+transform = Transform3D(1, 0, 0, 0, -0.039852716, 0.9992056, 0, -0.9992056, -0.039852716, 11.211075, 8.157478, -1.6255047)
 
 [node name="SauceMachine4_light" type="SpotLight3D" parent="." unique_id=397264787]
+transform = Transform3D(1, 0, 0, 0, -0.039852716, 0.9992056, 0, -0.9992056, -0.039852716, 11.211075, 8.157478, 2.6053257)
 
 [node name="Raccoon" parent="." unique_id=1781054978 instance=ExtResource("4_p44lo")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -8.663836, 1.5399714, -6.352392)

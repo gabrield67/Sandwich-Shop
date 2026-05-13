@@ -2,16 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://c2gk4jxeh0jpx" path="res://models/sauceDispenser.glb" id="1_ru3wm"]
 [ext_resource type="Material" uid="uid://cyyp7dpy6ma8" path="res://colors/tomatoRed.tres" id="2_8n0kd"]
+[ext_resource type="Script" uid="uid://c3uwpxa50idbm" path="res://sauce_dispenser.gd" id="2_abnhy"]
 [ext_resource type="Material" uid="uid://dbct6i3fm0wjg" path="res://colors/tomatoWhite.tres" id="2_vvkr7"]
 
 [node name="sauceDispenser" unique_id=459785786 instance=ExtResource("1_ru3wm")]
+script = ExtResource("2_abnhy")
 
-[node name="Cylinder" parent="." index="0" unique_id=897126787]
+[node name="Cylinder" parent="." index="0" unique_id=1441875156]
 surface_material_override/0 = ExtResource("2_vvkr7")
 surface_material_override/1 = ExtResource("2_vvkr7")
 
-[node name="Cylinder_001" parent="." index="1" unique_id=508164523]
+[node name="Cylinder_001" parent="." index="1" unique_id=428131860]
 surface_material_override/0 = ExtResource("2_vvkr7")
 
-[node name="Torus" parent="." index="2" unique_id=1293563820]
+[node name="Torus" parent="." index="2" unique_id=211740103]
 surface_material_override/0 = ExtResource("2_8n0kd")
