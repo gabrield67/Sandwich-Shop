@@ -84,9 +84,9 @@ theme_override_font_sizes/font_size = 35
 [node name="Control" type="Control" parent="Flavor Display/Flavor Viewport/Label" unique_id=1504621611]
 layout_mode = 1
 anchors_preset = 0
-offset_left = -75.0
+offset_left = -50.0
 offset_top = -150.0
-offset_right = 125.0
+offset_right = 150.0
 offset_bottom = 50.0
 script = ExtResource("8_yg326")
 spacing = 5.0

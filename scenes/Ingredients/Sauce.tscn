@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://thp4kcbikugd"]
 
 [ext_resource type="Script" uid="uid://dq7ejcivwnm6d" path="res://scenes/Ingredients/sauce.gd" id="1_0jfnc"]
-[ext_resource type="AudioStream" uid="uid://8cytiw0cfaxq" path="res://sounds/random2_oga_artisticdude.wav" id="2_vudre"]
+[ext_resource type="AudioStream" uid="uid://7mkldjnu5617" path="res://sounds/slime9_oga_artistic_dude.wav" id="2_h4yvr"]
 [ext_resource type="PackedScene" uid="uid://ecpkd4q734jf" path="res://scenes/FlavorProfile.tscn" id="3_h4yvr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h4yvr"]
@@ -25,7 +25,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_uoxs5")
 shape = SubResource("CylinderShape3D_vudre")
 
 [node name="AddToSandwichSound" type="AudioStreamPlayer" parent="." unique_id=85749781]
-stream = ExtResource("2_vudre")
+stream = ExtResource("2_h4yvr")
 pitch_scale = 1.8
 
 [node name="FlavorProfile" parent="." unique_id=414758302 instance=ExtResource("3_h4yvr")]

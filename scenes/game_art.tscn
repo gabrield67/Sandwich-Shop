@@ -196,13 +196,13 @@ surface_material_override/0 = ExtResource("14_txiir")
 transform = Transform3D(0.99756396, 0, -0.06975646, 0, 1, 0, 0.06975646, 0, 0.99756396, 2.8806672, 0, 3.1015)
 
 [node name="monsterHand" parent="SewerHole/AllMonster" unique_id=25484297 instance=ExtResource("15_6esf2")]
-transform = Transform3D(-0.1330201, -0.20123203, -0.4379627, -0.19499356, 0.4379627, -0.14200768, 0.44077563, 0.13302006, -0.19499359, 10.065, 1.96, 4.335)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.065, 1.96, 4.335)
 
 [node name="monsterHand2" parent="SewerHole/AllMonster" unique_id=703297632 instance=ExtResource("15_6esf2")]
-transform = Transform3D(0.29558063, -0.3354583, -0.2238298, 0.09027181, 0.3255096, -0.36863863, 0.3930433, 0.17751385, 0.25299355, 8.86, 1.485, 5.85)
+transform = Transform3D(0.4999998, 0, 0, 0, 0.49999985, 0, 0, 0, 0.49999985, 9.42161, 1.485, 5.8499985)
 
 [node name="monsterHand3" parent="SewerHole/AllMonster" unique_id=495911412 instance=ExtResource("15_6esf2")]
-transform = Transform3D(0.1522475, -0.4273195, -0.2102824, 0.21713047, 0.25876603, -0.36863863, 0.42388088, 0.020931182, 0.26436117, 9.725, 1.525, 4.555)
+transform = Transform3D(0.4999999, 0, 0, 0, 0.49999988, 0, 0, 0, 0.49999994, 9.145467, 1.525, 4.5549994)
 
 [node name="SecretSauceApparatus" type="Node3D" parent="." unique_id=1782365273]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005, -0.59, 4.9)

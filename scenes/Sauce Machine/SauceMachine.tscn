@@ -17,7 +17,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.26244342, 0.25842392)
 shape = SubResource("BoxShape3D_ywgvx")
 
 [node name="Spawn Point" type="Node3D" parent="." unique_id=1449396289]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.046854, 1.4595525)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8933635, 1.4595525)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1357646626]
 mesh = SubResource("ArrayMesh_yerb2")

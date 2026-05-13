@@ -27,6 +27,7 @@ func _process(delta: float) -> void:
 				
 				get_parent().get_parent().add_child(s)
 				s.position = $"Spawn Point".global_position
+				s.original_position = s.position
 				s.init_sauce(sauce_index, colors, self)
 				spawned = true
 			current_timer = 0

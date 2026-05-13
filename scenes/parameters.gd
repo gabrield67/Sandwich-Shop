@@ -12,7 +12,7 @@ var min_target_flavors = 2
 var max_target_flavors = 4
 
 #HUD
-var debug_upgrades = false
+var debug_upgrades = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://paloirtdcgga"]
+
+[ext_resource type="Script" uid="uid://dibcbtk2usta5" path="res://scenes/Monster/monster.gd" id="1_mvmt3"]
+[ext_resource type="AudioStream" uid="uid://duypmvc5sxh7m" path="res://sounds/giant4_oga_artistic_dude.wav" id="2_22fpm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gbugj"]
+size = Vector3(2, 5, 1)
+
+[node name="Monster" type="Area3D" unique_id=1079855907]
+script = ExtResource("1_mvmt3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1286515888]
+shape = SubResource("BoxShape3D_gbugj")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1021397428]
+stream = ExtResource("2_22fpm")
+
+[connection signal="body_entered" from="." to="." method="on_enter"]

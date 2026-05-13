@@ -4,15 +4,28 @@ extends Ingredient
 var sauce_index = 0
 var sauce_colors = []
 var sauce_machine
+var original_position
+var spawn_timer = 2
+var spawning = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	original_size = scale
+	scale = Vector3(0,0,0)
+	original_position = position
 	isSauce = true
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if spawning:
+		spawn_timer = spawn_timer-delta 
+		position = original_position + Vector3(0,.5*spawn_timer,0) 
+		scale = original_size*(2-spawn_timer)*.5
+		if spawn_timer <= 0:
+			scale = original_size 
+			position = original_position
+			spawning = false
 	pass
 	
 func init_sauce(index: int, colorsA: Array, machine) -> void:
@@ -25,6 +38,7 @@ func init_sauce(index: int, colorsA: Array, machine) -> void:
 	
 	
 func handle_sauce(flavor_profile) -> void:
+	$AddToSandwichSound.play()
 	sauce_machine.current_timer = 0
 	sauce_machine.spawned = false
 	#sauce [ Color.PURPLE,  Color.GREEN, Color.ORANGE, Color.WHITE]
