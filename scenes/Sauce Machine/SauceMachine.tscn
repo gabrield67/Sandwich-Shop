@@ -1,14 +1,11 @@
 [gd_scene format=3 uid="uid://b8kmk2ebsnyy5"]
 
 [ext_resource type="Script" uid="uid://40iec7v7kyhi" path="res://scenes/Sauce Machine/sauce_machine.gd" id="1_hoo76"]
-[ext_resource type="PackedScene" uid="uid://c2gk4jxeh0jpx" path="res://models/sauceDispenser.glb" id="2_yerb2"]
+[ext_resource type="PackedScene" uid="uid://p76u6bysbig7" path="res://sauce_dispenser.tscn" id="3_1jx4e"]
 [ext_resource type="AudioStream" uid="uid://7mkldjnu5617" path="res://sounds/slime9_oga_artistic_dude.wav" id="3_p3b6x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ywgvx"]
 size = Vector3(1, 1.2, 1.5)
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_yerb2"]
-resource_name = "sauceDispenser"
 
 [node name="SauceMachine" type="StaticBody3D" unique_id=1370060822]
 script = ExtResource("1_hoo76")
@@ -20,10 +17,7 @@ shape = SubResource("BoxShape3D_ywgvx")
 [node name="Spawn Point" type="Node3D" parent="." unique_id=1449396289]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.893, 1.46)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1357646626]
-mesh = SubResource("ArrayMesh_yerb2")
-
-[node name="sauceDispenser" parent="." unique_id=1757681863 instance=ExtResource("2_yerb2")]
-
 [node name="SauceSound" type="AudioStreamPlayer" parent="." unique_id=1786279219]
 stream = ExtResource("3_p3b6x")
+
+[node name="sauceDispenser" parent="." unique_id=459785786 instance=ExtResource("3_1jx4e")]
