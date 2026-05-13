@@ -6,8 +6,8 @@ extends Area3D
 @onready var timer: Timer = $"Raccoon Timer"
 @onready var progressBar = $"Timer Display/Timer Viewport/Timer 3D"
 @onready var raccoon_click = $"Raccoon Click"
-@onready var thought_bubble_display = $"Sprite3D"
-@onready var thought_bubble_label =$"Sprite3D/Flavor Viewport/Thought Bubble/Label"
+@onready var thought_bubble_display = $"Flavor Display"
+@onready var thought_bubble_label =$"Flavor Display/Flavor Viewport/Thought Bubble/Label"
 @onready var timer_display = $"Timer Display"
 @onready var chart_display = $"Flavor Display/Flavor Viewport/Thought Bubble/Flavor Chart"
 
@@ -91,7 +91,7 @@ func randomize_target() -> void:
 	var total_sum: int = randi_range(min_target_flavors, max_target_flavors)
 
 	for i in total_sum:
-		var random_index: int = randi() % 4
+		var random_index: int = randi() % 3
 		final[random_index] += 1
 
 	target_flavors = final
@@ -150,6 +150,7 @@ func on_finished(ingredient: Node3D):
 			get_parent().good_sandwich_event()
 			print("Perfect Sandwich")
 	else:
+		print()
 		get_parent().bad_sandwich_event()
 		print("Bad Sandwich")
 		
@@ -164,6 +165,6 @@ func clean_up_raccoon():
 
 func check_imperfect_sandwich(actual_flavor, target_flavor) -> bool:
 	for i in range(actual_flavor.size()):
-			if actual_flavor[i] > target_flavor[i]:
+			if actual_flavor[i] < target_flavor[i]:
 				return false
 	return true

@@ -68,6 +68,7 @@ func assign_type_index() ->void:
 		var test = randf()
 		if test > bread_ingredient_frequency:
 			type_index = randi_range(0, 2)
+	generate_flavors()
 
 func on_grab() -> void:
 	move_on_start = false
@@ -87,10 +88,12 @@ func generate_flavors() -> void:
 
 	var final: Array[int] = [0, 0, 0, 0]
 	var total_sum: int = randi_range(min_ingredient_flavors, max_ingredient_flavors)
-
-	for i in total_sum:
-		var random_index: int = randi() % 4
-		final[random_index] += 1
+	final[type_index] += 1
+	
+	if total_sum > 1:
+		for i in total_sum-1:
+			var random_index: int = randi() % 3
+			final[random_index] += 1
 
 	ingredient_flavors = final
 
