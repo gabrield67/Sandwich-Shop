@@ -2,11 +2,158 @@
 
 [ext_resource type="PackedScene" uid="uid://8bf2qyi134c5" path="res://models/monserHand.glb" id="1_gqnhx"]
 [ext_resource type="Material" uid="uid://dttrd5o6p1gsg" path="res://colors/monsterPink.tres" id="2_esa6o"]
+[ext_resource type="Script" uid="uid://b26bilado3cc7" path="res://models/monster_hand.gd" id="2_uo5e8"]
+
+[sub_resource type="Animation" id="Animation_gqnhx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cube:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cube_001:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cube:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cube_001:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uo5e8"]
+resource_name = "idle"
+length = 1.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.21, 0.45, 0.64, 0.84, 0.99, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.08726646, -0.15707964, 0.1308997), Vector3(-0.41887903, 0, -0.14835298), Vector3(-0.33161256, 0.05235988, -0.34906584), Vector3(-0.07853982, -0.20943952, -0.4712389), Vector3(0.0035132393, -0.013008282, -0.023045912), Vector3(0.034906585, -0.09599311, -0.16580628)]
+}
+
+[sub_resource type="Animation" id="Animation_esa6o"]
+resource_name = "pulseAnimation"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cube:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.43333334, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.14, 1.14, 1.14), Vector3(1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cube_001:scale")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.43333334, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.14, 1.14, 1.14), Vector3(1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cube:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cube_001:rotation")
+tracks/3/interp = 0
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.6666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uo5e8"]
+_data = {
+&"RESET": SubResource("Animation_gqnhx"),
+&"idle": SubResource("Animation_uo5e8"),
+&"pulseAnimation": SubResource("Animation_esa6o")
+}
 
 [node name="monsterHand" unique_id=25484297 instance=ExtResource("1_gqnhx")]
+script = ExtResource("2_uo5e8")
 
 [node name="Cube" parent="." index="0" unique_id=772115163]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10479504, -0.0015145243, 0.0013602161)
 surface_material_override/0 = ExtResource("2_esa6o")
 
 [node name="Cube_001" parent="." index="1" unique_id=2071544464]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06108061, 6.6412373, 2.6885955)
 surface_material_override/0 = ExtResource("2_esa6o")
+
+[node name="monsterPulseAnimation" type="AnimationPlayer" parent="." index="2" unique_id=1253457227]
+libraries/ = SubResource("AnimationLibrary_uo5e8")
+speed_scale = 0.166

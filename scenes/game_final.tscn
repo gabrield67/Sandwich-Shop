@@ -93,6 +93,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_cccns")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1180750594]
 transform = Transform3D(-0.7847766, -0.6197788, 0.000115731615, -0.0020713904, 0.002809565, 0.99999404, -0.6197755, 0.78477144, -0.003488685, 0, 8.340313, -0.60483086)
 light_color = Color(0.55912375, 0.77097917, 0.94932514, 1)
+light_energy = 0.635
 shadow_enabled = true
 shadow_bias = 0.135
 shadow_blur = 1.506
@@ -181,16 +182,16 @@ mesh = SubResource("CylinderMesh_qosn7")
 surface_material_override/0 = ExtResource("14_hkjom")
 
 [node name="AllMonster" type="Node3D" parent="SewerHole" unique_id=1786045459]
-transform = Transform3D(0.99756396, 0, -0.06975646, 0, 1, 0, 0.06975646, 0, 0.99756396, 2.8806672, 0, 3.1015)
+transform = Transform3D(-0.5921214, 0.049014777, -0.8043566, 0.4768584, 0.82594305, -0.30070576, 0.64961374, -0.5616187, -0.5124317, 22.381, -2.955, 5.177)
 
 [node name="monsterHand" parent="SewerHole/AllMonster" unique_id=25484297 instance=ExtResource("15_21cbb")]
-transform = Transform3D(-0.1330201, -0.20123203, -0.4379627, -0.19499356, 0.4379627, -0.14200768, 0.44077563, 0.13302006, -0.19499359, 10.065, 1.96, 4.335)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12.59, 0.225, 5.54)
 
 [node name="monsterHand2" parent="SewerHole/AllMonster" unique_id=703297632 instance=ExtResource("15_21cbb")]
-transform = Transform3D(0.29558063, -0.3354583, -0.2238298, 0.09027181, 0.3255096, -0.36863863, 0.3930433, 0.17751385, 0.25299355, 8.86, 1.485, 5.85)
+transform = Transform3D(0.49999994, 0, 0, 0, 0.49999994, 0, 0, 0, 0.49999997, 8.86, 1.485, 5.85)
 
 [node name="monsterHand3" parent="SewerHole/AllMonster" unique_id=495911412 instance=ExtResource("15_21cbb")]
-transform = Transform3D(0.1522475, -0.4273195, -0.2102824, 0.21713047, 0.25876603, -0.36863863, 0.42388088, 0.020931182, 0.26436117, 9.725, 1.525, 4.555)
+transform = Transform3D(0.49999994, 0, 0, 0, 0.4999999, 0, 0, 0, 0.49999997, 9.725, 1.525, 4.555)
 
 [node name="SecretSauceApparatus" type="Node3D" parent="." unique_id=1782365273]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005, -7.8269696, 2.6072478)
