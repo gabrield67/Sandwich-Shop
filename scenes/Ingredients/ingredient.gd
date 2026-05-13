@@ -33,7 +33,7 @@ var spawner
 
 @export var min_ingredient_flavors: int = 1
 @export var max_ingredient_flavors: int = 2
-var ingredient_flavors: Array[int] = [0, 0, 0, 0]
+var ingredient_flavors: Array[int] = [0, 0, 0]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -88,7 +88,7 @@ func generate_flavors() -> void:
 	# creates an array of ints where the sum is between the min and max ingredient flavors
 	randomize()
 
-	var final: Array[int] = [0, 0, 0, 0]
+	var final: Array[int] = [0, 0, 0]
 	var total_sum: int = randi_range(min_ingredient_flavors, max_ingredient_flavors)
 	final[type_index] += 1
 	

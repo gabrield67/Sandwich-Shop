@@ -126,6 +126,7 @@ stream = SubResource("AudioStreamOggVorbis_u5sy4")
 volume_db = -5.0
 
 [node name="HUD" parent="." unique_id=1287460498 instance=ExtResource("4_80xwq")]
+process_mode = 0
 
 [node name="WinSound" type="AudioStreamPlayer" parent="." unique_id=699382802]
 stream = ExtResource("5_djiwr")

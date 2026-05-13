@@ -24,7 +24,7 @@ var bread2
 var finished: bool = false
 
 @export var ingredients = []
-var flavor_tracker: Array[int] = [0, 0, 0, 0]
+var flavor_tracker: Array[int] = [0, 0, 0]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -52,11 +52,12 @@ func on_entered(body: Node3D) -> void:
 				$bread.scale = original_size*1.2
 				$Plate.scale = original_size_plate*1.2
 				body.flavor_chart.hide()
-				# flavor_tracker = add_new_flavors(flavor_tracker, body.ingredient_flavors)
+				flavor_tracker = add_new_flavors(flavor_tracker, body.ingredient_flavors)
 				update_display(flavor_tracker)
 
 func on_exited(body: Node3D) -> void:
 	print("exited")
+	print(finished)
 	if is_active:
 		if body is Ingredient:
 			#print ('Exit Bread')
@@ -65,7 +66,7 @@ func on_exited(body: Node3D) -> void:
 					body.bread = null
 				self.material_off()
 				if finished == false:
-					# flavor_tracker = remove_new_flavors(flavor_tracker, body.ingredient_flavors)
+					flavor_tracker = remove_new_flavors(flavor_tracker, body.ingredient_flavors)
 					update_display(flavor_tracker)
 					body.flavor_chart.show()
 				
@@ -93,7 +94,7 @@ func add_to_sandwich(ingredient: Node3D):
 		ingredient.onBread = true
 		ingredient.play_add_to_sandwich()
 		update_positions()
-		flavor_tracker = add_new_flavors(flavor_tracker, ingredient.ingredient_flavors)
+		#flavor_tracker = add_new_flavors(flavor_tracker, ingredient.ingredient_flavors)
 		chart_display.update_chart_data(flavor_tracker)
 		update_display(flavor_tracker)
 		print('on bread')
@@ -103,20 +104,18 @@ func add_to_sandwich(ingredient: Node3D):
 func on_finished():
 	$SandwichEatParticles.restart()
 	$SandwichEatParticles.emitting = true
-	
+	finished = true
 	#var newBread = bread_scene.instantiate()
 	#newBread.position = position
 	#get_parent().add_child(newBread)
 	clean_up_bread()
 	
 func clean_up_bread():
-	finished = true
 	for i in ingredients:
 		i.queue_free()
 	ingredients.clear()
 	on_material.albedo_color = Color.PINK
 	off_material.albedo_color = Color.WHITE
-	flavor_tracker = [0, 0, 0, 0]
 	update_display(flavor_tracker)
 	chart_display.update_chart_data(flavor_tracker)
 	return_to_position()
@@ -153,8 +152,8 @@ func on_grab() -> void:
 
 func update_position(position) -> void:
 	self.position = position
-	update_positions()
 	finished = false
+	update_positions()
 	
 func add_new_flavors( currentFlavors: Array[int], newFlavors: Array[int]) -> Array[int]:
 	var sum: Array[int] = []

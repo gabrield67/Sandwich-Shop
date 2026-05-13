@@ -19,6 +19,7 @@ texture = ExtResource("1_7s8w5")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="." unique_id=428152943]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

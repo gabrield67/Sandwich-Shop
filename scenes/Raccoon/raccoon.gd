@@ -19,8 +19,8 @@ extends Area3D
 @export var min_target_flavors = 2
 @export var max_target_flavors = 4
 
-var target_flavors: Array[int] = [0, 0, 0, 0]
-var ingredient_flavors: Array[int] = [0, 0, 0, 0]
+var target_flavors: Array[int] = [0, 0, 0]
+var ingredient_flavors: Array[int] = [0, 0, 0]
 
 var is_active = true
 
@@ -52,7 +52,7 @@ func _ready() -> void:
 	original_size = scale
 	# start game
 	#TODO change this after animations come in
-	await get_tree().create_timer(.5).timeout
+	#await get_tree().create_timer(.5).timeout
 	#thought_bubble_display.show()
 	#timer_display.show()
 	#timer.start()
@@ -87,7 +87,7 @@ func randomize_target() -> void:
 	# creates an array of ints where the sum is between the min and max target flavors
 	randomize()
 
-	var final: Array[int] = [0, 0, 0, 0]
+	var final: Array[int] = [0, 0, 0]
 	var total_sum: int = randi_range(min_target_flavors, max_target_flavors)
 
 	for i in total_sum:

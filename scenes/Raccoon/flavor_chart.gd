@@ -4,14 +4,14 @@ extends Control
 var targets: Array = []
 
 # styling
-@export var bar_color: Array[Color] = [ Color.RED,  Color.YELLOW, Color.BLUE, Color.GREEN]
+@export var bar_color: Array[Color] = [ Color.RED, Color.BLUE, Color.GREEN]
 @export var spacing: float = 20.0
 @export var max_chart_value: float = 5.0
 @export var testing_chart: bool = true
 
 func update_chart_data(current_targets: Array)-> void:
 	if testing_chart:
-		current_targets = [1, 1, 1, 1]
+		current_targets = [1, 1, 1]
 	targets = current_targets
 	queue_redraw()
 
