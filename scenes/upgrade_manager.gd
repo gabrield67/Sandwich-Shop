@@ -39,16 +39,16 @@ func bad_sandwich_event():
 func init_bread():
 	$Bread.min_target_flavors = min_target_flavors
 	$Bread.max_target_flavors = max_target_flavors
-	$Bread. randomize_target()
+
 	$Bread2.max_target_flavors = max_target_flavors
 	$Bread2.min_target_flavors = min_target_flavors
-	$Bread2. randomize_target()
+
 	$Bread3.max_target_flavors = max_target_flavors
 	$Bread3.min_target_flavors = min_target_flavors
-	$Bread3. randomize_target()
+
 	$Bread4.max_target_flavors = max_target_flavors
 	$Bread4.min_target_flavors = min_target_flavors
-	$Bread4. randomize_target()
+
 	
 	$Raccoon.min_target_flavors = min_target_flavors
 	$Raccoon.max_target_flavors = max_target_flavors
@@ -93,3 +93,4 @@ func stopUpgradeTime():
 	$SauceMachine2_light.light_energy = 0
 	$SauceMachine4_light.light_energy = 0
 	$SauceMachine3_light.light_energy = 0
+	

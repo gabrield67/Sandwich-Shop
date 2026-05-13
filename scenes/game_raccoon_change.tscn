@@ -11,12 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://cmanph4x4jobr" path="res://scenes/upgrade_manager.tscn" id="9_ooa0w"]
 [ext_resource type="PackedScene" path="res://models/trash_base.tscn" id="10_t6wmy"]
 [ext_resource type="PackedScene" path="res://models/trash_lid.tscn" id="11_2h5sn"]
-[ext_resource type="Material" path="res://colors/slimeYellow.tres" id="12_ic31d"]
-[ext_resource type="Material" path="res://colors/eyeDarkCharcoal.tres" id="14_w1l2r"]
+[ext_resource type="Material" uid="uid://sb1tl5fge5x2" path="res://colors/slimeYellow.tres" id="12_ic31d"]
+[ext_resource type="PackedScene" uid="uid://dtd1mtifhnvab" path="res://scenes/Raccoon/raccoon_manager.tscn" id="14_6nw5r"]
+[ext_resource type="Material" uid="uid://7gn0t4diki3s" path="res://colors/eyeDarkCharcoal.tres" id="14_w1l2r"]
 [ext_resource type="PackedScene" path="res://scenes/UI/game_timer.tscn" id="16_6nw5r"]
-[ext_resource type="Script" uid="uid://sri5f1gjv6sc" path="res://scenes/Raccoon/raccoon_manager.gd" id="17_ianhv"]
-[ext_resource type="Script" path="res://scenes/Raccoon/slot.gd" id="17_ku6qt"]
-[ext_resource type="PackedScene" uid="uid://ccbffutqtq21k" path="res://scenes/Raccoon/raccoon.tscn" id="18_ku6qt"]
 [ext_resource type="PackedScene" path="res://scenes/parameters.tscn" id="19_xcf35"]
 
 [sub_resource type="TorusMesh" id="TorusMesh_qosn7"]
@@ -224,30 +222,7 @@ surface_material_override/0 = ExtResource("14_w1l2r")
 
 [node name="Game Timer" parent="." unique_id=936284248 instance=ExtResource("16_6nw5r")]
 
-[node name="Raccoon Manager" type="Node" parent="." unique_id=1869960919]
-script = ExtResource("17_ianhv")
-raccoon_scene = ExtResource("18_ku6qt")
-
-[node name="Raccoon Placement" type="Node3D" parent="Raccoon Manager" unique_id=611878047]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2990437, 0.5184207)
-
-[node name="Slot" type="Node3D" parent="Raccoon Manager/Raccoon Placement" unique_id=1273449844]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.133707, 0, -3.0857244)
-script = ExtResource("17_ku6qt")
-
-[node name="Slot2" type="Node3D" parent="Raccoon Manager/Raccoon Placement" unique_id=731970625]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.81509566, 0, -3.0857244)
-script = ExtResource("17_ku6qt")
-
-[node name="Slot3" type="Node3D" parent="Raccoon Manager/Raccoon Placement" unique_id=1482992697]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9692862, 0, -3.0857244)
-script = ExtResource("17_ku6qt")
-
-[node name="Slot4" type="Node3D" parent="Raccoon Manager/Raccoon Placement" unique_id=560627413]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.782774, 0, -3.0857244)
-script = ExtResource("17_ku6qt")
-
-[node name="Raccoons" type="Node" parent="Raccoon Manager" unique_id=1074432555]
+[node name="Raccoon Manager" parent="." unique_id=853224076 instance=ExtResource("14_6nw5r")]
 
 [node name="IngredientSpawner" parent="." unique_id=1365398154 instance=ExtResource("2_6nw5r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.328553, 1.3971848, 6.0316615)
