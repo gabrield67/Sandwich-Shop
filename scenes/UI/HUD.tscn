@@ -5,8 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://bdqawm5wejg8a" path="res://assets/timers/timer_circle_hot_red.png" id="2_l8xe2"]
 [ext_resource type="Texture2D" uid="uid://kukxhywuqh7o" path="res://assets/waste/trash_full.png" id="3_5ip4n"]
 [ext_resource type="Texture2D" uid="uid://bh5epw1konr3x" path="res://assets/waste/trash_empty.png" id="4_l8xe2"]
+[ext_resource type="Texture2D" uid="uid://dw6i7sv2xbbn5" path="res://assets/Pause.png" id="6_0qpk7"]
+[ext_resource type="Texture2D" uid="uid://csjo3m4bfhlub" path="res://assets/Pause_red.png" id="7_ucsqe"]
 
 [node name="HUD" type="CanvasLayer" unique_id=1287460498]
+process_mode = 3
 script = ExtResource("1_1etfg")
 
 [node name="Control" type="Control" parent="." unique_id=614236100]
@@ -57,3 +60,16 @@ max_value = 0.0
 fill_mode = 3
 texture_under = ExtResource("4_l8xe2")
 texture_progress = ExtResource("3_5ip4n")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1783262630]
+offset_left = 28.0
+offset_top = 25.0
+offset_right = 73.0
+offset_bottom = 79.0
+toggle_mode = true
+texture_normal = ExtResource("6_0qpk7")
+texture_pressed = ExtResource("7_ucsqe")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="TextureButton" to="." method="pause_click"]

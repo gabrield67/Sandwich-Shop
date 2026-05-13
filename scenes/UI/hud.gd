@@ -7,6 +7,8 @@ extends CanvasLayer
 @export var levelTime: int = 30
 @export var maxWaste: int = 10
 
+var isPaused = false
+
 var debug_upgrades = false
 
 var goodSandwichCount: int = 0
@@ -46,3 +48,11 @@ func setMaxWaste(max_waste) -> void:
 
 func updateWaste(current_waste) -> void:
 	waste.value = current_waste
+	
+func pause_click() -> void:
+	if isPaused:
+		get_tree().paused = false
+		isPaused = false
+	else:
+		get_tree().paused = true
+		isPaused = true

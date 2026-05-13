@@ -3,7 +3,7 @@ extends StaticBody3D
 
 var sauce_scene = preload("res://scenes/Ingredients/Sauce.tscn")
 
-var colors = [ Color.PURPLE,  Color.GREEN, Color.ORANGE, Color.WHITE]
+var colors = [ Color.RED,  Color.YELLOW, Color.BLUE, Color.WHITE]
 var sauce_index = 0;
 var spawned = false;
 var timer = 1	
@@ -35,8 +35,7 @@ func _process(delta: float) -> void:
 func init_machine(index:int):
 	var material = StandardMaterial3D.new()
 	material.albedo_color = colors[index]
-	$Back.set_surface_override_material(0, material)
-	$Spawner.set_surface_override_material(0, material)
+	#$sauceDispenser.set_surface_override_material(0, material)
 	sauce_index = index
 	
 func make_active():

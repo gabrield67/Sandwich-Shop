@@ -31,11 +31,11 @@ func handle_sauce(flavor_profile) -> void:
 	#flavor  [ Color.RED,  Color.YELLOW, Color.BLUE, Color.GREEN]
 
 	if sauce_index == 0:
-		flavor_profile.multiply_flavor(2,0,2,0)
+		flavor_profile.add_flavor(2,0,0,0)
 	elif sauce_index == 1:
-		flavor_profile.multiply_flavor(0,2,2,0)
+		flavor_profile.add_flavor(0,2,0,0)
 	elif sauce_index == 2:
-		flavor_profile.multiply_flavor(2,2,0,0)
+		flavor_profile.multiply_flavor(0,0,2,0)
 	elif sauce_index == 3:
 		flavor_profile.multiply_flavor(2,2,2,2)
 	queue_free()

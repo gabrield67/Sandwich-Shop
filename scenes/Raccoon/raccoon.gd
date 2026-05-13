@@ -53,7 +53,7 @@ func _ready() -> void:
 	# start game
 	#TODO change this after animations come in
 	await get_tree().create_timer(.5).timeout
-	thought_bubble_display.show()
+	#thought_bubble_display.show()
 	timer_display.show()
 	timer.start()
 	
@@ -105,10 +105,13 @@ func _on_input_event(camera, event, position, normal, shape_idx):
 func make_active() -> void:
 	is_active  = true
 	$TargetFlavorProfile.visible = true
+	thought_bubble_display.visible = true
+	thought_bubble_display.show()
 	
 func make_inactive() -> void:
 	is_active = false
 	thought_bubble_display.hide()
+	thought_bubble_display.visible = false
 	$WholeRaccoonModel.position = original_model_pos - Vector3(0,0,(2))
 	$TargetFlavorProfile.visible = false
 	

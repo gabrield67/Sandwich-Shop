@@ -22,16 +22,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.02864, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9935837, 0, 0)
 
 [node name="SauceMachine" parent="." unique_id=1370060822 instance=ExtResource("3_076jq")]
-transform = Transform3D(0.4519366, 0, 0.89205, 0, 1, 0, -0.89205, 0, 0.4519366, -9.815767, 0, 3.8730211)
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -11.4868965, 4.8971896, -0.94149995)
 
 [node name="SauceMachine2" parent="." unique_id=1885987930 instance=ExtResource("3_076jq")]
-transform = Transform3D(0.44253916, 0, 0.8967492, 0, 1, 0, -0.8967492, 0, 0.44253916, -10.061551, 0, 6.5593934)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.4158535, 4.912202, 3.1377432)
 
 [node name="SauceMachine3" parent="." unique_id=1176405904 instance=ExtResource("3_076jq")]
-transform = Transform3D(0.53091055, 0, -0.84742785, 0, 1, 0, 0.84742785, 0, 0.53091055, 9.500717, 0, 3.7625265)
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 11.086864, 5.0193043, -1.1707022)
 
 [node name="SauceMachine4" parent="." unique_id=1172735737 instance=ExtResource("3_076jq")]
-transform = Transform3D(0.5802482, 0, -0.8144397, 0, 1, 0, 0.8144397, 0, 0.5802482, 10.431595, 0, 6.1263647)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 11.268125, 5.0193043, 2.5001545)
 
 [node name="Bread4_light" type="SpotLight3D" parent="." unique_id=1387518698]
 transform = Transform3D(1, 0, 0, 0, -0.03127117, 0.99951094, 0, -0.99951094, -0.03127117, -7.8838153, 3.1463041, 0)

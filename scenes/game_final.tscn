@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://b60vg43gdsml4" path="res://models/monster_hand.tscn" id="15_21cbb"]
 [ext_resource type="PackedScene" uid="uid://co3tj1g5g5g38" path="res://scenes/parameters.tscn" id="17_ldmpq"]
 [ext_resource type="PackedScene" uid="uid://bfd7ic8voya81" path="res://scenes/UI/game_timer.tscn" id="17_s2b54"]
-[ext_resource type="PackedScene" uid="uid://p76u6bysbig7" path="res://sauce_dispenser.tscn" id="17_xkgmc"]
 
 [sub_resource type="TorusMesh" id="TorusMesh_qosn7"]
 
@@ -242,15 +241,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.87959313, 1.1091151, -1.756
 [node name="Parameters" parent="." unique_id=1415527279 instance=ExtResource("17_ldmpq")]
 
 [node name="sauceFaucets" type="Node3D" parent="." unique_id=119371215]
-
-[node name="sauceDispenser" parent="sauceFaucets" unique_id=459785786 instance=ExtResource("17_xkgmc")]
-transform = Transform3D(0.18235561, 0, -0.9832327, 0, 1, 0, 0.9832327, 0, 0.18235561, 12.167, 6.01, -3.23)
-
-[node name="sauceDispenser2" parent="sauceFaucets" unique_id=1879547224 instance=ExtResource("17_xkgmc")]
-transform = Transform3D(0.18235561, 0, -0.9832327, 0, 1, 0, 0.9832327, 0, 0.18235561, 12.167, 6.01, 0.63)
-
-[node name="sauceDispenser3" parent="sauceFaucets" unique_id=190957725 instance=ExtResource("17_xkgmc")]
-transform = Transform3D(0.10452842, 0, 0.9945219, 0, 1, 0, -0.9945219, 0, 0.10452842, -10.533, 6.01, -2.87)
-
-[node name="sauceDispenser4" parent="sauceFaucets" unique_id=1256845609 instance=ExtResource("17_xkgmc")]
-transform = Transform3D(0.10452842, 0, 0.9945219, 0, 1, 0, -0.9945219, 0, 0.10452842, -10.533, 6.01, 1.45)

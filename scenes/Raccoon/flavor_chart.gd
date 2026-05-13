@@ -8,7 +8,7 @@ func update_chart_data(current_targets: Array)-> void:
 	queue_redraw()
 
 # styling
-@export var bar_color: Array[Color] = [Color.BLUE, Color.RED, Color.YELLOW, Color.GREEN]
+@export var bar_color: Array[Color] = [ Color.RED,  Color.YELLOW, Color.BLUE, Color.GREEN]
 @export var spacing: float = 20.0
 @export var max_chart_value: float = 5.0
 
@@ -17,7 +17,7 @@ func _draw() -> void:
 		return
 
 	# calculating dimensions based on current size
-	var num_bars: int = targets.size()
+	var num_bars: int = targets.size() -1
 	var total_spacing: float = spacing * (num_bars + 1)
 	var bar_width: float = (size.x - total_spacing) / num_bars
 	
