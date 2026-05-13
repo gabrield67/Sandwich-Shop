@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://b54m7lsq21hkc" path="res://sounds/spring_07_rubber_duck.ogg" id="5_4ncmt"]
 [ext_resource type="PackedScene" uid="uid://bdh8u52n0jw4m" path="res://assets/Sandwich Eat Particles.tscn" id="6_4ncmt"]
 [ext_resource type="PackedScene" uid="uid://bsdvlbrb60p7d" path="res://assets/Sauce Particles.tscn" id="7_ok4gj"]
-[ext_resource type="Script" uid="uid://cs0cmyfegk6t5" path="res://scenes/Raccoon/flavor_chart.gd" id="8_yg326"]
+[ext_resource type="PackedScene" uid="uid://cfqqv7ftdfd1g" path="res://scenes/UI/flavor_chart.tscn" id="8_yg326"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kf4f7"]
 size = Vector3(2, 3, 6)
@@ -81,16 +81,6 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
 
-[node name="Control" type="Control" parent="Flavor Display/Flavor Viewport/Label" unique_id=1504621611]
-layout_mode = 1
-anchors_preset = 0
-offset_left = -75.0
-offset_top = -150.0
-offset_right = 125.0
-offset_bottom = 50.0
-script = ExtResource("8_yg326")
-spacing = 5.0
-
 [node name="TextureRect" type="TextureRect" parent="Flavor Display/Flavor Viewport" unique_id=538867422]
 anchors_preset = 8
 anchor_left = 0.5
@@ -103,6 +93,8 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Flavor Chart" parent="Flavor Display/Flavor Viewport" unique_id=1923621798 instance=ExtResource("8_yg326")]
 
 [connection signal="body_entered" from="." to="." method="on_entered"]
 [connection signal="body_exited" from="." to="." method="on_exited"]

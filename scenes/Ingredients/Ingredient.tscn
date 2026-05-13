@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dlcqiqygwtmgd" path="res://scenes/Ingredients/ingredient.gd" id="1_y8d8e"]
 [ext_resource type="PackedScene" uid="uid://ecpkd4q734jf" path="res://scenes/FlavorProfile.tscn" id="3_b12no"]
 [ext_resource type="AudioStream" uid="uid://8cytiw0cfaxq" path="res://sounds/random2_oga_artisticdude.wav" id="4_y8d8e"]
+[ext_resource type="PackedScene" uid="uid://cfqqv7ftdfd1g" path="res://scenes/UI/flavor_chart.tscn" id="5_ow5cj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1am71"]
 size = Vector3(2, 0.4, 2)
@@ -48,3 +49,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
+
+[node name="Flavor Chart" parent="Flavor Display/Flavor Viewport" unique_id=1923621798 instance=ExtResource("5_ow5cj")]
+testing_chart = null

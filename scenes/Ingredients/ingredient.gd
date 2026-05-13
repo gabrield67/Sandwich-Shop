@@ -2,6 +2,7 @@ class_name Ingredient
 extends StaticBody3D
 
 @onready var flavor_display = $"Flavor Display/Flavor Viewport/Label"
+@onready var flavor_chart = $"Flavor Display/Flavor Viewport/Flavor Chart"
 
 var tomatoMesh = preload("res://models/tomato_mesh.tscn")
 var fishMesh = preload("res://models/fishBonesMesh.tscn")
@@ -49,6 +50,7 @@ func _ready() -> void:
 	# handle flavors
 	generate_flavors()
 	flavor_display.text = str(ingredient_flavors)
+	flavor_chart.update_chart_data(ingredient_flavors)
 	#$FlavorProfile.add_flavor(3,4,2,3)
 	#print("new ingredient")
 

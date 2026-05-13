@@ -9,13 +9,13 @@
 [ext_resource type="AudioStream" uid="uid://cuwtp2lhf4g5" path="res://sounds/music/rpg_brandon_morris_oga_hael_DB.ogg" id="7_oa7co"]
 [ext_resource type="PackedScene" uid="uid://b4kkoakbexh8r" path="res://models/walls.tscn" id="8_pxs0x"]
 [ext_resource type="PackedScene" uid="uid://cmanph4x4jobr" path="res://scenes/upgrade_manager.tscn" id="9_qu6ye"]
-[ext_resource type="PackedScene" uid="uid://yahuxvrjhitd" path="res://models/trash_base.tscn" id="10_vdo6g"]
-[ext_resource type="PackedScene" uid="uid://dt2rm3uiki2lg" path="res://models/trash_lid.tscn" id="11_hf07t"]
+[ext_resource type="PackedScene" path="res://models/trash_base.tscn" id="10_vdo6g"]
+[ext_resource type="PackedScene" path="res://models/trash_lid.tscn" id="11_hf07t"]
 [ext_resource type="Material" uid="uid://sb1tl5fge5x2" path="res://colors/slimeYellow.tres" id="12_ub81o"]
 [ext_resource type="Material" uid="uid://7gn0t4diki3s" path="res://colors/eyeDarkCharcoal.tres" id="14_hkjom"]
 [ext_resource type="PackedScene" uid="uid://b60vg43gdsml4" path="res://models/monster_hand.tscn" id="15_21cbb"]
-[ext_resource type="PackedScene" uid="uid://co3tj1g5g5g38" path="res://scenes/parameters.tscn" id="17_ldmpq"]
-[ext_resource type="PackedScene" uid="uid://bfd7ic8voya81" path="res://scenes/UI/game_timer.tscn" id="17_s2b54"]
+[ext_resource type="PackedScene" path="res://scenes/parameters.tscn" id="17_ldmpq"]
+[ext_resource type="PackedScene" path="res://scenes/UI/game_timer.tscn" id="17_s2b54"]
 
 [sub_resource type="TorusMesh" id="TorusMesh_qosn7"]
 
