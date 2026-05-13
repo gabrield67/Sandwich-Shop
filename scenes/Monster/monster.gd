@@ -35,7 +35,7 @@ func add_hand()->void:
 	hs.original_position =hs.global_position
 	
 	hand_anims()
-	if hands.size() > 4:
+	if hands.size() > 10:
 		disperse()
 	pass
 	
