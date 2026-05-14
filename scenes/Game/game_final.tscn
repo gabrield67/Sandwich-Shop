@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://d2rqu1visdcsl"]
 
-[ext_resource type="Script" uid="uid://dnsby02e4apsw" path="res://scenes/game_manager.gd" id="1_ldmpq"]
+[ext_resource type="Script" uid="uid://dnsby02e4apsw" path="res://scenes/Game/game_manager.gd" id="1_ldmpq"]
 [ext_resource type="PackedScene" uid="uid://drkevmp0aiaxv" path="res://scenes/Ingredients/Ingredient Spawner.tscn" id="2_xkgmc"]
 [ext_resource type="AudioStream" uid="uid://dqndtmnajwa2x" path="res://sounds/plop_01_rubber_duck_oga.ogg" id="3_iprtr"]
 [ext_resource type="PackedScene" uid="uid://bkd5kxair4hmq" path="res://scenes/UI/HUD.tscn" id="4_80xwq"]
@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://pd50n848wkq0" path="res://models/lettuceMesh.tscn" id="13_oa7co"]
 [ext_resource type="Material" uid="uid://7gn0t4diki3s" path="res://colors/eyeDarkCharcoal.tres" id="14_hkjom"]
 [ext_resource type="PackedScene" uid="uid://b60vg43gdsml4" path="res://models/monster_hand.tscn" id="14_pxs0x"]
-[ext_resource type="PackedScene" path="res://scenes/parameters.tscn" id="17_ldmpq"]
+[ext_resource type="PackedScene" uid="uid://co3tj1g5g5g38" path="res://scenes/parameters.tscn" id="17_ldmpq"]
 [ext_resource type="PackedScene" uid="uid://c124rtdal8yfg" path="res://models/whole_raccoon_model.tscn" id="17_oa7co"]
 [ext_resource type="PackedScene" uid="uid://bfd7ic8voya81" path="res://scenes/UI/game_timer.tscn" id="17_s2b54"]
 [ext_resource type="PackedScene" uid="uid://btcll58epxffn" path="res://scenes/UI/Loss Screen.tscn" id="17_xkgmc"]

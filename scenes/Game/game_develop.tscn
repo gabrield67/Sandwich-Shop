@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://b6sf5n1s3tjjo"]
 
-[ext_resource type="Script" uid="uid://dnsby02e4apsw" path="res://scenes/game_manager.gd" id="1_yqjtg"]
+[ext_resource type="Script" uid="uid://dnsby02e4apsw" path="res://scenes/Game/game_manager.gd" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://drkevmp0aiaxv" path="res://scenes/Ingredients/Ingredient Spawner.tscn" id="4_lbhrr"]
 [ext_resource type="AudioStream" uid="uid://dqndtmnajwa2x" path="res://sounds/plop_01_rubber_duck_oga.ogg" id="4_p57ef"]
 [ext_resource type="PackedScene" uid="uid://bkd5kxair4hmq" path="res://scenes/UI/HUD.tscn" id="5_iywne"]
@@ -8,9 +8,9 @@
 [ext_resource type="AudioStream" uid="uid://b54m7lsq21hkc" path="res://sounds/spring_07_rubber_duck.ogg" id="8_0tnpc"]
 [ext_resource type="AudioStream" uid="uid://cuwtp2lhf4g5" path="res://sounds/music/rpg_brandon_morris_oga_hael_DB.ogg" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://b4kkoakbexh8r" path="res://models/walls.tscn" id="9_0tnpc"]
-[ext_resource type="PackedScene" path="res://scenes/UI/game_timer.tscn" id="10_ofl7d"]
+[ext_resource type="PackedScene" uid="uid://bfd7ic8voya81" path="res://scenes/UI/game_timer.tscn" id="10_ofl7d"]
 [ext_resource type="PackedScene" uid="uid://cmanph4x4jobr" path="res://scenes/upgrade_manager.tscn" id="10_vtaks"]
-[ext_resource type="PackedScene" path="res://scenes/parameters.tscn" id="11_x00gf"]
+[ext_resource type="PackedScene" uid="uid://co3tj1g5g5g38" path="res://scenes/parameters.tscn" id="11_x00gf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8cj0n"]
 

@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bpfynrkdc3kbq"]
 
-[ext_resource type="Script" uid="uid://dnsby02e4apsw" path="res://scenes/game_manager.gd" id="1_egqwa"]
+[ext_resource type="Script" uid="uid://dnsby02e4apsw" path="res://scenes/Game/game_manager.gd" id="1_egqwa"]
 [ext_resource type="PackedScene" uid="uid://drkevmp0aiaxv" path="res://scenes/Ingredients/Ingredient Spawner.tscn" id="2_030r3"]
 [ext_resource type="AudioStream" uid="uid://dqndtmnajwa2x" path="res://sounds/plop_01_rubber_duck_oga.ogg" id="3_oigvx"]
 [ext_resource type="PackedScene" uid="uid://bkd5kxair4hmq" path="res://scenes/UI/HUD.tscn" id="4_28nyi"]
@@ -9,8 +9,8 @@
 [ext_resource type="AudioStream" uid="uid://cuwtp2lhf4g5" path="res://sounds/music/rpg_brandon_morris_oga_hael_DB.ogg" id="7_qosn7"]
 [ext_resource type="PackedScene" uid="uid://b4kkoakbexh8r" path="res://models/walls.tscn" id="8_cccns"]
 [ext_resource type="PackedScene" uid="uid://cmanph4x4jobr" path="res://scenes/upgrade_manager.tscn" id="9_6esf2"]
-[ext_resource type="PackedScene" uid="uid://yahuxvrjhitd" path="res://models/trash_base.tscn" id="10_oigvx"]
-[ext_resource type="PackedScene" uid="uid://dt2rm3uiki2lg" path="res://models/trash_lid.tscn" id="11_28nyi"]
+[ext_resource type="PackedScene" path="res://models/trash_base.tscn" id="10_oigvx"]
+[ext_resource type="PackedScene" path="res://models/trash_lid.tscn" id="11_28nyi"]
 [ext_resource type="PackedScene" uid="uid://c124rtdal8yfg" path="res://models/whole_raccoon_model.tscn" id="12_28nyi"]
 [ext_resource type="Material" uid="uid://sb1tl5fge5x2" path="res://colors/slimeYellow.tres" id="12_ojg76"]
 [ext_resource type="Material" uid="uid://7gn0t4diki3s" path="res://colors/eyeDarkCharcoal.tres" id="14_txiir"]
