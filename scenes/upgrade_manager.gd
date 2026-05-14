@@ -5,6 +5,8 @@ var init = true
 var min_target_flavors = 2
 var max_target_flavors = 4
 
+var upgrade_count = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Bread4.make_inactive()
@@ -28,6 +30,7 @@ func _process(delta: float) -> void:
 
 
 func good_sandwich_event():
+	
 	get_parent().good_sandwich_event()
 	$SandwichCounter.addSandwich()
 	pass
@@ -64,7 +67,9 @@ func init_bread():
 	#$Racoon4. randomize_target()
 	
 func startUpgradeTime():
+	
 	get_parent().startUpgradeTime()
+	
 	
 func startUpgradeLights():
 	if not $Bread3.is_active:
@@ -91,6 +96,10 @@ func startUpgradeLights():
 	if not $SauceMachine4.is_active:
 		$SauceMachine4_light.light_energy = 10
 		$SauceMachine4.turnOnUpgradeTime()
+	upgrade_count = upgrade_count + 1
+	print(upgrade_count)
+	if upgrade_count > 8:
+		get_parent().on_win()
 	
 func stopUpgradeTime():
 	$Bread4_light.light_energy = 0

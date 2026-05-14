@@ -4,6 +4,11 @@
 [ext_resource type="Script" uid="uid://yh2jtny4e83h" path="res://scenes/UI/loss_screen.gd" id="1_j75l8"]
 
 [node name="LossScreen" type="Node3D" unique_id=1027865471]
+transform = Transform3D(1, 0, 0, 0, 0.93923813, -0.3432663, 0, 0.3432663, 0.93923813, 0, 0, 0)
 script = ExtResource("1_j75l8")
 
 [node name="raccoonHead" parent="." unique_id=1241450067 instance=ExtResource("1_7vpr3")]
+transform = Transform3D(1, 0, 0, 0, 0.9321976, -0.36195, 0, 0.36195, 0.9321976, 0, 0, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1861127679]
+transform = Transform3D(1, 0, 0, 0, -0.42672658, 0.90438074, 0, -0.90438074, -0.42672658, 0, 2.034607, -2.1888251)

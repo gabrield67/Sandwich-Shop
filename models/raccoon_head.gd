@@ -10,6 +10,10 @@ func _ready() -> void:
 		$DeadInd2.visible = false
 		$DeadInd3.visible = false
 		$DeadInd4.visible = false
+	
+	$WinInd.visible = false
+	$WinInd2.visible = false
+	$WinInd3.visible = false
 	pass # Replace with function body.
 
 
@@ -22,4 +26,9 @@ func set_dead():
 	$DeadInd2.visible = true
 	$DeadInd3.visible = true
 	$DeadInd4.visible = true
+	
+func set_win():
+	$WinInd.visible = true
+	$WinInd2.visible = true
+	$WinInd3.visible = true
 	

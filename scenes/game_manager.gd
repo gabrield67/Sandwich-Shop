@@ -254,3 +254,8 @@ func _on_ingredients_wasted():
 		GlobalEvents.max_ingredients_wasted.emit()
 func on_loss() -> void:
 	$LossScreen.show_screen()
+	
+func on_win() -> void:
+	$LossScreen.show_win()
+	$Music.stop()
+	$WinMusic.play()
