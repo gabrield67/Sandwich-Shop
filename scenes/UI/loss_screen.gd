@@ -1,6 +1,7 @@
 extends Node3D
 
 var win = false;
+var first_loss = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	self.visible=false
@@ -14,6 +15,10 @@ func _process(delta: float) -> void:
 
 func show_screen():
 	if not win:
+		if first_loss:
+			$LossMusic.play()
+			first_loss = false
+			get_parent().stop_music()
 		self.visible = true
 		$raccoonHead.set_dead()
 		
