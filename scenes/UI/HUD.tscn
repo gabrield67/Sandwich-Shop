@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://2we5k3tji1q1" path="res://scenes/UI/hud.gd" id="1_1etfg"]
 [ext_resource type="Texture2D" uid="uid://cxqhivndx050a" path="res://assets/timers/progress_circle_lime_green.png" id="1_fls4u"]
 [ext_resource type="Texture2D" uid="uid://bdqawm5wejg8a" path="res://assets/timers/timer_circle_hot_red.png" id="2_l8xe2"]
-[ext_resource type="Texture2D" uid="uid://kukxhywuqh7o" path="res://assets/waste/trash_full.png" id="3_5ip4n"]
-[ext_resource type="Texture2D" uid="uid://bh5epw1konr3x" path="res://assets/waste/trash_empty.png" id="4_l8xe2"]
+[ext_resource type="Texture2D" uid="uid://cj2ce1j0m2w7o" path="res://assets/waste/trash_empty_2.png" id="4_tohwf"]
+[ext_resource type="Texture2D" uid="uid://bwjeqnvogave0" path="res://assets/waste/trash_full_2.png" id="5_tohwf"]
 [ext_resource type="Texture2D" uid="uid://dw6i7sv2xbbn5" path="res://assets/Pause.png" id="6_0qpk7"]
 [ext_resource type="Texture2D" uid="uid://csjo3m4bfhlub" path="res://assets/Pause_red.png" id="7_ucsqe"]
 [ext_resource type="Texture2D" uid="uid://jvi0ufca2i7" path="res://assets/restart.png" id="8_a0qax"]
@@ -50,19 +50,21 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -45.0
-offset_top = -46.0
-offset_right = -5.0
-offset_bottom = -6.0
+offset_left = -87.0
+offset_top = -67.0
+offset_right = -47.0
+offset_bottom = -27.0
 grow_horizontal = 0
 grow_vertical = 0
+scale = Vector2(1.5, 1.5)
 
 [node name="Waste Progress" type="TextureProgressBar" parent="Control/Waste Container" unique_id=698615135]
 layout_mode = 2
 max_value = 0.0
 fill_mode = 3
-texture_under = ExtResource("4_l8xe2")
-texture_progress = ExtResource("3_5ip4n")
+texture_over = ExtResource("4_tohwf")
+texture_progress = ExtResource("5_tohwf")
+texture_progress_offset = Vector2(8, 8)
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1783262630]
 process_mode = 3

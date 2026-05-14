@@ -47,9 +47,12 @@ func updateTimer(current_time)-> void:
 # update waste
 func setMaxWaste(max_waste) -> void:
 	waste.max_value = max_waste
-
+	print(waste.max_value)
 func updateWaste(current_waste) -> void:
 	waste.value = current_waste
+	print(current_waste)
+	print("max waste")
+	print(waste.max_value)
 	
 func pause_click() -> void:
 	if isPaused:

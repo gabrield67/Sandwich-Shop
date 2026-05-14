@@ -63,7 +63,6 @@ func _process(delta: float) -> void:
 			time_to_despawn = time_to_despawn-delta 
 			if time_to_despawn <= 0:
 				queue_free()
-				GlobalEvents.ingredients_wasted.emit()
 	
 func assign_type_index() ->void:
 	type_index = randi_range(0, 2)

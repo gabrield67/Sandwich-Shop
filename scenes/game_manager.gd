@@ -247,11 +247,12 @@ func _on_game_timer_timeout():
 	
 # update Trash Progress Bar every time there's a wasted ingredient
 func _on_ingredients_wasted():
-	wasteCount += 1
-	hud.updateWaste(wasteCount)
-	if wasteCount > maxWaste:
+	if wasteCount == maxWaste:
 		print("Max Ingredients Wasted")
 		GlobalEvents.max_ingredients_wasted.emit()
+	wasteCount += 1
+	hud.updateWaste(wasteCount)
+
 func on_loss() -> void:
 	$LossScreen.show_screen()
 	

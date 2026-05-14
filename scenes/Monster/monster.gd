@@ -6,17 +6,11 @@ var firstAdd = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	add_hand()
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 	
 func on_enter(body: Node3D)->void:
 	body.queue_free()
 	add_hand()
-	pass
+	GlobalEvents.ingredients_wasted.emit()
 
 func add_hand()->void:
 	var hs = hand_scene.instantiate()
@@ -41,7 +35,6 @@ func add_hand()->void:
 	hand_anims()
 	if hands.size() > 10:
 		disperse()
-	pass
 	
 func hand_anims():
 	for h in hands:
