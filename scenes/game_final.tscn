@@ -10,11 +10,17 @@
 [ext_resource type="PackedScene" uid="uid://b4kkoakbexh8r" path="res://models/walls.tscn" id="8_pxs0x"]
 [ext_resource type="PackedScene" uid="uid://cmanph4x4jobr" path="res://scenes/upgrade_manager.tscn" id="9_qu6ye"]
 [ext_resource type="PackedScene" uid="uid://yahuxvrjhitd" path="res://models/trash_base.tscn" id="10_vdo6g"]
+[ext_resource type="PackedScene" uid="uid://7x41ywua5vgq" path="res://models/fishBonesMesh.tscn" id="11_djiwr"]
 [ext_resource type="PackedScene" uid="uid://dt2rm3uiki2lg" path="res://models/trash_lid.tscn" id="11_hf07t"]
+[ext_resource type="PackedScene" uid="uid://b6uqd7cn3xg0x" path="res://models/tomato_mesh.tscn" id="12_26feh"]
 [ext_resource type="Material" uid="uid://sb1tl5fge5x2" path="res://colors/slimeYellow.tres" id="12_ub81o"]
 [ext_resource type="PackedScene" uid="uid://paloirtdcgga" path="res://scenes/Monster/Monster.tscn" id="13_bxin3"]
+[ext_resource type="PackedScene" uid="uid://pd50n848wkq0" path="res://models/lettuceMesh.tscn" id="13_oa7co"]
 [ext_resource type="Material" uid="uid://7gn0t4diki3s" path="res://colors/eyeDarkCharcoal.tres" id="14_hkjom"]
+[ext_resource type="PackedScene" uid="uid://b60vg43gdsml4" path="res://models/monster_hand.tscn" id="14_pxs0x"]
+[ext_resource type="PackedScene" uid="uid://ju7u3wbxyx7i" path="res://models/breadMesh.tscn" id="15_26feh"]
 [ext_resource type="PackedScene" uid="uid://co3tj1g5g5g38" path="res://scenes/parameters.tscn" id="17_ldmpq"]
+[ext_resource type="PackedScene" uid="uid://c124rtdal8yfg" path="res://models/whole_raccoon_model.tscn" id="17_oa7co"]
 [ext_resource type="PackedScene" uid="uid://bfd7ic8voya81" path="res://scenes/UI/game_timer.tscn" id="17_s2b54"]
 [ext_resource type="PackedScene" uid="uid://btcll58epxffn" path="res://scenes/UI/Loss Screen.tscn" id="17_xkgmc"]
 [ext_resource type="AudioStream" uid="uid://cbk4glf7b0n4" path="res://sounds/Garbage Sludge.ogg" id="18_xkgmc"]
@@ -74,6 +80,575 @@ height = 3.5
 
 [sub_resource type="SphereMesh" id="SphereMesh_qosn7"]
 material = ExtResource("12_ub81o")
+
+[sub_resource type="Animation" id="Animation_ldmpq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("trashBase:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-8.051999, 2.445, 8.049999)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("trashBase:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.7182542e-10, -0.66497046, -1.5725417)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("trashLid:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-6.2799993, 2.528, 6.766)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("trashLid:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.8918631, 1.0489429, -1.1798426)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("trashLid:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2.18, 2.18, 2.18)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("trashBase:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.8399999, 1.8399999, 1.8399999)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("trashBase/monsterHand:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.5497787, 1.6231562, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("trashBase/monsterHand:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.115, -0.695, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("trashBase/bread:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.78, 2.72, -3.48)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("trashBase/bread:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.87266463, -0.09599311, -1.6493361)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("trashBase/fishBones:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.255, 1.21, 0.035)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("trashBase/fishBones:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-4.886922, 4.197517, -0.25307274)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("trashBase/tomatoMesh:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.275, 1.385, 0.065)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("trashBase/tomatoMesh:rotation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-2.050762, -0.7766715, 2.2863812)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("trashBase/lettuce:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0630064, 1.4221846, 0.058386326)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("trashBase/lettuce:rotation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.256637, 2.5220006, 1.3439035)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("../WholeRaccoonModel:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.595, 3.215, -9.37)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("../WholeRaccoonModel:rotation")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("trashBase/fishBones:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("trashBase/tomatoMesh:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("trashBase/lettuce:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("trashBase/bread:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("../WholeRaccoonModel:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_xkgmc"]
+resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_iprtr"]
+resource_name = "trashRollSettle"
+length = 2.1666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("trashBase:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0009999999, 0.33333334, 0.58, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.345, 2.39, 6.24), Vector3(-1.498, 2.5, 6.637), Vector3(-4.5268636, 2.4650455, 7.289227), Vector3(-8.051999, 2.445, 8.049999)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("trashBase:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0009999999, 0.16, 0.33333334, 0.58, 0.95, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.3228859, 0.3298672, -0.33161256), Vector3(0.6736971, -0.057595864, -0.69464105), Vector3(1.3194689, -0.35953784, -1.3718288), Vector3(1.6057029, -0.62831855, -1.548107), Vector3(1.7182542e-10, -0.66497046, -1.5725417)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("trashLid:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0009999999, 0.23, 0.35, 0.57, 0.690585, 0.76666665, 0.8666667, 0.9999999, 1.1333332, 1.3, 1.4333333, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.37, 4.265, 5.98), Vector3(0.256, 4.497, 6.69), Vector3(0.529, 4.621, 6.687), Vector3(2.264, 2.568, 6.608), Vector3(3.886, 2.552, 6.797), Vector3(2.488, 2.546, 8.349), Vector3(0.061, 2.541, 9.358), Vector3(-0.802, 2.537, 7.892), Vector3(-1.424, 2.534, 7.508), Vector3(-3.569, 2.532, 7.117), Vector3(-5.389958, 2.5293133, 6.8812356), Vector3(-6.2799993, 2.528, 6.766)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("trashLid:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0009999999, 0.23, 0.35, 0.57, 0.690585, 0.76666665, 0.8666667, 0.9999999, 1.1333332, 1.3, 1.4333333, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.65449846, 0), Vector3(0.45029494, 0.20594884, -0.4712389), Vector3(0.46806556, 0.46171892, -0.53978276), Vector3(0.5078908, 0.7295476, -1.5097098), Vector3(0.6632251, -0.48520154, -1.3770648), Vector3(0.72082096, -0.83950335, -1.3281956), Vector3(1.5097098, -1.6336281, -1.288053), Vector3(1.1013027, -2.1694443, -1.2531464), Vector3(1.0297443, -3.2358403, -1.2287118), Vector3(1.4049901, -5.3197637, -1.1519173), Vector3(1.0611602, -5.0387654, -1.1711159), Vector3(0.8918632, -4.998623, -1.1798426)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("trashLid:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.23, 0.35, 0.57),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(2.18, 2.18, 2.18), Vector3(2.18, 2.18, 2.18), Vector3(2.18, 2.18, 2.18)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("trashBase:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.33333334),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.8399999, 1.8399999, 1.8399999)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("trashBase/monsterHand:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.56666666, 0.66619736, 0.76457936, 0.99794155, 1.1354207, 1.2333335, 1.3666667, 1.4666667, 1.63677, 1.682524, 1.6832273, 1.7013221),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.5497787, 1.6231562, 0), Vector3(-0.7592182, 1.6231562, -0.3228859), Vector3(-0.27052602, 2.2863812, -0.36651915), Vector3(-0.4204111, 2.4934762, -0.53677505), Vector3(0.286234, 1.5777776, -0.424115), Vector3(-0.18602495, 2.1975589, -0.29750484), Vector3(-0.3743935, 2.4204082, -0.47552028), Vector3(-0.8255005, 2.2808745, -1.1267197), Vector3(-0.08316097, 1.571018, -0.82845414), Vector3(0.44923556, 1.1719184, -0.93578273), Vector3(0.52515745, 1.0864649, -0.98567176), Vector3(0.65205514, 0.9436356, -1.0690577)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("trashBase/monsterHand:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.56666666, 0.66619736, 0.76457936, 0.99794155, 1.1354207, 1.2333335, 1.3666667, 1.4666667, 1.63677, 1.6534368, 1.6832273, 1.7013221),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.115, -0.695, 0), Vector3(0.115, 0.105, 0), Vector3(0.285, 0.79, -0.015), Vector3(0.16836834, 1.7697003, -0.68284035), Vector3(-0.642, 1.575, -0.683), Vector3(0.09737909, 3.4468536, -1.8184402), Vector3(0.09537649, 4.5941854, -2.595243), Vector3(0.09295809, 5.979809, -3.5333824), Vector3(-0.41332388, 7.037572, -4.250139), Vector3(0.3496893, 8.2067995, -5.040863), Vector3(0.8012544, 8.362265, -5.145587), Vector3(1.5560125, 8.622113, -5.3206253)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("trashBase/bread:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.23321912, 0.96666664, 1.3666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.78, 1.26, -3.48), Vector3(0.78, 2.72, -3.48), Vector3(0.57, 2.883, -4.181)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("trashBase/bread:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.23321912, 0.96666664, 1.3666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.87266463, -0.09599311, -1.6493361), Vector3(0.87266463, -0.09599311, -1.6493361), Vector3(0.863938, -0.09599311, -1.6493361)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("trashBase/fishBones:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(1.2676283, 1.3804762, 1.504609, 1.598649, 1.692689, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.255, 1.21, 0.035), Vector3(0.12, 2.5, -0.89), Vector3(0.11795735, 3.670281, -1.6823409), Vector3(0.11620641, 4.673439, -2.361531), Vector3(-0.7787876, 4.075638, -3.2421715), Vector3(-0.739, 3.436, -3.242)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("trashBase/fishBones:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(1.3804762, 1.504609, 1.598649, 1.692689, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-4.886922, 4.197517, -0.25307274), Vector3(1.3962632, -2.0856683, -0.2530727), Vector3(1.3962632, -2.0856686, -0.25307313), Vector3(1.3962632, -2.0856688, -0.25307316), Vector3(1.3962631, -2.085669, -0.25307316)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("trashBase/tomatoMesh:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(1.3955227, 1.504609, 1.598649, 1.692689, 1.7942522, 1.8544377, 1.8645824),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.275, 1.385, 0.065), Vector3(0.27295732, 2.5552807, -0.7273407), Vector3(0.27120638, 3.5584388, -1.4065309), Vector3(0.27025414, 4.103922, -1.7758512), Vector3(0.2692213, 4.6955776, -2.1764326), Vector3(-1.1004469, 4.3280325, -2.7157633), Vector3(-1.1, 3.753, -2.716)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("trashBase/tomatoMesh:rotation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(1.3955227, 1.504609, 1.598649, 1.692689, 1.7942522, 1.8544377, 1.8645824),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-2.050762, -0.7766715, 2.2863812), Vector3(-1.0908307, 2.364921, -0.85521144), Vector3(-1.0908307, 2.364921, -0.85521144), Vector3(-1.0908306, 2.364921, -0.8552114), Vector3(-1.0908304, 2.364921, -0.8552114), Vector3(-1.0908303, 2.364921, -0.8552113), Vector3(-1.4573499, 2.364921, -0.8552113)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("trashBase/lettuce:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(1.504609, 1.598649, 1.692689, 1.7942522, 1.8544377, 1.9021984, 1.9661456),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.0630064, 1.4221846, 0.058386326), Vector3(0.061255336, 2.4253426, -0.62080383), Vector3(0.060303092, 2.9708261, -0.9901242), Vector3(0.059270263, 3.5624819, -1.3907058), Vector3(0.057579994, 4.5308013, -2.0463085), Vector3(-1.5921535, 4.0042825, -2.8197212), Vector3(-1.305, 3.644, -2.879)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("trashBase/lettuce:rotation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(1.504609, 1.598649, 1.692689, 1.7942522, 1.8544377, 1.9021984, 1.9661456),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.256637, 2.5220006, 1.3439035), Vector3(1.2566371, 2.5220006, 1.3439035), Vector3(1.2566371, 2.5220006, 1.3439037), Vector3(1.2566371, 2.5220006, 1.3439037), Vector3(1.2566371, 2.5220006, 1.3439037), Vector3(1.2566371, 2.5220006, 1.3439037), Vector3(1.2954258, -2.9640977, 1.9148964)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("../WholeRaccoonModel:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(1.7333333, 1.9333333, 2.146998),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.595, 3.215, -9.37), Vector3(-1.595, 3.215, -1.715), Vector3(0.075, 3.81, 3.535)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("../WholeRaccoonModel:rotation")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(1.7333333, 1.9333333, 2.146998),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.31415927, 0), Vector3(0, 0.31415927, 0)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("trashBase/fishBones:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0, 0.8007187, 2.1546786),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("trashBase/tomatoMesh:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 0.8007187, 2.1546786),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("trashBase/lettuce:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0, 0.8007187, 2.1546786),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("trashBase/bread:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0, 0.8007187, 2.1546786),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("../WholeRaccoonModel:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0, 0.8007187, 2.1546786),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_80xwq"]
+_data = {
+&"RESET": SubResource("Animation_ldmpq"),
+&"idle": SubResource("Animation_xkgmc"),
+&"trashRollSettle": SubResource("Animation_iprtr")
+}
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_qosn7"]
 height = 0.515
@@ -148,12 +723,6 @@ transform = Transform3D(1.58, 0, 0, 0, 1.58, 0, 0, 0, 1.58, 7.299, 0, 0.655)
 [node name="WholeTrash" type="Node3D" parent="." unique_id=527124321]
 transform = Transform3D(0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, 0.9975641, 0, 0, -2.633)
 
-[node name="trashBase" parent="WholeTrash" unique_id=1689667389 instance=ExtResource("10_vdo6g")]
-transform = Transform3D(-0.00252725, 1.4479584, -1.135346, -1.8399972, -0.0032115104, -9.5710474e-11, -0.0019816172, 1.1353443, 1.4479605, -8.052, 2.445, 8.05)
-
-[node name="trashLid" parent="WholeTrash" unique_id=1689766337 instance=ExtResource("11_hf07t")]
-transform = Transform3D(-0.99772173, 1.6513226, 1.2520721, -1.3353357, 0.5503856, -1.7899593, -1.5847491, -1.5033988, 0.7199734, -6.28, 2.528, 6.766)
-
 [node name="SlimeParticles1" type="CPUParticles3D" parent="WholeTrash" unique_id=1484742347]
 transform = Transform3D(0.06189458, -0.997959, 0.015707318, 0.9980822, 0.061902214, -1.1530187e-10, -0.0009723178, 0.015677195, 0.99987656, -6.603, 0.93, 8.972)
 amount = 20
@@ -175,6 +744,36 @@ emission_shape = 3
 emission_box_extents = Vector3(1, 0, 2.2)
 direction = Vector3(0, 0, 1)
 gravity = Vector3(3.035, -0.15, 0)
+
+[node name="trashCanModel" type="Node3D" parent="WholeTrash" unique_id=1835890558]
+
+[node name="trashBase" parent="WholeTrash/trashCanModel" unique_id=1689667389 instance=ExtResource("10_vdo6g")]
+transform = Transform3D(-0.0025272497, 1.4479582, -1.1353459, -1.839997, -0.0032115101, -3.1615874e-10, -0.0019816172, 1.1353441, 1.4479604, -8.051999, 2.445, 8.049999)
+
+[node name="fishBones" parent="WholeTrash/trashCanModel/trashBase" unique_id=978523315 instance=ExtResource("11_djiwr")]
+transform = Transform3D(-0.0812602, -0.29546836, -0.046852045, -0.013478189, 0.052116256, -0.30529034, 0.29885635, -0.07798858, -0.026507609, 0.255, 1.21, 0.035)
+
+[node name="tomatoMesh" parent="WholeTrash/trashCanModel/trashBase" unique_id=1286273143 instance=ExtResource("12_26feh")]
+transform = Transform3D(0.0004925054, -0.3642785, 0.12460296, -0.13416715, 0.116629705, 0.3414993, -0.36086547, -0.04385923, -0.12679689, 0.275, 1.385, 0.065)
+
+[node name="lettuce" parent="WholeTrash/trashCanModel/trashBase" unique_id=1237050228 instance=ExtResource("13_oa7co")]
+transform = Transform3D(0.1810453, 0.4679179, 0.09151807, 0.15355958, 0.035451993, -0.48503885, -0.45137843, 0.19973996, -0.12830354, 0.0630064, 1.4221846, 0.058386326)
+
+[node name="monsterHand" parent="WholeTrash/trashCanModel/trashBase" unique_id=25484297 instance=ExtResource("14_pxs0x")]
+transform = Transform3D(-0.009943838, -0.09913868, 0.16177951, 0, 0.16200164, 0.09927466, -0.1897398, 0.0051956363, -0.008478503, 0.115, -0.695, 0)
+
+[node name="bread" parent="WholeTrash/trashCanModel/trashBase" unique_id=338320632 instance=ExtResource("15_26feh")]
+transform = Transform3D(-0.00370107, 0.75355667, -0.04651439, -0.48380864, -0.038076546, -0.57836354, -0.5796037, 0.026971526, 0.48307043, 0.78, 2.72, -3.48)
+
+[node name="trashLid" parent="WholeTrash/trashCanModel" unique_id=1689766337 instance=ExtResource("11_hf07t")]
+transform = Transform3D(-0.9456667, 1.5651668, 1.1867467, -1.2656664, 0.52167004, -1.6965699, -1.5020666, -1.4249609, 0.68240964, -6.2799993, 2.528, 6.766)
+
+[node name="TrashCanAnimation" type="AnimationPlayer" parent="WholeTrash" unique_id=1681397019]
+root_node = NodePath("../trashCanModel")
+libraries/ = SubResource("AnimationLibrary_80xwq")
+
+[node name="WholeRaccoonModel" parent="WholeTrash" unique_id=1874828909 instance=ExtResource("17_oa7co")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.595, 3.215, -9.37)
 
 [node name="SewerHole" type="Node3D" parent="." unique_id=1301368767]
 transform = Transform3D(0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, 0.9975641, 11.032166, 0, 6.264655)
@@ -243,3 +842,4 @@ transform = Transform3D(-0.9999756, 0, 0.0069812285, 0, 1, 0, -0.0069812285, 0, 
 stream = ExtResource("18_xkgmc")
 volume_db = 1.0
 autoplay = true
+visible = false
