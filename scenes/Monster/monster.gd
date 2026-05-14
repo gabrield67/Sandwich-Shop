@@ -2,6 +2,7 @@ extends Area3D
 var hand_scene = preload("res://models/monster_hand.tscn")
 var hands = [];
 var playedSound = false
+var firstAdd = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	add_hand()
@@ -19,7 +20,10 @@ func on_enter(body: Node3D)->void:
 
 func add_hand()->void:
 	var hs = hand_scene.instantiate()
-	$Monster.play()
+	if firstAdd:
+		firstAdd = false
+	else:
+		$Monster.play()
 	add_child(hs)
 	hands.push_back(hs)
 	

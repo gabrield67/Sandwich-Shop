@@ -3,7 +3,8 @@ extends StaticBody3D
 
 var sauce_scene = preload("res://scenes/Ingredients/Sauce.tscn")
 
-var colors = [ Color.RED, Color.BLUE,  Color.GREEN, Color.WHITE]
+var colors =[Color(239.0/256,68.0/256,68.0/256,1),Color(6.0/268,182.0/256, 212.0/256,1),Color(132.0/256,204.0/256,22.0/256,1), Color.WHITE]
+
 var sauce_index = 0;
 var spawned = false;
 var timer = 1	

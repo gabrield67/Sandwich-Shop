@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://co3tj1g5g5g38" path="res://scenes/parameters.tscn" id="17_ldmpq"]
 [ext_resource type="PackedScene" uid="uid://bfd7ic8voya81" path="res://scenes/UI/game_timer.tscn" id="17_s2b54"]
 [ext_resource type="PackedScene" uid="uid://btcll58epxffn" path="res://scenes/UI/Loss Screen.tscn" id="17_xkgmc"]
+[ext_resource type="AudioStream" uid="uid://cbk4glf7b0n4" path="res://sounds/Garbage Sludge.ogg" id="18_xkgmc"]
 
 [sub_resource type="TorusMesh" id="TorusMesh_qosn7"]
 
@@ -135,8 +136,9 @@ stream = ExtResource("5_djiwr")
 [node name="LoseSound" type="AudioStreamPlayer" parent="." unique_id=178496200]
 stream = ExtResource("6_26feh")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1534530507]
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1534530507]
 stream = ExtResource("7_oa7co")
+volume_db = -1.0
 autoplay = true
 parameters/looping = true
 
@@ -236,3 +238,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.87959313, 1.1091151, -1.756
 
 [node name="LossScreen" parent="." unique_id=1027865471 instance=ExtResource("17_xkgmc")]
 transform = Transform3D(-0.9999756, 0, 0.0069812285, 0, 1, 0, -0.0069812285, 0, -0.9999756, 0.256, 6.964, 9.162)
+
+[node name="Sludge Sound" type="AudioStreamPlayer" parent="." unique_id=1710715433]
+stream = ExtResource("18_xkgmc")
+volume_db = 1.0
+autoplay = true

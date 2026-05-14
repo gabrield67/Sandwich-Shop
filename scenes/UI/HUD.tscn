@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://dw6i7sv2xbbn5" path="res://assets/Pause.png" id="6_0qpk7"]
 [ext_resource type="Texture2D" uid="uid://csjo3m4bfhlub" path="res://assets/Pause_red.png" id="7_ucsqe"]
 [ext_resource type="Texture2D" uid="uid://jvi0ufca2i7" path="res://assets/restart.png" id="8_a0qax"]
+[ext_resource type="Texture2D" uid="uid://b0in8klafmepp" path="res://assets/Tutorial.png" id="9_gawfp"]
+[ext_resource type="Texture2D" uid="uid://dkttrcbqdtyc1" path="res://assets/Play Button.png" id="10_tohwf"]
 
 [node name="HUD" type="CanvasLayer" unique_id=1287460498]
 process_mode = 3
@@ -100,6 +102,25 @@ texture_pressed = ExtResource("8_a0qax")
 ignore_texture_size = true
 stretch_mode = 0
 
+[node name="Tutorial" type="TextureButton" parent="." unique_id=2104160659]
+process_mode = 2
+offset_left = 6.0
+offset_top = 87.0
+offset_right = 1150.0
+offset_bottom = 651.0
+texture_normal = ExtResource("9_gawfp")
+
+[node name="Play" type="TextureButton" parent="." unique_id=1258364092]
+process_mode = 2
+offset_left = 141.0
+offset_top = 176.0
+offset_right = 453.0
+offset_bottom = 481.0
+scale = Vector2(0.5169752, 0.5199997)
+texture_normal = ExtResource("10_tohwf")
+
 [connection signal="pressed" from="TextureButton" to="." method="pause_click"]
 [connection signal="pressed" from="Restart" to="." method="restart_click"]
 [connection signal="pressed" from="Restart2" to="." method="restart_click"]
+[connection signal="pressed" from="Tutorial" to="." method="pause_click"]
+[connection signal="pressed" from="Play" to="." method="pause_click"]
