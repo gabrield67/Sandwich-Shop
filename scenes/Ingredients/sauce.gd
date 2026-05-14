@@ -1,19 +1,21 @@
 class_name Sauce
 extends Ingredient
 
+@onready var chart_display = $"Flavor Display/Flavor Viewport/Flavor Chart"
+
 var sauce_index = 0
 var sauce_colors = []
 var sauce_machine
 var original_position
 var spawn_timer = 2
 var spawning = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	original_size = scale
 	scale = Vector3(0,0,0)
 	original_position = position
 	isSauce = true
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -28,7 +30,6 @@ func _process(delta: float) -> void:
 			if not isHeld:
 				position = original_position
 			spawning = false
-	pass
 	
 func init_sauce(index: int, colorsA: Array, machine) -> void:
 	var material = StandardMaterial3D.new()
@@ -45,6 +46,7 @@ func init_sauce(index: int, colorsA: Array, machine) -> void:
 		ingredient_flavors = [0,0,2]
 	elif sauce_index == 3:
 		ingredient_flavors = [1,1,1]
+	chart_display.update_chart_data(ingredient_flavors)
 	
 func handle_sauce() -> void:
 	$AddToSandwichSound.play()

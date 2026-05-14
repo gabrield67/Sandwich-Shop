@@ -9,16 +9,16 @@
 [ext_resource type="AudioStream" uid="uid://cuwtp2lhf4g5" path="res://sounds/music/rpg_brandon_morris_oga_hael_DB.ogg" id="7_oa7co"]
 [ext_resource type="PackedScene" uid="uid://b4kkoakbexh8r" path="res://models/walls.tscn" id="8_pxs0x"]
 [ext_resource type="PackedScene" uid="uid://cmanph4x4jobr" path="res://scenes/upgrade_manager.tscn" id="9_qu6ye"]
-[ext_resource type="PackedScene" uid="uid://yahuxvrjhitd" path="res://models/trash_base.tscn" id="10_vdo6g"]
+[ext_resource type="PackedScene" path="res://models/trash_base.tscn" id="10_vdo6g"]
 [ext_resource type="PackedScene" uid="uid://7x41ywua5vgq" path="res://models/fishBonesMesh.tscn" id="11_djiwr"]
-[ext_resource type="PackedScene" uid="uid://dt2rm3uiki2lg" path="res://models/trash_lid.tscn" id="11_hf07t"]
+[ext_resource type="PackedScene" path="res://models/trash_lid.tscn" id="11_hf07t"]
 [ext_resource type="PackedScene" uid="uid://b6uqd7cn3xg0x" path="res://models/tomato_mesh.tscn" id="12_26feh"]
 [ext_resource type="Material" uid="uid://sb1tl5fge5x2" path="res://colors/slimeYellow.tres" id="12_ub81o"]
 [ext_resource type="PackedScene" uid="uid://paloirtdcgga" path="res://scenes/Monster/Monster.tscn" id="13_bxin3"]
 [ext_resource type="PackedScene" uid="uid://pd50n848wkq0" path="res://models/lettuceMesh.tscn" id="13_oa7co"]
 [ext_resource type="Material" uid="uid://7gn0t4diki3s" path="res://colors/eyeDarkCharcoal.tres" id="14_hkjom"]
 [ext_resource type="PackedScene" uid="uid://b60vg43gdsml4" path="res://models/monster_hand.tscn" id="14_pxs0x"]
-[ext_resource type="PackedScene" uid="uid://co3tj1g5g5g38" path="res://scenes/parameters.tscn" id="17_ldmpq"]
+[ext_resource type="PackedScene" path="res://scenes/parameters.tscn" id="17_ldmpq"]
 [ext_resource type="PackedScene" uid="uid://c124rtdal8yfg" path="res://models/whole_raccoon_model.tscn" id="17_oa7co"]
 [ext_resource type="PackedScene" uid="uid://bfd7ic8voya81" path="res://scenes/UI/game_timer.tscn" id="17_s2b54"]
 [ext_resource type="PackedScene" uid="uid://btcll58epxffn" path="res://scenes/UI/Loss Screen.tscn" id="17_xkgmc"]
@@ -677,7 +677,7 @@ gravity = Vector3(3.035, -0.15, 0)
 transform = Transform3D(-0.0025272497, 1.4479582, -1.1353459, -1.839997, -0.0032115101, -3.1615874e-10, -0.0019816172, 1.1353441, 1.4479604, -8.051999, 2.445, 8.049999)
 
 [node name="fishBones" parent="WholeTrash/trashCanModel/trashBase" unique_id=978523315 instance=ExtResource("11_djiwr")]
-transform = Transform3D(-0.0812602, -0.2954683, -0.046852045, -0.013478189, 0.052116245, -0.30529034, 0.29885635, -0.077988565, -0.026507609, 0.255, 1.21, 0.035)
+transform = Transform3D(-0.0812602, -0.29546827, -0.046852045, -0.013478189, 0.05211624, -0.30529034, 0.29885635, -0.07798856, -0.026507609, 0.255, 1.21, 0.035)
 
 [node name="tomatoMesh" parent="WholeTrash/trashCanModel/trashBase" unique_id=1286273143 instance=ExtResource("12_26feh")]
 transform = Transform3D(0.00049250526, -0.36427847, 0.12460294, -0.13416712, 0.1166297, 0.34149927, -0.36086538, -0.043859225, -0.12679689, 0.275, 1.385, 0.065)
@@ -686,7 +686,7 @@ transform = Transform3D(0.00049250526, -0.36427847, 0.12460294, -0.13416712, 0.1
 transform = Transform3D(0.1810453, 0.4679179, 0.09151807, 0.15355958, 0.035451993, -0.48503885, -0.45137843, 0.19973996, -0.12830354, 0.0630064, 1.4221846, 0.058386326)
 
 [node name="monsterHand" parent="WholeTrash/trashCanModel/trashBase" unique_id=25484297 instance=ExtResource("14_pxs0x")]
-transform = Transform3D(-0.009943838, -0.099138655, 0.16177951, 0, 0.16200161, 0.09927466, -0.1897398, 0.0051956354, -0.008478503, 0.115, -0.695, 0)
+transform = Transform3D(-0.009943838, -0.09913865, 0.16177951, 0, 0.1620016, 0.09927466, -0.1897398, 0.005195635, -0.008478503, 0.115, -0.695, 0)
 
 [node name="trashLid" parent="WholeTrash/trashCanModel" unique_id=1689766337 instance=ExtResource("11_hf07t")]
 transform = Transform3D(-0.9456667, 1.5651668, 1.1867467, -1.2656664, 0.52167004, -1.6965699, -1.5020666, -1.4249609, 0.68240964, -6.2799993, 2.528, 6.766)

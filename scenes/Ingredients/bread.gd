@@ -56,9 +56,8 @@ func on_entered(body: Node3D) -> void:
 				$Plate.set_surface_override_material(0, on_material)
 				$bread.scale = original_size*1.2
 				$Plate.scale = original_size_plate*1.2
-				if not body.isSauce:
-					body.flavor_chart.hide()
-					flavor_tracker = add_new_flavors(flavor_tracker, body.ingredient_flavors)
+				body.flavor_chart.hide()
+				flavor_tracker = add_new_flavors(flavor_tracker, body.ingredient_flavors)
 				update_display(flavor_tracker)
 
 func on_exited(body: Node3D) -> void:
@@ -72,11 +71,10 @@ func on_exited(body: Node3D) -> void:
 					body.bread = null
 				self.material_off()
 				if finished == false:
-					if not body.isSauce:
-						if body.sandwich_bread != self:
-							flavor_tracker = remove_new_flavors(flavor_tracker, body.ingredient_flavors)
-							update_display(flavor_tracker)
-							body.flavor_chart.show()
+					if body.sandwich_bread != self:
+						flavor_tracker = remove_new_flavors(flavor_tracker, body.ingredient_flavors)
+						update_display(flavor_tracker)
+						body.flavor_chart.show()
 				
 func material_off() -> void:
 	$Plate.set_surface_override_material(0, off_material)
