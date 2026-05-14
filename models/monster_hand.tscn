@@ -146,11 +146,11 @@ _data = {
 [node name="monsterHand" unique_id=25484297 instance=ExtResource("1_gqnhx")]
 script = ExtResource("2_uo5e8")
 
-[node name="Cube" parent="." index="0" unique_id=772115163]
+[node name="Cube" parent="." index="0" unique_id=1924322693]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10479504, -0.0015145243, 0.0013602161)
 surface_material_override/0 = ExtResource("2_esa6o")
 
-[node name="Cube_001" parent="." index="1" unique_id=2071544464]
+[node name="Cube_001" parent="." index="1" unique_id=297445562]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06108061, 6.6412373, 2.6885955)
 surface_material_override/0 = ExtResource("2_esa6o")
 
