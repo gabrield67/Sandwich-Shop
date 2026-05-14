@@ -20,11 +20,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if spawning:
 		spawn_timer = spawn_timer-delta 
-		position = original_position + Vector3(0,.5*spawn_timer,0) 
+		if not isHeld:
+			position = original_position + Vector3(0,.5*spawn_timer,0) 
 		scale = original_size*(2-spawn_timer)*.5
 		if spawn_timer <= 0:
-			scale = original_size 
-			position = original_position
+			scale = original_size
+			if not isHeld:
+				position = original_position
 			spawning = false
 	pass
 	

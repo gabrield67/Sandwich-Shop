@@ -18,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://pd50n848wkq0" path="res://models/lettuceMesh.tscn" id="13_oa7co"]
 [ext_resource type="Material" uid="uid://7gn0t4diki3s" path="res://colors/eyeDarkCharcoal.tres" id="14_hkjom"]
 [ext_resource type="PackedScene" uid="uid://b60vg43gdsml4" path="res://models/monster_hand.tscn" id="14_pxs0x"]
-[ext_resource type="PackedScene" uid="uid://ju7u3wbxyx7i" path="res://models/breadMesh.tscn" id="15_26feh"]
 [ext_resource type="PackedScene" uid="uid://co3tj1g5g5g38" path="res://scenes/parameters.tscn" id="17_ldmpq"]
 [ext_resource type="PackedScene" uid="uid://c124rtdal8yfg" path="res://models/whole_raccoon_model.tscn" id="17_oa7co"]
 [ext_resource type="PackedScene" uid="uid://bfd7ic8voya81" path="res://scenes/UI/game_timer.tscn" id="17_s2b54"]
@@ -182,127 +181,127 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("trashBase/bread:position")
+tracks/8/path = NodePath("trashBase/fishBones:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.78, 2.72, -3.48)]
+"values": [Vector3(0.255, 1.21, 0.035)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("trashBase/bread:rotation")
+tracks/9/path = NodePath("trashBase/fishBones:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.87266463, -0.09599311, -1.6493361)]
+"values": [Vector3(-4.886922, 4.197517, -0.25307274)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("trashBase/fishBones:position")
+tracks/10/path = NodePath("trashBase/tomatoMesh:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.255, 1.21, 0.035)]
+"values": [Vector3(0.275, 1.385, 0.065)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("trashBase/fishBones:rotation")
+tracks/11/path = NodePath("trashBase/tomatoMesh:rotation")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-4.886922, 4.197517, -0.25307274)]
+"values": [Vector3(-2.050762, -0.7766715, 2.2863812)]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("trashBase/tomatoMesh:position")
+tracks/12/path = NodePath("trashBase/lettuce:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.275, 1.385, 0.065)]
+"values": [Vector3(0.0630064, 1.4221846, 0.058386326)]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("trashBase/tomatoMesh:rotation")
+tracks/13/path = NodePath("trashBase/lettuce:rotation")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-2.050762, -0.7766715, 2.2863812)]
+"values": [Vector3(1.256637, 2.5220006, 1.3439035)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("trashBase/lettuce:position")
+tracks/14/path = NodePath("../WholeRaccoonModel:position")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.0630064, 1.4221846, 0.058386326)]
+"values": [Vector3(-1.595, 3.215, -9.37)]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("trashBase/lettuce:rotation")
+tracks/15/path = NodePath("../WholeRaccoonModel:rotation")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(1.256637, 2.5220006, 1.3439035)]
+"values": [Vector3(0, 0, 0)]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("../WholeRaccoonModel:position")
+tracks/16/path = NodePath("trashBase/fishBones:visible")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-1.595, 3.215, -9.37)]
+"update": 1,
+"values": [true]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("../WholeRaccoonModel:rotation")
+tracks/17/path = NodePath("trashBase/tomatoMesh:visible")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
+"update": 1,
+"values": [true]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("trashBase/fishBones:visible")
+tracks/18/path = NodePath("trashBase/lettuce:visible")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
@@ -314,46 +313,10 @@ tracks/18/keys = {
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("trashBase/tomatoMesh:visible")
+tracks/19/path = NodePath("../WholeRaccoonModel:visible")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/20/type = "value"
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/path = NodePath("trashBase/lettuce:visible")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/21/type = "value"
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/path = NodePath("trashBase/bread:visible")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/22/type = "value"
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/path = NodePath("../WholeRaccoonModel:visible")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -465,127 +428,127 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("trashBase/bread:position")
+tracks/8/path = NodePath("trashBase/fishBones:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0.23321912, 0.96666664, 1.3666667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0.78, 1.26, -3.48), Vector3(0.78, 2.72, -3.48), Vector3(0.57, 2.883, -4.181)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("trashBase/bread:rotation")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0.23321912, 0.96666664, 1.3666667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0.87266463, -0.09599311, -1.6493361), Vector3(0.87266463, -0.09599311, -1.6493361), Vector3(0.863938, -0.09599311, -1.6493361)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("trashBase/fishBones:position")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
 "times": PackedFloat32Array(1.2676283, 1.3804762, 1.504609, 1.598649, 1.692689, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0.255, 1.21, 0.035), Vector3(0.12, 2.5, -0.89), Vector3(0.11795735, 3.670281, -1.6823409), Vector3(0.11620641, 4.673439, -2.361531), Vector3(-0.7787876, 4.075638, -3.2421715), Vector3(-0.739, 3.436, -3.242)]
 }
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("trashBase/fishBones:rotation")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("trashBase/fishBones:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
 "times": PackedFloat32Array(1.3804762, 1.504609, 1.598649, 1.692689, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(-4.886922, 4.197517, -0.25307274), Vector3(1.3962632, -2.0856683, -0.2530727), Vector3(1.3962632, -2.0856686, -0.25307313), Vector3(1.3962632, -2.0856688, -0.25307316), Vector3(1.3962631, -2.085669, -0.25307316)]
 }
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("trashBase/tomatoMesh:position")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("trashBase/tomatoMesh:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
 "times": PackedFloat32Array(1.3955227, 1.504609, 1.598649, 1.692689, 1.7942522, 1.8544377, 1.8645824),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0.275, 1.385, 0.065), Vector3(0.27295732, 2.5552807, -0.7273407), Vector3(0.27120638, 3.5584388, -1.4065309), Vector3(0.27025414, 4.103922, -1.7758512), Vector3(0.2692213, 4.6955776, -2.1764326), Vector3(-1.1004469, 4.3280325, -2.7157633), Vector3(-1.1, 3.753, -2.716)]
 }
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("trashBase/tomatoMesh:rotation")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("trashBase/tomatoMesh:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
 "times": PackedFloat32Array(1.3955227, 1.504609, 1.598649, 1.692689, 1.7942522, 1.8544377, 1.8645824),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(-2.050762, -0.7766715, 2.2863812), Vector3(-1.0908307, 2.364921, -0.85521144), Vector3(-1.0908307, 2.364921, -0.85521144), Vector3(-1.0908306, 2.364921, -0.8552114), Vector3(-1.0908304, 2.364921, -0.8552114), Vector3(-1.0908303, 2.364921, -0.8552113), Vector3(-1.4573499, 2.364921, -0.8552113)]
 }
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("trashBase/lettuce:position")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("trashBase/lettuce:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
 "times": PackedFloat32Array(1.504609, 1.598649, 1.692689, 1.7942522, 1.8544377, 1.9021984, 1.9661456),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0.0630064, 1.4221846, 0.058386326), Vector3(0.061255336, 2.4253426, -0.62080383), Vector3(0.060303092, 2.9708261, -0.9901242), Vector3(0.059270263, 3.5624819, -1.3907058), Vector3(0.057579994, 4.5308013, -2.0463085), Vector3(-1.5921535, 4.0042825, -2.8197212), Vector3(-1.305, 3.644, -2.879)]
 }
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("trashBase/lettuce:rotation")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("trashBase/lettuce:rotation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
 "times": PackedFloat32Array(1.504609, 1.598649, 1.692689, 1.7942522, 1.8544377, 1.9021984, 1.9661456),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(1.256637, 2.5220006, 1.3439035), Vector3(1.2566371, 2.5220006, 1.3439035), Vector3(1.2566371, 2.5220006, 1.3439037), Vector3(1.2566371, 2.5220006, 1.3439037), Vector3(1.2566371, 2.5220006, 1.3439037), Vector3(1.2566371, 2.5220006, 1.3439037), Vector3(1.2954258, -2.9640977, 1.9148964)]
 }
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("../WholeRaccoonModel:position")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("../WholeRaccoonModel:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
 "times": PackedFloat32Array(1.7333333, 1.9333333, 2.146998),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(-1.595, 3.215, -9.37), Vector3(-1.595, 3.215, -1.715), Vector3(0.075, 3.81, 3.535)]
 }
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("../WholeRaccoonModel:rotation")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("../WholeRaccoonModel:rotation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
 "times": PackedFloat32Array(1.7333333, 1.9333333, 2.146998),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0.31415927, 0), Vector3(0, 0.31415927, 0)]
 }
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("trashBase/fishBones:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 0.8007187, 2.1546786),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("trashBase/tomatoMesh:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 0.8007187, 2.1546786),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("trashBase/fishBones:visible")
+tracks/18/path = NodePath("trashBase/lettuce:visible")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
@@ -597,46 +560,10 @@ tracks/18/keys = {
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("trashBase/tomatoMesh:visible")
+tracks/19/path = NodePath("../WholeRaccoonModel:visible")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
-"times": PackedFloat32Array(0, 0.8007187, 2.1546786),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/20/type = "value"
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/path = NodePath("trashBase/lettuce:visible")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/keys = {
-"times": PackedFloat32Array(0, 0.8007187, 2.1546786),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/21/type = "value"
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/path = NodePath("trashBase/bread:visible")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/keys = {
-"times": PackedFloat32Array(0, 0.8007187, 2.1546786),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/22/type = "value"
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/path = NodePath("../WholeRaccoonModel:visible")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/keys = {
 "times": PackedFloat32Array(0, 0.8007187, 2.1546786),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
@@ -652,8 +579,6 @@ _data = {
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_qosn7"]
 height = 0.515
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_cccns"]
 
 [node name="Game_Art" type="Node3D" unique_id=1126054119]
 script = ExtResource("1_ldmpq")
@@ -751,19 +676,16 @@ gravity = Vector3(3.035, -0.15, 0)
 transform = Transform3D(-0.0025272497, 1.4479582, -1.1353459, -1.839997, -0.0032115101, -3.1615874e-10, -0.0019816172, 1.1353441, 1.4479604, -8.051999, 2.445, 8.049999)
 
 [node name="fishBones" parent="WholeTrash/trashCanModel/trashBase" unique_id=978523315 instance=ExtResource("11_djiwr")]
-transform = Transform3D(-0.0812602, -0.29546836, -0.046852045, -0.013478189, 0.052116256, -0.30529034, 0.29885635, -0.07798858, -0.026507609, 0.255, 1.21, 0.035)
+transform = Transform3D(-0.0812602, -0.29546833, -0.046852045, -0.013478189, 0.05211625, -0.30529034, 0.29885635, -0.07798857, -0.026507609, 0.255, 1.21, 0.035)
 
 [node name="tomatoMesh" parent="WholeTrash/trashCanModel/trashBase" unique_id=1286273143 instance=ExtResource("12_26feh")]
-transform = Transform3D(0.0004925054, -0.3642785, 0.12460296, -0.13416715, 0.116629705, 0.3414993, -0.36086547, -0.04385923, -0.12679689, 0.275, 1.385, 0.065)
+transform = Transform3D(0.0004925053, -0.36427847, 0.12460294, -0.13416713, 0.1166297, 0.34149927, -0.3608654, -0.043859225, -0.12679689, 0.275, 1.385, 0.065)
 
 [node name="lettuce" parent="WholeTrash/trashCanModel/trashBase" unique_id=1237050228 instance=ExtResource("13_oa7co")]
 transform = Transform3D(0.1810453, 0.4679179, 0.09151807, 0.15355958, 0.035451993, -0.48503885, -0.45137843, 0.19973996, -0.12830354, 0.0630064, 1.4221846, 0.058386326)
 
 [node name="monsterHand" parent="WholeTrash/trashCanModel/trashBase" unique_id=25484297 instance=ExtResource("14_pxs0x")]
-transform = Transform3D(-0.009943838, -0.09913868, 0.16177951, 0, 0.16200164, 0.09927466, -0.1897398, 0.0051956363, -0.008478503, 0.115, -0.695, 0)
-
-[node name="bread" parent="WholeTrash/trashCanModel/trashBase" unique_id=338320632 instance=ExtResource("15_26feh")]
-transform = Transform3D(-0.00370107, 0.75355667, -0.04651439, -0.48380864, -0.038076546, -0.57836354, -0.5796037, 0.026971526, 0.48307043, 0.78, 2.72, -3.48)
+transform = Transform3D(-0.009943838, -0.09913866, 0.16177951, 0, 0.16200162, 0.09927466, -0.1897398, 0.005195636, -0.008478503, 0.115, -0.695, 0)
 
 [node name="trashLid" parent="WholeTrash/trashCanModel" unique_id=1689766337 instance=ExtResource("11_hf07t")]
 transform = Transform3D(-0.9456667, 1.5651668, 1.1867467, -1.2656664, 0.52167004, -1.6965699, -1.5020666, -1.4249609, 0.68240964, -6.2799993, 2.528, 6.766)
@@ -784,25 +706,6 @@ mesh = SubResource("CylinderMesh_qosn7")
 surface_material_override/0 = ExtResource("14_hkjom")
 
 [node name="Monster" parent="SewerHole" unique_id=1760694918 instance=ExtResource("13_bxin3")]
-
-[node name="SecretSauceApparatus" type="Node3D" parent="." unique_id=1782365273]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005, -7.8269696, 2.6072478)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SecretSauceApparatus" unique_id=688467887]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.94, 8.08, 0)
-mesh = SubResource("CylinderMesh_cccns")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="SecretSauceApparatus" unique_id=1990816244]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04, 8.08, 0)
-mesh = SubResource("CylinderMesh_cccns")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="SecretSauceApparatus" unique_id=1999951140]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.935, 8.08, 0)
-mesh = SubResource("CylinderMesh_cccns")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="SecretSauceApparatus" unique_id=642749906]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.01, 8.08, 0)
-mesh = SubResource("CylinderMesh_cccns")
 
 [node name="SewerDoorsPlaceholder" type="Node3D" parent="." unique_id=1861657235]
 
@@ -842,4 +745,3 @@ transform = Transform3D(-0.9999756, 0, 0.0069812285, 0, 1, 0, -0.0069812285, 0, 
 stream = ExtResource("18_xkgmc")
 volume_db = 1.0
 autoplay = true
-visible = false

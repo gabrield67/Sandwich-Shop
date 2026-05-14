@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bdh8u52n0jw4m" path="res://assets/Sandwich Eat Particles.tscn" id="6_4ncmt"]
 [ext_resource type="PackedScene" uid="uid://bsdvlbrb60p7d" path="res://assets/Sauce Particles.tscn" id="7_ok4gj"]
 [ext_resource type="PackedScene" uid="uid://cfqqv7ftdfd1g" path="res://scenes/UI/flavor_chart.tscn" id="8_yg326"]
+[ext_resource type="Texture2D" uid="uid://bx3pi75y8uocb" path="res://assets/Upgrade Plus.png" id="9_3p2gm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kf4f7"]
 size = Vector3(2, 3, 6)
@@ -86,6 +87,12 @@ theme_override_font_sizes/font_size = 35
 [node name="Flavor Chart" parent="Flavor Display/Flavor Viewport" unique_id=1923621798 instance=ExtResource("8_yg326")]
 notch_outline_color = Color(0, 0, 0, 1)
 notch_outline_width = 1.0
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=250586906]
+transform = Transform3D(0.6539514, 0, 0, 0, 0.61910796, 0, 0, 0, 1, -0.078992486, 0.8164034, 1.1327907)
+modulate = Color(1, 1, 1, 0.56078434)
+billboard = 1
+texture = ExtResource("9_3p2gm")
 
 [connection signal="body_entered" from="." to="." method="on_entered"]
 [connection signal="body_exited" from="." to="." method="on_exited"]

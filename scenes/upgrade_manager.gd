@@ -69,20 +69,28 @@ func startUpgradeTime():
 func startUpgradeLights():
 	if not $Bread3.is_active:
 		$Bread3_light.light_energy = 10
+		$Bread3.turnOnUpgradeTime()
 	if not $Bread4.is_active:
 		$Bread4_light.light_energy = 10
+		$Bread4.turnOnUpgradeTime()
 	if not $Raccoon3.is_active:
 		$Bread3_light2.light_energy = 10
+		$Raccoon3.turnOnUpgradeTime()
 	if not $Raccoon.is_active:
 		$Bread4_light2.light_energy = 10
+		$Raccoon.turnOnUpgradeTime()
 	if not $SauceMachine.is_active:
 		$SauceMachine_light.light_energy = 10
+		$SauceMachine.turnOnUpgradeTime()
 	if not $SauceMachine2.is_active:
 		$SauceMachine2_light.light_energy = 10
+		$SauceMachine2.turnOnUpgradeTime()
 	if not $SauceMachine3.is_active:
 		$SauceMachine3_light.light_energy = 10
+		$SauceMachine3.turnOnUpgradeTime()
 	if not $SauceMachine4.is_active:
 		$SauceMachine4_light.light_energy = 10
+		$SauceMachine4.turnOnUpgradeTime()
 	
 func stopUpgradeTime():
 	$Bread4_light.light_energy = 0
@@ -93,4 +101,12 @@ func stopUpgradeTime():
 	$SauceMachine2_light.light_energy = 0
 	$SauceMachine4_light.light_energy = 0
 	$SauceMachine3_light.light_energy = 0
+	$SauceMachine.turnOffUpgradeTime()
+	$SauceMachine2.turnOffUpgradeTime()
+	$SauceMachine3.turnOffUpgradeTime()
+	$SauceMachine4.turnOffUpgradeTime()
+	$Raccoon3.turnOffUpgradeTime()
+	$Raccoon.turnOffUpgradeTime()
+	$Bread3.turnOffUpgradeTime()
+	$Bread.turnOffUpgradeTime()
 	

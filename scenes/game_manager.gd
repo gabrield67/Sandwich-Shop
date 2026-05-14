@@ -109,6 +109,8 @@ func _input(event: InputEvent) -> void:
 						grabbed_object.bread.add_to_sandwich(grabbed_object)
 					else:
 						$"Drop Sound".play()
+						if grabbed_object is Sauce:
+							grabbed_object.handle_sauce()
 						grabbed_object.queue_free()
 					grabbed_object.isHeld = false
 					prev_grabbed_object = grabbed_object

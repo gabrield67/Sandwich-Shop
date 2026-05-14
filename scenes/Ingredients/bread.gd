@@ -28,6 +28,7 @@ var flavor_tracker: Array[int] = [0, 0, 0]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Sprite3D.visible = false
 	original_position = position
 	$MeshInstance3D.visible = false
 	original_size = $bread.scale
@@ -68,9 +69,10 @@ func on_exited(body: Node3D) -> void:
 				self.material_off()
 				if finished == false:
 					if not body.isSauce:
-						flavor_tracker = remove_new_flavors(flavor_tracker, body.ingredient_flavors)
-						update_display(flavor_tracker)
-						body.flavor_chart.show()
+						if body.sandwich_bread != self:
+							flavor_tracker = remove_new_flavors(flavor_tracker, body.ingredient_flavors)
+							update_display(flavor_tracker)
+							body.flavor_chart.show()
 				
 func material_off() -> void:
 	$Plate.set_surface_override_material(0, off_material)
@@ -101,6 +103,7 @@ func add_to_sandwich(ingredient: Node3D):
 		chart_display.update_chart_data(flavor_tracker)
 		update_display(flavor_tracker)
 		print('on bread')
+		ingredient.sandwich_bread = self
 		if ingredient.type_index == 3:
 			on_finished()
 	
@@ -119,6 +122,7 @@ func clean_up_bread():
 	ingredients.clear()
 	on_material.albedo_color = Color.PINK
 	off_material.albedo_color = Color.WHITE
+	flavor_tracker = [0,0,0]
 	update_display(flavor_tracker)
 	chart_display.update_chart_data(flavor_tracker)
 	return_to_position()
@@ -140,6 +144,7 @@ func update_positions():
 
 func make_active() -> void:
 	is_active  = true
+	$Sprite3D.visible = false
 	$bread.visible = true
 	
 func make_inactive() -> void:
@@ -174,3 +179,8 @@ func remove_new_flavors(currentFlavors: Array[int], newFlavors: Array[int]) -> A
 func update_display(newFlavors: Array[int]) -> void:
 	display_label.text = str(newFlavors)
 	chart_display.update_chart_data(flavor_tracker)
+	
+func turnOnUpgradeTime() -> void:
+	$Sprite3D.visible=true
+func turnOffUpgradeTime() -> void:
+	$Sprite3D.visible=false

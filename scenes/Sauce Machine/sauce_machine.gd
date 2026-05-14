@@ -12,7 +12,7 @@ var current_timer = 0
 var is_active = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	$Sprite3D.visible = false
 	
 	pass # Replace with function body.
 
@@ -42,6 +42,12 @@ func init_machine(index:int):
 func make_active():
 	is_active= true
 	current_timer = timer
+	$Sprite3D.visible = false
 	
 func play_sound():
 	$SauceSound.play()
+	
+func turnOnUpgradeTime() -> void:
+	$Sprite3D.visible=true
+func turnOffUpgradeTime() -> void:
+	$Sprite3D.visible=false

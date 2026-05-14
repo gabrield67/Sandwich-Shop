@@ -15,6 +15,7 @@ var isSauce = false
 var isHovered = false
 var move_on_start = false
 var despawn = false
+var sandwich_bread
 var time_to_despawn = 8
 var move_speed = 2
 var move_direction = Vector3(1,0,0)

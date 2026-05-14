@@ -37,6 +37,7 @@ var slot: Node = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	original_model_pos =$WholeRaccoonModel.position
+	$Sprite3D.visible = false
 	# set up timer
 	timer.wait_time = raccoonTime
 	progressBar.max_value = raccoonTime
@@ -105,6 +106,7 @@ func _on_input_event(camera, event, position, normal, shape_idx):
 func make_active() -> void:
 	is_active  = true
 	$TargetFlavorProfile.visible = true
+	$Sprite3D.visible = false
 	thought_bubble_display.visible = true
 	thought_bubble_display.show()
 	
@@ -172,3 +174,8 @@ func check_imperfect_sandwich(actual_flavor, target_flavor) -> bool:
 			if actual_flavor[i] < target_flavor[i]:
 				return false
 	return true
+	
+func turnOnUpgradeTime() -> void:
+	$Sprite3D.visible=true
+func turnOffUpgradeTime() -> void:
+	$Sprite3D.visible=false

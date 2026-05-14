@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://40iec7v7kyhi" path="res://scenes/Sauce Machine/sauce_machine.gd" id="1_hoo76"]
 [ext_resource type="PackedScene" uid="uid://p76u6bysbig7" path="res://sauce_dispenser.tscn" id="3_1jx4e"]
 [ext_resource type="AudioStream" uid="uid://7mkldjnu5617" path="res://sounds/slime9_oga_artistic_dude.wav" id="3_p3b6x"]
+[ext_resource type="Texture2D" uid="uid://bx3pi75y8uocb" path="res://assets/Upgrade Plus.png" id="4_1jx4e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ywgvx"]
 size = Vector3(1, 1.2, 1.5)
@@ -21,3 +22,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.893, 1.46)
 stream = ExtResource("3_p3b6x")
 
 [node name="sauceDispenser" parent="." unique_id=459785786 instance=ExtResource("3_1jx4e")]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1942871846]
+transform = Transform3D(0.6539514, 0, 0, 0, 0.61910796, 0, 0, 0, 1, -0.078992486, 0.8164034, 1.1327907)
+modulate = Color(1, 1, 1, 0.56078434)
+billboard = 1
+texture = ExtResource("4_1jx4e")

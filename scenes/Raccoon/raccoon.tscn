@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d2r8uv00axk3i" path="res://scenes/Raccoon/thought_bubble.tscn" id="5_axfwu"]
 [ext_resource type="PackedScene" uid="uid://bdh8u52n0jw4m" path="res://assets/Sandwich Eat Particles.tscn" id="5_epiun"]
 [ext_resource type="PackedScene" uid="uid://ecpkd4q734jf" path="res://scenes/FlavorProfile.tscn" id="6_epiun"]
+[ext_resource type="Texture2D" uid="uid://bx3pi75y8uocb" path="res://assets/Upgrade Plus.png" id="7_bxu2a"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_fnbhh"]
 viewport_path = NodePath("Timer Display/Timer Viewport")
@@ -66,6 +67,12 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 2.0979843, 1.4099163
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2670898, -0.36985)
 visible = false
 shape = SubResource("BoxShape3D_vwr5m")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1996389846]
+transform = Transform3D(0.6539514, 0, 0, 0, 0.61910796, 0, 0, 0, 1, -0.078992486, 0.8164034, 1.1327907)
+modulate = Color(1, 1, 1, 0.56078434)
+billboard = 1
+texture = ExtResource("7_bxu2a")
 
 [connection signal="area_entered" from="." to="." method="on_entered_area"]
 [connection signal="area_exited" from="." to="." method="on_exited_area"]
