@@ -12,7 +12,7 @@
 viewport_path = NodePath("Timer Display/Timer Viewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gvxd3"]
-size = Vector3(1.4257813, 4.585205, 3.2268012)
+size = Vector3(0.5, 4.585, 5)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_epiun"]
 viewport_path = NodePath("Flavor Display/Flavor Viewport")
@@ -43,7 +43,7 @@ transparent_bg = true
 [node name="Raccoon Click" type="StaticBody3D" parent="." unique_id=735071723]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Raccoon Click" unique_id=1201567582]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.059631348, -0.25500488, -0.4433905)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.059631348, -0.25500488, -1.3569629)
 shape = SubResource("BoxShape3D_gvxd3")
 debug_color = Color(0.9911961, 0, 0.27465352, 0.41960785)
 debug_fill = false

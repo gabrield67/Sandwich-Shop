@@ -108,5 +108,5 @@ func stopUpgradeTime():
 	$Raccoon3.turnOffUpgradeTime()
 	$Raccoon.turnOffUpgradeTime()
 	$Bread3.turnOffUpgradeTime()
-	$Bread.turnOffUpgradeTime()
+	$Bread4.turnOffUpgradeTime()
 	

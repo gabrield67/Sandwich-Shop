@@ -28,6 +28,10 @@ var flavor_tracker: Array[int] = [0, 0, 0]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$SandwichEatParticles.restart()
+	$SandwichEatParticles.emitting = true
+	$"Sauce Particles".restart()
+	$"Sauce Particles".emitting = true 
 	$Sprite3D.visible = false
 	original_position = position
 	$MeshInstance3D.visible = false
