@@ -259,3 +259,7 @@ func on_win() -> void:
 	$LossScreen.show_win()
 	$Music.stop()
 	$WinMusic.play()
+	
+func stop_music() ->void:
+	$Music.stop()
+	
