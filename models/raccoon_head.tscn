@@ -20,27 +20,27 @@ material = SubResource("StandardMaterial3D_osptv")
 [node name="raccoonHead" unique_id=1241450067 instance=ExtResource("1_ousl6")]
 script = ExtResource("2_i0lle")
 
-[node name="Cylinder" parent="." index="0" unique_id=1387519303]
+[node name="Cylinder" parent="." index="0" unique_id=1262152076]
 surface_material_override/0 = ExtResource("2_f4w7d")
 
-[node name="Cylinder_001" parent="." index="1" unique_id=1464094898]
-surface_material_override/0 = ExtResource("2_f4w7d")
-surface_material_override/1 = ExtResource("3_eku7j")
-
-[node name="Cylinder_002" parent="." index="2" unique_id=288919583]
+[node name="Cylinder_001" parent="." index="1" unique_id=1556451873]
 surface_material_override/0 = ExtResource("2_f4w7d")
 surface_material_override/1 = ExtResource("3_eku7j")
 
-[node name="Cube" parent="." index="3" unique_id=1236861795]
+[node name="Cylinder_002" parent="." index="2" unique_id=924485004]
+surface_material_override/0 = ExtResource("2_f4w7d")
+surface_material_override/1 = ExtResource("3_eku7j")
+
+[node name="Cube" parent="." index="3" unique_id=1830523180]
 surface_material_override/0 = ExtResource("4_lnwa2")
 
-[node name="Cube_001" parent="." index="4" unique_id=1476344236]
+[node name="Cube_001" parent="." index="4" unique_id=1508799288]
 surface_material_override/0 = ExtResource("5_ko7r5")
 
-[node name="Cylinder_003" parent="." index="5" unique_id=1358880317]
+[node name="Cylinder_003" parent="." index="5" unique_id=1569147660]
 surface_material_override/0 = ExtResource("5_ko7r5")
 
-[node name="Cylinder_004" parent="." index="6" unique_id=185650425]
+[node name="Cylinder_004" parent="." index="6" unique_id=361429110]
 surface_material_override/0 = ExtResource("5_ko7r5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." index="7" unique_id=584003007]
@@ -56,28 +56,35 @@ surface_material_override/0 = ExtResource("6_dvv7g")
 
 [node name="DeadInd1" type="MeshInstance3D" parent="." index="9" unique_id=245713086]
 transform = Transform3D(0.10339902, -0.2644174, 0, 0.10448752, 0.26166284, 0, 0, 0, 0.057, 0.337, 0.164, -1.1962845)
+visible = false
 mesh = SubResource("BoxMesh_i0lle")
 
 [node name="DeadInd2" type="MeshInstance3D" parent="." index="10" unique_id=1563038489]
 transform = Transform3D(-0.10448751, -0.26166287, 0, 0.10339903, -0.26441738, 0, 0, 0, 0.057, 0.337, 0.164, -1.1962845)
+visible = false
 mesh = SubResource("BoxMesh_i0lle")
 
 [node name="DeadInd3" type="MeshInstance3D" parent="." index="11" unique_id=1081015057]
 transform = Transform3D(0.10339902, -0.2644174, 0, 0.10448752, 0.26166284, 0, 0, 0, 0.057, -0.36, 0.164, -1.1962845)
+visible = false
 mesh = SubResource("BoxMesh_i0lle")
 
 [node name="DeadInd4" type="MeshInstance3D" parent="." index="12" unique_id=858994975]
 transform = Transform3D(-0.10448751, -0.26166287, 0, 0.10339903, -0.26441738, 0, 0, 0, 0.057, -0.36, 0.164, -1.1962845)
+visible = false
 mesh = SubResource("BoxMesh_i0lle")
 
 [node name="WinInd" type="MeshInstance3D" parent="." index="13" unique_id=973300514]
 transform = Transform3D(0.46248922, 0, 0, 0, 0.42120925, 0, 0, 0, 0.057, -0.36, 0.164, -1.1939168)
+visible = false
 mesh = SubResource("BoxMesh_i0lle")
 
 [node name="WinInd2" type="MeshInstance3D" parent="." index="14" unique_id=537779573]
 transform = Transform3D(0.46248922, 0, 0, 0, 0.42120925, 0, 0, 0, 0.057, 0.36462897, 0.164, -1.1939168)
+visible = false
 mesh = SubResource("BoxMesh_i0lle")
 
 [node name="WinInd3" type="MeshInstance3D" parent="." index="15" unique_id=1326274408]
 transform = Transform3D(0.46248922, 0, 0, 0, 0.112947546, 0, 0, 0, 0.057, 0.009575963, 0.2841942, -1.1939168)
+visible = false
 mesh = SubResource("BoxMesh_i0lle")

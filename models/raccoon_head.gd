@@ -1,6 +1,11 @@
 extends Node3D
 
 var is_dead = false;
+
+@onready var raccoon_head = [$"Cylinder"]
+@onready var raccoon_ears = [$"Cylinder_001", $"Cylinder_002"]
+@onready var raccoon_cheeks = [$"Cylinder_003", $"Cylinder_004"]
+@onready var raccoon_snout = $"Cube"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if is_dead:

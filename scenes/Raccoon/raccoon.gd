@@ -10,6 +10,7 @@ extends Area3D
 @onready var thought_bubble_label =$"Flavor Display/Flavor Viewport/Thought Bubble/Label"
 @onready var timer_display = $"Timer Display"
 @onready var chart_display = $"Flavor Display/Flavor Viewport/Thought Bubble/Flavor Chart"
+@onready var color_palette = $"WholeRaccoonModel"
 
 @export var test_raccoon_spawn: bool = false
 @export var bar_width = 40
@@ -37,6 +38,7 @@ var slot: Node = null
 	set(value):
 		needs_to_enter = value
 		if needs_to_enter and is_active:
+			select_random_colors()
 			handle_entrance()
 			
 @export var needs_to_exit: bool = false:
@@ -67,6 +69,7 @@ func _ready() -> void:
 	chart_display.update_chart_data(target_flavors)
 	
 	original_size = scale
+	select_random_colors()
 	if is_active:
 		handle_entrance()
 
@@ -211,6 +214,12 @@ func check_imperfect_sandwich(actual_flavor, target_flavor) -> bool:
 			if actual_flavor[i] < target_flavor[i]:
 				return false
 	return true
+	
+func select_random_colors() -> void:
+	randomize()
+	var random_index = randi() % color_palette.palette_names.size()
+	var chosen_palette = color_palette.palette_names[random_index]
+	color_palette.apply_color_palette(chosen_palette)
 	
 func turnOnUpgradeTime() -> void:
 	$Sprite3D.visible=true

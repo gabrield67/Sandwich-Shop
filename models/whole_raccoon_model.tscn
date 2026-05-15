@@ -11,7 +11,7 @@
 [node name="raccoonHead" parent="." unique_id=1241450067 instance=ExtResource("1_0doq1")]
 transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 0, 0, -0.5564541)
 
-[node name="PlaceholderRaccoonBody" type="MeshInstance3D" parent="." unique_id=294207954]
+[node name="raccoonBody" type="MeshInstance3D" parent="." unique_id=294207954]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -1.3564084, -0.15925771)
 mesh = SubResource("SphereMesh_ka5vx")
 surface_material_override/0 = ExtResource("2_0doq1")

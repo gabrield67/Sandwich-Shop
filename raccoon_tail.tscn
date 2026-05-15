@@ -6,7 +6,7 @@
 
 [node name="raccoonTail" unique_id=687596290 instance=ExtResource("1_xqp31")]
 
-[node name="Cylinder" parent="." index="0" unique_id=1947534138]
+[node name="Cylinder" parent="." index="0" unique_id=290928161]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 surface_material_override/0 = ExtResource("2_7hs65")
 surface_material_override/1 = ExtResource("3_vip82")
