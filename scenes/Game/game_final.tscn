@@ -581,7 +581,7 @@ _data = {
 [sub_resource type="CylinderMesh" id="CylinderMesh_qosn7"]
 height = 0.515
 
-[node name="Game_Art" type="Node3D" unique_id=1126054119]
+[node name="Game_Final" type="Node3D" unique_id=1126054119]
 script = ExtResource("1_ldmpq")
 
 [node name="IndoorLighting" type="Node3D" parent="." unique_id=1607209306]
@@ -677,7 +677,7 @@ gravity = Vector3(3.035, -0.15, 0)
 transform = Transform3D(-0.0025272497, 1.4479582, -1.1353459, -1.839997, -0.0032115101, -3.1615874e-10, -0.0019816172, 1.1353441, 1.4479604, -8.051999, 2.445, 8.049999)
 
 [node name="fishBones" parent="WholeTrash/trashCanModel/trashBase" unique_id=978523315 instance=ExtResource("11_djiwr")]
-transform = Transform3D(-0.0812602, -0.2954682, -0.046852045, -0.013478189, 0.05211623, -0.30529034, 0.29885635, -0.07798854, -0.026507609, 0.255, 1.21, 0.035)
+transform = Transform3D(-0.0812602, -0.29546818, -0.046852045, -0.013478189, 0.052116226, -0.30529034, 0.29885635, -0.077988535, -0.026507609, 0.255, 1.21, 0.035)
 
 [node name="tomatoMesh" parent="WholeTrash/trashCanModel/trashBase" unique_id=1286273143 instance=ExtResource("12_26feh")]
 transform = Transform3D(0.00049250526, -0.36427844, 0.12460294, -0.13416712, 0.11662968, 0.34149927, -0.36086538, -0.04385922, -0.12679689, 0.275, 1.385, 0.065)

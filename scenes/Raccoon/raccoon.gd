@@ -2,7 +2,7 @@ class_name Raccoon
 extends Area3D
 
 @export var raccoonTime: int = 10
-
+@export var move_distance: float = 2
 @onready var timer: Timer = $"Raccoon Timer"
 @onready var progressBar = $"Timer Display/Timer Viewport/Timer 3D"
 @onready var raccoon_click = $"Raccoon Click"
@@ -25,63 +25,97 @@ var ingredient_flavors: Array[int] = [0, 0, 0]
 var is_active = true
 
 var original_model_pos 
-var needs_to_enter = true
 var enter_timer = 0.0
+var target_position
 
-var original_size	;
-
-signal sandwich_completed(raccoon)
+var original_size
+var active_tween: Tween
 
 var slot: Node = null
 
+@export var needs_to_enter: bool = true:
+	set(value):
+		needs_to_enter = value
+		if needs_to_enter and is_active:
+			handle_entrance()
+			
+@export var needs_to_exit: bool = false:
+	set(value):
+		needs_to_exit = value
+		if needs_to_exit and is_active:
+			handle_exit()
+var entered: bool = false:
+	set(value):
+		entered = value
+		if entered and is_active:
+			show_display()
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	original_model_pos =$WholeRaccoonModel.position
+	target_position = global_position
+	original_model_pos = target_position - Vector3(0,0,2)
+	self.position = original_model_pos
 	$Sprite3D.visible = false
 	# set up timer
 	timer.wait_time = raccoonTime
 	progressBar.max_value = raccoonTime
 	timer.one_shot = true
-	timer_display.hide()
 	
-	# set up thought bubble
-	thought_bubble_display.hide()
+	hide_display()
 	randomize_target()
 	
 	chart_display.update_chart_data(target_flavors)
 	
 	original_size = scale
-	# start game
-	#TODO change this after animations come in
-	#await get_tree().create_timer(.5).timeout
-	#thought_bubble_display.show()
-	#timer_display.show()
-	#timer.start()
-	
-	if test_raccoon_spawn:
-		pass
-		#raccoon_click.input_event.connect(_on_input_event)
+	if is_active:
+		handle_entrance()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	progressBar.value = timer.time_left
 	thought_bubble_label.text = str(target_flavors)
-	if is_active:
-		if needs_to_enter:
-			
-			$TargetFlavorProfile.visible = false
-			$WholeRaccoonModel.position = original_model_pos - Vector3(0,0,(2-enter_timer))
-			enter_timer = enter_timer + delta  
-			if enter_timer >= 2:
-				thought_bubble_display.show()
-				needs_to_enter = false;
-				$WholeRaccoonModel.position = original_model_pos
-				enter_timer = 0
-				thought_bubble_display.show()
-				timer_display.show()
-				timer.start()
-			
+
+func _clear_active_tween() -> void:
+	if active_tween and active_tween.is_valid():
+		active_tween.kill()
+		
+func handle_entrance() -> void:
+	_clear_active_tween()
+	
+	global_rotation_degrees.y = 0.0
+	
+	active_tween = create_tween()
+	active_tween.tween_property(self, "global_position", target_position, 1)
+	active_tween.tween_callback(func():
+		entered = true
+	)
+	
+	
+func handle_exit() -> void:
+	_clear_active_tween()
+	
+	active_tween = create_tween()
+	active_tween.tween_property(self, "global_rotation_degrees:y", 180.0, 0.4)
+	active_tween.tween_property(self, "global_position", original_model_pos, 1)
+	
+	active_tween.tween_callback(func():
+		needs_to_exit = false
+		needs_to_enter = true
+		entered = false
+	)
+	
+func show_display() -> void:
+	thought_bubble_display.show()
+	thought_bubble_display.visible = true
+	timer_display.show()
+	timer.start()
+	
+func hide_display() -> void:
+	thought_bubble_display.hide()
+	thought_bubble_display.visible = false
+	timer_display.hide()
+
 			
 func randomize_target() -> void:
 	# generates a new target 
@@ -96,26 +130,29 @@ func randomize_target() -> void:
 		final[random_index] += 1
 
 	target_flavors = final
-	
-func _on_input_event(camera, event, position, normal, shape_idx):
-	if event is InputEventMouseButton:
-		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-			pass
-			#emit_signal("sandwich_completed", self)
-	
+		
 func make_active() -> void:
-	is_active  = true
-	$TargetFlavorProfile.visible = true
+	_clear_active_tween()
+	self.global_position = original_model_pos
+	self.global_rotation_degrees.y = 0.0
+	
+	is_active = true
 	$Sprite3D.visible = false
-	thought_bubble_display.visible = true
-	thought_bubble_display.show()
+	
+	needs_to_enter = true
 	
 func make_inactive() -> void:
+	_clear_active_tween()
+	
 	is_active = false
-	thought_bubble_display.hide()
-	thought_bubble_display.visible = false
-	$WholeRaccoonModel.position = original_model_pos - Vector3(0,0,(2))
-	$TargetFlavorProfile.visible = false
+	needs_to_enter = false
+	needs_to_exit = false
+	entered = false
+	
+	hide_display()
+	
+	self.global_position = original_model_pos
+	self.global_rotation_degrees.y = 0.0
 	
 func on_entered_area(area: Area3D) -> void:
 	if is_active:
@@ -165,7 +202,7 @@ func on_finished(ingredient: Node3D):
 	clean_up_raccoon()
 	
 func clean_up_raccoon():
-	needs_to_enter = true
+	needs_to_exit = true
 	randomize_target()
 	chart_display.update_chart_data(target_flavors)
 
