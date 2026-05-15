@@ -1,0 +1,240 @@
+[gd_scene format=3 uid="uid://b4kkoakbexh8r"]
+
+[ext_resource type="PackedScene" uid="uid://bxjs8jmi1nepo" path="res://models/4_red_brick.tscn" id="1_4gegr"]
+[ext_resource type="Material" uid="uid://8kf6dv73p3lv" path="res://colors/fishCharcoal.tres" id="1_cjjxk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pd14n"]
+size = Vector3(1, 9.8, 19.225)
+
+[node name="Walls" type="Node3D" unique_id=915657737]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=621821630]
+transform = Transform3D(0.9941942, 0, -0.107600264, 0, 1, 0, 0.107600264, 0, 0.9941942, -13.424712, 3.5059636, -0.26685667)
+mesh = SubResource("BoxMesh_pd14n")
+surface_material_override/0 = ExtResource("1_cjjxk")
+
+[node name="4RedBrick" parent="MeshInstance3D" unique_id=541584649 instance=ExtResource("1_4gegr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03003788, -0.72583604)
+
+[node name="4RedBrick2" parent="MeshInstance3D" unique_id=1122379395 instance=ExtResource("1_4gegr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.636847, -0.72583604)
+
+[node name="4RedBrick3" parent="MeshInstance3D" unique_id=466629732 instance=ExtResource("1_4gegr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03003788, -4.8823786)
+
+[node name="4RedBrick4" parent="MeshInstance3D" unique_id=385410779 instance=ExtResource("1_4gegr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.636847, -4.8823786)
+
+[node name="4RedBrick5" parent="MeshInstance3D" unique_id=1988379722 instance=ExtResource("1_4gegr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1930711, -0.72583604)
+
+[node name="4RedBrick6" parent="MeshInstance3D" unique_id=1991187562 instance=ExtResource("1_4gegr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5862625, -0.72583604)
+
+[node name="4RedBrick7" parent="MeshInstance3D" unique_id=1039282589 instance=ExtResource("1_4gegr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1930711, -4.8823786)
+
+[node name="4RedBrick8" parent="MeshInstance3D" unique_id=1446497838 instance=ExtResource("1_4gegr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5862625, -4.8823786)
+
+[node name="4RedBrick9" parent="MeshInstance3D" unique_id=339775912 instance=ExtResource("1_4gegr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.1828964, -0.72583604)
+
+[node name="4RedBrick10" parent="MeshInstance3D" unique_id=235872240 instance=ExtResource("1_4gegr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.7897053, -0.72583604)
+
+[node name="4RedBrick11" parent="MeshInstance3D" unique_id=1139834163 instance=ExtResource("1_4gegr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.1828964, -4.8823786)
+
+[node name="4RedBrick12" parent="MeshInstance3D" unique_id=1546964453 instance=ExtResource("1_4gegr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.7897053, -4.8823786)
+
+[node name="4RedBrick13" parent="MeshInstance3D" unique_id=1271316223 instance=ExtResource("1_4gegr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03003788, 7.6525307)
+
+[node name="4RedBrick14" parent="MeshInstance3D" unique_id=1915522790 instance=ExtResource("1_4gegr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.636847, 7.6525307)
+
+[node name="4RedBrick15" parent="MeshInstance3D" unique_id=1541466743 instance=ExtResource("1_4gegr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03003788, 3.495988)
+
+[node name="4RedBrick16" parent="MeshInstance3D" unique_id=347355410 instance=ExtResource("1_4gegr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.636847, 3.495988)
+
+[node name="4RedBrick17" parent="MeshInstance3D" unique_id=790997083 instance=ExtResource("1_4gegr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1930711, 7.6525307)
+
+[node name="4RedBrick18" parent="MeshInstance3D" unique_id=1250681007 instance=ExtResource("1_4gegr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5862625, 7.6525307)
+
+[node name="4RedBrick19" parent="MeshInstance3D" unique_id=1312638076 instance=ExtResource("1_4gegr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1930711, 3.495988)
+
+[node name="4RedBrick20" parent="MeshInstance3D" unique_id=1141112374 instance=ExtResource("1_4gegr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5862625, 3.495988)
+
+[node name="4RedBrick21" parent="MeshInstance3D" unique_id=556699600 instance=ExtResource("1_4gegr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.1828964, 7.6525307)
+
+[node name="4RedBrick22" parent="MeshInstance3D" unique_id=798297433 instance=ExtResource("1_4gegr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.7897053, 7.6525307)
+
+[node name="4RedBrick23" parent="MeshInstance3D" unique_id=1680818146 instance=ExtResource("1_4gegr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.1828964, 3.495988)
+
+[node name="4RedBrick24" parent="MeshInstance3D" unique_id=1840237671 instance=ExtResource("1_4gegr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.7897053, 3.495988)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=106696433]
+transform = Transform3D(0.99722046, 0, 0.074508816, 0, 1, 0, -0.074508816, 0, 0.99722046, 5.7405834, 3.5059636, -0.24383259)
+mesh = SubResource("BoxMesh_pd14n")
+surface_material_override/0 = ExtResource("1_cjjxk")
+
+[node name="4RedBrick" parent="MeshInstance3D2" unique_id=686532883 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9982139, 0, 0.059741817, 0, 1, 0, -0.059741817, 0, -0.9982139, -0.92655325, -0.03003788, -3.7712693)
+
+[node name="4RedBrick2" parent="MeshInstance3D2" unique_id=112450613 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9982139, 0, 0.059741817, 0, 1, 0, -0.059741817, 0, -0.9982139, -0.92655325, -1.636847, -3.7712693)
+
+[node name="4RedBrick3" parent="MeshInstance3D2" unique_id=1826644682 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9982139, 0, 0.059741817, 0, 1, 0, -0.059741817, 0, -0.9982139, -1.1748729, -0.03003788, 0.37784946)
+
+[node name="4RedBrick4" parent="MeshInstance3D2" unique_id=172986094 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9982139, 0, 0.059741817, 0, 1, 0, -0.059741817, 0, -0.9982139, -1.1748729, -1.636847, 0.37784946)
+
+[node name="4RedBrick5" parent="MeshInstance3D2" unique_id=1598430013 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9982139, 0, 0.059741817, 0, 1, 0, -0.059741817, 0, -0.9982139, -0.92655325, 3.1930711, -3.7712693)
+
+[node name="4RedBrick6" parent="MeshInstance3D2" unique_id=388223719 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9982139, 0, 0.059741817, 0, 1, 0, -0.059741817, 0, -0.9982139, -0.92655325, 1.5862625, -3.7712693)
+
+[node name="4RedBrick7" parent="MeshInstance3D2" unique_id=1095215034 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9982139, 0, 0.059741817, 0, 1, 0, -0.059741817, 0, -0.9982139, -1.1748729, 3.1930711, 0.37784946)
+
+[node name="4RedBrick8" parent="MeshInstance3D2" unique_id=2143047738 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9982139, 0, 0.059741817, 0, 1, 0, -0.059741817, 0, -0.9982139, -1.1748729, 1.5862625, 0.37784946)
+
+[node name="4RedBrick9" parent="MeshInstance3D2" unique_id=1182719599 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9982139, 0, 0.059741817, 0, 1, 0, -0.059741817, 0, -0.9982139, -0.92655325, -3.1828964, -3.7712693)
+
+[node name="4RedBrick10" parent="MeshInstance3D2" unique_id=641796197 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9982139, 0, 0.059741817, 0, 1, 0, -0.059741817, 0, -0.9982139, -0.92655325, -4.7897053, -3.7712693)
+
+[node name="4RedBrick11" parent="MeshInstance3D2" unique_id=421028921 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9982139, 0, 0.059741817, 0, 1, 0, -0.059741817, 0, -0.9982139, -1.1748729, -3.1828964, 0.37784946)
+
+[node name="4RedBrick12" parent="MeshInstance3D2" unique_id=1062251497 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9982139, 0, 0.059741817, 0, 1, 0, -0.059741817, 0, -0.9982139, -1.1748729, -4.7897053, 0.37784946)
+
+[node name="4RedBrick13" parent="MeshInstance3D2" unique_id=2054837463 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9982138, 0, 0.059741817, 0, 1, 0, -0.059741817, 0, -0.9982138, -1.4659925, -0.03003788, 4.5424337)
+
+[node name="4RedBrick14" parent="MeshInstance3D2" unique_id=568515185 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9982138, 0, 0.059741817, 0, 1, 0, -0.059741817, 0, -0.9982138, -1.4659925, -1.636847, 4.5424337)
+
+[node name="4RedBrick15" parent="MeshInstance3D2" unique_id=677318388 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9982138, 0, 0.059741817, 0, 1, 0, -0.059741817, 0, -0.9982138, -1.7143121, -0.03003788, 8.691553)
+
+[node name="4RedBrick16" parent="MeshInstance3D2" unique_id=1052036160 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9982138, 0, 0.059741817, 0, 1, 0, -0.059741817, 0, -0.9982138, -1.7143121, -1.636847, 8.691553)
+
+[node name="4RedBrick17" parent="MeshInstance3D2" unique_id=2102643523 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9982138, 0, 0.059741817, 0, 1, 0, -0.059741817, 0, -0.9982138, -1.4659925, 3.1930711, 4.5424337)
+
+[node name="4RedBrick18" parent="MeshInstance3D2" unique_id=1838388004 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9982138, 0, 0.059741817, 0, 1, 0, -0.059741817, 0, -0.9982138, -1.4659925, 1.5862625, 4.5424337)
+
+[node name="4RedBrick19" parent="MeshInstance3D2" unique_id=36490206 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9982138, 0, 0.059741817, 0, 1, 0, -0.059741817, 0, -0.9982138, -1.7143121, 3.1930711, 8.691553)
+
+[node name="4RedBrick20" parent="MeshInstance3D2" unique_id=1294481184 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9982138, 0, 0.059741817, 0, 1, 0, -0.059741817, 0, -0.9982138, -1.7143121, 1.5862625, 8.691553)
+
+[node name="4RedBrick21" parent="MeshInstance3D2" unique_id=1794243242 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9982138, 0, 0.059741817, 0, 1, 0, -0.059741817, 0, -0.9982138, -1.4659925, -3.1828964, 4.5424337)
+
+[node name="4RedBrick22" parent="MeshInstance3D2" unique_id=2007451122 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9982138, 0, 0.059741817, 0, 1, 0, -0.059741817, 0, -0.9982138, -1.4659925, -4.7897053, 4.5424337)
+
+[node name="4RedBrick23" parent="MeshInstance3D2" unique_id=1887226477 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9982138, 0, 0.059741817, 0, 1, 0, -0.059741817, 0, -0.9982138, -1.7143121, -3.1828964, 8.691553)
+
+[node name="4RedBrick24" parent="MeshInstance3D2" unique_id=1299836316 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9982138, 0, 0.059741817, 0, 1, 0, -0.059741817, 0, -0.9982138, -1.7143121, -4.7897053, 8.691553)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=188742623]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.5279827, 3.5059636, -6.93202)
+mesh = SubResource("BoxMesh_pd14n")
+surface_material_override/0 = ExtResource("1_cjjxk")
+
+[node name="4RedBrick" parent="MeshInstance3D3" unique_id=1067812079 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9999894, 0, 0.004607544, 0, 1, 0, -0.004607544, 0, -0.9999894, 0.09988546, -0.03003788, -6.3200502)
+
+[node name="4RedBrick2" parent="MeshInstance3D3" unique_id=1996524307 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9999894, 0, 0.004607544, 0, 1, 0, -0.004607544, 0, -0.9999894, 0.09988546, -1.636847, -6.3200502)
+
+[node name="4RedBrick3" parent="MeshInstance3D3" unique_id=1752083919 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9999894, 0, 0.004607544, 0, 1, 0, -0.004607544, 0, -0.9999894, 0.080732346, -0.03003788, -2.163552)
+
+[node name="4RedBrick4" parent="MeshInstance3D3" unique_id=1593472244 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9999894, 0, 0.004607544, 0, 1, 0, -0.004607544, 0, -0.9999894, 0.080732346, -1.636847, -2.163552)
+
+[node name="4RedBrick5" parent="MeshInstance3D3" unique_id=1449987567 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9999894, 0, 0.004607544, 0, 1, 0, -0.004607544, 0, -0.9999894, 0.09988546, 3.1930711, -6.3200502)
+
+[node name="4RedBrick6" parent="MeshInstance3D3" unique_id=519347948 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9999894, 0, 0.004607544, 0, 1, 0, -0.004607544, 0, -0.9999894, 0.09988546, 1.5862625, -6.3200502)
+
+[node name="4RedBrick7" parent="MeshInstance3D3" unique_id=930195266 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9999894, 0, 0.004607544, 0, 1, 0, -0.004607544, 0, -0.9999894, 0.080732346, 3.1930711, -2.163552)
+
+[node name="4RedBrick8" parent="MeshInstance3D3" unique_id=438613980 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9999894, 0, 0.004607544, 0, 1, 0, -0.004607544, 0, -0.9999894, 0.080732346, 1.5862625, -2.163552)
+
+[node name="4RedBrick9" parent="MeshInstance3D3" unique_id=1529271013 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9999894, 0, 0.004607544, 0, 1, 0, -0.004607544, 0, -0.9999894, 0.09988546, -3.1828964, -6.3200502)
+
+[node name="4RedBrick10" parent="MeshInstance3D3" unique_id=2084349840 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9999894, 0, 0.004607544, 0, 1, 0, -0.004607544, 0, -0.9999894, 0.09988546, -4.7897053, -6.3200502)
+
+[node name="4RedBrick11" parent="MeshInstance3D3" unique_id=1599688218 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9999894, 0, 0.004607544, 0, 1, 0, -0.004607544, 0, -0.9999894, 0.080732346, -3.1828964, -2.163552)
+
+[node name="4RedBrick12" parent="MeshInstance3D3" unique_id=1295954026 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9999894, 0, 0.004607544, 0, 1, 0, -0.004607544, 0, -0.9999894, 0.080732346, -4.7897053, -2.163552)
+
+[node name="4RedBrick13" parent="MeshInstance3D3" unique_id=1120787833 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9999894, 0, 0.004607544, 0, 1, 0, -0.004607544, 0, -0.9999894, 0.09988499, -0.03003788, 2.085661)
+
+[node name="4RedBrick14" parent="MeshInstance3D3" unique_id=881053953 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9999894, 0, 0.004607544, 0, 1, 0, -0.004607544, 0, -0.9999894, 0.09988499, -1.636847, 2.085661)
+
+[node name="4RedBrick15" parent="MeshInstance3D3" unique_id=1246167553 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9999894, 0, 0.004607544, 0, 1, 0, -0.004607544, 0, -0.9999894, 0.080732346, -0.03003788, 6.242159)
+
+[node name="4RedBrick16" parent="MeshInstance3D3" unique_id=829472918 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9999894, 0, 0.004607544, 0, 1, 0, -0.004607544, 0, -0.9999894, 0.080732346, -1.636847, 6.242159)
+
+[node name="4RedBrick17" parent="MeshInstance3D3" unique_id=1171839322 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9999894, 0, 0.004607544, 0, 1, 0, -0.004607544, 0, -0.9999894, 0.09988499, 3.1930711, 2.085661)
+
+[node name="4RedBrick18" parent="MeshInstance3D3" unique_id=100780566 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9999894, 0, 0.004607544, 0, 1, 0, -0.004607544, 0, -0.9999894, 0.09988499, 1.5862625, 2.085661)
+
+[node name="4RedBrick19" parent="MeshInstance3D3" unique_id=2059735139 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9999894, 0, 0.004607544, 0, 1, 0, -0.004607544, 0, -0.9999894, 0.080732346, 3.1930711, 6.242159)
+
+[node name="4RedBrick20" parent="MeshInstance3D3" unique_id=1259756520 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9999894, 0, 0.004607544, 0, 1, 0, -0.004607544, 0, -0.9999894, 0.080732346, 1.5862625, 6.242159)
+
+[node name="4RedBrick21" parent="MeshInstance3D3" unique_id=212867284 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9999894, 0, 0.004607544, 0, 1, 0, -0.004607544, 0, -0.9999894, 0.09988499, -3.1828964, 2.085661)
+
+[node name="4RedBrick22" parent="MeshInstance3D3" unique_id=300022372 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9999894, 0, 0.004607544, 0, 1, 0, -0.004607544, 0, -0.9999894, 0.09988499, -4.7897053, 2.085661)
+
+[node name="4RedBrick23" parent="MeshInstance3D3" unique_id=573625781 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9999894, 0, 0.004607544, 0, 1, 0, -0.004607544, 0, -0.9999894, 0.080732346, -3.1828964, 6.242159)
+
+[node name="4RedBrick24" parent="MeshInstance3D3" unique_id=1150444950 instance=ExtResource("1_4gegr")]
+transform = Transform3D(-0.9999894, 0, 0.004607544, 0, 1, 0, -0.004607544, 0, -0.9999894, 0.080732346, -4.7897053, 6.242159)

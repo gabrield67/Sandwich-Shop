@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dtd1mtifhnvab"]
+
+[ext_resource type="Script" uid="uid://sri5f1gjv6sc" path="res://scenes/Raccoon/raccoon_manager.gd" id="1_i7y3h"]
+[ext_resource type="PackedScene" uid="uid://ccbffutqtq21k" path="res://scenes/Raccoon/raccoon.tscn" id="2_sjjxq"]
+[ext_resource type="Script" uid="uid://b67lox2qabkcr" path="res://scenes/Raccoon/slot.gd" id="3_qg0vf"]
+
+[node name="Raccoon Manager" type="Node" unique_id=853224076]
+script = ExtResource("1_i7y3h")
+raccoon_scene = ExtResource("2_sjjxq")
+
+[node name="Raccoon Placement" type="Node3D" parent="." unique_id=2083537139]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2990437, 0.5184207)
+
+[node name="Slot" type="Node3D" parent="Raccoon Placement" unique_id=1755505467]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.133707, 0, -3.0857244)
+script = ExtResource("3_qg0vf")
+
+[node name="Slot2" type="Node3D" parent="Raccoon Placement" unique_id=109943122]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.81509566, 0, -3.0857244)
+script = ExtResource("3_qg0vf")
+
+[node name="Slot3" type="Node3D" parent="Raccoon Placement" unique_id=591279604]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9692862, 0, -3.0857244)
+script = ExtResource("3_qg0vf")
+
+[node name="Slot4" type="Node3D" parent="Raccoon Placement" unique_id=116933554]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.782774, 0, -3.0857244)
+script = ExtResource("3_qg0vf")
+
+[node name="Raccoons" type="Node" parent="." unique_id=1923348800]

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://i47o6l2cwokv"]
+
+[ext_resource type="PackedScene" uid="uid://3f1p7cxc77nr" path="res://models/raccoonTail.glb" id="1_xqp31"]
+[ext_resource type="Material" uid="uid://cujwxnb7cugkl" path="res://colors/trashGray.tres" id="2_7hs65"]
+[ext_resource type="Material" uid="uid://8kf6dv73p3lv" path="res://colors/fishCharcoal.tres" id="3_vip82"]
+
+[node name="raccoonTail" unique_id=687596290 instance=ExtResource("1_xqp31")]
+
+[node name="Cylinder" parent="." index="0" unique_id=290928161]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_7hs65")
+surface_material_override/1 = ExtResource("3_vip82")

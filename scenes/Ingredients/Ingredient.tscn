@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bgu50auo18ypd"]
+
+[ext_resource type="PackedScene" uid="uid://b6uqd7cn3xg0x" path="res://models/tomato_mesh.tscn" id="1_weumo"]
+[ext_resource type="Script" uid="uid://dlcqiqygwtmgd" path="res://scenes/Ingredients/ingredient.gd" id="1_y8d8e"]
+[ext_resource type="PackedScene" uid="uid://ecpkd4q734jf" path="res://scenes/FlavorProfile.tscn" id="3_b12no"]
+[ext_resource type="AudioStream" uid="uid://8cytiw0cfaxq" path="res://sounds/random2_oga_artisticdude.wav" id="4_y8d8e"]
+[ext_resource type="PackedScene" uid="uid://cfqqv7ftdfd1g" path="res://scenes/UI/flavor_chart.tscn" id="5_ow5cj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1am71"]
+size = Vector3(2, 0.4, 2)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_i2ser"]
+viewport_path = NodePath("Flavor Display/Flavor Viewport")
+
+[node name="Ingredient" type="StaticBody3D" unique_id=1817893045]
+script = ExtResource("1_y8d8e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=176146749]
+shape = SubResource("BoxShape3D_1am71")
+
+[node name="tomatoMesh" parent="." unique_id=1286273143 instance=ExtResource("1_weumo")]
+
+[node name="FlavorProfile" parent="." unique_id=414758302 instance=ExtResource("3_b12no")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.66455185, 0.2718928, 1.0902346)
+
+[node name="AddToSandwichSound" type="AudioStreamPlayer" parent="." unique_id=1021067203]
+stream = ExtResource("4_y8d8e")
+pitch_scale = 1.8
+
+[node name="Flavor Display" type="Sprite3D" parent="." unique_id=437178471]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40450048, 0.4166764, 0.8609812)
+billboard = 1
+texture = SubResource("ViewportTexture_i2ser")
+
+[node name="Flavor Viewport" type="SubViewport" parent="Flavor Display" unique_id=1092217114]
+transparent_bg = true
+
+[node name="Label" type="Label" parent="Flavor Display/Flavor Viewport" unique_id=1645579572]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -21.0
+offset_right = 61.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+
+[node name="Flavor Chart" parent="Flavor Display/Flavor Viewport" unique_id=1923621798 instance=ExtResource("5_ow5cj")]
+notch_outline_color = Color(0, 0, 0, 1)
+notch_outline_width = 1.0

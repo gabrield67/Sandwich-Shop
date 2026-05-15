@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ju7u3wbxyx7i"]
+
+[ext_resource type="PackedScene" uid="uid://cow4iscn5txbf" path="res://models/bread.glb" id="1_o5nec"]
+[ext_resource type="Material" uid="uid://c58kryccqh2qk" path="res://colors/breadBrown.tres" id="2_73r8d"]
+[ext_resource type="Material" uid="uid://lhyoib2shmiv" path="res://colors/breadLightBrown.tres" id="3_knl1b"]
+
+[node name="bread" unique_id=338320632 instance=ExtResource("1_o5nec")]
+
+[node name="Cube" parent="." index="0" unique_id=700049488]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7037995, 0)
+surface_material_override/0 = ExtResource("2_73r8d")
+surface_material_override/1 = ExtResource("3_knl1b")

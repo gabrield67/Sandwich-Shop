@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ecpkd4q734jf"]
+
+[ext_resource type="Script" uid="uid://c30xoa6pfg0gr" path="res://scenes/flavor_profile.gd" id="1_ifqar"]
+
+[node name="FlavorProfile" type="Node3D" unique_id=414758302]
+script = ExtResource("1_ifqar")
+
+[node name="Flavor1" type="Node3D" parent="." unique_id=1506588621]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9961386, 0, 0)
+
+[node name="Flavor2" type="Node3D" parent="." unique_id=436674301]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32056397, 0, 0)
+
+[node name="Flavor3" type="Node3D" parent="." unique_id=1442328881]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3832599, 0, 0)
+
+[node name="Flavor4" type="Node3D" parent="." unique_id=1900150937]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.98546076, 0, 0)

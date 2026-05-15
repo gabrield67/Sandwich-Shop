@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c3fdf77psgmhn"
+path="res://.godot/imported/Cyberpunk Moonlight Sonata JOTH_Open Game Art.mp3-e3bd6b6d5a79e206e478c164d184e14d.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/Cyberpunk Moonlight Sonata JOTH_Open Game Art.mp3"
+dest_files=["res://.godot/imported/Cyberpunk Moonlight Sonata JOTH_Open Game Art.mp3-e3bd6b6d5a79e206e478c164d184e14d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

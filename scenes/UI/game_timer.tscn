@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bfd7ic8voya81"]
+
+[node name="Game Timer" type="Timer" unique_id=936284248]

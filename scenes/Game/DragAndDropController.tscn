@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cekaksnqp516x"]
+
+[ext_resource type="Script" uid="uid://dnsby02e4apsw" path="res://scenes/Game/game_manager.gd" id="1_gh27g"]
+
+[node name="DragAndDropController" type="Node3D" unique_id=578573874]
+script = ExtResource("1_gh27g")

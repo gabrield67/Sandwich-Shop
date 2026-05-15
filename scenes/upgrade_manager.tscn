@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://cmanph4x4jobr"]
+
+[ext_resource type="Script" uid="uid://ccjc7jb5iqi23" path="res://scenes/upgrade_manager.gd" id="1_ssrsn"]
+[ext_resource type="PackedScene" uid="uid://c54v7gf8e74j5" path="res://scenes/Ingredients/Bread.tscn" id="2_076jq"]
+[ext_resource type="PackedScene" uid="uid://b8kmk2ebsnyy5" path="res://scenes/Sauce Machine/SauceMachine.tscn" id="3_076jq"]
+[ext_resource type="PackedScene" uid="uid://ccbffutqtq21k" path="res://scenes/Raccoon/raccoon.tscn" id="4_p44lo"]
+[ext_resource type="PackedScene" uid="uid://dite4secijj4j" path="res://scenes/UI/SandwichCounter.tscn" id="5_yx8ru"]
+
+[node name="UpgradeManager" type="Node3D" unique_id=357130373]
+script = ExtResource("1_ssrsn")
+
+[node name="Bread" parent="." unique_id=1187585206 instance=ExtResource("2_076jq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7874794, 0, 0)
+
+[node name="Bread2" parent="." unique_id=673511391 instance=ExtResource("2_076jq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6648092, 0, 0)
+
+[node name="Bread3" parent="." unique_id=1372513161 instance=ExtResource("2_076jq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.02864, 0, 0)
+
+[node name="Bread4" parent="." unique_id=238430442 instance=ExtResource("2_076jq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9935837, 0, 0)
+
+[node name="SauceMachine" parent="." unique_id=1370060822 instance=ExtResource("3_076jq")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -11.4868965, 4.8971896, -0.94149995)
+
+[node name="SauceMachine2" parent="." unique_id=1885987930 instance=ExtResource("3_076jq")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.4158535, 4.912202, 3.1377432)
+
+[node name="SauceMachine3" parent="." unique_id=1176405904 instance=ExtResource("3_076jq")]
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 11.086864, 5.0193043, -1.1707022)
+
+[node name="SauceMachine4" parent="." unique_id=1172735737 instance=ExtResource("3_076jq")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 11.268125, 5.0193043, 2.5001545)
+
+[node name="Bread4_light" type="SpotLight3D" parent="." unique_id=1387518698]
+transform = Transform3D(1, 0, 0, 0, -0.03127117, 0.99951094, 0, -0.99951094, -0.03127117, -7.8838153, 3.1463041, 0)
+
+[node name="Bread3_light" type="SpotLight3D" parent="." unique_id=1258138221]
+transform = Transform3D(1, 0, 0, 0, -0.0031764891, 0.99999493, 0, -0.99999493, -0.0031764891, 7.812482, 2.671819, 0)
+spot_range = 3.376309
+
+[node name="Bread4_light2" type="SpotLight3D" parent="." unique_id=593323215]
+transform = Transform3D(1, 0, 0, 0, -0.031445608, 0.99950546, 0, -0.99950546, -0.031445608, -8.139338, 5.756592, -6.1970215)
+
+[node name="Bread3_light2" type="SpotLight3D" parent="." unique_id=1507871108]
+transform = Transform3D(1, 0, 0, 0, -0.10350425, 0.994629, 0, -0.994629, -0.10350425, 8.976089, 5.2397156, -6.681235)
+
+[node name="SauceMachine_light" type="SpotLight3D" parent="." unique_id=772677100]
+transform = Transform3D(1, 0, 0, 0, 0.075413875, 0.9971523, 0, -0.9971523, 0.075413875, -11.182748, 8.218652, -0.9198077)
+
+[node name="SauceMachine2_light" type="SpotLight3D" parent="." unique_id=1949320493]
+transform = Transform3D(1, 0, 0, 0, -0.039852716, 0.9992056, 0, -0.9992056, -0.039852716, -11.412082, 8.206162, 2.9391785)
+
+[node name="SauceMachine3_light" type="SpotLight3D" parent="." unique_id=692216209]
+transform = Transform3D(1, 0, 0, 0, -0.039852716, 0.9992056, 0, -0.9992056, -0.039852716, 11.211075, 8.157478, -1.6255047)
+
+[node name="SauceMachine4_light" type="SpotLight3D" parent="." unique_id=397264787]
+transform = Transform3D(1, 0, 0, 0, -0.039852716, 0.9992056, 0, -0.9992056, -0.039852716, 11.211075, 8.157478, 2.6053257)
+
+[node name="Raccoon" parent="." unique_id=1781054978 instance=ExtResource("4_p44lo")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -8.663836, 2.027938, -6.352392)
+
+[node name="Raccoon2" parent="." unique_id=164445241 instance=ExtResource("4_p44lo")]
+transform = Transform3D(1.4999994, 0.0013351766, 0, -0.0013351766, 1.4999994, 0, 0, 0, 1.5, 3.03, 2.0279665, -6.352)
+
+[node name="Raccoon3" parent="." unique_id=1684853461 instance=ExtResource("4_p44lo")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 8.819, 2.0279665, -6.352)
+
+[node name="Raccoon4" parent="." unique_id=1710227643 instance=ExtResource("4_p44lo")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2.872, 2.0279665, -6.352)
+
+[node name="SandwichCounter" parent="." unique_id=889999482 instance=ExtResource("5_yx8ru")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26598716, 4.244292, -2.1379788)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SandwichCounter" unique_id=714813833]
+transform = Transform3D(1, 0, 0, 0, 0.74108595, -0.67141026, 0, 0.67141026, 0.74108595, -8.0722065, -0.964612, 2.118465)
+light_energy = 8.0
+spot_range = 10.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="SandwichCounter" unique_id=1054060008]
+transform = Transform3D(1, 0, 0, 0, 0.74108595, -0.67141026, 0, 0.67141026, 0.74108595, 0.6097419, -0.964612, 2.118465)
+light_energy = 8.0
+spot_range = 10.0
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="SandwichCounter" unique_id=130830810]
+transform = Transform3D(1, 0, 0, 0, 0.74108595, -0.67141026, 0, 0.67141026, 0.74108595, 8.582536, -0.964612, 2.118465)
+light_energy = 8.0
+spot_range = 10.0

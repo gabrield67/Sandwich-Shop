@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://c54v7gf8e74j5"]
+
+[ext_resource type="Script" uid="uid://b3r8sts5bsuoa" path="res://scenes/Ingredients/bread.gd" id="1_kf4f7"]
+[ext_resource type="PackedScene" uid="uid://ecpkd4q734jf" path="res://scenes/FlavorProfile.tscn" id="2_rap00"]
+[ext_resource type="PackedScene" uid="uid://ju7u3wbxyx7i" path="res://models/breadMesh.tscn" id="3_3yw7i"]
+[ext_resource type="AudioStream" uid="uid://bhebxqcor48g" path="res://sounds/bell_01_rubber_duck_oga.ogg" id="4_3deqp"]
+[ext_resource type="AudioStream" uid="uid://b54m7lsq21hkc" path="res://sounds/spring_07_rubber_duck.ogg" id="5_4ncmt"]
+[ext_resource type="PackedScene" uid="uid://bdh8u52n0jw4m" path="res://assets/Sandwich Eat Particles.tscn" id="6_4ncmt"]
+[ext_resource type="PackedScene" uid="uid://bsdvlbrb60p7d" path="res://assets/Sauce Particles.tscn" id="7_ok4gj"]
+[ext_resource type="PackedScene" uid="uid://cfqqv7ftdfd1g" path="res://scenes/UI/flavor_chart.tscn" id="8_yg326"]
+[ext_resource type="Texture2D" uid="uid://bx3pi75y8uocb" path="res://assets/Upgrade Plus.png" id="9_3p2gm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kf4f7"]
+size = Vector3(1, 3, 6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3deqp"]
+transparency = 1
+albedo_color = Color(0, 1, 0.32941177, 0.5529412)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4ncmt"]
+material = SubResource("StandardMaterial3D_3deqp")
+size = Vector3(3, 1, 3)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3deqp"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ok4gj"]
+viewport_path = NodePath("Flavor Display/Flavor Viewport")
+
+[node name="Bread" type="Area3D" unique_id=1187585206]
+script = ExtResource("1_kf4f7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=584160643]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4065671, 0)
+shape = SubResource("BoxShape3D_kf4f7")
+
+[node name="ActualFlavorProfile" parent="." unique_id=414758302 instance=ExtResource("2_rap00")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.5407626, 1.6563432)
+
+[node name="bread" parent="." unique_id=338320632 instance=ExtResource("3_3yw7i")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="WinSound" type="AudioStreamPlayer" parent="." unique_id=1122598284]
+stream = ExtResource("4_3deqp")
+
+[node name="TargetFlavorProfile" parent="." unique_id=443898979 instance=ExtResource("2_rap00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9594035, -1.6379085)
+
+[node name="LoseSound" type="AudioStreamPlayer" parent="." unique_id=859498381]
+stream = ExtResource("5_4ncmt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=517962003]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25861204, 0)
+mesh = SubResource("BoxMesh_4ncmt")
+
+[node name="Plate" type="MeshInstance3D" parent="." unique_id=296019120]
+transform = Transform3D(4.3741674, 0, 0, 0, 0.085751995, 0, 0, 0, 5.4601307, 0, -0.5172241, 0)
+mesh = SubResource("CylinderMesh_3deqp")
+
+[node name="SandwichEatParticles" parent="." unique_id=2146837341 instance=ExtResource("6_4ncmt")]
+
+[node name="Sauce Particles" parent="." unique_id=1058675559 instance=ExtResource("7_ok4gj")]
+
+[node name="Flavor Display" type="Sprite3D" parent="." unique_id=799888542]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5456265, 0.5309634, 2.61056)
+billboard = 1
+texture = SubResource("ViewportTexture_ok4gj")
+
+[node name="Flavor Viewport" type="SubViewport" parent="Flavor Display" unique_id=215884474]
+transparent_bg = true
+
+[node name="Label" type="Label" parent="Flavor Display/Flavor Viewport" unique_id=566411123]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -21.0
+offset_right = 61.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 35
+
+[node name="Flavor Chart" parent="Flavor Display/Flavor Viewport" unique_id=1923621798 instance=ExtResource("8_yg326")]
+notch_outline_color = Color(0, 0, 0, 1)
+notch_outline_width = 1.0
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=250586906]
+transform = Transform3D(0.6539514, 0, 0, 0, 0.61910796, 0, 0, 0, 1, -0.078992486, 0.8164034, 1.1327907)
+modulate = Color(1, 1, 1, 0.56078434)
+billboard = 1
+texture = ExtResource("9_3p2gm")
+
+[connection signal="body_entered" from="." to="." method="on_entered"]
+[connection signal="body_exited" from="." to="." method="on_exited"]
