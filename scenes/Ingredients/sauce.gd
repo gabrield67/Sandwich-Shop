@@ -2,6 +2,7 @@ class_name Sauce
 extends Ingredient
 
 @onready var chart_display = $"Flavor Display/Flavor Viewport/Flavor Chart"
+@onready var sauce_drop = $"Sauce Drop/Sphere"
 
 var sauce_index = 0
 var sauce_colors = []
@@ -35,7 +36,7 @@ func init_sauce(index: int, colorsA: Array, machine) -> void:
 	var material = StandardMaterial3D.new()
 	sauce_colors = colorsA
 	material.albedo_color = sauce_colors[index]
-	$MeshInstance3D.set_surface_override_material(0, material)
+	sauce_drop.set_surface_override_material(0, material)
 	sauce_index = index
 	sauce_machine = machine
 	if sauce_index == 0:

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://thp4kcbikugd"]
 
 [ext_resource type="Script" uid="uid://dq7ejcivwnm6d" path="res://scenes/Ingredients/sauce.gd" id="1_0jfnc"]
+[ext_resource type="PackedScene" uid="uid://6iqnqbwcmnca" path="res://models/sauce_drop.tscn" id="2_4b0wk"]
 [ext_resource type="AudioStream" uid="uid://8cytiw0cfaxq" path="res://sounds/random2_oga_artisticdude.wav" id="2_vudre"]
 [ext_resource type="PackedScene" uid="uid://ecpkd4q734jf" path="res://scenes/FlavorProfile.tscn" id="3_h4yvr"]
 [ext_resource type="PackedScene" uid="uid://cfqqv7ftdfd1g" path="res://scenes/UI/flavor_chart.tscn" id="4_uoxs5"]
@@ -22,6 +23,7 @@ script = ExtResource("1_0jfnc")
 metadata/_custom_type_script = "uid://dlcqiqygwtmgd"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=924995693]
+visible = false
 mesh = SubResource("CylinderMesh_0jfnc")
 surface_material_override/0 = SubResource("StandardMaterial3D_uoxs5")
 
@@ -62,3 +64,6 @@ theme_override_font_sizes/font_size = 35
 [node name="Flavor Chart" parent="Flavor Display/Flavor Viewport" unique_id=1923621798 instance=ExtResource("4_uoxs5")]
 notch_outline_color = Color(0, 0, 0, 1)
 notch_outline_width = 1.0
+
+[node name="Sauce Drop" parent="." unique_id=1395603104 instance=ExtResource("2_4b0wk")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.003247738, -0.49727762, 0)
