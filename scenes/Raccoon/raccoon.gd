@@ -219,6 +219,7 @@ func on_finished(ingredient: Node3D):
 	$SandwichEatParticles.restart()
 	$SandwichEatParticles.emitting = true
 	if check_imperfect_sandwich(ingredient.get_actual_flavor_profile(), target_flavors):
+		bad_sandwich = false
 		get_parent().good_sandwich_event()
 		print("Good Sandwich")
 		if ingredient.get_actual_flavor_profile() == target_flavors:
