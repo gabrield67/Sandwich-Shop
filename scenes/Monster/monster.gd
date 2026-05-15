@@ -3,6 +3,7 @@ var hand_scene = preload("res://models/monster_hand.tscn")
 var hands = [];
 var playedSound = false
 var firstAdd = true
+var gameEnd = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	add_hand()
@@ -14,12 +15,13 @@ func on_enter(body: Node3D)->void:
 
 func add_hand()->void:
 	var hs = hand_scene.instantiate()
-	if firstAdd:
-		firstAdd = false
-	else:
-		$Monster.play()
-	add_child(hs)
-	hands.push_back(hs)
+	if not gameEnd:
+		if firstAdd:
+			firstAdd = false
+		else:
+			$Monster.play()
+		add_child(hs)
+		hands.push_back(hs)
 	
 	hs.scale = Vector3(.5,.5,.5)
 	randomize()
@@ -41,8 +43,11 @@ func hand_anims():
 		h.start_anim = true
 		
 func disperse():
+	gameEnd = true
 	if not playedSound:
-		$Scream.play()
+		$Squeaking.play()
+		await get_tree().create_timer(0.5).timeout
+		$Squeaking2.play()
 		playedSound = true
 	var i = 0
 	for h in hands:

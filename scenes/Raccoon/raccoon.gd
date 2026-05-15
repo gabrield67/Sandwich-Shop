@@ -5,12 +5,13 @@ extends Area3D
 @export var move_distance: float = 2
 #@onready var timer: Timer = $"Raccoon Timer"
 #@onready var progressBar = $"Timer Display/Timer Viewport/Timer 3D"
-@onready var raccoon_click = $"Raccoon Click"
 @onready var thought_bubble_display = $"Flavor Display"
 @onready var thought_bubble_label =$"Flavor Display/Flavor Viewport/Thought Bubble/Label"
 #@onready var timer_display = $"Timer Display"
 @onready var chart_display = $"Flavor Display/Flavor Viewport/Thought Bubble/Flavor Chart"
 @onready var color_palette = $"WholeRaccoonModel"
+
+@onready var raccoon_head = $"WholeRaccoonModel/raccoonHead"
 
 @export var test_raccoon_spawn: bool = false
 @export var bar_width = 40
@@ -34,6 +35,8 @@ var active_tween: Tween
 
 var slot: Node = null
 
+var bad_sandwich = false
+
 @export var needs_to_enter: bool = true:
 	set(value):
 		needs_to_enter = value
@@ -46,6 +49,14 @@ var slot: Node = null
 		needs_to_exit = value
 		if needs_to_exit and is_active:
 			handle_exit()
+
+@export var bad_sandwich_react: bool = false:
+	set(value):
+		bad_sandwich_react = value
+		if bad_sandwich_react and is_active:
+			print("Reacting... ")
+			animate_bad_sandwich()
+
 var entered: bool = false:
 	set(value):
 		entered = value
@@ -108,6 +119,24 @@ func handle_exit() -> void:
 		entered = false
 	)
 	
+func animate_bad_sandwich() -> void:
+	_clear_active_tween()
+	
+	print("animating bad sandiwch")
+	var shake_amount = 15.0 # Degrees
+	var time = .2
+	
+	active_tween = create_tween()
+	active_tween.set_parallel(false)
+		
+	active_tween.tween_property(self, "global_rotation_degrees:y", shake_amount, time).set_trans(Tween.TRANS_SINE)
+	active_tween.tween_property(self, "global_rotation_degrees:y", -shake_amount, time).set_trans(Tween.TRANS_SINE)
+	active_tween.tween_property(self, "global_rotation_degrees:y", 0, time).set_trans(Tween.TRANS_SINE)
+	
+	active_tween.tween_callback(func():
+		needs_to_exit = true
+	)
+
 func show_display() -> void:
 	thought_bubble_display.show()
 	thought_bubble_display.visible = true
@@ -158,6 +187,7 @@ func make_inactive() -> void:
 	self.global_rotation_degrees.y = 0.0
 	
 func on_entered_area(area: Area3D) -> void:
+	print("entered area")
 	if is_active:
 		if area is Bread:
 			#print (body.name)
@@ -197,6 +227,7 @@ func on_finished(ingredient: Node3D):
 	else:
 		print()
 		get_parent().bad_sandwich_event()
+		bad_sandwich = true
 		print("Bad Sandwich")
 		
 	GlobalEvents.sandwich_completed.emit(get_parent())
@@ -205,9 +236,12 @@ func on_finished(ingredient: Node3D):
 	clean_up_raccoon()
 	
 func clean_up_raccoon():
-	needs_to_exit = true
-	randomize_target()
-	chart_display.update_chart_data(target_flavors)
+	if bad_sandwich:
+		bad_sandwich_react = true
+	if bad_sandwich_react == false:
+		needs_to_exit = true
+		randomize_target()
+		chart_display.update_chart_data(target_flavors)
 
 func check_imperfect_sandwich(actual_flavor, target_flavor) -> bool:
 	for i in range(actual_flavor.size()):
