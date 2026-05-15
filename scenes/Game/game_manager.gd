@@ -208,6 +208,7 @@ func get_grab_position():
 	return $"Camera Pivot/Camera3D".global_position + line_fin
 
 func play_win_sound():
+	$SandwichBite.play()
 	$WinSound.play()
 
 func play_lose_sound():
@@ -216,12 +217,10 @@ func play_lose_sound():
 func good_sandwich_event():
 	play_win_sound()
 	$HUD.addGoodSandwich()
-	pass
 	
 func bad_sandwich_event():
 	play_lose_sound()
 	$HUD.addBadSandwich()
-	pass
 
 func startUpgradeTime():
 	upgradeTime = true
