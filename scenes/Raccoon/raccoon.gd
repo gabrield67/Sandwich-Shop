@@ -135,6 +135,7 @@ func animate_bad_sandwich() -> void:
 	
 	active_tween.tween_callback(func():
 		needs_to_exit = true
+		bad_sandwich_react = false
 	)
 
 func show_display() -> void:
@@ -216,9 +217,9 @@ func eat_sandwich(sandwich: Node3D):
 		sandwich. clean_up_bread()
 		
 func on_finished(ingredient: Node3D):
-	$SandwichEatParticles.restart()
-	$SandwichEatParticles.emitting = true
 	if check_imperfect_sandwich(ingredient.get_actual_flavor_profile(), target_flavors):
+		$SandwichEatParticles.restart()
+		$SandwichEatParticles.emitting = true
 		bad_sandwich = false
 		get_parent().good_sandwich_event()
 		print("Good Sandwich")
@@ -238,11 +239,15 @@ func on_finished(ingredient: Node3D):
 	
 func clean_up_raccoon():
 	if bad_sandwich:
+		# Triggers the setter for bad_sandwich_react, which calls animate_bad_sandwich()
 		bad_sandwich_react = true
-	if bad_sandwich_react == false:
+	else:
+		# Explicitly reset the bad reaction flag so old data doesn't trap the raccoon
+		bad_sandwich_react = false
 		needs_to_exit = true
 		randomize_target()
 		chart_display.update_chart_data(target_flavors)
+
 
 func check_imperfect_sandwich(actual_flavor, target_flavor) -> bool:
 	for i in range(actual_flavor.size()):
