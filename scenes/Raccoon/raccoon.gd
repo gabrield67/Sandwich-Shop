@@ -3,12 +3,12 @@ extends Area3D
 
 @export var raccoonTime: int = 10
 @export var move_distance: float = 2
-@onready var timer: Timer = $"Raccoon Timer"
-@onready var progressBar = $"Timer Display/Timer Viewport/Timer 3D"
+#@onready var timer: Timer = $"Raccoon Timer"
+#@onready var progressBar = $"Timer Display/Timer Viewport/Timer 3D"
 @onready var raccoon_click = $"Raccoon Click"
 @onready var thought_bubble_display = $"Flavor Display"
 @onready var thought_bubble_label =$"Flavor Display/Flavor Viewport/Thought Bubble/Label"
-@onready var timer_display = $"Timer Display"
+#@onready var timer_display = $"Timer Display"
 @onready var chart_display = $"Flavor Display/Flavor Viewport/Thought Bubble/Flavor Chart"
 @onready var color_palette = $"WholeRaccoonModel"
 
@@ -59,9 +59,9 @@ func _ready() -> void:
 	self.position = original_model_pos
 	$Sprite3D.visible = false
 	# set up timer
-	timer.wait_time = raccoonTime
-	progressBar.max_value = raccoonTime
-	timer.one_shot = true
+	#timer.wait_time = raccoonTime
+	#progressBar.max_value = raccoonTime
+	#timer.one_shot = true
 	
 	hide_display()
 	randomize_target()
@@ -75,9 +75,9 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	progressBar.value = timer.time_left
-	thought_bubble_label.text = str(target_flavors)
+#func _process(delta: float) -> void:
+	#progressBar.value = timer.time_left
+	#thought_bubble_label.text = str(target_flavors)
 
 func _clear_active_tween() -> void:
 	if active_tween and active_tween.is_valid():
@@ -111,13 +111,13 @@ func handle_exit() -> void:
 func show_display() -> void:
 	thought_bubble_display.show()
 	thought_bubble_display.visible = true
-	timer_display.show()
-	timer.start()
+	#timer_display.show()
+	#timer.start()
 	
 func hide_display() -> void:
 	thought_bubble_display.hide()
 	thought_bubble_display.visible = false
-	timer_display.hide()
+	#timer_display.hide()
 
 			
 func randomize_target() -> void:
@@ -201,7 +201,7 @@ func on_finished(ingredient: Node3D):
 		
 	GlobalEvents.sandwich_completed.emit(get_parent())
 	thought_bubble_display.hide()
-	timer_display.hide()
+	#timer_display.hide()
 	clean_up_raccoon()
 	
 func clean_up_raccoon():
