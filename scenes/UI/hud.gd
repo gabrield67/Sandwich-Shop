@@ -58,13 +58,13 @@ func pause_click() -> void:
 	if isPaused:
 		get_tree().paused = false
 		isPaused = false
-		$Tutorial.visible = false
+		$ColorRect.visible = false
 		$Play.visible =false
 	else:
 		get_tree().paused = true
 		isPaused = true
 		if firstPause:
-			$Tutorial.visible = true
+			$ColorRect.visible = true
 			firstPause = false
 		
 func restart_click() -> void:
