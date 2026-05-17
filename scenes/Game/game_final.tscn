@@ -14,16 +14,18 @@
 [ext_resource type="PackedScene" path="res://models/trash_lid.tscn" id="11_hf07t"]
 [ext_resource type="PackedScene" uid="uid://b6uqd7cn3xg0x" path="res://models/tomato_mesh.tscn" id="12_26feh"]
 [ext_resource type="Material" uid="uid://sb1tl5fge5x2" path="res://colors/slimeYellow.tres" id="12_ub81o"]
-[ext_resource type="PackedScene" uid="uid://paloirtdcgga" path="res://scenes/Monster/Monster.tscn" id="13_bxin3"]
 [ext_resource type="PackedScene" uid="uid://pd50n848wkq0" path="res://models/lettuceMesh.tscn" id="13_oa7co"]
 [ext_resource type="Material" uid="uid://7gn0t4diki3s" path="res://colors/eyeDarkCharcoal.tres" id="14_hkjom"]
 [ext_resource type="PackedScene" uid="uid://b60vg43gdsml4" path="res://models/monster_hand.tscn" id="14_pxs0x"]
 [ext_resource type="PackedScene" uid="uid://co3tj1g5g5g38" path="res://scenes/parameters.tscn" id="17_ldmpq"]
+[ext_resource type="PackedScene" uid="uid://dyuhvf8kbarea" path="res://models/sewer_hole.tscn" id="17_ln52f"]
 [ext_resource type="PackedScene" uid="uid://c124rtdal8yfg" path="res://models/whole_raccoon_model.tscn" id="17_oa7co"]
 [ext_resource type="PackedScene" uid="uid://bfd7ic8voya81" path="res://scenes/UI/game_timer.tscn" id="17_s2b54"]
 [ext_resource type="PackedScene" uid="uid://btcll58epxffn" path="res://scenes/UI/Loss Screen.tscn" id="17_xkgmc"]
 [ext_resource type="AudioStream" uid="uid://cbk4glf7b0n4" path="res://sounds/Garbage Sludge.ogg" id="18_xkgmc"]
+[ext_resource type="Material" uid="uid://8kf6dv73p3lv" path="res://colors/fishCharcoal.tres" id="19_mi1nb"]
 [ext_resource type="AudioStream" uid="uid://c3fdf77psgmhn" path="res://sounds/music/Cyberpunk Moonlight Sonata JOTH_Open Game Art.mp3" id="24_pxs0x"]
+[ext_resource type="AudioStream" uid="uid://8jojlge32dly" path="res://sounds/Sandwich Bite.wav" id="26_m51li"]
 
 [sub_resource type="TorusMesh" id="TorusMesh_qosn7"]
 
@@ -578,9 +580,6 @@ _data = {
 &"trashRollSettle": SubResource("Animation_iprtr")
 }
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_qosn7"]
-height = 0.515
-
 [node name="Game_Final" type="Node3D" unique_id=1126054119]
 script = ExtResource("1_ldmpq")
 
@@ -698,37 +697,70 @@ libraries/ = SubResource("AnimationLibrary_80xwq")
 [node name="WholeRaccoonModel" parent="WholeTrash" unique_id=1874828909 instance=ExtResource("17_oa7co")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.595, 3.215, -9.37)
 
-[node name="SewerHole" type="Node3D" parent="." unique_id=1301368767]
-transform = Transform3D(0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, 0.9975641, 11.032166, 0, 6.264655)
+[node name="SewerHole" parent="." unique_id=1257466158 instance=ExtResource("17_ln52f")]
+transform = Transform3D(0.9975641, 0, 0.06975646, 0, 1, 0, -0.06975646, 0, 0.9975641, 11.548767, -0.37512398, 6.264655)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SewerHole" unique_id=1043650768]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
-mesh = SubResource("CylinderMesh_qosn7")
-surface_material_override/0 = ExtResource("14_hkjom")
+[node name="SewerDoors" type="Node3D" parent="." unique_id=1861657235]
 
-[node name="Monster" parent="SewerHole" unique_id=1760694918 instance=ExtResource("13_bxin3")]
+[node name="Door4" type="CSGCombiner3D" parent="SewerDoors" unique_id=1113057211]
+transform = Transform3D(0.99026805, -0.1385324, -0.0133391535, 0, 0.09584576, -0.9953962, 0.13917312, 0.9857091, 0.09491299, 9.745, 2.103, -9.331)
 
-[node name="SewerDoorsPlaceholder" type="Node3D" parent="." unique_id=1861657235]
+[node name="Sewer" type="CSGCylinder3D" parent="SewerDoors/Door4" unique_id=466625362]
+transform = Transform3D(3.9999788, 0, 3.2782555e-07, 0, 1, 0, -3.2782555e-07, 0, 3.9999788, 0, 0, 0)
+sides = 20
+material = ExtResource("19_mi1nb")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="SewerDoorsPlaceholder" unique_id=621694390]
-transform = Transform3D(3.9610722, -0.55412954, -0.053356607, 0, 0.38338304, -3.9815848, 0.5566924, 3.9428363, 0.37965196, 9.745, 2.103, -9.331)
-mesh = SubResource("CylinderMesh_qosn7")
-surface_material_override/0 = ExtResource("14_hkjom")
+[node name="Hole" type="CSGCylinder3D" parent="SewerDoors/Door4" unique_id=684465860]
+transform = Transform3D(2.9999871, 9.23872e-07, 2.719462e-07, 2.9802322e-08, 0.8000121, -2.9802322e-07, -2.3469329e-07, 9.164214e-07, 2.999984, -9.536743e-07, 0.9820385, -4.7683716e-07)
+operation = 2
+height = 0.54693604
+sides = 20
+material = ExtResource("14_hkjom")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="SewerDoorsPlaceholder" unique_id=376586994]
-transform = Transform3D(3.9610722, -0.55412954, -0.053356607, 0, 0.38338304, -3.9815848, 0.5566924, 3.9428363, 0.37965196, 4.035, 2.103, -9.331)
-mesh = SubResource("CylinderMesh_qosn7")
-surface_material_override/0 = ExtResource("14_hkjom")
+[node name="Door3" type="CSGCombiner3D" parent="SewerDoors" unique_id=1133219722]
+transform = Transform3D(0.99026805, -0.1385324, -0.0133391535, 0, 0.09584576, -0.9953962, 0.13917312, 0.9857091, 0.09491299, 4.035, 2.103, -9.331)
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="SewerDoorsPlaceholder" unique_id=2105922762]
-transform = Transform3D(3.9610722, -0.55412954, -0.053356607, 0, 0.38338304, -3.9815848, 0.5566924, 3.9428363, 0.37965196, -1.795, 2.103, -9.331)
-mesh = SubResource("CylinderMesh_qosn7")
-surface_material_override/0 = ExtResource("14_hkjom")
+[node name="Sewer" type="CSGCylinder3D" parent="SewerDoors/Door3" unique_id=693841640]
+transform = Transform3D(3.9999788, 0, 3.2782555e-07, 0, 1, 0, -3.2782555e-07, 0, 3.9999788, 0, 0, 0)
+sides = 20
+material = ExtResource("19_mi1nb")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="SewerDoorsPlaceholder" unique_id=464680717]
-transform = Transform3D(3.9610722, -0.55412954, -0.053356607, 0, 0.38338304, -3.9815848, 0.5566924, 3.9428363, 0.37965196, -7.63, 2.103, -9.331)
-mesh = SubResource("CylinderMesh_qosn7")
-surface_material_override/0 = ExtResource("14_hkjom")
+[node name="Hole" type="CSGCylinder3D" parent="SewerDoors/Door3" unique_id=2016533215]
+transform = Transform3D(2.9999871, 9.23872e-07, 2.719462e-07, 2.9802322e-08, 0.8000121, -2.9802322e-07, -2.3469329e-07, 9.164214e-07, 2.999984, -9.536743e-07, 0.9820385, -4.7683716e-07)
+operation = 2
+height = 0.54693604
+sides = 20
+material = ExtResource("14_hkjom")
+
+[node name="Door2" type="CSGCombiner3D" parent="SewerDoors" unique_id=1377212472]
+transform = Transform3D(0.99026805, -0.1385324, -0.0133391535, 0, 0.09584576, -0.9953962, 0.13917312, 0.9857091, 0.09491299, -1.795, 2.103, -9.331)
+
+[node name="Sewer" type="CSGCylinder3D" parent="SewerDoors/Door2" unique_id=742352394]
+transform = Transform3D(3.9999788, 0, 3.2782555e-07, 0, 1, 0, -3.2782555e-07, 0, 3.9999788, 0, 0, 0)
+sides = 20
+material = ExtResource("19_mi1nb")
+
+[node name="Hole" type="CSGCylinder3D" parent="SewerDoors/Door2" unique_id=1760056832]
+transform = Transform3D(2.9999871, 9.23872e-07, 2.719462e-07, 2.9802322e-08, 0.8000121, -2.9802322e-07, -2.3469329e-07, 9.164214e-07, 2.999984, -9.536743e-07, 0.9820385, -4.7683716e-07)
+operation = 2
+height = 0.54693604
+sides = 20
+material = ExtResource("14_hkjom")
+
+[node name="Door1" type="CSGCombiner3D" parent="SewerDoors" unique_id=2016155029]
+transform = Transform3D(0.99026805, -0.1385324, -0.0133391535, 0, 0.09584576, -0.9953962, 0.13917312, 0.9857091, 0.09491299, -7.63, 2.103, -9.331)
+
+[node name="Sewer" type="CSGCylinder3D" parent="SewerDoors/Door1" unique_id=286978551]
+transform = Transform3D(3.9999788, 0, 3.2782555e-07, 0, 1, 0, -3.2782555e-07, 0, 3.9999788, 0, 0, 0)
+sides = 20
+material = ExtResource("19_mi1nb")
+
+[node name="Hole" type="CSGCylinder3D" parent="SewerDoors/Door1" unique_id=75336693]
+transform = Transform3D(2.9999871, 9.23872e-07, 2.719462e-07, 2.9802322e-08, 0.8000121, -2.9802322e-07, -2.3469329e-07, 9.164214e-07, 2.999984, -9.536743e-07, 0.9820385, -4.7683716e-07)
+operation = 2
+height = 0.54693604
+sides = 20
+material = ExtResource("14_hkjom")
 
 [node name="Game Timer" parent="." unique_id=936284248 instance=ExtResource("17_s2b54")]
 
@@ -751,3 +783,7 @@ autoplay = true
 stream = ExtResource("24_pxs0x")
 volume_db = -1.0
 parameters/looping = true
+
+[node name="SandwichBite" type="AudioStreamPlayer" parent="." unique_id=456181747]
+stream = ExtResource("26_m51li")
+volume_db = 0.8

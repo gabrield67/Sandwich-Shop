@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @onready var waste: TextureProgressBar = $"Control/Waste Container/Waste Progress"
-@onready var radialProgress: TextureProgressBar = $"Control/Timer Container/Radial Timer"
+#@onready var radialProgress: TextureProgressBar = $"Control/Timer Container/Radial Timer"
 
 
 @export var levelTime: int = 30
@@ -38,11 +38,11 @@ func addBadSandwich() -> void:
 		get_parent().startUpgradeTime()
 	
 # update timer
-func setMaxTimer(max_time) -> void:
-	radialProgress.max_value = max_time
-
-func updateTimer(current_time)-> void:
-	radialProgress.value = current_time
+#func setMaxTimer(max_time) -> void:
+	#radialProgress.max_value = max_time
+#
+#func updateTimer(current_time)-> void:
+	#radialProgress.value = current_time
 
 # update waste
 func setMaxWaste(max_waste) -> void:
@@ -58,13 +58,13 @@ func pause_click() -> void:
 	if isPaused:
 		get_tree().paused = false
 		isPaused = false
-		$Tutorial.visible = false
+		$ColorRect.visible = false
 		$Play.visible =false
 	else:
 		get_tree().paused = true
 		isPaused = true
 		if firstPause:
-			$Tutorial.visible = true
+			$ColorRect.visible = true
 			firstPause = false
 		
 func restart_click() -> void:

@@ -39,10 +39,10 @@ func _ready() -> void:
 	#@$AudioStreamPlayer.play()
 
 	# Game Timer
-	hud.setMaxTimer(gameTime)
-	timer.wait_time = gameTime
-	timer.one_shot = true
-	timer.start()
+	#hud.setMaxTimer(gameTime)
+	#timer.wait_time = gameTime
+	#timer.one_shot = true
+	#timer.start()
 
 	set_parameters()
 	# Waste Tracking
@@ -68,7 +68,7 @@ func _process(delta: float) -> void:
 			pass
 	
 	# handle game timer
-	hud.updateTimer(timer.time_left)
+	#hud.updateTimer(timer.time_left)
 
 func set_parameters():
 	$IngredientSpawner.conveyor_move_speed= $Parameters.conveyor_move_speed
@@ -208,6 +208,7 @@ func get_grab_position():
 	return $"Camera Pivot/Camera3D".global_position + line_fin
 
 func play_win_sound():
+	$SandwichBite.play()
 	$WinSound.play()
 
 func play_lose_sound():
@@ -216,12 +217,10 @@ func play_lose_sound():
 func good_sandwich_event():
 	play_win_sound()
 	$HUD.addGoodSandwich()
-	pass
 	
 func bad_sandwich_event():
 	play_lose_sound()
 	$HUD.addBadSandwich()
-	pass
 
 func startUpgradeTime():
 	upgradeTime = true
@@ -241,9 +240,9 @@ func stopUpgradeTime():
 	$UpgradeManager.stopUpgradeTime()
 
 # Time Functions
-func _on_game_timer_timeout():
-	print("Time's Up")
-	GlobalEvents.level_timer_end.emit()
+#func _on_game_timer_timeout():
+	#print("Time's Up")
+	#GlobalEvents.level_timer_end.emit()
 	
 # update Trash Progress Bar every time there's a wasted ingredient
 func _on_ingredients_wasted():

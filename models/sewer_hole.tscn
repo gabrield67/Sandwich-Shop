@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dyuhvf8kbarea"]
+
+[ext_resource type="Material" uid="uid://7gn0t4diki3s" path="res://colors/eyeDarkCharcoal.tres" id="1_hwytf"]
+[ext_resource type="PackedScene" uid="uid://paloirtdcgga" path="res://scenes/Monster/Monster.tscn" id="2_x7end"]
+[ext_resource type="Material" uid="uid://8kf6dv73p3lv" path="res://colors/fishCharcoal.tres" id="3_x7end"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qosn7"]
+height = 0.515
+
+[node name="SewerHole" type="Node3D" unique_id=1257466158]
+transform = Transform3D(0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, 0.9975641, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1924702244]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+visible = false
+mesh = SubResource("CylinderMesh_qosn7")
+surface_material_override/0 = ExtResource("1_hwytf")
+
+[node name="Monster" parent="." unique_id=1760694918 instance=ExtResource("2_x7end")]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=313886858]
+
+[node name="Sewer" type="CSGCylinder3D" parent="CSGCombiner3D" unique_id=268617513]
+transform = Transform3D(3.9999788, 0, 3.2782555e-07, 0, 1, 0, -3.2782555e-07, 0, 3.9999788, 0, 0, 0)
+sides = 20
+material = ExtResource("3_x7end")
+
+[node name="Hole" type="CSGCylinder3D" parent="CSGCombiner3D" unique_id=1710162797]
+transform = Transform3D(2.9999783, 0, 2.2351742e-07, 0, 0.8, 0, -2.2351742e-07, 0, 2.9999783, 0, 1.0964675, 0)
+operation = 2
+height = 0.26086426
+sides = 20
+material = ExtResource("1_hwytf")

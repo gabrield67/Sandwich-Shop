@@ -143,6 +143,8 @@ _data = {
 &"pulseAnimation": SubResource("Animation_esa6o")
 }
 
+[sub_resource type="PrismMesh" id="PrismMesh_esa6o"]
+
 [node name="monsterHand" unique_id=25484297 instance=ExtResource("1_gqnhx")]
 script = ExtResource("2_uo5e8")
 
@@ -157,3 +159,19 @@ surface_material_override/0 = ExtResource("2_esa6o")
 [node name="monsterPulseAnimation" type="AnimationPlayer" parent="." index="2" unique_id=1253457227]
 libraries/ = SubResource("AnimationLibrary_uo5e8")
 speed_scale = 0.166
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="3" unique_id=142075869]
+transform = Transform3D(0.27212936, 0, 0, 0, -0.015182768, -0.13748631, 0, 0.5493913, -0.003799519, 0.22326788, 7.3149934, 5.31364)
+mesh = SubResource("PrismMesh_esa6o")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="4" unique_id=2067517250]
+transform = Transform3D(0.26972932, 0.067986876, -0.0065369084, -0.008016554, -0.079140924, -0.13604504, -0.03515982, 0.5396069, -0.019129304, -0.8340335, 7.1629205, 5.31364)
+mesh = SubResource("PrismMesh_esa6o")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." index="5" unique_id=690154753]
+transform = Transform3D(0.27212936, 0, 0, 0, -0.01536495, -0.13748503, 0, 0.5493862, -0.0038451105, -0.2747834, 6.845867, 5.399783)
+mesh = SubResource("PrismMesh_esa6o")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." index="6" unique_id=148838750]
+transform = Transform3D(0.27212936, 0, 0, 0, -0.09048327, -0.13566202, 0, 0.5421015, -0.022643624, 0.94069433, 6.879563, 5.3527336)
+mesh = SubResource("PrismMesh_esa6o")

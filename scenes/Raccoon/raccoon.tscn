@@ -12,14 +12,11 @@
 [sub_resource type="ViewportTexture" id="ViewportTexture_fnbhh"]
 viewport_path = NodePath("Timer Display/Timer Viewport")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_gvxd3"]
-size = Vector3(0.5, 4.585, 5)
-
 [sub_resource type="ViewportTexture" id="ViewportTexture_epiun"]
 viewport_path = NodePath("Flavor Display/Flavor Viewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vwr5m"]
-size = Vector3(4, 4, 4)
+size = Vector3(1, 4, 4.3896484)
 
 [node name="Raccoon" type="Area3D" unique_id=1000162927]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
@@ -31,6 +28,7 @@ script = ExtResource("3_btq72")
 
 [node name="Timer Display" type="Sprite3D" parent="." unique_id=2102177136]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0103045, -0.8910922, 0.98120373)
+visible = false
 billboard = 1
 texture = SubResource("ViewportTexture_fnbhh")
 
@@ -39,16 +37,9 @@ disable_3d = true
 transparent_bg = true
 
 [node name="Timer 3D" parent="Timer Display/Timer Viewport" unique_id=1129717321 instance=ExtResource("2_wngsp")]
+visible = false
 
 [node name="Raccoon Timer" type="Timer" parent="." unique_id=2134176697]
-
-[node name="Raccoon Click" type="StaticBody3D" parent="." unique_id=735071723]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Raccoon Click" unique_id=1201567582]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.059631348, -0.25500488, -1.3569629)
-shape = SubResource("BoxShape3D_gvxd3")
-debug_color = Color(0.9911961, 0, 0.27465352, 0.41960785)
-debug_fill = false
 
 [node name="Flavor Display" type="Sprite3D" parent="." unique_id=1953032506]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.536615, 1.1326852)
@@ -66,9 +57,9 @@ transparent_bg = true
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 2.0979843, 1.4099163)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1394801554]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2670898, -0.36985)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2670898, 0.4353258)
 shape = SubResource("BoxShape3D_vwr5m")
+debug_color = Color(0, 0, 0.69803923, 0.41960785)
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1996389846]
 transform = Transform3D(0.6539514, 0, 0, 0, 0.61910796, 0, 0, 0, 1, -0.078992486, 0.8164034, 1.1327907)
