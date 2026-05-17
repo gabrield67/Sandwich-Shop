@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dw6i7sv2xbbn5" path="res://assets/Pause.png" id="6_0qpk7"]
 [ext_resource type="Texture2D" uid="uid://csjo3m4bfhlub" path="res://assets/Pause_red.png" id="7_ucsqe"]
 [ext_resource type="Texture2D" uid="uid://jvi0ufca2i7" path="res://assets/restart.png" id="8_a0qax"]
-[ext_resource type="Texture2D" uid="uid://hqqgsq6ibna2" path="res://assets/GameJam_Tutorial_final.png" id="9_tohwf"]
+[ext_resource type="Texture2D" uid="uid://r1nlu0ebcqx6" path="res://assets/GameJam_Tutorial_final_2.png" id="9_tohwf"]
 [ext_resource type="Texture2D" uid="uid://dkttrcbqdtyc1" path="res://assets/Play Button.png" id="10_tohwf"]
 
 [node name="HUD" type="CanvasLayer" unique_id=1287460498]
