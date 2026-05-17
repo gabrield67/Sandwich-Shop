@@ -4,9 +4,16 @@ var hands = [];
 var playedSound = false
 var firstAdd = true
 var gameEnd = false
+var wait_time = 3.0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	add_hand()
+	pass
+func _process(delta:float)->void:
+	if wait_time > 0:
+		wait_time -= delta
+	
+	if wait_time <= 0 and firstAdd:
+		add_hand()
 	
 func on_enter(body: Node3D)->void:
 	body.queue_free()
@@ -15,20 +22,25 @@ func on_enter(body: Node3D)->void:
 
 func add_hand()->void:
 	var hs = hand_scene.instantiate()
-	if not gameEnd:
-		if firstAdd:
-			firstAdd = false
-		else:
+	randomize()
+	
+	if firstAdd:
+		firstAdd = false
+		hs.rotation = Vector3(0	,4.5,0)
+	else:
+		var x = ((randf()-.5)*1.1)*0.3
+		var y = ((randf()-.5)*3.1)-1.5
+		var z = ((randf()-.5)*1.1)*0.3
+		hs.rotation = Vector3(x	,y,z)
+		if not gameEnd:
 			$Monster.play()
+	if not gameEnd:
 		add_child(hs)
 		hands.push_back(hs)
 	
-	hs.scale = Vector3(.5,.5,.5)
+	#hs.scale = Vector3(.5,.5,.5)
 	randomize()
-	var x = ((randf()-.5)*1.1)*0.3
-	var y = ((randf()-.5)*3.1)-1.5
-	var z = ((randf()-.5)*1.1)*0.3
-	hs.rotation = Vector3(x	,y,z)
+	
 	hs.rotation_order = 2
 	hs.original_rotation =hs.rotation
 	hs.position = Vector3(-.5	, 0, -.5) 

@@ -48,6 +48,7 @@ func _ready() -> void:
 	# Waste Tracking
 	hud.setMaxWaste(maxWaste)
 	
+	$WholeTrash/TrashCanAnimation2.play("trashRollSettle")
 	# listeners
 	GlobalEvents.ingredients_wasted.connect(_on_ingredients_wasted)
 

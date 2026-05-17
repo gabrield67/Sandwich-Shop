@@ -44,6 +44,7 @@ func _ready() -> void:
 	off_material.albedo_color = Color.WHITE
 	
 	display_label.text = str(flavor_tracker)
+
 	
 func on_entered(body: Node3D) -> void:
 	if is_active:

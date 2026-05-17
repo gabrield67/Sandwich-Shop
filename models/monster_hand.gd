@@ -4,6 +4,9 @@ extends Node3D
 
 @onready var original_rotation = rotation
 @onready var original_position = position
+@onready var original_size = scale*.5
+
+var grow_timer = 0
 var start_anim = false
 var anim_rot = Vector3(0,0,0)
 var anim_timer = 0
@@ -14,11 +17,16 @@ var disperse_pt_2 = Vector3(0,0,0)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
+	original_size = scale*.5
 	anim_rot = Vector3(randf(), randf(), randf())*(1-(randi_range(0,1)*2))
+	scale = Vector3(0,0,0)
 	pass
 	#monsterArmAnim.play("idle")
 	
 func _process(delta:float)->void:
+	if grow_timer < 1:
+		grow_timer = grow_timer + delta 
+		scale = original_size * grow_timer
 	if start_anim:
 		anim_timer = anim_timer+delta
 		if anim_timer < .5:
